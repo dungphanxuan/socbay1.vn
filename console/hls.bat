@@ -1,0 +1,1 @@
+ffmpeg -i 831.mkv -g 60 -hls_time 5 -hls_list_size 0 831/831.m3u8 -hls_segment_filename 831/360p_%03d.ts

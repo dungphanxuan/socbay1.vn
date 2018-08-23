@@ -1,0 +1,67 @@
+# Your project's server will run on proxy
+PROXY: "http://local.yiiframework.com"
+
+# Autoprefixer will make sure your CSS works with these browsers
+COMPATIBILITY:
+  - "last 2 versions"
+  - "ie >= 9"
+
+# Gulp will reference these paths when it copies files
+PATHS:
+  # Path to dist folder
+  dist: "frontend/web/modern-business/dist"
+  # Path to source folder
+  src: "assets_z/src"
+  # Paths to fonts
+  fonts:
+    - "vendor/bower/font-awesome/fonts/**/*"
+    - "assets_z/src/fonts/ptsans-bold/**/*"
+    - "assets_z/src/fonts/ptsans-regular/**/*"
+    - "assets_z/src/fonts/sourcecodepro/**/*"
+  # Paths to Sass libraries, which can then be loaded with @import
+  sass:
+    - "vendor/bower/glidejs/src/sass"
+    - "vendor/bower/bootstrap-social"
+    - "vendor/scrivo/highlight.php"
+    - "vendor/bower/font-awesome/scss"
+    - "vendor/bower/sass-rem"
+    - "vendor/bower/codemirror/lib"
+  # Paths to JavaScript libraries, which are compined into one file
+  javascript:
+    - "vendor/bower/jquery/dist/jquery.js"
+    - "frontend/web/bootstrap4/js/popper.min.js"
+    - "frontend/web/bootstrap4/js/bootstrap.js"
+    - "vendor/bower/scrollup/dist/jquery.scrollUp.js"
+    - "vendor/yiisoft/yii2/assets/yii.js"
+    - "vendor/yiisoft/yii2/assets/yii.validation.js"
+    - "vendor/yiisoft/yii2/assets/yii.activeForm.js"
+    - "vendor/yiisoft/yii2-authclient/assets/authchoice.js"
+    - "vendor/bower/glidejs/dist/glide.js"
+    - "assets_z/src/js/custom.js"
+    - "assets_z/src/js/search.js"
+    - "assets_z/src/js/voting.js"
+    - "assets_z/src/js/star.js"
+    - "vendor/bower/codemirror/lib/codemirror.js"
+    - "vendor/bower/codemirror/mode/shell/shell.js"
+    - "vendor/bower/codemirror/mode/clike/clike.js"
+    - "vendor/bower/codemirror/mode/css/css.js"
+    - "vendor/bower/codemirror/mode/javascript/javascript.js"
+    - "vendor/bower/codemirror/mode/php/php.js"
+    - "vendor/bower/codemirror/mode/sass/sass.js"
+    - "vendor/bower/codemirror/mode/sql/sql.js"
+    - "vendor/bower/codemirror/mode/twig/twig.js"
+    - "vendor/bower/codemirror/mode/xml/xml.js"
+    - "vendor/bower/codemirror/mode/yaml/yaml.js"
+    - "vendor/bower/codemirror/mode/htmlmixed/htmlmixed.js"
+    - "vendor/bower/codemirror/mode/meta.js"
+    - "vendor/bower/codemirror/mode/markdown/markdown.js"
+    - "vendor/bower/codemirror/addon/mode/overlay.js"
+    - "vendor/bower/codemirror/mode/gfm/gfm.js"
+    - "vendor/bower/codemirror/addon/edit/continuelist.js"
+    - "vendor/bower/codemirror/addon/fold/xml-fold.js"
+    - "vendor/bower/codemirror/addon/edit/matchbrackets.js"
+    - "vendor/bower/codemirror/addon/edit/closebrackets.js"
+    - "vendor/bower/codemirror/addon/edit/closetag.js"
+    - "vendor/bower/codemirror/addon/display/panel.js"
+    - "vendor/bower/codemirror-buttons/buttons.js"
+    - "assets_z/src/js/editor.js"

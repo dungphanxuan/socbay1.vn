@@ -1,0 +1,79 @@
+# Framework
+# ---------
+YII_DEBUG   = true
+YII_ENV     = dev
+APP_MAINTENANCE = 0
+
+# Application
+# -----------
+LINK_ASSETS=true
+
+# Databases
+# ---------
+DB_DSN           = mysql:host=localhost;port=3306;dbname=admin_socbay1
+DB_USERNAME      = admin_socbay1
+DB_PASSWORD      = 1b98cw847M
+DB_TABLE_PREFIX  = tbl_
+DB_CHARSET       = utf8mb4
+
+# Urls
+# ----
+
+FRONTEND_HOST_INFO    = https://socbay1.vn
+API_HOST_INFO         = https://socbay1.vn/api
+BACKEND_HOST_INFO     = https://socbay1.vn/backend
+STORAGE_HOST_INFO     = https://socbay1.vn/storage
+
+
+# Redis Localhost
+# ---------
+REDIS_HOST = 127.0.0.1
+REDIS_PORT =  6379
+REDIS_PASS =
+
+# Redis cloud
+# ---------
+REDIS_CLOUD_HOST = 127.0.0.1
+REDIS_CLOUD_PORT =  6379
+REDIS_CLOUD_PASS =
+
+# FileStack
+# ---------
+FILESTACK_API_KEY = AmtW50G0R2t1V9dH4Tguwz
+FILESTACK_API_SECRET = N3RQ4ISJBJDGPMTWTU5TZDPTTM
+
+# System
+API_KEY      = <generated_key>
+AUTHY_API_KEY=your_token
+
+# Service
+Slack_Webhook_URL =
+
+# Other
+# -----
+SMTP_HOST = mailcatcher
+SMTP_PORT = 1025
+
+FRONTEND_COOKIE_VALIDATION_KEY = <generated_key>
+BACKEND_COOKIE_VALIDATION_KEY  = <generated_key>
+
+ADMIN_EMAIL    = dungpx.s@gmail.com
+ROBOT_EMAIL    = dungpx.s@gmail.com
+
+# Socbay Ads
+FACEBOOK_CLIENT_ID = 2193463547548556
+FACEBOOK_CLIENT_SECRET = c9f267d011381d80642b5f4dd4808ada
+
+
+GITHUB_CLIENT_ID = your-client-id
+GITHUB_CLIENT_SECRET = your-client-secret
+
+GLIDE_SIGN_KEY = <generated_key>
+GLIDE_MAX_IMAGE_SIZE = 4000000
+
+GOOGLE_MAP_KEY = AIzaSyCNmTfwkNfWBggiPp060J19KlvDbDiJUS0
+GA_CODE        =
+
+GOOGLE_RECAPCHA_KEY = 6LdVnzUUAAAAAKqecAVFrtJwlMvHy8RE1tD6wyzh
+GOOGLE_RECAPCHA_SECRET = 6LdVnzUUAAAAAI5aOkgH8F4-0KhSVnfoxiMeVyiM
+

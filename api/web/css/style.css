@@ -1,0 +1,8 @@
+
+.starter-template {
+    padding: 3rem 1.5rem;
+}
+
+.hljs-type, .hljs-string, .hljs-number, .hljs-selector-id, .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
+    color: #D81B60 !important;
+}

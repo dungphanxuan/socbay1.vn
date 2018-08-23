@@ -1,0 +1,74 @@
+# Framework
+# ---------
+YII_DEBUG   = false
+YII_ENV     = prod
+
+# Application
+# -----------
+LINK_ASSETS=true
+
+# Databases
+# ---------
+DB_DSN           = mysql:host=localhost;port=3306;dbname=admin_classified
+DB_USERNAME      = admin_classified
+DB_PASSWORD      = A1lexHcs4f
+DB_TABLE_PREFIX  = tbl_
+DB_CHARSET       = utf8mb4
+
+# Urls
+# ----
+
+FRONTEND_HOST_INFO    = https://dev.yiiframework.vn/classified
+API_HOST_INFO         = https://dev.yiiframework.vn/classified/api
+BACKEND_HOST_INFO     = https://dev.yiiframework.vn/classified/backend
+STORAGE_HOST_INFO     = https://dev.yiiframework.vn/classified/storage
+
+
+# Redis Localhost
+# ---------
+REDIS_HOST = 127.0.0.1
+REDIS_PORT =  6379
+REDIS_PASS =
+
+
+# FileStack
+# ---------
+FILESTACK_API_KEY = AmtW50G0R2t1V9dH4Tguwz
+FILESTACK_API_SECRET = N3RQ4ISJBJDGPMTWTU5TZDPTTM
+
+# System
+API_KEY      = OnBGAJyMKhZ4lql-NQz4nmZfSITku8Ma
+AUTHY_API_KEY=your_token
+
+# Service
+Slack_Webhook_URL = https://hooks.slack.com/services/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
+
+# Other
+# -----
+SMTP_HOST = mailcatcher
+SMTP_PORT = 1025
+
+FRONTEND_COOKIE_VALIDATION_KEY = S5X-OApOLIT5vI1_Tx5kTXmvjfwc6Ida
+BACKEND_COOKIE_VALIDATION_KEY  = W9aSmTYGCcE5pgkyX5Flyg2oL64VUOZG
+
+ADMIN_EMAIL    = dungphanxuan999@gmail.com
+ROBOT_EMAIL    = dungphanxuan999@gmail.com
+
+# Classified
+FACEBOOK_CLIENT_ID = 142933663150789
+FACEBOOK_CLIENT_SECRET = dbcbee698d584525c463b17ee30f898c
+
+
+GITHUB_CLIENT_ID = your-client-id
+GITHUB_CLIENT_SECRET = your-client-secret
+
+GLIDE_SIGN_KEY = 1
+GLIDE_MAX_IMAGE_SIZE = 4000000
+
+GOOGLE_MAP_KEY = AIzaSyCNmTfwkNfWBggiPp060J19KlvDbDiJUS0
+GA_CODE        =
+
+GOOGLE_RECAPCHA_KEY = 6LdVnzUUAAAAAKqecAVFrtJwlMvHy8RE1tD6wyzh
+GOOGLE_RECAPCHA_SECRET = 6LdVnzUUAAAAAI5aOkgH8F4-0KhSVnfoxiMeVyiM
+
+FCM_KEY = AAAA0p8WGI8:APA91bE0RXmNI4IQ4GnHH6y8f_nYvmsQkbio3ClYtdbE1Q-JNNiIvBa6e9IrIDwa-IHVerl-FOMWoLFQjVDwpKHzjaffPx4L3ggnvATsAdGYwk_89P1d3EKWKh6ighyKR5z6W1umuNN5
