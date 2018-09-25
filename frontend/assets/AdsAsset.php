@@ -29,7 +29,8 @@ class AdsAsset extends AssetBundle
     /**
      * @var string
      */
-    public $baseUrl = '@web/frontend/web/theme';
+    //public $baseUrl = '@web/frontend/web/theme';
+    public $baseUrl = '@web/frontend/web/dist';
 
     /**
      * @var string
@@ -40,8 +41,8 @@ class AdsAsset extends AssetBundle
      */
     public $css = [
         //'assets/bootstrap/css/bootstrap.css',
-        'https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css',
-        'assets/css/style.css?v=1',
+        'https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css',
+        'assets/css/style.css',
         'assets/css/other.css',
         'https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.css',
     ];
@@ -54,9 +55,13 @@ class AdsAsset extends AssetBundle
         //'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js',
         //'assets/bootstrap/js/bootstrap.min.js',
-        'https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js',
+        'https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js',
         'assets/js/vendors.min.js',
-        'assets/js/script.js',
+        'assets/js/main.min.js',
+        //'assets/js/script.js',
+        'assets/plugins/autocomplete/jquery.mockjax.js',
+        'assets/plugins/autocomplete/jquery.autocomplete.js',
+        'assets/plugins/autocomplete/usastates.js',
 
         'https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.7/jquery.lazy.min.js',
         'assets/js/star.js',
@@ -70,7 +75,6 @@ class AdsAsset extends AssetBundle
     public $depends = [
         YiiAsset::class,
         JqueryAsset::class,
-        FontAwesome::class,
         //OwlCarousel::class,
         Html5shiv::class,
     ];

@@ -20,7 +20,7 @@ use yii\bootstrap\ActiveForm;
 /* @var $modelCity \dungphanxuan\vnlocation\models\City */
 /* @var $dataProvider \yii\data\ActiveDataProvider */
 
-$this->title = 'Dự án Bất động sản';
+$this->title =  Yii::t('ads', 'Property project');
 $imgUrl = baseUrl() . '/frontend/web/theme/images/house/1.jpg';
 
 $updateData = false;
