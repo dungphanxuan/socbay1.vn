@@ -9,7 +9,7 @@ use yii\helpers\Url;
 $this->beginContent('@frontend/views/layouts/b3/_clear.php');
 $urlLogo = \common\models\ads\AdsAssets::getAssets('logo');
 if (empty($urlLogo)) {
-    $urlLogo = Url::to('@/web/frontend/web/images/') . 'logo1.png';
+    $urlLogo = Url::to('@web/frontend/web/images/') . 'logo1.png';
 }
 $app_css = <<<CSS
 .navbar-brand.logo img {

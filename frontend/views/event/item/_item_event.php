@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Url;
-use common\helpers\StringHelper;
+use yii\helpers\StringHelper;
 
 /**
  * Created by PhpStorm.

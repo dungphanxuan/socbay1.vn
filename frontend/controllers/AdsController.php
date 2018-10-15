@@ -118,6 +118,11 @@ class AdsController extends FrontendController
             'defaultOrder' => ['created_at' => SORT_DESC]
         ];
 
+        $dataProvider->pagination = [
+            'pageSize' => 3
+        ];
+
+
         $view = 'index';
         $providerJobCat = null;
         switch ($cid) {

@@ -85,7 +85,7 @@ $cProperty = ArticleCategory::find()->where(['type' => \common\dictionaries\AdsT
                     </li>
 
                     <li class="postadd nav-item">
-                        <a class="btn btn-block   btn-border btn-post btn-success nav-link" href="job-post.html">Create Event</a>
+                        <a class="btn btn-block   btn-border btn-post btn-success nav-link" href="<?php echo Url::to(['/ads/create', 'type' => 'event']) ?>">Create Event</a>
                     </li>
 
                 </ul>

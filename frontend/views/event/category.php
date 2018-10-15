@@ -269,17 +269,12 @@ $bundle = AdsAsset::register($this);
                     </div>
                     <div class="pagination-bar text-center">
                         <nav aria-label="Page navigation " class="d-inline-b">
-                            <ul class="pagination">
-
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link" href="#">...</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
+                            <?php
+                            echo \frontend\widgets\LinkPager::widget([
+                                'pagination' => $dataProvider->pagination,
+                                'nextPageLabel' => 'Next'
+                            ]);
+                            ?>
                         </nav>
                     </div>
                     <!--/.pagination-bar -->
@@ -287,7 +282,7 @@ $bundle = AdsAsset::register($this);
                     <div class="post-promo text-center">
                         <h2> Do you get anything for sell ? </h2>
                         <h5>Sell your products online FOR FREE. It's easier than you think !</h5>
-                        <a href="post-ads.html" class="btn btn-lg btn-border btn-post btn-danger">Post a Free Ad </a>
+                        <a href="<?php echo Url::to(['/ads/create', 'type' => 'event']) ?>" class="btn btn-lg btn-border btn-post btn-danger">Post a Free Ad </a>
                     </div>
                     <!--/.post-promo-->
 

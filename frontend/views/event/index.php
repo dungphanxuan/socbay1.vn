@@ -1,6 +1,8 @@
 <?php
 
 use frontend\assets\AdsAsset;
+use yii\helpers\Url;
+use yii\helpers\Html;
 
 /**
  * Created by PhpStorm.
@@ -9,6 +11,7 @@ use frontend\assets\AdsAsset;
  * Time: 3:05 PM
  */
 /* @var $this yii\web\View */
+/* @var $modelEventCat */
 /* @var $dataEventFeatureProvider \yii\data\ActiveDataProvider */
 /* @var $dataEventProvider \yii\data\ActiveDataProvider */
 
@@ -267,7 +270,7 @@ $bundle = AdsAsset::register($this);
                 ?>
 
                 <div class="load-more  col-lg-12 text-center">
-                    <a class="btn btn-default btn-wide btn-more " href="event-category.html">
+                    <a class="btn btn-default btn-wide btn-more " href="<?php echo Url::to(['/ads/index', 'cslug' => $modelEventCat->slug]) ?>">
                         <i class="fas fa-plus"></i> Load More
                     </a>
                 </div>
