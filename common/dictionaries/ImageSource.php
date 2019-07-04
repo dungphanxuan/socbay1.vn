@@ -25,11 +25,11 @@ class ImageSource
     public static function all()
     {
         return [
-            self::STORAGE      => Yii::t('common', 'Storage'),
+            self::STORAGE => Yii::t('common', 'Storage'),
             self::GOOGLE_CLOUD => Yii::t('common', 'Cloud Storage'),
-            self::FILESTACK    => Yii::t('common', 'Filestack'),
-            self::S3           => Yii::t('common', 'S3'),
-            self::SERVICE      => Yii::t('common', 'Service'),
+            self::FILESTACK => Yii::t('common', 'Filestack'),
+            self::S3 => Yii::t('common', 'S3'),
+            self::SERVICE => Yii::t('common', 'Service'),
         ];
     }
 

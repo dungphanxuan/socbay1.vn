@@ -7,21 +7,21 @@ use Yii;
 /**
  * This is the model class for table "sup_topic_category".
  *
- * @property int                    $id
- * @property string                 $slug
- * @property string                 $title
- * @property string                 $body
- * @property string                 $excerpt
- * @property string                 $icon
- * @property string                 $color
- * @property int                    $parent_id
- * @property int                    $sort_number
- * @property int                    $status
- * @property int                    $created_at
- * @property int                    $updated_at
+ * @property int $id
+ * @property string $slug
+ * @property string $title
+ * @property string $body
+ * @property string $excerpt
+ * @property string $icon
+ * @property string $color
+ * @property int $parent_id
+ * @property int $sort_number
+ * @property int $status
+ * @property int $created_at
+ * @property int $updated_at
  *
- * @property SupTopic[]             $supTopics
- * @property SupportTopicCategory   $parent
+ * @property SupTopic[] $supTopics
+ * @property SupportTopicCategory $parent
  * @property SupportTopicCategory[] $supportTopicCategories
  */
 class SupportTopicCategory extends \yii\db\ActiveRecord
@@ -57,18 +57,18 @@ class SupportTopicCategory extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'          => 'ID',
-            'slug'        => 'Slug',
-            'title'       => 'Title',
-            'body'        => 'Body',
-            'excerpt'     => 'Excerpt',
-            'icon'        => 'Icon',
-            'color'       => 'Color',
-            'parent_id'   => 'Parent ID',
+            'id' => 'ID',
+            'slug' => 'Slug',
+            'title' => 'Title',
+            'body' => 'Body',
+            'excerpt' => 'Excerpt',
+            'icon' => 'Icon',
+            'color' => 'Color',
+            'parent_id' => 'Parent ID',
             'sort_number' => 'Sort Number',
-            'status'      => 'Status',
-            'created_at'  => 'Created At',
-            'updated_at'  => 'Updated At',
+            'status' => 'Status',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
         ];
     }
 

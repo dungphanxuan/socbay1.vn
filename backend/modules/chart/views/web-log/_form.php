@@ -42,9 +42,9 @@ use yii\bootstrap\ActiveForm;
                 echo Html::a(Yii::t('backend', 'Delete'), ['delete', 'id' => $model->id],
                     [
                         'class' => 'btn btn-flat btn-flat btn-warning btn200 bold',
-                        'data'  => [
+                        'data' => [
                             'confirm' => 'Are you sure you want to delete?',
-                            'method'  => 'post',
+                            'method' => 'post',
                         ]
                     ]);
             }

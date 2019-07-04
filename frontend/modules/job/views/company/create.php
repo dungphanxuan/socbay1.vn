@@ -24,10 +24,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="row">
                         <div class="col-sm-12">
                             <?= $this->render('_form', [
-                                'model'        => $model,
-                                'cities'       => $cities,
+                                'model' => $model,
+                                'cities' => $cities,
                                 'dataDistrict' => $dataDistrict,
-                                'dataWard'     => $dataWard,
+                                'dataWard' => $dataWard,
                             ]) ?>
                         </div>
                     </div>

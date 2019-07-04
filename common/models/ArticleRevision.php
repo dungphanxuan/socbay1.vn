@@ -12,16 +12,16 @@ use yii\behaviors\TimestampBehavior;
  *
  * @property integer $article_id
  * @property integer $revision
- * @property string  $title
- * @property string  $body
+ * @property string $title
+ * @property string $body
  * @property integer $category_id
- * @property string  $yii_version
- * @property string  $memo
+ * @property string $yii_version
+ * @property string $memo
  * @property integer $updater_id
- * @property string  $updated_at
- * @property string  $tagNames
+ * @property string $updated_at
+ * @property string $tagNames
  *
- * @property User    $updater
+ * @property User $updater
  * @property Article $article
  */
 class ArticleRevision extends ActiveRecord
@@ -32,10 +32,10 @@ class ArticleRevision extends ActiveRecord
     {
         return [
             'timestamp' => [
-                'class'              => TimestampBehavior::class,
+                'class' => TimestampBehavior::class,
                 'createdAtAttribute' => false,
             ],
-            'diff'      => DiffBehavior::class,
+            'diff' => DiffBehavior::class,
         ];
     }
 
@@ -89,14 +89,14 @@ class ArticleRevision extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'article_id'  => 'Article ID',
-            'revision'    => 'Revision',
-            'title'       => 'Title',
-            'body'        => 'body',
+            'article_id' => 'Article ID',
+            'revision' => 'Revision',
+            'title' => 'Title',
+            'body' => 'body',
             'category_id' => 'Category ID',
-            'memo'        => 'Memo',
-            'updater_id'  => 'Updater ID',
-            'updated_at'  => 'Updated At',
+            'memo' => 'Memo',
+            'updater_id' => 'Updater ID',
+            'updated_at' => 'Updated At',
         ];
     }
 

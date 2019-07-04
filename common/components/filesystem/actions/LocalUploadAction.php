@@ -114,10 +114,10 @@ class LocalUploadAction extends \trntv\filekit\actions\UploadAction
         foreach ($uploadedFiles as $uploadedFile) {
             /* @var \yii\web\UploadedFile $uploadedFile */
             $output = [
-                $this->responseNameParam     => Html::encode($uploadedFile->name),
+                $this->responseNameParam => Html::encode($uploadedFile->name),
                 $this->responseMimeTypeParam => $uploadedFile->type,
-                $this->responseSizeParam     => $uploadedFile->size,
-                $this->responseBaseUrlParam  => $this->getFileStorage()->baseUrl
+                $this->responseSizeParam => $uploadedFile->size,
+                $this->responseBaseUrlParam => $this->getFileStorage()->baseUrl
             ];
             if ($uploadedFile->error === UPLOAD_ERR_OK) {
                 $validationModel = DynamicModel::validateData(['file' => $uploadedFile], $this->validationRules);
@@ -167,9 +167,9 @@ class LocalUploadAction extends \trntv\filekit\actions\UploadAction
             $file = new FlysystemFile($fs, $path);
         }
         $this->trigger(self::EVENT_AFTER_SAVE, new UploadEvent([
-            'path'       => $path,
+            'path' => $path,
             'filesystem' => $fs,
-            'file'       => $file
+            'file' => $file
         ]));
     }
 

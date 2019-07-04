@@ -7,64 +7,64 @@ class m180224_025623_support extends BaseMigration
     public function up()
     {
         $this->createTable('sup_topic_category', [
-            'id'                 => $this->primaryKey(),
-            'slug'               => $this->string(255),
-            'title'              => $this->string(128)->notNull(),
-            'body'               => $this->text(),
-            'excerpt'            => $this->text(),
-            'icon'               => $this->string(64),
-            'color'              => $this->string(16),
-            'parent_id'          => $this->integer(),
+            'id' => $this->primaryKey(),
+            'slug' => $this->string(255),
+            'title' => $this->string(128)->notNull(),
+            'body' => $this->text(),
+            'excerpt' => $this->text(),
+            'icon' => $this->string(64),
+            'color' => $this->string(16),
+            'parent_id' => $this->integer(),
             'thumbnail_base_url' => $this->string(255),
-            'thumbnail_path'     => $this->string(255),
-            'sort_number'        => $this->smallInteger(2)->defaultValue(0),
-            'status'             => $this->smallInteger()->defaultValue(0),
-            'created_at'         => $this->integer(),
-            'updated_at'         => $this->integer(),
+            'thumbnail_path' => $this->string(255),
+            'sort_number' => $this->smallInteger(2)->defaultValue(0),
+            'status' => $this->smallInteger()->defaultValue(0),
+            'created_at' => $this->integer(),
+            'updated_at' => $this->integer(),
         ]);
 
         $this->createTable('sup_topic', [
-            'id'                 => $this->primaryKey(),
-            'slug'               => $this->string(255),
-            'title'              => $this->string(128)->notNull(),
-            'body'               => $this->text()->notNull(),
-            'view'               => $this->string(),
-            'category_id'        => $this->integer(),
+            'id' => $this->primaryKey(),
+            'slug' => $this->string(255),
+            'title' => $this->string(128)->notNull(),
+            'body' => $this->text()->notNull(),
+            'view' => $this->string(),
+            'category_id' => $this->integer(),
             'thumbnail_base_url' => $this->string(255),
-            'thumbnail_path'     => $this->string(255),
+            'thumbnail_path' => $this->string(255),
 
-            'total_votes'   => $this->integer()->defaultValue(0),
-            'up_votes'      => $this->integer()->defaultValue(0),
-            'rating'        => $this->double()->defaultValue(0),
-            'featured'      => $this->boolean()->defaultValue(0),
+            'total_votes' => $this->integer()->defaultValue(0),
+            'up_votes' => $this->integer()->defaultValue(0),
+            'rating' => $this->double()->defaultValue(0),
+            'featured' => $this->boolean()->defaultValue(0),
             'comment_count' => $this->integer()->defaultValue(0),
-            'view_count'    => $this->integer()->defaultValue(0),
+            'view_count' => $this->integer()->defaultValue(0),
 
-            'sort_number'  => $this->smallInteger()->defaultValue(0),
-            'status'       => $this->smallInteger()->defaultValue(0),
-            'created_by'   => $this->integer(),
-            'updated_by'   => $this->integer(),
+            'sort_number' => $this->smallInteger()->defaultValue(0),
+            'status' => $this->smallInteger()->defaultValue(0),
+            'created_by' => $this->integer(),
+            'updated_by' => $this->integer(),
             'published_at' => $this->integer(),
-            'created_at'   => $this->integer(),
-            'updated_at'   => $this->integer(),
+            'created_at' => $this->integer(),
+            'updated_at' => $this->integer(),
         ]);
 
         $this->createTable('sup_topic_attachment', [
-            'id'         => $this->primaryKey(),
-            'topic_id'   => $this->integer()->notNull(),
-            'path'       => $this->string()->notNull(),
-            'base_url'   => $this->string(),
-            'type'       => $this->string(),
-            'size'       => $this->integer(),
-            'name'       => $this->string(),
+            'id' => $this->primaryKey(),
+            'topic_id' => $this->integer()->notNull(),
+            'path' => $this->string()->notNull(),
+            'base_url' => $this->string(),
+            'type' => $this->string(),
+            'size' => $this->integer(),
+            'name' => $this->string(),
             'created_at' => $this->integer()
         ]);
 
         $this->createTable('sup_topic_pickup', [
-            'id'          => $this->primaryKey(),
-            'topic_id'    => $this->integer()->notNull(),
+            'id' => $this->primaryKey(),
+            'topic_id' => $this->integer()->notNull(),
             'sort_number' => $this->smallInteger(2),
-            'created_at'  => $this->integer()
+            'created_at' => $this->integer()
         ]);
 
         $this->addForeignKey('fk_topic_attachment_topic', 'sup_topic_attachment', 'topic_id', 'sup_topic', 'id', 'cascade', 'cascade');
@@ -89,11 +89,11 @@ class m180224_025623_support extends BaseMigration
 
         foreach ($dataTopicCategory as $key => $item) {
             $this->insert('sup_topic_category', [
-                'id'          => $key + 1,
-                'icon'        => $item[0],
-                'title'       => $item[1],
-                'slug'        => \yii\helpers\Inflector::slug($item[1]),
-                'body'        => $item[2],
+                'id' => $key + 1,
+                'icon' => $item[0],
+                'title' => $item[1],
+                'slug' => \yii\helpers\Inflector::slug($item[1]),
+                'body' => $item[2],
                 'sort_number' => 0,
             ]);
         }

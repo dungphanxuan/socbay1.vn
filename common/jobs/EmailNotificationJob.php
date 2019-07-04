@@ -59,8 +59,8 @@ class EmailNotificationJob extends BaseObject implements RetryableJob
     }
 
     /**
-     * @param int        $attempt number
-     * @param \Exception $error   from last execute of the job
+     * @param int $attempt number
+     * @param \Exception $error from last execute of the job
      * @return bool
      */
     public function canRetry($attempt, $error)

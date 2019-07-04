@@ -13,26 +13,26 @@ use yii\db\ActiveRecord;
  * @property integer $user_id
  * @property integer $bio
  * @property integer $locale
- * @property string  $displayname
- * @property string  $firstname
- * @property string  $middlename
- * @property string  $lastname
- * @property string  $picture
- * @property string  $avatar
- * @property string  $avatar_path
- * @property string  $avatar_base_url
+ * @property string $displayname
+ * @property string $firstname
+ * @property string $middlename
+ * @property string $lastname
+ * @property string $picture
+ * @property string $avatar
+ * @property string $avatar_path
+ * @property string $avatar_base_url
  * @property integer $city_id
  * @property integer $district_id
  * @property integer $ward_id
  * @property integer $gender
- * @property string  $phone
- * @property string  $address
- * @property string  $address2
- * @property string  $url
- * @property string  $company_name
- * @property string  $facebook_url
+ * @property string $phone
+ * @property string $address
+ * @property string $address2
+ * @property string $url
+ * @property string $company_name
+ * @property string $facebook_url
  *
- * @property User    $user
+ * @property User $user
  */
 class UserProfile extends ActiveRecord
 {
@@ -51,9 +51,9 @@ class UserProfile extends ActiveRecord
     {
         return [
             'picture' => [
-                'class'            => UploadBehavior::class,
-                'attribute'        => 'picture',
-                'pathAttribute'    => 'avatar_path',
+                'class' => UploadBehavior::class,
+                'attribute' => 'picture',
+                'pathAttribute' => 'avatar_path',
                 'baseUrlAttribute' => 'avatar_base_url'
             ]
         ];
@@ -96,16 +96,16 @@ class UserProfile extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'user_id'      => Yii::t('common', 'User ID'),
-            'bio'          => Yii::t('common', 'Bio'),
-            'displayname'  => Yii::t('common', 'Display Name'),
-            'firstname'    => Yii::t('common', 'Firstname'),
-            'middlename'   => Yii::t('common', 'Middlename'),
-            'lastname'     => Yii::t('common', 'Lastname'),
+            'user_id' => Yii::t('common', 'User ID'),
+            'bio' => Yii::t('common', 'Bio'),
+            'displayname' => Yii::t('common', 'Display Name'),
+            'firstname' => Yii::t('common', 'Firstname'),
+            'middlename' => Yii::t('common', 'Middlename'),
+            'lastname' => Yii::t('common', 'Lastname'),
             'company_name' => Yii::t('common', 'Company name'),
-            'locale'       => Yii::t('common', 'Locale'),
-            'picture'      => Yii::t('common', 'Picture'),
-            'gender'       => Yii::t('common', 'Gender'),
+            'locale' => Yii::t('common', 'Locale'),
+            'picture' => Yii::t('common', 'Picture'),
+            'gender' => Yii::t('common', 'Gender'),
         ];
     }
 

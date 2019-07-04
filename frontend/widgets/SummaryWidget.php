@@ -50,12 +50,12 @@ class SummaryWidget extends Widget
             $pageCount = $pagination->pageCount;
             if (($summaryContent = $this->summary) === null) {
                 return Html::tag($tag, Yii::t('yii', 'Showing <b>{begin, number}-{end, number}</b> of <b>{totalCount, number}</b> {totalCount, plural, one{item} other{items}}.', [
-                    'begin'      => $begin,
-                    'end'        => $end,
-                    'count'      => $count,
+                    'begin' => $begin,
+                    'end' => $end,
+                    'count' => $count,
                     'totalCount' => $totalCount,
-                    'page'       => $page,
-                    'pageCount'  => $pageCount,
+                    'page' => $page,
+                    'pageCount' => $pageCount,
                 ]), $summaryOptions);
             }
         } else {
@@ -63,23 +63,23 @@ class SummaryWidget extends Widget
             $end = $totalCount = $count;
             if (($summaryContent = $this->summary) === null) {
                 return Html::tag($tag, Yii::t('yii', 'Total <b>{count, number}</b> {count, plural, one{item} other{items}}.', [
-                    'begin'      => $begin,
-                    'end'        => $end,
-                    'count'      => $count,
+                    'begin' => $begin,
+                    'end' => $end,
+                    'count' => $count,
                     'totalCount' => $totalCount,
-                    'page'       => $page,
-                    'pageCount'  => $pageCount,
+                    'page' => $page,
+                    'pageCount' => $pageCount,
                 ]), $summaryOptions);
             }
         }
 
         return Yii::$app->getI18n()->format($summaryContent, [
-            'begin'      => $begin,
-            'end'        => $end,
-            'count'      => $count,
+            'begin' => $begin,
+            'end' => $end,
+            'count' => $count,
             'totalCount' => $totalCount,
-            'page'       => $page,
-            'pageCount'  => $pageCount,
+            'page' => $page,
+            'pageCount' => $pageCount,
         ], Yii::$app->language);
     }
 }

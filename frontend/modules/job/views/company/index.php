@@ -48,11 +48,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <tbody>
                                 <?php echo \yii\widgets\ListView::widget([
                                     'dataProvider' => $dataProvider,
-                                    'itemView'     => '_item',
-                                    'options'      => [
+                                    'itemView' => '_item',
+                                    'options' => [
                                         'tag' => false
                                     ],
-                                    'layout'       => "{summary}\n{items}\n",
+                                    'layout' => "{summary}\n{items}\n",
 
                                 ]);
                                 ?> </tbody>

@@ -18,10 +18,10 @@ class LogController extends BackendController
     {
         return \yii\helpers\ArrayHelper::merge(parent::behaviors(), [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['post'],
-                    'clear'  => ['delete'],
+                    'clear' => ['delete'],
                 ],
             ],
         ]);
@@ -52,7 +52,7 @@ class LogController extends BackendController
 
 
         return $this->render('index', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

@@ -54,8 +54,8 @@ class RbacAuthRule extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'name'       => Yii::t('backend', 'Name'),
-            'data'       => Yii::t('backend', 'Data'),
+            'name' => Yii::t('backend', 'Name'),
+            'data' => Yii::t('backend', 'Data'),
             'created_at' => Yii::t('backend', 'Created At'),
             'updated_at' => Yii::t('backend', 'Updated At'),
         ];

@@ -18,7 +18,8 @@ $bundle = \frontend\assets\AdsAsset::register($this);
     <div class="card card-event info-overlay featured">
         <div class="img has-background"
              style="background-image: url(<?php echo $this->assetManager->getAssetUrl($bundle, 'images/events/10-large.jpg') ?>); background-size:cover ">
-            <a href="<?php echo Url::to(['/ads/view', 'id' => $model->id, 'name' => $model->slug]) ?>" class="event-pop-link">
+            <a href="<?php echo Url::to(['/ads/view', 'id' => $model->id, 'name' => $model->slug]) ?>"
+               class="event-pop-link">
                                     <span class="event-badges ">
 									<span class="badge badge-success">featured</span>
 								</span>
@@ -42,7 +43,9 @@ $bundle = \frontend\assets\AdsAsset::register($this);
         </div>
 
         <div class="card-body">
-            <h4 class="card-title"><a href="<?php echo Url::to(['/ads/view', 'id' => $model->id, 'name' => $model->slug]) ?>"><?php echo StringHelper::truncateWords($model->title, 15) ?></a></h4>
+            <h4 class="card-title"><a
+                        href="<?php echo Url::to(['/ads/view', 'id' => $model->id, 'name' => $model->slug]) ?>"><?php echo StringHelper::truncateWords($model->title, 15) ?></a>
+            </h4>
         </div>
     </div>
 </div>

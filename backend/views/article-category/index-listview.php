@@ -44,11 +44,11 @@ $this->params['breadcrumbs'][] = $this->title;
             <tbody class="datas">
             <?php echo ListView::widget([
                 'dataProvider' => $dataProvider,
-                'summary'      => '',
-                'itemView'     => '_item',
-                'layout'       => "{items}\n <tr class='lpagination'><td colspan=\"10\">{pager}</td></tr>",
-                'itemOptions'  => [
-                    'tag'   => false,
+                'summary' => '',
+                'itemView' => '_item',
+                'layout' => "{items}\n <tr class='lpagination'><td colspan=\"10\">{pager}</td></tr>",
+                'itemOptions' => [
+                    'tag' => false,
                     'class' => 'item'
                 ],
             ]) ?>

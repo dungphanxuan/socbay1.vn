@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\authclient\widgets\AuthChoice;
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $form yii\widgets\ActiveForm */
@@ -38,7 +38,7 @@ HTML;
                                 <div class="col-md-6">
                                     <?php $authAuthChoice = AuthChoice::begin([
                                         'baseAuthUrl' => ['user/sign-in/oauth'],
-                                        'autoRender'  => false
+                                        'autoRender' => false
                                     ]); ?>
                                     <?php foreach ($authAuthChoice->getClients() as $client): ?>
                                         <a class="btn btn-success btn-block btn-social btn-facebook facebook auth-link"
@@ -60,8 +60,8 @@ HTML;
                         <div class="clearfix"></div>
                         <div class="col-sm-12">
                             <?php $form = ActiveForm::begin([
-                                'id'          => 'form-signup',
-                                'layout'      => 'horizontal',
+                                'id' => 'form-signup',
+                                'layout' => 'horizontal',
                                 'fieldConfig' => ['options' => ['class' => 'form-group  row']],
                             ]); ?>
                             <fieldset>
@@ -74,28 +74,28 @@ HTML;
                                 </div>
 
                                 <?php echo $form->field($model, 'username', [
-                                    'template'     => $temp_input_html,
+                                    'template' => $temp_input_html,
                                     'labelOptions' => ['class' => 'col-md-4 control-label']
                                 ])->textInput() ?>
 
                                 <?php echo $form->field($model, 'email', [
-                                    'template'     => $temp_input_html,
+                                    'template' => $temp_input_html,
                                     'labelOptions' => ['class' => 'col-md-4 control-label']
                                 ])->textInput([
-                                    'maxlength'    => true,
-                                    'placeholder'  => 'your username',
+                                    'maxlength' => true,
+                                    'placeholder' => 'your username',
                                     'autocomplete' => 'off',
-                                    'readonly'     => true,
-                                    'onfocus'      => "this.removeAttribute('readonly');",
+                                    'readonly' => true,
+                                    'onfocus' => "this.removeAttribute('readonly');",
                                 ]) ?>
 
                                 <?php echo $form->field($model, 'password', [
-                                    'template'     => $temp_input_html,
+                                    'template' => $temp_input_html,
                                     'labelOptions' => ['class' => 'col-md-4 control-label']
                                 ])->passwordInput([
                                     'autocomplete' => 'off',
-                                    'readonly'     => true,
-                                    'onfocus'      => "this.removeAttribute('readonly');",
+                                    'readonly' => true,
+                                    'onfocus' => "this.removeAttribute('readonly');",
                                 ]) ?>
 
 

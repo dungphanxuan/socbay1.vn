@@ -25,9 +25,9 @@ use yii\helpers\Html;
 
     <td style="width: 5%"><?php echo Html::a('Xóa', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-warning  btn-sm',
-            'data'  => [
+            'data' => [
                 'confirm' => 'Xác nhận xóa',
-                'method'  => 'post',
+                'method' => 'post',
             ]
         ]) ?>
     </td>

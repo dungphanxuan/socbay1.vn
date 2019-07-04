@@ -19,7 +19,7 @@ class ProjectCategoryController extends Controller
     {
         return [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['post'],
                 ],
@@ -39,7 +39,7 @@ class ProjectCategoryController extends Controller
         //$view = 'index';
         $view = 'index_list';
         return $this->render($view, [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -113,7 +113,7 @@ class ProjectCategoryController extends Controller
 
         //Update data
         $res = array(
-            'msg'     => 'Success',
+            'msg' => 'Success',
             'success' => true,
         );
 

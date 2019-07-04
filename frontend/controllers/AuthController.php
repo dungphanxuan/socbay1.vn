@@ -34,27 +34,27 @@ class AuthController extends Controller
                 'rules' => [
                     [
                         'actions' => ['signup', 'login', 'request-password-reset', 'reset-password', 'auth'],
-                        'allow'   => true,
-                        'roles'   => ['?'],
+                        'allow' => true,
+                        'roles' => ['?'],
                     ],
                     [
                         'actions' => ['logout', 'request-password-reset', 'reset-password', 'auth'],
-                        'allow'   => true,
-                        'roles'   => ['@'],
+                        'allow' => true,
+                        'roles' => ['@'],
                     ],
                     [
                         'actions' => ['remove-auth', 'connect-auth', 'disable-password'],
-                        'allow'   => true,
-                        'roles'   => ['@'],
+                        'allow' => true,
+                        'roles' => ['@'],
                     ],
                 ],
             ],
-            'verbs'  => [
-                'class'   => VerbFilter::class,
+            'verbs' => [
+                'class' => VerbFilter::class,
                 'actions' => [
-                    'logout'           => ['post'],
-                    'remove-auth'      => ['post'],
-                    'connect-auth'     => ['post'],
+                    'logout' => ['post'],
+                    'remove-auth' => ['post'],
+                    'connect-auth' => ['post'],
                     'disable-password' => ['post'],
                 ],
             ],
@@ -65,7 +65,7 @@ class AuthController extends Controller
     {
         return [
             'auth' => [
-                'class'           => AuthAction::class,
+                'class' => AuthAction::class,
                 'successCallback' => [$this, 'onAuthSuccess'],
             ],
         ];

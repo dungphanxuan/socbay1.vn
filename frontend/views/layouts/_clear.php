@@ -28,8 +28,8 @@ AdsAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144"
-          href="<?php echo baseUrl() . '/frontend/web/theme/images/favicon/apple-icon-114x114.png' ?>">
-    <link rel="shortcut icon" href="<?php echo baseUrl() . '/frontend/web/theme/images/favicon/socbay-16x16.png' ?>">
+          href="<?php echo baseUrl() . '/frontend/web/classified/images/favicon/apple-icon-114x114.png' ?>">
+    <link rel="shortcut icon" href="<?php echo baseUrl() . '/frontend/web/classified/images/favicon/socbay-16x16.png' ?>">
     <title><?php echo Html::encode($this->title) ?></title>
     <meta name="theme-color" content="#4ea64e">
     <?php $this->head() ?>

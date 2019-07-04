@@ -11,15 +11,15 @@ use yii\db\ActiveRecord;
  * This is the model class for table "{{%file_storage_item}}".
  *
  * @property integer $id
- * @property string  $component
- * @property string  $base_url
- * @property string  $path
- * @property string  $type
+ * @property string $component
+ * @property string $base_url
+ * @property string $path
+ * @property string $type
  * @property integer $size
- * @property string  $name
+ * @property string $name
  * @property integer $is_safe
  * @property integer $created_by
- * @property string  $upload_ip
+ * @property string $upload_ip
  * @property integer $created_at
  */
 class FileStorageItem extends ActiveRecord
@@ -38,11 +38,11 @@ class FileStorageItem extends ActiveRecord
     {
         return [
             [
-                'class'              => TimestampBehavior::class,
+                'class' => TimestampBehavior::class,
                 'updatedAtAttribute' => false
             ],
             [
-                'class'              => BlameableBehavior::class,
+                'class' => BlameableBehavior::class,
                 'createdByAttribute' => 'created_by',
                 'updatedByAttribute' => 'created_by',
             ],
@@ -71,16 +71,16 @@ class FileStorageItem extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'         => Yii::t('common', 'ID'),
-            'component'  => Yii::t('common', 'Component'),
-            'base_url'   => Yii::t('common', 'Base Url'),
-            'path'       => Yii::t('common', 'Path'),
-            'type'       => Yii::t('common', 'Type'),
-            'size'       => Yii::t('common', 'Size'),
-            'name'       => Yii::t('common', 'Name'),
-            'is_safe'    => Yii::t('common', 'Safe Image'),
+            'id' => Yii::t('common', 'ID'),
+            'component' => Yii::t('common', 'Component'),
+            'base_url' => Yii::t('common', 'Base Url'),
+            'path' => Yii::t('common', 'Path'),
+            'type' => Yii::t('common', 'Type'),
+            'size' => Yii::t('common', 'Size'),
+            'name' => Yii::t('common', 'Name'),
+            'is_safe' => Yii::t('common', 'Safe Image'),
             'created_by' => Yii::t('common', 'User Id'),
-            'upload_ip'  => Yii::t('common', 'Upload Ip'),
+            'upload_ip' => Yii::t('common', 'Upload Ip'),
             'created_at' => Yii::t('common', 'Created At')
         ];
     }
@@ -109,9 +109,9 @@ class FileStorageItem extends ActiveRecord
             $signConfig = [
                 'glide/index',
                 'path' => $path,
-                'w'    => '230',
-                'h'    => '110',
-                'fit'  => 'crop'
+                'w' => '230',
+                'h' => '110',
+                'fit' => 'crop'
             ];
 
             $url = Yii::$app->glide->createSignedUrl($signConfig);

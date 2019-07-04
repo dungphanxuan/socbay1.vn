@@ -17,6 +17,8 @@ class ArticleHelper
 {
     public static function getDetail($id, $update = false)
     {
+        $update = true;
+
         $cacheKey = [
             Article::class,
             CACHE_ARTICLE_DETAIL . $id
@@ -56,24 +58,37 @@ class ArticleHelper
                 $data['price-show'] = ($model->price ? getCurrencyFormat()->asDecimal($model->price) : '') . '₫';
                 $dataImage = [];
                 $countImage = 0;
+                //1 Local
+                //2 Cloudinary
+                $imgSourceType = 2;
                 if ($model->attachments) {
 
+
+                    $attImageWidth = 790;
+                    $attImageHeigh = 445;
                     foreach ($model->attachments as $itemAtt) {
                         //Check Has File
-                        if (fileStorage()->getFilesystem()->has($itemAtt['path'])) {
-                            $itemAttacthment = [];
-                            $itemAttacthment[] = $itemAtt['base_url'] . '/' . $itemAtt['path'];
 
+                        $itemAttacthment = [];
+                        $itemAttacthment[] = $itemAtt['base_url'] . '/' . $itemAtt['path'];
 
-                            $urlStandar = ArticleHelper::getImgThumb($itemAtt['base_url'], $itemAtt['path'], 790, 445);
-
-                            $urlThumbnail = ArticleHelper::getImgThumb($itemAtt['base_url'], $itemAtt['path'], 100, 75);
-
-                            $itemAttacthment[] = $urlThumbnail;
-                            $itemAttacthment[] = $urlStandar;
-                            $dataImage[] = $itemAttacthment;
-                            $countImage++;
+                        switch ($imgSourceType) {
+                            case 1:
+                                if (fileStorage()->getFilesystem()->has($itemAtt['path'])) {
+                                    $urlStandar = ArticleHelper::getImgThumb($itemAtt['base_url'], $itemAtt['path'], 790, 445);
+                                    $urlThumbnail = ArticleHelper::getImgThumb($itemAtt['base_url'], $itemAtt['path'], 100, 75);
+                                }
+                                break;
+                            case 2:
+                                $urlStandar = CloudinaryHelper::resizingAndCropping($itemAtt['base_url'], $itemAtt['path'], $attImageWidth, $attImageHeigh);
+                                $urlThumbnail = CloudinaryHelper::resizingAndCropping($itemAtt['base_url'], $itemAtt['path'], 100, 75);
+                                break;
                         }
+
+                        $itemAttacthment[] = $urlThumbnail;
+                        $itemAttacthment[] = $urlStandar;
+                        $dataImage[] = $itemAttacthment;
+                        $countImage++;
                     }
                 }
                 //Empty Attacthment
@@ -95,6 +110,8 @@ class ArticleHelper
                     }
 
                 }
+
+
                 $data['attachments'] = $dataImage;
                 $data['total_image'] = $countImage;
 
@@ -131,13 +148,13 @@ class ArticleHelper
 
                 //Company data
                 $dataCompany = [
-                    'id'        => null,
-                    'title'     => null,
+                    'id' => null,
+                    'title' => null,
                     'thumbnail' => null,
                 ];
                 $dataJob = [
-                    'type'          => 0,
-                    'category_id'   => 0,
+                    'type' => 0,
+                    'category_id' => 0,
                     'category_slug' => 'khac',
                     'category_name' => 'Khác'
                 ];
@@ -217,10 +234,10 @@ class ArticleHelper
         switch ($sourceType) {
             case 0:
                 $url = Yii::$app->glide->createSignedUrl(['glide/index',
-                                                          'path' => $path,
-                                                          'w'    => $w,
-                                                          'h'    => $h,
-                                                          'fit'  => 'crop']);
+                    'path' => $path,
+                    'w' => $w,
+                    'h' => $h,
+                    'fit' => 'crop']);
                 break;
             default:
                 $url = FilestackHelper::resizeUrl($base_url . '/' . $path, $w, $h);

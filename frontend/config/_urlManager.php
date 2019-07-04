@@ -3,24 +3,24 @@
 //use Sitemaped\Sitemap;
 
 return [
-    'class'           => 'yii\web\UrlManager',
+    'class' => 'yii\web\UrlManager',
     'enablePrettyUrl' => true,
-    'showScriptName'  => false,
+    'showScriptName' => false,
     //'enableStrictParsing' => true,
-    'normalizer'      => [
-        'class'  => 'yii\web\UrlNormalizer',
+    'normalizer' => [
+        'class' => 'yii\web\UrlNormalizer',
         // use temporary redirection instead of permanent for debugging
         'action' => \yii\web\UrlNormalizer::ACTION_REDIRECT_TEMPORARY,
     ],
-    'rules'           => [
+    'rules' => [
         //static pages
         ['pattern' => 'page/<slug>', 'route' => 'page/view'],
 
         //Site
         [
-            'pattern'    => 'site/index',
-            'route'      => 'site/index',
-            'suffix'     => '/',
+            'pattern' => 'site/index',
+            'route' => 'site/index',
+            'suffix' => '/',
             'normalizer' => false,
         ],
 
@@ -48,7 +48,7 @@ return [
         ['pattern' => 'ads/<id:\d+>/<name>', 'route' => 'ads/view'],
         ['pattern' => 'ads/<id:\d+>', 'route' => 'ads/view'],
         //['pattern' => 'dang-tin', 'route' => 'ads/create'],
-        'ads/<action:[\w-]+>'       => 'ads/<action>',
+        'ads/<action:[\w-]+>' => 'ads/<action>',
 
         //Property
 
@@ -63,7 +63,7 @@ return [
 
         ['pattern' => 'jobs/company/<id:\d+>/<name>', 'route' => 'job/company-profile'],
         ['pattern' => 'jobs/company/<id:\d+>', 'route' => 'job/company-profile'],
-        'jobs/<action:[\w-]+>'      => 'job/<action>',
+        'jobs/<action:[\w-]+>' => 'job/<action>',
 
         //Event
         //['pattern' => 'su-kien', 'route' => 'event/index'],
@@ -72,18 +72,18 @@ return [
         ['pattern' => 'blog/index/<page:\d+>', 'route' => 'blog/index'],
         ['pattern' => 'blog/<id:\d+>/<name>', 'route' => 'blog/view'],
         ['pattern' => 'blog/<id:\d+>', 'route' => 'blog/view'],
-        'blog/<action:[\w-]+>'      => 'blog/<action>',
+        'blog/<action:[\w-]+>' => 'blog/<action>',
 
         //Media
         ['pattern' => 'media/index/<page:\d+>', 'route' => 'media/default/index'],
         ['pattern' => 'media/<id:\d+>/<name>', 'route' => 'media/default/view'],
         ['pattern' => 'media/<id:\d+>', 'route' => 'media/default/view'],
-        'media/<action:[\w-]+>'     => 'media/default/<action>',
+        'media/<action:[\w-]+>' => 'media/default/<action>',
 
         //Blog
         ['pattern' => 'support/<id:\d+>/<name>', 'route' => 'support/topic'],
         ['pattern' => 'support/<id:\d+>', 'route' => 'support/topic'],
-        'support/<action:[\w-]+>'   => 'support/<action>',
+        'support/<action:[\w-]+>' => 'support/<action>',
 
         //User
         ['pattern' => 'login', 'route' => 'user/sign-in/login'],
@@ -94,15 +94,15 @@ return [
         ['pattern' => 'account/seller-profile/<id:\d+>', 'route' => 'account/seller-profile'],
 
         // search
-        'search'                    => 'search/global',
-        'search/suggest'            => 'search/suggest',
-        'search/as-you-type'        => 'search/as-you-type',
-        'search/extension'          => 'search/extension',
+        'search' => 'search/global',
+        'search/suggest' => 'search/suggest',
+        'search/as-you-type' => 'search/as-you-type',
+        'search/extension' => 'search/extension',
         'search/opensearch-suggest' => 'search/opensearch-suggest',
-        'opensearch.xml'            => 'search/opensearch-description',
+        'opensearch.xml' => 'search/opensearch-description',
 
         // ajax actions for handling user interactions
-        'ajax/<action:[\w-]+>'      => 'ajax/<action>',
+        'ajax/<action:[\w-]+>' => 'ajax/<action>',
 
         // Sitemap
         ['pattern' => '<name>.xml', 'route' => 'xml/index'],

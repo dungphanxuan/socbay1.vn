@@ -257,7 +257,7 @@ use common\widgets\UploadCloudinary;
                 <?php echo $form->field($model, 'attachments')->widget(
                     UploadCloudinary::class,
                     [
-                        'url' => ['/file-storage/upload'],
+                        //'url' => ['/file-storage/upload'],
                         'sortable' => true,
                         'maxFileSize' => 10000000, // 10 MiB
                         'maxNumberOfFiles' => 10,

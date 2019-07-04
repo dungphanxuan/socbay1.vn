@@ -10,12 +10,12 @@ use yii\db\Expression;
  * This is the model class for table "rating".
  *
  * @property integer $user_id
- * @property string  $object_type
+ * @property string $object_type
  * @property integer $object_id
  * @property integer $rating
- * @property string  $created_at
+ * @property string $created_at
  *
- * @property User    $user
+ * @property User $user
  */
 class Rating extends ActiveRecord
 {
@@ -55,9 +55,9 @@ class Rating extends ActiveRecord
 
     /**
      * Casts a vote to the specified content object.
-     * @param ActiveRecord $model  the type of the content object
-     * @param integer      $userID the user ID
-     * @param integer      $vote   the vote (1 means up vote, 0 means down vote)
+     * @param ActiveRecord $model the type of the content object
+     * @param integer $userID the user ID
+     * @param integer $vote the vote (1 means up vote, 0 means down vote)
      * @return array the updated vote information of the content object (total votes, up votes). False if the content object is invalid.
      */
     public static function castVote($model, $userID, $vote)
@@ -65,8 +65,8 @@ class Rating extends ActiveRecord
         /** @var $rating Rating */
         $rating = static::findOne([
             'object_type' => $model->formName(),
-            'object_id'   => (int)$model->primaryKey,
-            'user_id'     => $userID,
+            'object_id' => (int)$model->primaryKey,
+            'user_id' => $userID,
         ]);
 
         $vote = $vote ? 1 : 0;
@@ -89,8 +89,8 @@ class Rating extends ActiveRecord
 
         $model->updateAttributes([
             'total_votes' => $votes[0],
-            'up_votes'    => $votes[1],
-            'rating'      => static::wilsonLowerInterval($votes[1], $votes[0]),
+            'up_votes' => $votes[1],
+            'rating' => static::wilsonLowerInterval($votes[1], $votes[0]),
         ]);
 
         return $votes;
@@ -114,8 +114,8 @@ class Rating extends ActiveRecord
     /**
      * Calculate the Wilson lower bound score based on
      * http://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval
-     * @param int    $s     number of successful trials
-     * @param int    $n     number of all trials
+     * @param int $s number of successful trials
+     * @param int $n number of all trials
      * @param string $alpha value, accepts only '0.01', '0.05' or '0.1'
      * @return float Wilson score interval
      * @throws \yii\base\InvalidArgumentException

@@ -13,15 +13,15 @@ use common\models\property\Project;
 use kartik\select2\Select2;
 use common\models\property\ProjectCategory;
 use yii\widgets\Pjax;
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $activeIndex */
 /* @var $modelCity \dungphanxuan\vnlocation\models\City */
 /* @var $dataProvider \yii\data\ActiveDataProvider */
 
-$this->title =  Yii::t('ads', 'Property project');
-$imgUrl = baseUrl() . '/frontend/web/theme/images/house/1.jpg';
+$this->title = Yii::t('ads', 'Property project');
+$imgUrl = baseUrl() . '/frontend/web/classified/images/house/1.jpg';
 
 $updateData = false;
 $cityCount = Project::getAllCityCount($updateData);
@@ -29,7 +29,7 @@ $cityCount = Project::getAllCityCount($updateData);
 $cityList = Project::getCityList($updateData);
 $catList = ProjectCategory::getCatSlug($updateData);
 
-$this->registerCssFile("@web/frontend/web/theme/assets/css/box/style-page.css", [
+$this->registerCssFile("@web/frontend/web/classified/assets/css/box/style-page.css", [
     'depends' => [\frontend\assets\AdsAsset::class],
 ]);
 ?>
@@ -40,27 +40,27 @@ $this->registerCssFile("@web/frontend/web/theme/assets/css/box/style-page.css", 
                 'action' => ['/property/project'],
                 'method' => 'get',
             ]); ?>
-                <div class="row">
-                    <div class="col-md-3">
-                        <?php
-                        echo Html::textInput('key', getParam('key'), ['class' => 'form-control keyword', 'placeholder' => 'Dự án ...'])
-                        ?>
-                    </div>
-                    <div class="col-md-3">
-                        <?php
-                        echo Html::dropDownList('category', getParam('category'), $catList, ['class' => 'form-control selecter', 'id' => 'id-location', 'prompt' => 'Loại hình bất động sản ...']);
-                        ?>
-                    </div>
-                    <div class="col-md-3">
-                        <?php
-                        echo Html::dropDownList('location', getParam('location'), $cityList, ['class' => 'form-control selecter', 'id' => 'id-location', 'prompt' => 'Tỉnh/Thành Phố...']);
-                        ?>
-                    </div>
-                    <div class="col-md-3">
-                        <button class="btn btn-block btn-primary  "><i class="fa fa-search"></i>
-                        </button>
-                    </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <?php
+                    echo Html::textInput('key', getParam('key'), ['class' => 'form-control keyword', 'placeholder' => 'Dự án ...'])
+                    ?>
                 </div>
+                <div class="col-md-3">
+                    <?php
+                    echo Html::dropDownList('category', getParam('category'), $catList, ['class' => 'form-control selecter', 'id' => 'id-location', 'prompt' => 'Loại hình bất động sản ...']);
+                    ?>
+                </div>
+                <div class="col-md-3">
+                    <?php
+                    echo Html::dropDownList('location', getParam('location'), $cityList, ['class' => 'form-control selecter', 'id' => 'id-location', 'prompt' => 'Tỉnh/Thành Phố...']);
+                    ?>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-block btn-primary  "><i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
             <?php ActiveForm::end(); ?>
         </div>
     </div>
@@ -80,8 +80,8 @@ $this->registerCssFile("@web/frontend/web/theme/assets/css/box/style-page.css", 
                 <!--/.page-side-bar-->
                 <div class="col-md-9 page-content col-thin-left">
                     <?php Pjax::begin([
-                        'id'       => 'all-ads',
-                        'timeout'  => 2000,
+                        'id' => 'all-ads',
+                        'timeout' => 2000,
                         'scrollTo' => 0
                     ]) ?>
                     <div class="category-list">
@@ -180,12 +180,12 @@ $this->registerCssFile("@web/frontend/web/theme/assets/css/box/style-page.css", 
                             <?php echo ListView::widget([
                                 'dataProvider' => $dataProvider,
                                 //'summary'      => '',
-                                'layout'       => '{items}',
-                                'itemView'     => '_item_project1',
-                                'options'      => [
+                                'layout' => '{items}',
+                                'itemView' => '_item_project1',
+                                'options' => [
                                     'tag' => false
                                 ],
-                                'itemOptions'  => [
+                                'itemOptions' => [
                                     'tag' => false,
                                 ]
                             ]) ?>

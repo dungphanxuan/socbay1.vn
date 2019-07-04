@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = 'Update';
 <div class="job-category-update">
 
     <?php echo $this->render('_form', [
-        'model'      => $model,
+        'model' => $model,
         'categories' => $categories,
     ]) ?>
 

@@ -30,15 +30,15 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 
         <?php echo GridView::widget([
             'dataProvider' => $carouselItemsProvider,
-            'options'      => [
+            'options' => [
                 'class' => 'grid-view table-responsive'
             ],
-            'columns'      => [
+            'columns' => [
                 'order',
                 [
-                    'attribute'      => 'path',
-                    'format'         => 'raw',
-                    'value'          => function ($model) {
+                    'attribute' => 'path',
+                    'format' => 'raw',
+                    'value' => function ($model) {
                         return $model->path ? Html::img($model->getImageUrl(), [
                             'style' => 'width: 100%',
                             'class' => 'imageList'
@@ -49,22 +49,22 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                 ],
                 'url:url',
                 [
-                    'format'    => 'html',
+                    'format' => 'html',
                     'attribute' => 'caption',
-                    'options'   => ['style' => 'width: 20%']
+                    'options' => ['style' => 'width: 20%']
                 ],
                 [
-                    'class'     => \common\grid\EnumColumn::class,
+                    'class' => \common\grid\EnumColumn::class,
                     'attribute' => 'status',
-                    'enum'      => [
+                    'enum' => [
                         Yii::t('backend', 'Not Published'),
                         Yii::t('backend', 'Published')
                     ]
                 ],
                 [
-                    'class'          => 'backend\grid\ActionColumn',
-                    'controller'     => '/widget/widget-carousel-item',
-                    'template'       => '{update} {delete}',
+                    'class' => 'backend\grid\ActionColumn',
+                    'controller' => '/widget/widget-carousel-item',
+                    'template' => '{update} {delete}',
                     'contentOptions' => ['style' => 'width:8%;text-align:center'],
                 ],
             ],

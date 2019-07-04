@@ -2,7 +2,7 @@
 
 use trntv\filekit\widget\Upload;
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model common\base\MultiModel */
@@ -85,20 +85,20 @@ $profile = $model->getModel('profile');
                                     <div class="user-profile-form">
 
                                         <?php $form = ActiveForm::begin([
-                                            'layout'      => 'horizontal',
+                                            'layout' => 'horizontal',
                                             'fieldConfig' => [
-                                                'template'             => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
+                                                'template' => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
                                                 'horizontalCssClasses' => [
-                                                    'label'   => 'col-sm-3 col-xs-3',
+                                                    'label' => 'col-sm-3 col-xs-3',
                                                     'wrapper' => 'col-sm-8 col-xs-8',
-                                                    'error'   => '',
-                                                    'hint'    => '',
+                                                    'error' => '',
+                                                    'hint' => '',
                                                 ],
                                             ],
                                         ]); ?>
 
                                         <?php echo $form->errorSummary($model->getModel('profile'), [
-                                            'class'  => 'alert alert-warning alert-dismissible',
+                                            'class' => 'alert alert-warning alert-dismissible',
                                             'header' => ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4><i class="icon fa fa-warning"></i> Vui lòng sửa các lỗi sau!</h4>'
                                         ]); ?>
 
@@ -132,7 +132,7 @@ $profile = $model->getModel('profile');
 
                                         <?php echo $form->field($model->getModel('profile'), 'gender')->dropDownlist([
                                             \common\models\UserProfile::GENDER_FEMALE => Yii::t('frontend', 'Female'),
-                                            \common\models\UserProfile::GENDER_MALE   => Yii::t('frontend', 'Male')
+                                            \common\models\UserProfile::GENDER_MALE => Yii::t('frontend', 'Male')
                                         ], ['prompt' => ''])->label('Giới tính') ?>
 
                                         <h2><?php echo Yii::t('frontend', 'Account Settings') ?></h2>

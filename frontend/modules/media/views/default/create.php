@@ -41,8 +41,8 @@ $bundle = AdsAsset::register($this);
                         <div class="col-md-8">
                             <?php
                             echo FileInput::widget([
-                                'name'          => 'file',
-                                'options'       => [
+                                'name' => 'file',
+                                'options' => [
                                     'multiple' => true
                                 ],
                                 'pluginOptions' => [
@@ -50,9 +50,9 @@ $bundle = AdsAsset::register($this);
                                     //'uploadUrl' => Url::to(['/file-storage/upload-google-cloud']),
                                     'uploadExtraData' => [
                                         'album_id' => 20,
-                                        'cat_id'   => 'Nature'
+                                        'cat_id' => 'Nature'
                                     ],
-                                    'maxFileCount'    => 1
+                                    'maxFileCount' => 1
                                 ]
                             ]);
                             ?>

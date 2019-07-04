@@ -15,7 +15,7 @@ use yii\widgets\ListView;
 /* @var $dataProvider \yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('ads', 'Events');
-$imgUrl = baseUrl() . '/frontend/web/theme/images/house/1.jpg';
+$imgUrl = baseUrl() . '/frontend/web/classified/images/house/1.jpg';
 $bundle = AdsAsset::register($this);
 ?>
     <div class="search-row-wrapper events"
@@ -282,7 +282,8 @@ $bundle = AdsAsset::register($this);
                     <div class="post-promo text-center">
                         <h2> Do you get anything for sell ? </h2>
                         <h5>Sell your products online FOR FREE. It's easier than you think !</h5>
-                        <a href="<?php echo Url::to(['/ads/create', 'type' => 'event']) ?>" class="btn btn-lg btn-border btn-post btn-danger">Post a Free Ad </a>
+                        <a href="<?php echo Url::to(['/ads/create', 'type' => 'event']) ?>"
+                           class="btn btn-lg btn-border btn-post btn-danger">Post a Free Ad </a>
                     </div>
                     <!--/.post-promo-->
 

@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = 'Cập nhật';
 <div class="project-pickup-update">
 
     <?php echo $this->render('_form', [
-        'model'    => $model,
+        'model' => $model,
         'projects' => $projects,
     ]) ?>
 

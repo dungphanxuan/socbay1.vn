@@ -41,16 +41,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
                             <?php echo GridView::widget([
                                 'dataProvider' => $dataProvider,
-                                'filterModel'  => $searchModel,
-                                'options'      => [
+                                'filterModel' => $searchModel,
+                                'options' => [
                                     'class' => 'grid-view table-responsive'
                                 ],
-                                'layout'       => "{summary}\n{items}",
-                                'columns'      => [
+                                'layout' => "{summary}\n{items}",
+                                'columns' => [
                                     [
-                                        'class'           => 'yii\grid\CheckboxColumn',
-                                        'headerOptions'   => ['style' => 'width:3%;text-align:center'],
-                                        'contentOptions'  => ['style' => 'width:3%;text-align:center'],
+                                        'class' => 'yii\grid\CheckboxColumn',
+                                        'headerOptions' => ['style' => 'width:3%;text-align:center'],
+                                        'contentOptions' => ['style' => 'width:3%;text-align:center'],
                                         'checkboxOptions' => [
                                             'class' => 'select-item'
                                         ]
@@ -58,12 +58,12 @@ $this->params['breadcrumbs'][] = $this->title;
                                     ['class' => 'yii\grid\SerialColumn'],
 
                                     [
-                                        'attribute'      => 'image',
-                                        'format'         => 'raw',
-                                        'header'         => 'Ảnh',
-                                        'headerOptions'  => ['style' => 'text-align:center'],
+                                        'attribute' => 'image',
+                                        'format' => 'raw',
+                                        'header' => 'Ảnh',
+                                        'headerOptions' => ['style' => 'text-align:center'],
                                         'contentOptions' => ['style' => 'width:10%;text-align:center'],
-                                        'value'          => function ($model) {
+                                        'value' => function ($model) {
                                             return Html::a(Html::img($model->getImage(), ['class' => 'imageList']), [
                                                 'view',
                                                 'id' => $model->id
@@ -78,8 +78,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                     'type',
                                     [
                                         'attribute' => 'size',
-                                        'format'    => 'size',
-                                        'label'     => 'Dung lượng',
+                                        'format' => 'size',
+                                        'label' => 'Dung lượng',
                                     ],
                                     //'name',
                                     /*[
@@ -95,9 +95,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                     'created_at:date',
 
                                     [
-                                        'class'          => 'frontend\grid\ActionColumn',
-                                        'template'       => '{delete-file}',
-                                        'headerOptions'  => ['style' => 'text-align:center'],
+                                        'class' => 'frontend\grid\ActionColumn',
+                                        'template' => '{delete-file}',
+                                        'headerOptions' => ['style' => 'text-align:center'],
                                         'contentOptions' => ['style' => 'width:10%;text-align:center'],
 
                                     ]

@@ -53,9 +53,9 @@ class ArticleCategorySearch extends ArticleCategory
         }
 
         $query->andFilterWhere([
-            'id'        => $this->id,
+            'id' => $this->id,
             'parent_id' => $this->parent_id,
-            'status'    => $this->status,
+            'status' => $this->status,
         ]);
 
         $query->andFilterWhere(['like', 'slug', $this->slug])

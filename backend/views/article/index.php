@@ -40,45 +40,45 @@ Bootbox::register($this);
         <br>
         <?php
         Pjax::begin([
-            'timeout'  => 2000,
+            'timeout' => 2000,
             'scrollTo' => 0,
-            'id'       => 'datas'
+            'id' => 'datas'
         ]);
         ?>
 
         <?php echo GridView::widget([
             'dataProvider' => $dataProvider,
-            'filterModel'  => $searchModel,
-            'options'      => [
+            'filterModel' => $searchModel,
+            'options' => [
                 'class' => 'grid-view table-responsive',
-                'id'    => $gridId
+                'id' => $gridId
             ],
-            'pager'        => [
+            'pager' => [
                 'maxButtonCount' => 15,
             ],
-            'layout'       => "{summary}\n{items}\n<div align='center'>{pager}</div>",
-            'columns'      => [
+            'layout' => "{summary}\n{items}\n<div align='center'>{pager}</div>",
+            'columns' => [
 
                 [
-                    'class'           => 'yii\grid\CheckboxColumn',
-                    'headerOptions'   => ['style' => 'width:3%;text-align:center'],
-                    'contentOptions'  => ['style' => 'width:3%;text-align:center'],
+                    'class' => 'yii\grid\CheckboxColumn',
+                    'headerOptions' => ['style' => 'width:3%;text-align:center'],
+                    'contentOptions' => ['style' => 'width:3%;text-align:center'],
                     'checkboxOptions' => [
                         'class' => 'select-item'
                     ]
                 ],
                 [
-                    'attribute'      => 'id',
-                    'format'         => 'raw',
-                    'headerOptions'  => ['style' => 'text-align:center'],
+                    'attribute' => 'id',
+                    'format' => 'raw',
+                    'headerOptions' => ['style' => 'text-align:center'],
                     'contentOptions' => ['style' => 'width:10%;text-align:center'],
                 ],
                 [
-                    'attribute'      => 'thumbnail',
-                    'format'         => 'raw',
-                    'headerOptions'  => ['style' => 'text-align:center'],
+                    'attribute' => 'thumbnail',
+                    'format' => 'raw',
+                    'headerOptions' => ['style' => 'text-align:center'],
                     'contentOptions' => ['style' => 'width:10%;text-align:center'],
-                    'value'          => function ($model) {
+                    'value' => function ($model) {
                         return Html::a(Html::tag('img', null, ['class' => 'imageList lazy', 'data-src' => $model->getImgThumbnail(5)]), [
                             'update',
                             'id' => $model->id
@@ -88,46 +88,46 @@ Bootbox::register($this);
                 //'slug',
                 [
                     'attribute' => 'title',
-                    'format'    => 'raw',
-                    'value'     => function ($model) {
+                    'format' => 'raw',
+                    'value' => function ($model) {
                         return StringHelper::truncateWords($model->title, 12);
                     },
                 ],
                 [
                     'attribute' => 'category_id',
-                    'value'     => function ($model) {
+                    'value' => function ($model) {
                         return $model->category ? $model->category->title : null;
                     },
-                    'filter'    => ArrayHelper::map(ArticleCategory::find()->all(), 'id', 'title')
+                    'filter' => ArrayHelper::map(ArticleCategory::find()->all(), 'id', 'title')
                 ],
                 [
                     'attribute' => 'created_by',
-                    'value'     => function ($model) {
+                    'value' => function ($model) {
                         return $model->author ? $model->author->username : '';
                     }
                 ],
                 [
-                    'class'          => EnumColumn::class,
-                    'attribute'      => 'status',
-                    'format'         => 'raw',
-                    'enum'           => [
+                    'class' => EnumColumn::class,
+                    'attribute' => 'status',
+                    'format' => 'raw',
+                    'enum' => [
                         Yii::t('backend', 'Not Published'),
                         Yii::t('backend', 'Published'),
                         Yii::t('backend', 'Deleted')
                     ],
-                    'headerOptions'  => ['style' => 'text-align:center'],
+                    'headerOptions' => ['style' => 'text-align:center'],
                     'contentOptions' => ['style' => 'text-align:center'],
                 ],
                 [
                     'attribute' => 'created_at',
-                    'format'    => 'datetimerel',
-                    'filter'    => false
+                    'format' => 'datetimerel',
+                    'filter' => false
                 ],
                 [
-                    'attribute'      => 'view_count',
-                    'format'         => 'raw',
-                    'label'          => 'View',
-                    'headerOptions'  => ['style' => 'text-align:center'],
+                    'attribute' => 'view_count',
+                    'format' => 'raw',
+                    'label' => 'View',
+                    'headerOptions' => ['style' => 'text-align:center'],
                     'contentOptions' => ['style' => 'width:10%;text-align:center'],
                 ],
                 //'published_at:date',
@@ -136,8 +136,8 @@ Bootbox::register($this);
                 // 'updated_at',
 
                 [
-                    'class'          => 'backend\grid\ActionColumn',
-                    'template'       => '{update} {copy} {delete}{show}',
+                    'class' => 'backend\grid\ActionColumn',
+                    'template' => '{update} {copy} {delete}{show}',
                     'contentOptions' => ['style' => 'width:10%;text-align:center'],
 
                     'buttons' => [
@@ -145,8 +145,8 @@ Bootbox::register($this);
                             $url = Url::to(['/article/create', 'type' => 'copy', 'id' => $key]);
 
                             return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, [
-                                'title'     => \Yii::t('common', 'Copy'),
-                                'class'     => 'btnaction btn btn-success btn-xs',
+                                'title' => \Yii::t('common', 'Copy'),
+                                'class' => 'btnaction btn btn-success btn-xs',
                                 'data-pjax' => 0
                             ]);
                         },
@@ -155,9 +155,9 @@ Bootbox::register($this);
                                 '<i class="fa fa-eye" aria-hidden="true"></i>',
                                 $url,
                                 [
-                                    'title'     => Yii::t('backend', 'Show'),
-                                    'class'     => 'btn btn-xs btn-success',
-                                    'target'    => '_blank',
+                                    'title' => Yii::t('backend', 'Show'),
+                                    'class' => 'btn btn-xs btn-success',
+                                    'target' => '_blank',
                                     'data-pjax' => 0
                                 ]
                             );

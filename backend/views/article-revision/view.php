@@ -20,9 +20,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php echo Html::a('Delete',
                     ['delete', 'article_id' => $model->article_id, 'revision' => $model->revision], [
                         'class' => 'btn btn-danger',
-                        'data'  => [
+                        'data' => [
                             'confirm' => 'Are you sure you want to delete this item?',
-                            'method'  => 'post',
+                            'method' => 'post',
                         ],
                     ]) ?>
             </p>
@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
     <?php echo DetailView::widget([
-        'model'      => $model,
+        'model' => $model,
         'attributes' => [
             'article_id',
             'revision',

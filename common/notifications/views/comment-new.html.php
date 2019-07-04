@@ -1,6 +1,6 @@
 <?php
 /**
- * @var Linkable|ObjectIdentityInterface $model   the model object that just received a new comment
+ * @var Linkable|ObjectIdentityInterface $model the model object that just received a new comment
  * @var                                  $comment \app\models\Comment the comment object
  * @var                                  $user    \app\models\User the user object to whom the email is sent
  */
@@ -13,7 +13,7 @@ use yii\helpers\Html;
 ?>
 <?php $this->beginContent('@app/notifications/views/_layout.html.php', [
     'model' => $model,
-    'user'  => $user,
+    'user' => $user,
     'title' => "A new comment was added: " . $model->getLinkTitle(),
 ]) ?>
 <p>A new comment was added to <?= Html::encode($model->getObjectType()) ?> you are following:</p>

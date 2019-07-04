@@ -37,9 +37,9 @@ class GoogleStorageAdapter extends AbstractAdapter
 
     /**
      * @param StorageClient $storageClient
-     * @param Bucket        $bucket
-     * @param string        $pathPrefix
-     * @param string        $storageApiUri
+     * @param Bucket $bucket
+     * @param string $pathPrefix
+     * @param string $storageApiUri
      */
     public function __construct(StorageClient $storageClient, Bucket $bucket, $pathPrefix = null, $storageApiUri = null)
     {
@@ -158,9 +158,9 @@ class GoogleStorageAdapter extends AbstractAdapter
     /**
      * Uploads a file to the Google Cloud Storage service.
      *
-     * @param string          $path
+     * @param string $path
      * @param string|resource $contents
-     * @param Config          $config
+     * @param Config $config
      *
      * @return array
      */
@@ -194,12 +194,12 @@ class GoogleStorageAdapter extends AbstractAdapter
         }
 
         return [
-            'type'      => $isDir ? 'dir' : 'file',
-            'dirname'   => Util::dirname($name),
-            'path'      => $name,
+            'type' => $isDir ? 'dir' : 'file',
+            'dirname' => Util::dirname($name),
+            'path' => $name,
             'timestamp' => strtotime($info['updated']),
-            'mimetype'  => isset($info['contentType']) ? $info['contentType'] : '',
-            'size'      => $info['size'],
+            'mimetype' => isset($info['contentType']) ? $info['contentType'] : '',
+            'size' => $info['size'],
         ];
     }
 
@@ -226,7 +226,7 @@ class GoogleStorageAdapter extends AbstractAdapter
         $visibility = $this->getRawVisibility($path);
 
         $options = [
-            'name'          => $newpath,
+            'name' => $newpath,
             'predefinedAcl' => $this->getPredefinedAclForVisibility($visibility),
         ];
         $this->getObject($path)->copy($this->bucket, $options);

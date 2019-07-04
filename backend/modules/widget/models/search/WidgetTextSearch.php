@@ -45,7 +45,7 @@ class WidgetTextSearch extends WidgetText
         }
 
         $query->andFilterWhere([
-            'id'     => $this->id,
+            'id' => $this->id,
             'status' => $this->status,
         ]);
 

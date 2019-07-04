@@ -71,7 +71,7 @@ class MultiModel extends Model
     }
 
     /**
-     * @param array  $data
+     * @param array $data
      * @param string $formName
      * @return bool
      */

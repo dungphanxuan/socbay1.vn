@@ -3,6 +3,7 @@
  * @var $this  yii\web\View
  * @var $model common\models\Article
  */
+
 use yii\helpers\Html;
 
 ?>
@@ -29,7 +30,7 @@ use yii\helpers\Html;
                     Yii::$app->glide->createSignedUrl([
                         'glide/index',
                         'path' => $model->thumbnail_path,
-                        'w'    => 100
+                        'w' => 100
                     ], true),
                     ['class' => 'article-thumb img-rounded pull-left']
                 ) ?>

@@ -24,24 +24,24 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php echo GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel'  => $searchModel,
-        'columns'      => [
+        'filterModel' => $searchModel,
+        'columns' => [
             [
-                'class'          => 'yii\grid\CheckboxColumn',
+                'class' => 'yii\grid\CheckboxColumn',
                 'contentOptions' => ['style' => 'text-align:center'],
-                'headerOptions'  => ['style' => 'text-align:center; width:5%;'],
+                'headerOptions' => ['style' => 'text-align:center; width:5%;'],
             ],
 
             [
-                'attribute'      => 'id',
-                'format'         => 'raw',
-                'headerOptions'  => ['style' => 'text-align:center'],
+                'attribute' => 'id',
+                'format' => 'raw',
+                'headerOptions' => ['style' => 'text-align:center'],
                 'contentOptions' => ['style' => 'width:10%;text-align:center'],
             ],
             [
                 'attribute' => 'project_id',
-                'format'    => 'raw',
-                'value'     => function ($model) {
+                'format' => 'raw',
+                'value' => function ($model) {
                     return Html::a($model->project ? $model->project->title : '', [
                         'update',
                         'id' => $model->id
@@ -49,27 +49,27 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
             ],
             [
-                'attribute'      => 'lang_id',
-                'format'         => 'raw',
-                'filter'         => [1 => 'Tiếng Việt', 2 => 'Tiếng Anh'],
-                'value'          => function ($model) {
+                'attribute' => 'lang_id',
+                'format' => 'raw',
+                'filter' => [1 => 'Tiếng Việt', 2 => 'Tiếng Anh'],
+                'value' => function ($model) {
                     $iconName = $model->lang_id != 2 ? 'vn' : 'en';
 
                     return Html::img('@web/web/img/i-' . $iconName . '.png', ['class' => 'imageh20']);
                 },
-                'headerOptions'  => ['style' => 'text-align:center'],
+                'headerOptions' => ['style' => 'text-align:center'],
                 'contentOptions' => ['style' => 'width:10%;text-align:center'],
             ],
             [
-                'attribute'      => 'sort_number',
-                'format'         => 'raw',
-                'headerOptions'  => ['style' => 'text-align:center'],
+                'attribute' => 'sort_number',
+                'format' => 'raw',
+                'headerOptions' => ['style' => 'text-align:center'],
                 'contentOptions' => ['style' => 'width:15%;text-align:center'],
             ],
 
             [
-                'class'          => 'backend\grid\ActionColumn',
-                'template'       => '{update} {delete}',
+                'class' => 'backend\grid\ActionColumn',
+                'template' => '{update} {delete}',
                 'contentOptions' => ['style' => 'width:15%;text-align:center'],
             ],
         ],

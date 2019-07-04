@@ -16,8 +16,8 @@ class FilestackController extends \yii\web\Controller
     {
         $data = [];
         $dataProvider = new ArrayDataProvider([
-            'allModels'  => $data,
-            'sort'       => [
+            'allModels' => $data,
+            'sort' => [
                 'attributes' => ['id', 'username', 'email'],
             ],
             'pagination' => [

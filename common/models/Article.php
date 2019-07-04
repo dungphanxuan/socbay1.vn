@@ -158,47 +158,47 @@ class Article extends ActiveRecord implements Linkable, ObjectIdentityInterface
             TimestampBehavior::class,
             BlameableBehavior::class,
             [
-                'class'     => SluggableBehavior::class,
+                'class' => SluggableBehavior::class,
                 'attribute' => 'title',
                 'immutable' => true
             ],
             [
-                'class'            => UploadBehavior::class,
-                'attribute'        => 'attachments',
-                'multiple'         => true,
-                'uploadRelation'   => 'articleAttachments',
-                'pathAttribute'    => 'path',
+                'class' => UploadBehavior::class,
+                'attribute' => 'attachments',
+                'multiple' => true,
+                'uploadRelation' => 'articleAttachments',
+                'pathAttribute' => 'path',
                 'baseUrlAttribute' => 'base_url',
-                'orderAttribute'   => 'order',
-                'typeAttribute'    => 'type',
-                'sizeAttribute'    => 'size',
-                'nameAttribute'    => 'name',
+                'orderAttribute' => 'order',
+                'typeAttribute' => 'type',
+                'sizeAttribute' => 'size',
+                'nameAttribute' => 'name',
             ],
             [
-                'class'            => UploadBehavior::class,
-                'attribute'        => 'images',
-                'multiple'         => true,
-                'uploadRelation'   => 'articleImages',
-                'pathAttribute'    => 'path',
+                'class' => UploadBehavior::class,
+                'attribute' => 'images',
+                'multiple' => true,
+                'uploadRelation' => 'articleImages',
+                'pathAttribute' => 'path',
                 'baseUrlAttribute' => 'base_url',
-                'orderAttribute'   => 'order',
-                'typeAttribute'    => 'type',
-                'sizeAttribute'    => 'size',
-                'nameAttribute'    => 'name',
+                'orderAttribute' => 'order',
+                'typeAttribute' => 'type',
+                'sizeAttribute' => 'size',
+                'nameAttribute' => 'name',
             ],
             [
-                'class'            => UploadBehavior::class,
-                'attribute'        => 'thumbnail',
-                'pathAttribute'    => 'thumbnail_path',
+                'class' => UploadBehavior::class,
+                'attribute' => 'thumbnail',
+                'pathAttribute' => 'thumbnail_path',
                 'baseUrlAttribute' => 'thumbnail_base_url'
             ],
             [
                 'class' => Taggable::class,
             ],
             'cacheInvalidate' => [
-                'class'          => CacheInvalidateBehavior::class,
+                'class' => CacheInvalidateBehavior::class,
                 'cacheComponent' => 'dcache',
-                'keys'           => [
+                'keys' => [
                     function ($model) {
                         return [
                             self::class,
@@ -279,35 +279,35 @@ class Article extends ActiveRecord implements Linkable, ObjectIdentityInterface
     public function attributeLabels()
     {
         return [
-            'id'              => Yii::t('common', 'ID'),
-            'slug'            => Yii::t('common', 'Slug'),
-            'title'           => Yii::t('common', 'Title'),
-            'body'            => Yii::t('common', 'Body'),
-            'excerpt'         => Yii::t('common', 'Excerpt'),
-            'view'            => Yii::t('common', 'Article View'),
-            'thumbnail'       => Yii::t('common', 'Thumbnail'),
-            'attachments'     => Yii::t('common', 'Attachments'),
-            'category_id'     => Yii::t('common', 'Category'),
+            'id' => Yii::t('common', 'ID'),
+            'slug' => Yii::t('common', 'Slug'),
+            'title' => Yii::t('common', 'Title'),
+            'body' => Yii::t('common', 'Body'),
+            'excerpt' => Yii::t('common', 'Excerpt'),
+            'view' => Yii::t('common', 'Article View'),
+            'thumbnail' => Yii::t('common', 'Thumbnail'),
+            'attachments' => Yii::t('common', 'Attachments'),
+            'category_id' => Yii::t('common', 'Category'),
             'sub_category_id' => Yii::t('common', 'Sub Category'),
-            'type'            => Yii::t('common', 'Article Type'),
-            'condition_type'  => Yii::t('common', 'Condition'),
-            'is_negotiable'   => Yii::t('common', 'Negotiable'),
-            'sort_number'     => Yii::t('common', 'Sort Number'),
-            'price'           => Yii::t('common', 'Price'),
-            'package_id'      => Yii::t('common', 'Package'),
-            'address_text'    => Yii::t('common', 'Address'),
-            'city_id'         => Yii::t('common', 'City'),
-            'district_id'     => Yii::t('common', 'District'),
-            'ward_id'         => Yii::t('common', 'Ward'),
+            'type' => Yii::t('common', 'Article Type'),
+            'condition_type' => Yii::t('common', 'Condition'),
+            'is_negotiable' => Yii::t('common', 'Negotiable'),
+            'sort_number' => Yii::t('common', 'Sort Number'),
+            'price' => Yii::t('common', 'Price'),
+            'package_id' => Yii::t('common', 'Package'),
+            'address_text' => Yii::t('common', 'Address'),
+            'city_id' => Yii::t('common', 'City'),
+            'district_id' => Yii::t('common', 'District'),
+            'ward_id' => Yii::t('common', 'Ward'),
 
-            'status'       => Yii::t('common', 'Published'),
+            'status' => Yii::t('common', 'Published'),
             'published_at' => Yii::t('common', 'Published At'),
-            'public_from'  => Yii::t('common', 'Public From'),
-            'public_to'    => Yii::t('common', 'Public To'),
-            'created_by'   => Yii::t('common', 'Author'),
-            'updated_by'   => Yii::t('common', 'Updater'),
-            'created_at'   => Yii::t('common', 'Created At'),
-            'updated_at'   => Yii::t('common', 'Updated At')
+            'public_from' => Yii::t('common', 'Public From'),
+            'public_to' => Yii::t('common', 'Public To'),
+            'created_by' => Yii::t('common', 'Author'),
+            'updated_by' => Yii::t('common', 'Updater'),
+            'created_at' => Yii::t('common', 'Created At'),
+            'updated_at' => Yii::t('common', 'Updated At')
         ];
     }
 
@@ -388,7 +388,7 @@ class Article extends ActiveRecord implements Linkable, ObjectIdentityInterface
     {
         return [
             self::STATUS_PUBLISHED => Yii::t('common', 'Published'),
-            self::STATUS_DRAFT     => Yii::t('common', 'Deleted')
+            self::STATUS_DRAFT => Yii::t('common', 'Deleted')
         ];
     }
 
@@ -510,6 +510,9 @@ class Article extends ActiveRecord implements Linkable, ObjectIdentityInterface
         }
         $fullUrl = $this->thumbnail_base_url . '/' . $this->thumbnail_path;
 
+        //1. Local
+        //2. Filestack
+        //3. Cloudinary
         switch ($type) {
             case 1:
                 $url = $this->thumbnail_base_url . '/' . $path;
@@ -522,11 +525,13 @@ class Article extends ActiveRecord implements Linkable, ObjectIdentityInterface
                     case 2:
                         $url = FilestackHelper::resizeHander($this->thumbnail_path, $w, $h);
                         break;
+                    case 3:
+                        break;
                     default:
                         $signConfig = [
                             'glide/index',
                             'path' => $path,
-                            'fit'  => 'crop',
+                            'fit' => 'crop',
                         ];
                         if ($w) {
                             $signConfig['w'] = $w;
@@ -544,9 +549,9 @@ class Article extends ActiveRecord implements Linkable, ObjectIdentityInterface
                         $signConfig = [
                             'glide/index',
                             'path' => $path,
-                            'w'    => '480',
-                            'h'    => '240',
-                            'fit'  => 'crop'
+                            'w' => '480',
+                            'h' => '240',
+                            'fit' => 'crop'
                         ];
 
                         $url = Yii::$app->glide->createSignedUrl($signConfig);
@@ -567,16 +572,16 @@ class Article extends ActiveRecord implements Linkable, ObjectIdentityInterface
             foreach ($listImage as $itemAtt) {
                 $data[] = [
                     'src' => $itemAtt['base_url'] . '/' . $itemAtt['path'],
-                    'w'   => 964,
-                    'h'   => 1024
+                    'w' => 964,
+                    'h' => 1024
                 ];
             }
         } else {
             if ($this->thumbnail_path) {
                 $data[] = [
                     'src' => $this->thumbnail_base_url . '/' . $this->thumbnail_path,
-                    'w'   => 964,
-                    'h'   => 1024
+                    'w' => 964,
+                    'h' => 1024
                 ];
             }
         }

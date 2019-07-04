@@ -46,7 +46,7 @@ class CompanySearch extends Company
 
         //Filter company of user
         $dataProvider = new ActiveDataProvider([
-            'query'      => $query,
+            'query' => $query,
             'pagination' => [
                 'pageSize' => 10,
             ],
@@ -57,27 +57,27 @@ class CompanySearch extends Company
         }
 
         $query->andFilterWhere([
-            'id'            => $this->id,
-            'contact_id'    => $this->contact_id,
-            'start_date'    => $this->start_date,
-            'end_date'      => $this->end_date,
-            'complete_on'   => $this->complete_on,
-            'city_id'       => $this->city_id,
-            'district_id'   => $this->district_id,
-            'ward_id'       => $this->ward_id,
-            'lat'           => $this->lat,
-            'lng'           => $this->lng,
-            'total_votes'   => $this->total_votes,
-            'up_votes'      => $this->up_votes,
-            'rating'        => $this->rating,
-            'featured'      => $this->featured,
+            'id' => $this->id,
+            'contact_id' => $this->contact_id,
+            'start_date' => $this->start_date,
+            'end_date' => $this->end_date,
+            'complete_on' => $this->complete_on,
+            'city_id' => $this->city_id,
+            'district_id' => $this->district_id,
+            'ward_id' => $this->ward_id,
+            'lat' => $this->lat,
+            'lng' => $this->lng,
+            'total_votes' => $this->total_votes,
+            'up_votes' => $this->up_votes,
+            'rating' => $this->rating,
+            'featured' => $this->featured,
             'comment_count' => $this->comment_count,
-            'view_count'    => $this->view_count,
-            'sort_number'   => $this->sort_number,
-            'type'          => $this->type,
-            'status'        => $this->status,
-            'created_by'    => $this->created_by,
-            'updated_by'    => $this->updated_by
+            'view_count' => $this->view_count,
+            'sort_number' => $this->sort_number,
+            'type' => $this->type,
+            'status' => $this->status,
+            'created_by' => $this->created_by,
+            'updated_by' => $this->updated_by
         ]);
 
         if (empty($this->title_short)) {

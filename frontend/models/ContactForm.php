@@ -46,18 +46,18 @@ class ContactForm extends Model
     public function attributeLabels()
     {
         return [
-            'name'         => Yii::t('frontend', 'Name'),
-            'email'        => Yii::t('frontend', 'Email'),
-            'mobile'       => Yii::t('frontend', 'Mobile'),
+            'name' => Yii::t('frontend', 'Name'),
+            'email' => Yii::t('frontend', 'Email'),
+            'mobile' => Yii::t('frontend', 'Mobile'),
             'company_name' => Yii::t('frontend', 'Company Name'),
-            'subject'      => Yii::t('frontend', 'Subject'),
-            'body'         => Yii::t('frontend', 'Body'),
+            'subject' => Yii::t('frontend', 'Subject'),
+            'body' => Yii::t('frontend', 'Body'),
         ];
     }
 
     /**
      * Sends an email to the specified email address using the information collected by this model.
-     * @param  string $email the target email address
+     * @param string $email the target email address
      * @return boolean whether the model passes validation
      */
     public function contact($email)

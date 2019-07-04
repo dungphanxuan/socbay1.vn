@@ -25,21 +25,21 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['index']];
 
     <?php echo GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel'  => $searchModel,
-        'layout'       => "{summary}\n{items}\n<div align='center'>{pager}</div>",
-        'columns'      => [
+        'filterModel' => $searchModel,
+        'layout' => "{summary}\n{items}\n<div align='center'>{pager}</div>",
+        'columns' => [
             [
-                'class'           => 'yii\grid\CheckboxColumn',
-                'headerOptions'   => ['style' => 'width:3%;text-align:center'],
-                'contentOptions'  => ['style' => 'width:3%;text-align:center'],
+                'class' => 'yii\grid\CheckboxColumn',
+                'headerOptions' => ['style' => 'width:3%;text-align:center'],
+                'contentOptions' => ['style' => 'width:3%;text-align:center'],
                 'checkboxOptions' => [
                     'class' => 'select-item'
                 ]
             ],
             [
-                'attribute'      => 'id',
-                'format'         => 'raw',
-                'headerOptions'  => ['style' => 'text-align:center'],
+                'attribute' => 'id',
+                'format' => 'raw',
+                'headerOptions' => ['style' => 'text-align:center'],
                 'contentOptions' => ['style' => 'width:10%;text-align:center'],
             ],
             'title',
@@ -51,19 +51,19 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['index']];
             // 'sort_number',
             // 'type',
             [
-                'class'          => \common\grid\EnumColumn::class,
-                'attribute'      => 'status',
-                'format'         => 'raw',
-                'options'        => ['style' => 'width: 10%'],
-                'enum'           => Status::all(),
-                'filter'         => Status::all(),
-                'headerOptions'  => ['style' => 'text-align:center'],
+                'class' => \common\grid\EnumColumn::class,
+                'attribute' => 'status',
+                'format' => 'raw',
+                'options' => ['style' => 'width: 10%'],
+                'enum' => Status::all(),
+                'filter' => Status::all(),
+                'headerOptions' => ['style' => 'text-align:center'],
                 'contentOptions' => ['style' => 'width:10%;text-align:center'],
             ],
             [
-                'attribute'      => 'created_at',
-                'format'         => 'date',
-                'headerOptions'  => ['style' => 'text-align:center'],
+                'attribute' => 'created_at',
+                'format' => 'date',
+                'headerOptions' => ['style' => 'text-align:center'],
                 'contentOptions' => ['style' => 'width:10%;text-align:center'],
             ],
             // 'updated_at',

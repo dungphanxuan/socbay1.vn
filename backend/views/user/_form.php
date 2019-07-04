@@ -24,20 +24,20 @@ use yii\helpers\Url;
             'addon' => ['prepend' => ['content' => '<i class="fa fa-envelope"></i>']]
         ])->textInput([
             'autocomplete' => 'off',
-            'readonly'     => true,
-            'onfocus'      => "this.removeAttribute('readonly');",
+            'readonly' => true,
+            'onfocus' => "this.removeAttribute('readonly');",
         ]) ?>
 
         <?php echo $form->field($model, 'password', [
-            'addon'    => [
+            'addon' => [
                 'prepend' => ['content' => '<i class="fa fa-key"></i>'],
-                'append'  => ['content' => '<button class="btn btn-default" type="button" id="btnGenerate">Generate</button>', 'asButton' => true],
+                'append' => ['content' => '<button class="btn btn-default" type="button" id="btnGenerate">Generate</button>', 'asButton' => true],
             ],
             'template' => '{label} <div class="row"><div class="col-xs-6 col-sm-6">{input}{error}{hint}</div></div>'
         ])->textInput([
             'autocomplete' => 'off',
-            'readonly'     => true,
-            'onfocus'      => "this.removeAttribute('readonly');",
+            'readonly' => true,
+            'onfocus' => "this.removeAttribute('readonly');",
         ]) ?>
 
         <div class="row">

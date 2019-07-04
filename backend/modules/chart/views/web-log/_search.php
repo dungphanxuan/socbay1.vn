@@ -11,8 +11,8 @@ use yii\widgets\ActiveForm;
 <div class="web-log-search">
 
     <?php $form = ActiveForm::begin([
-        'action'  => ['index'],
-        'method'  => 'get',
+        'action' => ['index'],
+        'method' => 'get',
         'options' => [
             'class' => 'form-inline'
         ]

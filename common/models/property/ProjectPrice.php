@@ -7,12 +7,12 @@ use yii\helpers\ArrayHelper;
 /**
  * This is the model class for table "m_project_price".
  *
- * @property integer   $id
- * @property string    $title
- * @property string    $slug
- * @property integer   $type
- * @property integer   $sort_number
- * @property integer   $status
+ * @property integer $id
+ * @property string $title
+ * @property string $slug
+ * @property integer $type
+ * @property integer $sort_number
+ * @property integer $status
  *
  * @property Project[] $projects
  */
@@ -45,10 +45,10 @@ class ProjectPrice extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'          => 'ID',
-            'title'       => 'Tiêu đề',
-            'slug'        => 'Slug',
-            'type'        => 'Loại',
+            'id' => 'ID',
+            'title' => 'Tiêu đề',
+            'slug' => 'Slug',
+            'type' => 'Loại',
             'sort_number' => 'Sort Number',
         ];
     }

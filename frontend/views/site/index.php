@@ -4,7 +4,7 @@ use frontend\assets\AdsAsset;
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\ListView;
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $catProvider \yii\data\ActiveDataProvider */
@@ -23,10 +23,10 @@ $bundle = AdsAsset::register($this);
         <div class="dtable-cell hw100">
             <div class="container text-center">
                 <h1 class="intro-title  "> <?php echo Yii::t('ads', 'Find Classified Ads') ?> </h1>
-                <p class="sub animateme fittext3  "> Thông tin mua bán nhanh chóng và tiết kiệm thời gian </p>
+                <p class="sub animateme fittext3  "> Thông tin mua bán nhanh chóng </p>
                 <?php
                 $form = ActiveForm::begin([
-                    'id'     => 'find-form',
+                    'id' => 'find-form',
                     'method' => 'get',
                     'action' => ['/ads/index']
                 ]) ?>
@@ -72,12 +72,12 @@ $bundle = AdsAsset::register($this);
                 <?php echo ListView::widget([
                     'dataProvider' => $catProvider,
                     //'summary'      => '',
-                    'layout'       => '{items}',
-                    'itemView'     => '_item_cat',
-                    'options'      => [
+                    'layout' => '{items}',
+                    'itemView' => '_item_cat',
+                    'options' => [
                         'tag' => false,
                     ],
-                    'itemOptions'  => [
+                    'itemOptions' => [
                         'tag' => false,
                     ]
                 ]) ?>

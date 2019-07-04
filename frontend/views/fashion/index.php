@@ -121,13 +121,13 @@ BoxAsset::register($this);
                     <?php echo \yii\widgets\ListView::widget([
                         'dataProvider' => $dataProvider,
                         //'summary'      => '',
-                        'layout'       => '{items}',
-                        'itemView'     => '_item',
-                        'options'      => [
-                            'tag'   => 'div',
+                        'layout' => '{items}',
+                        'itemView' => '_item',
+                        'options' => [
+                            'tag' => 'div',
                             'class' => 'category-product',
                         ],
-                        'itemOptions'  => [
+                        'itemOptions' => [
                             'tag' => false,
                         ]
                     ]) ?>

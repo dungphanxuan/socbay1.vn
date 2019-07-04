@@ -23,49 +23,49 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?php echo GridView::widget([
             'dataProvider' => $dataProvider,
-            'filterModel'  => $searchModel,
-            'options'      => [
+            'filterModel' => $searchModel,
+            'options' => [
                 'class' => 'grid-view table-responsive'
             ],
-            'pager'        => [
+            'pager' => [
                 'maxButtonCount' => 15,
             ],
-            'layout'       => "{summary}\n{items}\n<div align='center'>{pager}</div>",
-            'columns'      => [
+            'layout' => "{summary}\n{items}\n<div align='center'>{pager}</div>",
+            'columns' => [
                 ['class' => 'yii\grid\SerialColumn'],
                 [
                     'attribute' => 'level',
-                    'value'     => function ($model) {
+                    'value' => function ($model) {
                         return \yii\log\Logger::getLevelName($model->level);
                     },
-                    'filter'    => [
-                        \yii\log\Logger::LEVEL_ERROR         => 'error',
-                        \yii\log\Logger::LEVEL_WARNING       => 'warning',
-                        \yii\log\Logger::LEVEL_INFO          => 'info',
-                        \yii\log\Logger::LEVEL_TRACE         => 'trace',
+                    'filter' => [
+                        \yii\log\Logger::LEVEL_ERROR => 'error',
+                        \yii\log\Logger::LEVEL_WARNING => 'warning',
+                        \yii\log\Logger::LEVEL_INFO => 'info',
+                        \yii\log\Logger::LEVEL_TRACE => 'trace',
                         \yii\log\Logger::LEVEL_PROFILE_BEGIN => 'profile begin',
-                        \yii\log\Logger::LEVEL_PROFILE_END   => 'profile end'
+                        \yii\log\Logger::LEVEL_PROFILE_END => 'profile end'
                     ]
                 ],
                 'category',
                 [
                     'attribute' => 'prefix',
-                    'format'    => 'raw',
-                    'value'     => function ($model) {
+                    'format' => 'raw',
+                    'value' => function ($model) {
                         return $model->getPrefixTitle();
                     }
                 ],
                 [
                     'attribute' => 'log_time',
-                    'format'    => 'datetime',
-                    'value'     => function ($model) {
+                    'format' => 'datetime',
+                    'value' => function ($model) {
                         return (int)$model->log_time;
                     }
                 ],
 
                 [
-                    'class'          => 'backend\grid\ActionColumn',
-                    'template'       => '{view}{delete}',
+                    'class' => 'backend\grid\ActionColumn',
+                    'template' => '{view}{delete}',
                     'contentOptions' => ['style' => 'width:10%;text-align:center', 'class' => 'log-action'],
                 ]
             ]

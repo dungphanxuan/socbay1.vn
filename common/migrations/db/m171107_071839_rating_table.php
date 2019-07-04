@@ -7,11 +7,11 @@ class m171107_071839_rating_table extends BaseMigration
     public function up()
     {
         $this->createTable('{{%rating}}', [
-            'user_id'     => $this->integer()->notNull(),
+            'user_id' => $this->integer()->notNull(),
             'object_type' => $this->string(128)->notNull(),
-            'object_id'   => $this->integer()->notNull(),
-            'rating'      => $this->smallInteger()->notNull(),
-            'created_at'  => $this->dateTime()->notNull(),
+            'object_id' => $this->integer()->notNull(),
+            'rating' => $this->smallInteger()->notNull(),
+            'created_at' => $this->dateTime()->notNull(),
             'PRIMARY KEY(user_id, object_type, object_id)'
         ]);
 

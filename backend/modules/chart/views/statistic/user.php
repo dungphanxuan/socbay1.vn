@@ -10,9 +10,9 @@ use frontend\models\App;
 $this->title = 'Thống kê thành viên mới';
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['menu'] = [
-    ['label'       => 'Trang chủ',
-     'url'         => ['/'],
-     'linkOptions' => ['class' => 'btn btn-flat', 'style' => 'border: 1px solid #ccc!important;']
+    ['label' => 'Trang chủ',
+        'url' => ['/'],
+        'linkOptions' => ['class' => 'btn btn-flat', 'style' => 'border: 1px solid #ccc!important;']
     ],
 ];
 
@@ -20,7 +20,7 @@ $this->registerJsFile('@web/assets_b' . '/js/moment.min.js', ['depends' => [\yii
 $this->registerJsFile('@web/assets_b' . '/js/daterangepicker.js', ['depends' => [\yii\web\JqueryAsset::class]]);
 $this->registerCssFile('@web/assets_b' . '/css/daterangepicker.css', [
     'depends' => [\yii\bootstrap\BootstrapThemeAsset::class],
-    'rel'     => 'stylesheet'
+    'rel' => 'stylesheet'
 ], 'css-print-theme');
 
 ?>
@@ -56,13 +56,13 @@ $this->registerCssFile('@web/assets_b' . '/css/daterangepicker.css', [
                     'modules/exporting', // adds Exporting button/menu to chart
                 ],
                 'options' => [
-                    'chart'  => ['type' => 'line'],
-                    'title'  => ['text' => 'User statistic'],
-                    'xAxis'  => [
+                    'chart' => ['type' => 'line'],
+                    'title' => ['text' => 'User statistic'],
+                    'xAxis' => [
                         'categories' => $arrDay
                     ],
-                    'yAxis'  => [
-                        'title'     => ['text' => 'New user'],
+                    'yAxis' => [
+                        'title' => ['text' => 'New user'],
                         'plotLines' => [
                             [
                                 'value' => 0,

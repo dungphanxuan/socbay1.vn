@@ -7,15 +7,15 @@ use Yii;
 /**
  * This is the model class for table "med_media_attachment".
  *
- * @property int      $id
- * @property int      $media_id
- * @property string   $path
- * @property string   $base_url
- * @property string   $type
- * @property int      $size
- * @property string   $name
- * @property int      $created_at
- * @property int      $order
+ * @property int $id
+ * @property int $media_id
+ * @property string $path
+ * @property string $base_url
+ * @property string $type
+ * @property int $size
+ * @property string $name
+ * @property int $created_at
+ * @property int $order
  *
  * @property MedMedia $media
  */
@@ -48,15 +48,15 @@ class MediaAttachment extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'         => 'ID',
-            'media_id'   => 'Media ID',
-            'path'       => 'Path',
-            'base_url'   => 'Base Url',
-            'type'       => 'Type',
-            'size'       => 'Size',
-            'name'       => 'Name',
+            'id' => 'ID',
+            'media_id' => 'Media ID',
+            'path' => 'Path',
+            'base_url' => 'Base Url',
+            'type' => 'Type',
+            'size' => 'Size',
+            'name' => 'Name',
             'created_at' => 'Created At',
-            'order'      => 'Order',
+            'order' => 'Order',
         ];
     }
 

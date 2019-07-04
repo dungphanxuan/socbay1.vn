@@ -8,9 +8,9 @@ class m180104_072507_user_graph extends BaseMigration
     {
         //User Follow
         $this->createTable('d_user_follow', [
-            'id'          => $this->primaryKey(),
-            'user_id'     => $this->integer()->notNull(),
-            'friend_id'   => $this->integer()->notNull(),
+            'id' => $this->primaryKey(),
+            'user_id' => $this->integer()->notNull(),
+            'friend_id' => $this->integer()->notNull(),
             'sort_number' => $this->smallInteger(1)->defaultValue(0),
         ]);
     }

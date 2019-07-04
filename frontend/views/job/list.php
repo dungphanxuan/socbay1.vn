@@ -89,8 +89,8 @@ $this->title = 'Việc làm mới nhất';
                 <!--/.page-side-bar-->
                 <div class="col-md-9 page-content col-thin-left">
                     <?php Pjax::begin([
-                        'id'       => 'all-ads',
-                        'timeout'  => 2000,
+                        'id' => 'all-ads',
+                        'timeout' => 2000,
                         'scrollTo' => 0
                     ]) ?>
                     <div class="category-list">
@@ -166,13 +166,13 @@ $this->title = 'Việc làm mới nhất';
                         <?php echo \yii\widgets\ListView::widget([
                             'dataProvider' => $dataProvider,
                             //'summary'      => '',
-                            'layout'       => '{summary}{items}',
-                            'itemView'     => '_item',
-                            'options'      => [
-                                'tag'   => 'div',
+                            'layout' => '{summary}{items}',
+                            'itemView' => '_item',
+                            'options' => [
+                                'tag' => 'div',
                                 'class' => 'adds-wrapper jobs-list',
                             ],
-                            'itemOptions'  => [
+                            'itemOptions' => [
                                 'tag' => false,
                             ]
                         ]) ?>

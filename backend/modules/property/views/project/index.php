@@ -32,43 +32,43 @@ $createdParam = isset($params['created_at']) ? $params['created_at'] : '';
         <div class="clearfix"></div>
 
         <?php echo $this->render('_search', [
-            'model'      => $searchModel,
+            'model' => $searchModel,
             'categories' => $categories,
-            'prices'     => $prices,
-            'areas'      => $areas,
-            'ranks'      => $ranks,
+            'prices' => $prices,
+            'areas' => $areas,
+            'ranks' => $ranks,
         ]); ?>
         <br>
         <br>
 
         <?php echo GridView::widget([
             'dataProvider' => $dataProvider,
-            'filterModel'  => $searchModel,
-            'pager'        => [
+            'filterModel' => $searchModel,
+            'pager' => [
                 'maxButtonCount' => 15,
             ],
-            'layout'       => "{summary}\n{items}\n<div align='center'>{pager}</div>",
+            'layout' => "{summary}\n{items}\n<div align='center'>{pager}</div>",
 
             'columns' => [
 
                 [
-                    'class'          => 'yii\grid\CheckboxColumn',
+                    'class' => 'yii\grid\CheckboxColumn',
                     'contentOptions' => ['style' => 'text-align:center'],
-                    'headerOptions'  => ['style' => 'text-align:center; width:5%;'],
+                    'headerOptions' => ['style' => 'text-align:center; width:5%;'],
                 ],
                 [
-                    'attribute'      => 'id',
-                    'format'         => 'raw',
-                    'headerOptions'  => ['style' => 'text-align:center'],
+                    'attribute' => 'id',
+                    'format' => 'raw',
+                    'headerOptions' => ['style' => 'text-align:center'],
                     'contentOptions' => ['style' => 'width:7%;text-align:center'],
                 ],
                 [
-                    'attribute'      => 'thumbnail',
-                    'format'         => 'raw',
-                    'header'         => 'Thumbnail',
-                    'headerOptions'  => ['style' => 'text-align:center'],
+                    'attribute' => 'thumbnail',
+                    'format' => 'raw',
+                    'header' => 'Thumbnail',
+                    'headerOptions' => ['style' => 'text-align:center'],
                     'contentOptions' => ['style' => 'width:8%;text-align:center'],
-                    'value'          => function ($model) {
+                    'value' => function ($model) {
                         return Html::a(Html::img($model->getImgThumbnail(2), ['class' => 'imageList']), [
                             'update',
                             'id' => $model->id
@@ -77,17 +77,17 @@ $createdParam = isset($params['created_at']) ? $params['created_at'] : '';
                 ],
                 [
                     'attribute' => 'title',
-                    'value'     => function ($model) {
+                    'value' => function ($model) {
                         return $model->getShowTitle(70);
                     },
                 ],
                 // 'city_id',
                 [
                     'attribute' => 'city_id',
-                    'value'     => function ($model) {
+                    'value' => function ($model) {
                         return $model->city ? $model->city->name : null;
                     },
-                    'filter'    => ArrayHelper::map(\dungphanxuan\vnlocation\models\City::find()->all(), 'id', 'name')
+                    'filter' => ArrayHelper::map(\dungphanxuan\vnlocation\models\City::find()->all(), 'id', 'name')
                 ],
                 'district_id',
                 // 'ward_id',
@@ -115,47 +115,47 @@ $createdParam = isset($params['created_at']) ? $params['created_at'] : '';
                      'contentOptions' => ['style' => 'width:10%;text-align:center'],
                  ],*/
                 [
-                    'attribute'      => 'status',
-                    'format'         => 'raw',
-                    'filter'         => [
+                    'attribute' => 'status',
+                    'format' => 'raw',
+                    'filter' => [
                         1 => Yii::t('backend', 'Published'),
                         0 => Yii::t('backend', 'Not Published')
                     ],
-                    'value'          => function ($model) {
+                    'value' => function ($model) {
                         $options = [
                             'class' => ($model->status == 1) ? 'glyphicon glyphicon-ok text-success' : 'glyphicon glyphicon-remove text-danger',
                         ];
 
                         return Html::tag('p', Html::tag('span', '', $options), [
-                            'class'   => 'text-center sValue',
+                            'class' => 'text-center sValue',
                             'data-id' => $model->id
                         ]);
                     },
-                    'headerOptions'  => ['style' => 'text-align:center'],
+                    'headerOptions' => ['style' => 'text-align:center'],
                     'contentOptions' => ['style' => 'width:10%;text-align:center'],
                 ],
                 [
-                    'attribute'          => 'created_at',
-                    'format'             => 'date',
+                    'attribute' => 'created_at',
+                    'format' => 'date',
                     'filterInputOptions' => [
                         'class' => 'form-control',
                     ],
-                    'filter'             => \yii\jui\DatePicker::widget([
-                        'name'       => 'ProjectSearch[created_at]',
-                        'language'   => 'vi',
+                    'filter' => \yii\jui\DatePicker::widget([
+                        'name' => 'ProjectSearch[created_at]',
+                        'language' => 'vi',
                         'dateFormat' => 'yyyy-MM-dd',
-                        'value'      => $createdParam,
-                        'options'    => ['class' => 'form-control', 'placeholder' => 'Ngày tạo',],
+                        'value' => $createdParam,
+                        'options' => ['class' => 'form-control', 'placeholder' => 'Ngày tạo',],
 
                         'id' => 'ProjectSearch-time'
                     ]),
-                    'contentOptions'     => ['style' => 'width:12%'],
+                    'contentOptions' => ['style' => 'width:12%'],
                 ],
                 // 'updated_at',
 
                 [
-                    'class'          => 'backend\grid\ActionColumn',
-                    'template'       => '{update} {delete} {view}',
+                    'class' => 'backend\grid\ActionColumn',
+                    'template' => '{update} {delete} {view}',
                     'contentOptions' => ['style' => 'width:10%;text-align:center'],
                 ]
             ],

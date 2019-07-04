@@ -22,7 +22,7 @@ use yii\widgets\Menu;
             'options' => [
                 'class' => 'nav nav-pills nav-stacked',
             ],
-            'items'   => [
+            'items' => [
                 ['label' => Yii::t('backend', 'Account'), 'url' => ['/sign-in/account']],
                 ['label' => Yii::t('backend', 'Profile'), 'url' => ['/sign-in/profile']],
                 ['label' => Yii::t('backend', 'Setting'), 'url' => ['/site/otp-qr']],

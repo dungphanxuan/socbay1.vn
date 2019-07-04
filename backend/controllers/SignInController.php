@@ -25,7 +25,7 @@ class SignInController extends BackendController
     {
         return \yii\helpers\ArrayHelper::merge(parent::behaviors(), [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'logout' => ['post'],
                 ],
@@ -37,8 +37,8 @@ class SignInController extends BackendController
     {
         return [
             'avatar-upload' => [
-                'class'        => UploadAction::class,
-                'deleteRoute'  => 'avatar-delete',
+                'class' => UploadAction::class,
+                'deleteRoute' => 'avatar-delete',
                 'on afterSave' => function ($event) {
                     /* @var $file \League\Flysystem\File */
                     $file = $event->file;
@@ -62,7 +62,7 @@ class SignInController extends BackendController
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            Yii::warning('Login admin: '. $model->username, 'login');
+            Yii::warning('Login admin: ' . $model->username, 'login');
 
             return $this->goBack();
         } else {
@@ -85,7 +85,7 @@ class SignInController extends BackendController
         if ($model->load($_POST) && $model->save()) {
             Yii::$app->session->setFlash('alert', [
                 'options' => ['class' => 'alert-success'],
-                'body'    => Yii::t('backend', 'Your profile has been successfully saved', [], $model->locale)
+                'body' => Yii::t('backend', 'Your profile has been successfully saved', [], $model->locale)
             ]);
 
             return $this->refresh();
@@ -101,7 +101,7 @@ class SignInController extends BackendController
         if ($model->load($_POST) && $model->save()) {
             Yii::$app->session->setFlash('alert', [
                 'options' => ['class' => 'alert-success'],
-                'body'    => Yii::t('backend', 'Your profile has been successfully saved', [], $model->locale)
+                'body' => Yii::t('backend', 'Your profile has been successfully saved', [], $model->locale)
             ]);
 
             return $this->refresh();
@@ -126,7 +126,7 @@ class SignInController extends BackendController
             $user->save();
             Yii::$app->session->setFlash('alert', [
                 'options' => ['class' => 'alert-success'],
-                'body'    => Yii::t('backend', 'Your account has been successfully saved')
+                'body' => Yii::t('backend', 'Your account has been successfully saved')
             ]);
 
             return $this->refresh();

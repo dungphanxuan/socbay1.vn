@@ -24,7 +24,7 @@ class SmartTextValidator extends Validator
 
     /**
      * @param \yii\base\Model $model
-     * @param string          $attribute
+     * @param string $attribute
      */
     public function validateAttribute($model, $attribute)
     {
@@ -46,8 +46,8 @@ class SmartTextValidator extends Validator
 
     /**
      * @param \yii\base\Model $model
-     * @param string          $attribute
-     * @param \yii\web\View   $view
+     * @param string $attribute
+     * @param \yii\web\View $view
      * @return string
      */
     public function clientValidateAttribute($model, $attribute, $view)

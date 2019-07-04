@@ -52,9 +52,9 @@ class JobTypeSearch extends JobType
         }
 
         $query->andFilterWhere([
-            'id'          => $this->id,
-            'status'      => $this->status,
-            'type'        => $this->type,
+            'id' => $this->id,
+            'status' => $this->status,
+            'type' => $this->type,
             'sort_number' => $this->sort_number,
         ]);
 

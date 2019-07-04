@@ -93,20 +93,20 @@ class Company extends \yii\db\ActiveRecord
             TimestampBehavior::class,
             BlameableBehavior::class,
             [
-                'class'     => SluggableBehavior::class,
+                'class' => SluggableBehavior::class,
                 'attribute' => 'title',
                 'immutable' => true
             ],
             [
-                'class'            => UploadBehavior::class,
-                'attribute'        => 'thumbnail',
-                'pathAttribute'    => 'thumbnail_path',
+                'class' => UploadBehavior::class,
+                'attribute' => 'thumbnail',
+                'pathAttribute' => 'thumbnail_path',
                 'baseUrlAttribute' => 'thumbnail_base_url'
             ],
             [
-                'class'            => UploadBehavior::class,
-                'attribute'        => 'banner',
-                'pathAttribute'    => 'banner_path',
+                'class' => UploadBehavior::class,
+                'attribute' => 'banner',
+                'pathAttribute' => 'banner_path',
                 'baseUrlAttribute' => 'banner_base_url'
             ]
         ];
@@ -138,45 +138,45 @@ class Company extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'                 => 'ID',
-            'contact_id'         => 'Contact ID',
-            'slug'               => 'Slug',
-            'title'              => 'Tên công ty',
-            'title_en'           => 'Tên tiếng anh',
-            'title_short'        => 'Mô tả',
-            'body'               => 'Body',
-            'excerpt'            => 'Excerpt',
-            'view'               => 'View',
-            'url'                => 'Địa chỉ website',
-            'email'              => 'Email',
-            'phone'              => 'Số điện thoại',
-            'start_date'         => 'Start Date',
-            'end_date'           => 'End Date',
-            'complete_on'        => 'Complete On',
-            'city_id'            => 'City ID',
-            'district_id'        => 'District ID',
-            'ward_id'            => 'Ward ID',
-            'lat'                => 'Lat',
-            'lng'                => 'Lng',
-            'total_votes'        => 'Total Votes',
-            'up_votes'           => 'Up Votes',
-            'rating'             => 'Rating',
-            'featured'           => 'Featured',
-            'comment_count'      => 'Comment Count',
-            'view_count'         => 'View Count',
-            'sort_number'        => 'Sort Number',
-            'banner_base_url'    => 'Thumbnail Base Url',
-            'banner_path'        => 'Thumbnail Path',
+            'id' => 'ID',
+            'contact_id' => 'Contact ID',
+            'slug' => 'Slug',
+            'title' => 'Tên công ty',
+            'title_en' => 'Tên tiếng anh',
+            'title_short' => 'Mô tả',
+            'body' => 'Body',
+            'excerpt' => 'Excerpt',
+            'view' => 'View',
+            'url' => 'Địa chỉ website',
+            'email' => 'Email',
+            'phone' => 'Số điện thoại',
+            'start_date' => 'Start Date',
+            'end_date' => 'End Date',
+            'complete_on' => 'Complete On',
+            'city_id' => 'City ID',
+            'district_id' => 'District ID',
+            'ward_id' => 'Ward ID',
+            'lat' => 'Lat',
+            'lng' => 'Lng',
+            'total_votes' => 'Total Votes',
+            'up_votes' => 'Up Votes',
+            'rating' => 'Rating',
+            'featured' => 'Featured',
+            'comment_count' => 'Comment Count',
+            'view_count' => 'View Count',
+            'sort_number' => 'Sort Number',
+            'banner_base_url' => 'Thumbnail Base Url',
+            'banner_path' => 'Thumbnail Path',
             'thumbnail_base_url' => 'Thumbnail Base Url',
-            'thumbnail_path'     => 'Thumbnail Path',
-            'thumbnail'          => 'Ảnh Thumbnail',
-            'type'               => 'Type',
-            'status'             => 'Trạng thái',
-            'created_by'         => 'Created By',
-            'updated_by'         => 'Updated By',
-            'published_at'       => 'Published At',
-            'created_at'         => 'Created At',
-            'updated_at'         => 'Updated At',
+            'thumbnail_path' => 'Thumbnail Path',
+            'thumbnail' => 'Ảnh Thumbnail',
+            'type' => 'Type',
+            'status' => 'Trạng thái',
+            'created_by' => 'Created By',
+            'updated_by' => 'Updated By',
+            'published_at' => 'Published At',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
         ];
     }
 
@@ -212,6 +212,7 @@ class Company extends \yii\db\ActiveRecord
         return $this->hasMany(ArticleDetail::class, ['job_company_id' => 'id'])
             ->count();
     }
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -258,7 +259,7 @@ class Company extends \yii\db\ActiveRecord
                 $signConfig = [
                     'glide/index',
                     'path' => $path,
-                    'fit'  => 'crop'
+                    'fit' => 'crop'
                 ];
                 if ($w) {
                     $signConfig['w'] = $w;
@@ -272,9 +273,9 @@ class Company extends \yii\db\ActiveRecord
                 $signConfig = [
                     'glide/index',
                     'path' => $path,
-                    'w'    => '480',
-                    'h'    => '240',
-                    'fit'  => 'crop'
+                    'w' => '480',
+                    'h' => '240',
+                    'fit' => 'crop'
                 ];
 
                 $url = Yii::$app->glide->createSignedUrl($signConfig);

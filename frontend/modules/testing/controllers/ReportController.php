@@ -38,9 +38,9 @@ class ReportController extends Controller
 // evaluated to replace the Word template variable. If the value is an
 // array, it will treated as tabular data.
         $report->templateVariables = [
-            'client_name'  => 'Socbay Ads',
+            'client_name' => 'Socbay Ads',
             'client_title' => 'Rao vặt số 1 Socbay',
-            'company'      => 'Real Estate',
+            'company' => 'Real Estate',
 
         ];
 
@@ -65,10 +65,10 @@ class ReportController extends Controller
         $pr->setOutputFileName('My_Generated_Report.pdf');
         $pr->setTemplateVariables(
             array(
-                'company'       => 'Armut Inc.',
-                'client_name'   => 'Armut Inc.',
+                'company' => 'Armut Inc.',
+                'client_name' => 'Armut Inc.',
                 'email_address' => 'murat.cileli@gmail.com',
-                'products'      => array('Computer', 'Smart Phone', 'Book')
+                'products' => array('Computer', 'Smart Phone', 'Book')
             ));
 
         $pr->generateReport();

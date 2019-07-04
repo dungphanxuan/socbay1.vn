@@ -23,16 +23,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php echo GridView::widget([
         'dataProvider' => $dataProvider,
-        'columns'      => [
+        'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
             'name',
             [
-                'class'     => EnumColumn::class,
+                'class' => EnumColumn::class,
                 'attribute' => 'type',
-                'format'    => 'raw',
-                'enum'      => [
-                    Item::TYPE_ROLE       => 'role',
+                'format' => 'raw',
+                'enum' => [
+                    Item::TYPE_ROLE => 'role',
                     Item::TYPE_PERMISSION => 'permission',
                 ]
             ],

@@ -14,7 +14,7 @@ use yii\helpers\Url;
 ?>
 <?php $this->beginContent('@app/notifications/views/_layout.html.php', [
     'model' => $extension,
-    'user'  => $user,
+    'user' => $user,
     'title' => "Yii extension updated: : {$extension->name}",
 ]) ?>
 <p>

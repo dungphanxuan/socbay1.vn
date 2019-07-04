@@ -21,12 +21,12 @@ class NotificationController extends ApiController
 
         $behaviors['access'] = [
             'class' => AccessControl::class,
-            'only'  => ['user'],
+            'only' => ['user'],
             'rules' => [
                 [
-                    'allow'   => true,
+                    'allow' => true,
                     'actions' => ['user'],
-                    'roles'   => ['@'],
+                    'roles' => ['@'],
                 ]
             ],
         ];

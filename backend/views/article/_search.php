@@ -33,15 +33,15 @@ use yii\helpers\Html;
         <div class="col-sm-4">
             <?php echo $form->field($model, 'created_at')->widget(
                 'trntv\yii\datetime\DateTimeWidget', [
-                'phpDatetimeFormat'    => 'dd.MM.yyyy',
+                'phpDatetimeFormat' => 'dd.MM.yyyy',
                 'momentDatetimeFormat' => 'DD.MM.YYYY',
-                'clientOptions'        => [
-                    'minDate'           => new \yii\web\JsExpression('new Date("2018-01-01")'),
-                    'allowInputToggle'  => true,
-                    'sideBySide'        => true,
+                'clientOptions' => [
+                    'minDate' => new \yii\web\JsExpression('new Date("2018-01-01")'),
+                    'allowInputToggle' => true,
+                    'sideBySide' => true,
                     'widgetPositioning' => [
                         'horizontal' => 'auto',
-                        'vertical'   => 'auto'
+                        'vertical' => 'auto'
                     ]
                 ]
             ]); ?>
@@ -53,12 +53,12 @@ use yii\helpers\Html;
         <div class="col-sm-4">
             <?php
             echo $form->field($model, 'category_id')->widget(Select2::class, [
-                'data'          => ArrayHelper::map(
+                'data' => ArrayHelper::map(
                     $categories,
                     'id',
                     'title'
                 ),
-                'options'       => ['placeholder' => Yii::t('common', 'Category') . '...'],
+                'options' => ['placeholder' => Yii::t('common', 'Category') . '...'],
                 'pluginOptions' => [
                     'allowClear' => true
                 ],

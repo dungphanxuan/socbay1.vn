@@ -23,7 +23,7 @@ class UserController extends BackendController
     {
         return \yii\helpers\ArrayHelper::merge(parent::behaviors(), [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['post'],
                 ],
@@ -46,7 +46,7 @@ class UserController extends BackendController
         $dataProvider->pagination->pageSize = 50;
 
         return $this->render('index', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -68,7 +68,7 @@ class UserController extends BackendController
 
 
         return $this->render('view', [
-            'model'      => $this->findModel($id),
+            'model' => $this->findModel($id),
             'tokenModel' => $tokenModel,
         ]);
     }
@@ -164,7 +164,7 @@ class UserController extends BackendController
             $passWord = Password::generateStrongPassword($getLength);
 
             $res = array(
-                'body'    => $passWord,
+                'body' => $passWord,
                 'success' => true,
             );
 
@@ -199,19 +199,19 @@ class UserController extends BackendController
             $fromDate = strtotime("+1 day", $fromDate);
         }
         $arrDataset[] = [
-            'label'                => 'Thống kê User',
-            'backgroundColor'      => "rgba(255,99,132,0.2)",
-            'borderColor'          => "rgba(255,99,132,1)",
+            'label' => 'Thống kê User',
+            'backgroundColor' => "rgba(255,99,132,0.2)",
+            'borderColor' => "rgba(255,99,132,1)",
             'pointBackgroundColor' => "rgba(255,99,132,1)",
-            'fill'                 => false,
-            'data'                 => $dataDate,
+            'fill' => false,
+            'data' => $dataDate,
         ];
 
         return $this->render('chart', [
-            'dateRange'  => $dateRange,
-            'arrLabel'   => $arrLabel,
+            'dateRange' => $dateRange,
+            'arrLabel' => $arrLabel,
             'arrDataset' => $arrDataset,
-            'total'      => $total
+            'total' => $total
         ]);
     }
 

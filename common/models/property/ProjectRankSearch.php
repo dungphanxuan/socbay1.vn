@@ -50,7 +50,7 @@ class ProjectRankSearch extends ProjectRank
         }
 
         $query->andFilterWhere([
-            'id'          => $this->id,
+            'id' => $this->id,
             'sort_number' => $this->sort_number,
         ]);
 

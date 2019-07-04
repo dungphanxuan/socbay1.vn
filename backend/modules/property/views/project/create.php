@@ -18,14 +18,14 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="project-create">
 
     <?php echo $this->render('_form', [
-        'model'        => $model,
-        'categories'   => $categories,
-        'prices'       => $prices,
-        'areas'        => $areas,
-        'ranks'        => $ranks,
-        'cities'       => $cities,
+        'model' => $model,
+        'categories' => $categories,
+        'prices' => $prices,
+        'areas' => $areas,
+        'ranks' => $ranks,
+        'cities' => $cities,
         'dataDistrict' => $dataDistrict,
-        'dataWard'     => $dataWard,
+        'dataWard' => $dataWard,
     ]) ?>
 
 </div>

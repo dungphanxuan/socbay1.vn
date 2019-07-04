@@ -44,11 +44,11 @@ class WebLogSearch extends WebLog
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
-            'query'      => $query,
+            'query' => $query,
             'pagination' => [
                 'pageSize' => 50,
             ],
-            'sort'       => [
+            'sort' => [
                 'defaultOrder' => ['id' => SORT_DESC]
             ]
         ]);
@@ -63,7 +63,7 @@ class WebLogSearch extends WebLog
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id'   => $this->id,
+            'id' => $this->id,
             //'time' => $this->time,
             'type' => $this->type,
         ]);

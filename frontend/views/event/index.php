@@ -16,7 +16,7 @@ use yii\helpers\Html;
 /* @var $dataEventProvider \yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('ads', 'Events');
-$imgUrl = baseUrl() . '/frontend/web/theme/images/house/1.jpg';
+$imgUrl = baseUrl() . '/frontend/web/classified/images/house/1.jpg';
 $bundle = AdsAsset::register($this);
 ?>
     <div class="intro-modern">
@@ -270,7 +270,8 @@ $bundle = AdsAsset::register($this);
                 ?>
 
                 <div class="load-more  col-lg-12 text-center">
-                    <a class="btn btn-default btn-wide btn-more " href="<?php echo Url::to(['/ads/index', 'cslug' => $modelEventCat->slug]) ?>">
+                    <a class="btn btn-default btn-wide btn-more "
+                       href="<?php echo Url::to(['/ads/index', 'cslug' => $modelEventCat->slug]) ?>">
                         <i class="fas fa-plus"></i> Load More
                     </a>
                 </div>

@@ -24,35 +24,35 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?php echo GridView::widget([
             'dataProvider' => $dataProvider,
-            'filterModel'  => $searchModel,
-            'columns'      => [
+            'filterModel' => $searchModel,
+            'columns' => [
 
                 ['class' => 'yii\grid\SerialColumn'],
                 [
-                    'class'          => 'yii\grid\CheckboxColumn',
-                    'headerOptions'  => ['style' => 'width:3%;text-align:center'],
+                    'class' => 'yii\grid\CheckboxColumn',
+                    'headerOptions' => ['style' => 'width:3%;text-align:center'],
                     'contentOptions' => ['style' => 'width:3%;text-align:center'],
                 ],
                 [
-                    'attribute'      => 'id',
-                    'format'         => 'raw',
-                    'headerOptions'  => ['style' => 'text-align:center'],
+                    'attribute' => 'id',
+                    'format' => 'raw',
+                    'headerOptions' => ['style' => 'text-align:center'],
                     'contentOptions' => ['style' => 'width:10%;text-align:center'],
                 ],
                 'key',
                 'title',
                 [
-                    'class'     => \common\grid\EnumColumn::class,
+                    'class' => \common\grid\EnumColumn::class,
                     'attribute' => 'status',
-                    'format'    => 'raw',
-                    'enum'      => [
+                    'format' => 'raw',
+                    'enum' => [
                         Yii::t('backend', 'Disabled'),
                         Yii::t('backend', 'Enabled')
                     ],
                 ],
 
                 [
-                    'class'    => 'backend\grid\ActionColumn',
+                    'class' => 'backend\grid\ActionColumn',
                     'template' => '{update}{delete}'
                 ],
             ],

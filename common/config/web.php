@@ -2,13 +2,13 @@
 $config = [
     'components' => [
         'assetManager' => [
-            'class'           => 'yii\web\AssetManager',
-            'linkAssets'      => env('LINK_ASSETS'),
+            'class' => 'yii\web\AssetManager',
+            'linkAssets' => env('LINK_ASSETS'),
             'appendTimestamp' => YII_ENV_DEV
         ]
     ],
-    'as locale'  => [
-        'class'                   => 'common\behaviors\LocaleBehavior',
+    'as locale' => [
+        'class' => 'common\behaviors\LocaleBehavior',
         'enablePreferredLanguage' => true
     ]
 ];
@@ -16,7 +16,7 @@ $config = [
 if (YII_DEBUG) {
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
-        'class'      => yii\debug\Module::class,
+        'class' => yii\debug\Module::class,
         //'allowedIPs' => ['*'],
         'allowedIPs' => ['127.0.0.1', '::1', '192.168.33.1', '172.17.42.1', '172.17.0.1', '192.168.99.1', '27.72.100.105', '10.128.0.2'],
     ];

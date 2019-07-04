@@ -18,7 +18,7 @@ $bundle = AdsAsset::register($this);
 <div class="intro-inner">
     <div class="about-intro" style="
             background:url(<?php echo $this->assetManager->getAssetUrl($bundle, 'images/bg2.jpg') ?>) no-repeat center;
-	background-size:cover;">
+            background-size:cover;">
 
         <div class="dtable hw100">
             <div class="dtable-cell hw100">

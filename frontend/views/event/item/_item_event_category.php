@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Url;
+
 /**
  * Created by PhpStorm.
  * User: pxdung
@@ -15,7 +16,8 @@ use yii\helpers\Url;
     <div class="card card-event info-overlay overlay-visible card-category">
         <div class="img has-background"
              style="background-image: url(<?php echo $this->assetManager->getAssetUrl($bundle, 'images/events/category/1.jpg') ?>); background-size:cover ">
-            <a href="<?php echo Url::to(['/ads/view', 'id' => $model->id, 'name' => $model->slug]) ?>" class="event-pop-link">
+            <a href="<?php echo Url::to(['/ads/view', 'id' => $model->id, 'name' => $model->slug]) ?>"
+               class="event-pop-link">
 
 
                 <div class="event-pop-info">

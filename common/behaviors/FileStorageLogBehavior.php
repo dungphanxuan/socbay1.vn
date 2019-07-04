@@ -23,7 +23,7 @@ class FileStorageLogBehavior extends Behavior
     public function events()
     {
         return [
-            Storage::EVENT_AFTER_SAVE   => 'afterSave',
+            Storage::EVENT_AFTER_SAVE => 'afterSave',
             Storage::EVENT_AFTER_DELETE => 'afterDelete'
         ];
     }
@@ -51,7 +51,7 @@ class FileStorageLogBehavior extends Behavior
         $isManager = Yii::$app->user->can('manager');
         if ($isCheck && !$isManager) {
             Yii::$app->queue->push(new CloudVisionJob([
-                'type'            => VisionJob::FILE,
+                'type' => VisionJob::FILE,
                 'file_storage_id' => $model->id
             ]));
         }
@@ -65,7 +65,7 @@ class FileStorageLogBehavior extends Behavior
     {
         FileStorageItem::deleteAll([
             'component' => $this->component,
-            'path'      => $event->path
+            'path' => $event->path
         ]);
     }
 

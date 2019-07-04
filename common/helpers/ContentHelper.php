@@ -165,7 +165,7 @@ class ContentHelper
                 $item['thumbnail'] = Yii::$app->glide->createSignedUrl([
                     'glide/index',
                     'path' => $model->image_path,
-                    'q'    => 75
+                    'q' => 75
                 ]);
 
                 if (env('IS_HTTPS')) {

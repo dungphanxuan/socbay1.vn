@@ -18,7 +18,7 @@ class Gender
     public static function all()
     {
         return [
-            self::MALE   => Yii::t('common', 'Male'),
+            self::MALE => Yii::t('common', 'Male'),
             self::FEMALE => Yii::t('common', 'Female'),
         ];
     }

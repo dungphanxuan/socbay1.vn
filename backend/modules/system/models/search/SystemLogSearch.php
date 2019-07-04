@@ -48,10 +48,10 @@ class SystemLogSearch extends SystemLog
         }
 
         $query->andFilterWhere([
-            'id'       => $this->id,
-            'level'    => $this->level,
+            'id' => $this->id,
+            'level' => $this->level,
             'log_time' => $this->log_time,
-            'message'  => $this->message,
+            'message' => $this->message,
         ]);
 
         $query->andFilterWhere(['like', 'category', $this->category])

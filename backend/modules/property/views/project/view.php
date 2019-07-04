@@ -22,9 +22,9 @@ $frontendProjectUrl = Yii::$app->urlManagerFrontend->createAbsoluteUrl(['/proper
                 <?php echo Html::a('Delete',
                     ['delete', 'id' => $model->id], [
                         'class' => 'btn btn-danger',
-                        'data'  => [
+                        'data' => [
                             'confirm' => 'Are you sure you want to delete this item?',
-                            'method'  => 'post',
+                            'method' => 'post',
                         ],
                     ]) ?>
             </p>
@@ -38,7 +38,7 @@ $frontendProjectUrl = Yii::$app->urlManagerFrontend->createAbsoluteUrl(['/proper
 
 
     <?php echo DetailView::widget([
-        'model'      => $model,
+        'model' => $model,
         'attributes' => [
             'id',
             'type',

@@ -26,7 +26,7 @@ class TimelineEventController extends BackendController
         ];
 
         return $this->render('index', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -35,7 +35,7 @@ class TimelineEventController extends BackendController
     {
         TimelineEvent::deleteAll();
         Yii::$app->getSession()->setFlash('alert', [
-            'body'    => 'Xóa dữ liệu thành công',
+            'body' => 'Xóa dữ liệu thành công',
             'options' => ['class' => 'alert-success']
         ]);
 

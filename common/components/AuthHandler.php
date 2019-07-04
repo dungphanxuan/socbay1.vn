@@ -48,7 +48,7 @@ class AuthHandler
 
         /** @var Auth $auth */
         $auth = Auth::find()->where([
-            'source'    => $this->client->getId(),
+            'source' => $this->client->getId(),
             'source_id' => $id,
         ])->one();
 
@@ -92,9 +92,9 @@ class AuthHandler
 
                     if ($user->save()) {
                         $auth = new Auth([
-                            'user_id'      => $user->id,
-                            'source'       => $this->client->getId(),
-                            'source_id'    => (string)$id,
+                            'user_id' => $user->id,
+                            'source' => $this->client->getId(),
+                            'source_id' => (string)$id,
                             'source_login' => (string)$login,
                         ]);
                         if ($auth->save()) {
@@ -121,9 +121,9 @@ class AuthHandler
         } else { // user already logged in
             if (!$auth) { // add auth provider
                 $auth = new Auth([
-                    'user_id'      => Yii::$app->user->id,
-                    'source'       => $this->client->getId(),
-                    'source_id'    => (string)$id,
+                    'user_id' => Yii::$app->user->id,
+                    'source' => $this->client->getId(),
+                    'source_id' => (string)$id,
                     'source_login' => $login,
                 ]);
                 if ($auth->save()) {

@@ -25,7 +25,8 @@ $bannerUrl = baseUrl() . '/frontend/web/images/banner/banner-ads.jpg';
 $bundle = AdsAsset::register($this);
 $totalAds = ArticleData::getTotal(1, $category_id);
 ?>
-    <div class="search-row-wrapper" style="background-image: url(<?php echo $this->assetManager->getAssetUrl($bundle, 'images/bg.jpg') ?>)">
+    <div class="search-row-wrapper"
+         style="background-image: url(<?php echo $this->assetManager->getAssetUrl($bundle, 'images/bg.jpg') ?>)">
         <div class="container">
             <?php echo $this->render('_search', []); ?>
         </div>
@@ -50,7 +51,7 @@ $totalAds = ArticleData::getTotal(1, $category_id);
                 <div class="col-md-9 page-content col-thin-left">
 
                     <?php Pjax::begin([
-                        'id'       => 'allAds',
+                        'id' => 'allAds',
                         'scrollTo' => 0
                     ]) ?>
                     <div class="category-list">
@@ -121,14 +122,14 @@ $totalAds = ArticleData::getTotal(1, $category_id);
                         <?php echo ListView::widget([
                             'dataProvider' => $dataProvider,
                             //'summary'      => '',
-                            'layout'       => '{summary}{items}',
-                            'itemView'     => '_item',
-                            'options'      => [
-                                'tag'   => 'div',
-                                'id'    => 'w5',
+                            'layout' => '{summary}{items}',
+                            'itemView' => '_item',
+                            'options' => [
+                                'tag' => 'div',
+                                'id' => 'w5',
                                 'class' => 'adds-wrapper',
                             ],
-                            'itemOptions'  => [
+                            'itemOptions' => [
                                 'tag' => false,
                             ]
                         ]) ?>

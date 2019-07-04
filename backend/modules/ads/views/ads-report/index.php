@@ -33,35 +33,35 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php Pjax::begin(['id' => 'datas', 'timeout' => 3000]); ?>
         <?php echo GridView::widget([
             'dataProvider' => $dataProvider,
-            'filterModel'  => $searchModel,
-            'options'      => [
+            'filterModel' => $searchModel,
+            'options' => [
                 'class' => 'grid-view table-responsive',
-                'id'    => 'w5'
+                'id' => 'w5'
             ],
-            'pager'        => [
+            'pager' => [
                 'maxButtonCount' => 15,
             ],
-            'columns'      => [
+            'columns' => [
                 [
-                    'class'           => 'yii\grid\CheckboxColumn',
-                    'headerOptions'   => ['style' => 'width:3%;text-align:center'],
-                    'contentOptions'  => ['style' => 'width:3%;text-align:center'],
+                    'class' => 'yii\grid\CheckboxColumn',
+                    'headerOptions' => ['style' => 'width:3%;text-align:center'],
+                    'contentOptions' => ['style' => 'width:3%;text-align:center'],
                     'checkboxOptions' => [
                         'class' => 'select-item'
                     ]
                 ],
                 [
-                    'attribute'      => 'id',
-                    'format'         => 'raw',
-                    'headerOptions'  => ['style' => 'text-align:center'],
+                    'attribute' => 'id',
+                    'format' => 'raw',
+                    'headerOptions' => ['style' => 'text-align:center'],
                     'contentOptions' => ['style' => 'width:10%;text-align:center'],
                 ],
                 [
                     'attribute' => 'reason_id',
-                    'value'     => function ($model) {
+                    'value' => function ($model) {
                         return $model->reason ? $model->reason->title : null;
                     },
-                    'filter'    => \yii\helpers\ArrayHelper::map(\common\models\ads\ReportReason::find()->all(), 'id', 'title')
+                    'filter' => \yii\helpers\ArrayHelper::map(\common\models\ads\ReportReason::find()->all(), 'id', 'title')
                 ],
                 //'slug',
                 'title',
@@ -74,10 +74,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 // 'thumbnail_base_url:url',
                 // 'thumbnail_path',
                 [
-                    'class'     => \common\grid\EnumColumn::class,
+                    'class' => \common\grid\EnumColumn::class,
                     'attribute' => 'status',
-                    'format'    => 'raw',
-                    'enum'      => [
+                    'format' => 'raw',
+                    'enum' => [
                         Yii::t('backend', 'Not Published'),
                         Yii::t('backend', 'Published')
                     ]
@@ -87,22 +87,22 @@ $this->params['breadcrumbs'][] = $this->title;
                 // 'created_by',
                 [
                     'attribute' => 'created_at',
-                    'format'    => 'datetime',
-                    'filter'    => DateTimeWidget::widget([
-                        'model'                => $searchModel,
-                        'attribute'            => 'created_at',
-                        'phpDatetimeFormat'    => 'dd.MM.yyyy',
+                    'format' => 'datetime',
+                    'filter' => DateTimeWidget::widget([
+                        'model' => $searchModel,
+                        'attribute' => 'created_at',
+                        'phpDatetimeFormat' => 'dd.MM.yyyy',
                         'momentDatetimeFormat' => 'DD.MM.YYYY',
-                        'clientEvents'         => [
+                        'clientEvents' => [
                             'dp.change' => new JsExpression('(e) => $(e.target).find("input").trigger("change.yiiGridView")')
                         ],
-                        'clientOptions'        => [
-                            'minDate'           => new \yii\web\JsExpression('new Date("2018-01-01")'),
-                            'allowInputToggle'  => false,
-                            'sideBySide'        => true,
+                        'clientOptions' => [
+                            'minDate' => new \yii\web\JsExpression('new Date("2018-01-01")'),
+                            'allowInputToggle' => false,
+                            'sideBySide' => true,
                             'widgetPositioning' => [
                                 'horizontal' => 'auto',
-                                'vertical'   => 'auto'
+                                'vertical' => 'auto'
                             ]
                         ]
                     ])

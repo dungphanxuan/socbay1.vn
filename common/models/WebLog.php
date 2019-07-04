@@ -8,10 +8,10 @@ use yii\behaviors\TimestampBehavior;
  * This is the model class for table "{{%log}}".
  *
  * @property integer $id
- * @property string  $user_id
- * @property string  $user_ip
- * @property string  $action
- * @property string  $url
+ * @property string $user_id
+ * @property string $user_ip
+ * @property string $action
+ * @property string $url
  * @property integer $time
  * @property integer $type
  * @property integer $execute_time
@@ -30,7 +30,7 @@ class WebLog extends \yii\db\ActiveRecord
     {
         return [
             [
-                'class'              => TimestampBehavior::class,
+                'class' => TimestampBehavior::class,
                 'createdAtAttribute' => 'time',
                 'updatedAtAttribute' => 'time',
             ],
@@ -56,12 +56,12 @@ class WebLog extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'      => 'ID',
+            'id' => 'ID',
             'user_ip' => 'IP',
-            'action'  => 'Hành động',
-            'url'     => 'Url',
-            'time'    => 'Thời gian',
-            'type'    => 'Loại',
+            'action' => 'Hành động',
+            'url' => 'Url',
+            'time' => 'Thời gian',
+            'type' => 'Loại',
         ];
     }
 }

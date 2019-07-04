@@ -1,8 +1,8 @@
 <?php
 return [
-    'class'           => yii\web\UrlManager::class,
+    'class' => yii\web\UrlManager::class,
     'enablePrettyUrl' => true,
-    'showScriptName'  => false,
+    'showScriptName' => false,
     'rules' => [
         //'http://localhost:7000/upload' => '/cloud-upload',
     ]

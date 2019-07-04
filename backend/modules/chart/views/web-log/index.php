@@ -23,9 +23,9 @@ $searchParams = getParam('WebLogSearch');
             <?php echo Html::a('Thống kê', ['chart'], ['class' => 'btn btn-success btn-block']) ?>
             <?php echo Html::a('Clear', ['delete-all'], [
                 'class' => 'btn btn-warning btn-block',
-                'data'  => [
+                'data' => [
                     'confirm' => "Are you sure you want to delete log?",
-                    'method'  => 'post',
+                    'method' => 'post',
                 ],
             ]) ?>
         </div>
@@ -34,70 +34,70 @@ $searchParams = getParam('WebLogSearch');
     <?php Pjax::begin(['id' => 'datas', 'timeout' => 3000, 'scrollTo' => 0]); ?>
     <?php echo GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel'  => $searchModel,
-        'options'      => ['class' => 'grid-view table-responsive'],
+        'filterModel' => $searchModel,
+        'options' => ['class' => 'grid-view table-responsive'],
         'tableOptions' => [
             'class' => 'table table-striped table-bordered table-hover'
         ],
-        'columns'      => [
+        'columns' => [
             [
-                'attribute'          => 'id',
-                'headerOptions'      => ['style' => 'text-align:center'],
-                'contentOptions'     => ['style' => 'width:10%;text-align:center'],
+                'attribute' => 'id',
+                'headerOptions' => ['style' => 'text-align:center'],
+                'contentOptions' => ['style' => 'width:10%;text-align:center'],
                 'filterInputOptions' => [
                     'class' => 'form-control',
                 ]
             ],
             [
-                'attribute'          => 'type',
+                'attribute' => 'type',
                 'filterInputOptions' => [
                     'class' => 'form-control',
                 ],
-                'value'              => function ($model) {
+                'value' => function ($model) {
                     if ($model->type == 1) {
                         return 'Backend';
                     }
 
                     return 'Frontend';
                 },
-                'filter'             => [1 => 'Backend', 2 => 'Frontend']
+                'filter' => [1 => 'Backend', 2 => 'Frontend']
             ],
             [
-                'attribute'          => 'user_ip',
+                'attribute' => 'user_ip',
                 'filterInputOptions' => [
                     'class' => 'form-control',
                 ]
             ],
             [
-                'attribute'          => 'action',
+                'attribute' => 'action',
                 'filterInputOptions' => [
                     'class' => 'form-control',
                 ]
             ],
             [
                 'attribute' => 'execute_time',
-                'value'     => function ($model) {
+                'value' => function ($model) {
                     return $model->execute_time * 1000;
                 },
             ],
             [
-                'attribute'          => 'time',
-                'format'             => 'datetime',
+                'attribute' => 'time',
+                'format' => 'datetime',
                 'filterInputOptions' => [
                     'class' => 'form-control',
                 ],
-                'filter'             => \yii\jui\DatePicker::widget([
-                    'name'       => 'WebLogSearch[time]',
-                    'language'   => 'vi',
+                'filter' => \yii\jui\DatePicker::widget([
+                    'name' => 'WebLogSearch[time]',
+                    'language' => 'vi',
                     'dateFormat' => 'yyyy-MM-dd',
-                    'value'      => $searchParams['time'],
-                    'options'    => ['class' => 'form-control', 'placeholder' => 'Log Time',],
+                    'value' => $searchParams['time'],
+                    'options' => ['class' => 'form-control', 'placeholder' => 'Log Time',],
 
                     'id' => 'weblogsearch-time'
                 ]),
             ],
             [
-                'class'    => 'backend\grid\ActionColumn',
+                'class' => 'backend\grid\ActionColumn',
                 'template' => '{view}{update}{delete}',
             ]
         ],

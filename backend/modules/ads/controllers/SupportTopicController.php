@@ -19,7 +19,7 @@ class SupportTopicController extends Controller
     {
         return [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['post'],
                 ],
@@ -37,7 +37,7 @@ class SupportTopicController extends Controller
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -67,7 +67,7 @@ class SupportTopicController extends Controller
             return $this->redirect(['index']);
         } else {
             return $this->render('create', [
-                'model'      => $model,
+                'model' => $model,
                 'categories' => SupportTopicCategory::find()->all(),
 
             ]);
@@ -88,7 +88,7 @@ class SupportTopicController extends Controller
             return $this->redirect(['index']);
         } else {
             return $this->render('update', [
-                'model'      => $model,
+                'model' => $model,
                 'categories' => SupportTopicCategory::find()->all(),
 
             ]);

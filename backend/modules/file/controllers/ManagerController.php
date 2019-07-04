@@ -1,13 +1,16 @@
 <?php
 
 namespace backend\modules\file\controllers;
+
 use alexantr\elfinder\ConnectorAction;
 use Yii;
 use yii\web\Controller;
+
 class ManagerController extends Controller
 {
     /** @var string */
     public $layout = '//clear';
+
     /**
      * @return array
      */
@@ -25,7 +28,7 @@ class ManagerController extends Controller
                         [
                             'driver' => 'LocalFileSystem',
                             'path' => Yii::getAlias('@storage/web/source'),
-                            'URL' => Yii::getAlias('@storageUrl'). '/web/source',
+                            'URL' => Yii::getAlias('@storageUrl') . '/web/source',
                             'uploadDeny' => [
                                 'text/x-php', 'text/php', 'application/x-php', 'application/php'
                             ],
@@ -35,6 +38,7 @@ class ManagerController extends Controller
             ]
         ];
     }
+
     /**
      * @return mixed
      */

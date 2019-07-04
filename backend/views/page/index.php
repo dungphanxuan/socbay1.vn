@@ -26,39 +26,39 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?php echo GridView::widget([
             'dataProvider' => $dataProvider,
-            'filterModel'  => $searchModel,
-            'options'      => [
+            'filterModel' => $searchModel,
+            'options' => [
                 'class' => 'grid-view table-responsive'
             ],
-            'layout'       => "{summary}\n{items}\n<div align='center'>{pager}</div>",
-            'columns'      => [
+            'layout' => "{summary}\n{items}\n<div align='center'>{pager}</div>",
+            'columns' => [
                 [
-                    'class'          => 'yii\grid\CheckboxColumn',
-                    'headerOptions'  => ['style' => 'width:3%;text-align:center'],
+                    'class' => 'yii\grid\CheckboxColumn',
+                    'headerOptions' => ['style' => 'width:3%;text-align:center'],
                     'contentOptions' => ['style' => 'width:3%;text-align:center'],
                 ],
                 [
-                    'attribute'      => 'id',
-                    'format'         => 'raw',
-                    'headerOptions'  => ['style' => 'text-align:center'],
+                    'attribute' => 'id',
+                    'format' => 'raw',
+                    'headerOptions' => ['style' => 'text-align:center'],
                     'contentOptions' => ['style' => 'width:7%;text-align:center'],
                 ],
                 'title',
                 'slug',
                 [
-                    'class'     => \common\grid\EnumColumn::class,
+                    'class' => \common\grid\EnumColumn::class,
                     'attribute' => 'status',
-                    'format'    => 'raw',
-                    'enum'      => [
+                    'format' => 'raw',
+                    'enum' => [
                         Yii::t('backend', 'Not Published'),
                         Yii::t('backend', 'Published')
                     ]
                 ],
 
                 [
-                    'class'    => 'backend\grid\ActionColumn',
+                    'class' => 'backend\grid\ActionColumn',
                     'template' => '{view} {update} {delete}',
-                    'buttons'  => [
+                    'buttons' => [
                         'view' => function ($url) {
                             return Html::a(
                                 '<i class="fa fa-eye" aria-hidden="true"></i>',

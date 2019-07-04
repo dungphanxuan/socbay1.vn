@@ -63,13 +63,13 @@ class RbacAuthItem extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'name'        => Yii::t('backend', 'Name'),
-            'type'        => Yii::t('backend', 'Type'),
+            'name' => Yii::t('backend', 'Name'),
+            'type' => Yii::t('backend', 'Type'),
             'description' => Yii::t('backend', 'Description'),
-            'rule_name'   => Yii::t('backend', 'Rule Name'),
-            'data'        => Yii::t('backend', 'Data'),
-            'created_at'  => Yii::t('backend', 'Created At'),
-            'updated_at'  => Yii::t('backend', 'Updated At'),
+            'rule_name' => Yii::t('backend', 'Rule Name'),
+            'data' => Yii::t('backend', 'Data'),
+            'created_at' => Yii::t('backend', 'Created At'),
+            'updated_at' => Yii::t('backend', 'Updated At'),
         ];
     }
 

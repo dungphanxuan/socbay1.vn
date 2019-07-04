@@ -29,7 +29,7 @@ class ArticleCategoryQuery extends ActiveQuery
     public function rootCategory()
     {
         $this->andWhere([
-            'status'    => ArticleCategory::STATUS_ACTIVE,
+            'status' => ArticleCategory::STATUS_ACTIVE,
             'parent_id' => null
         ]);
 

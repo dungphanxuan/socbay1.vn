@@ -26,15 +26,15 @@ class FileStorageController extends ApiController
     public function behaviors()
     {
         return \yii\helpers\ArrayHelper::merge(parent::behaviors(), [
-            'verbs'         => [
-                'class'   => VerbFilter::class,
+            'verbs' => [
+                'class' => VerbFilter::class,
                 'actions' => [
-                    'delete'        => ['post'],
+                    'delete' => ['post'],
                     'upload-delete' => ['delete'],
                 ],
             ],
             'authenticator' => [
-                'class'  => AccessTokenAuth::class,
+                'class' => AccessTokenAuth::class,
                 'except' => ['index', 'view'],
             ]
         ]);
@@ -44,16 +44,16 @@ class FileStorageController extends ApiController
     public function actions()
     {
         return [
-            'upload'        => [
-                'class'       => \trntv\filekit\actions\UploadAction::class,
+            'upload' => [
+                'class' => \trntv\filekit\actions\UploadAction::class,
                 'deleteRoute' => 'upload-delete'
             ],
             'upload-delete' => [
                 'class' => 'trntv\filekit\actions\DeleteAction'
             ],
-            'thumb-upload'  => [
-                'class'        => UploadAction::class,
-                'deleteRoute'  => 'upload-delete',
+            'thumb-upload' => [
+                'class' => UploadAction::class,
+                'deleteRoute' => 'upload-delete',
                 'on afterSave' => function ($event) {
                     /* @var $file \League\Flysystem\File */
                     $file = $event->file;
@@ -112,7 +112,7 @@ class FileStorageController extends ApiController
                 $this->code = 200;
                 $this->msg = 'Upload Success';
                 $this->data = [
-                    'id'  => $model->id,
+                    'id' => $model->id,
                     'url' => $imageUrl,
                 ];
             } else {
@@ -127,7 +127,7 @@ class FileStorageController extends ApiController
         $keyFilePath = getStoragePath() . '\key\YiiGroup-797194353469.json';
         $storage = new StorageClient([
             'projectId' => 'valued-ceiling-167301',
-            'keyFile'   => json_decode(file_get_contents($keyFilePath), true)
+            'keyFile' => json_decode(file_get_contents($keyFilePath), true)
 
         ]);
         $bucket = $storage->bucket('yii_bucket');
@@ -149,7 +149,7 @@ class FileStorageController extends ApiController
         $bucket->upload(
             fopen($fileInstance->tempName, 'r'),
             [
-                'name'          => $filePath,
+                'name' => $filePath,
                 'predefinedAcl' => 'publicRead'
             ]
         );

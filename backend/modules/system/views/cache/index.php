@@ -14,16 +14,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php echo GridView::widget([
         'dataProvider' => $dataProvider,
-        'columns'      => [
+        'columns' => [
             'name',
             'class',
             [
-                'class'    => 'backend\grid\ActionColumn',
+                'class' => 'backend\grid\ActionColumn',
                 'template' => '{flush-cache}',
-                'buttons'  => [
+                'buttons' => [
                     'flush-cache' => function ($url, $model) {
                         return \yii\helpers\Html::a('<i class="fa fa-refresh"></i>', $url, [
-                            'title'        => Yii::t('backend', 'Flush'),
+                            'title' => Yii::t('backend', 'Flush'),
                             'data-confirm' => Yii::t('backend', 'Are you sure you want to flush this cache?')
                         ]);
                     }

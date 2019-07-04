@@ -24,28 +24,32 @@ class DefaultController extends Controller
      * Renders the index view for the module
      * @return string
      */
-    public function actionIndex1(){
+    public function actionIndex1()
+    {
         $str = ' Stay With Me - Chanyeol, Punch - Goblin OST.mp4';
         dd(Inflector::slug($str));
     }
 
-    public function actionFake2(){
-        $data = User::find()->where(['like', 'username','demo'])->all();
+    public function actionFake2()
+    {
+        $data = User::find()->where(['like', 'username', 'demo'])->all();
         dd($data);
 
     }
-    public function actionFake1(){
+
+    public function actionFake1()
+    {
         $model = new UserForm();
         $model->setScenario('create');
-        $model->username ='demo2';
-        $model->name ='demo1';
-        $model->user_kbn ='demo1';
-        $model->email ='demo2@gmail.com';
-        $model->status =1;
-        $model->roles =['administrator'];
-        $model->password ='1234$aA56';
-       $a= $model->save();
-        dd( $a);
+        $model->username = 'demo2';
+        $model->name = 'demo1';
+        $model->user_kbn = 'demo1';
+        $model->email = 'demo2@gmail.com';
+        $model->status = 1;
+        $model->roles = ['administrator'];
+        $model->password = '1234$aA56';
+        $a = $model->save();
+        dd($a);
     }
 
     public function actionAssign()
@@ -73,8 +77,10 @@ class DefaultController extends Controller
         dd('ok');
 
     }
-    public function actionFake(){
-        $data =common\models\User::find()->where(['like', 'username', 'u'])->asArray()->all();
+
+    public function actionFake()
+    {
+        $data = common\models\User::find()->where(['like', 'username', 'u'])->asArray()->all();
         dd($data);
         $model = new UserForm();
         $model->setModel(User::findOne(1));
@@ -82,10 +88,11 @@ class DefaultController extends Controller
         $model->save();
         dd('ok');
     }
+
     public function actionIndex()
     {
         phpinfo();
-        
+
         dd(Yii::$app->getRequest()->getAbsoluteUrl());
         dd(Yii::getAlias('@web/frontend/web/themes'));
 

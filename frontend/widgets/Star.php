@@ -53,7 +53,7 @@ class Star extends Widget
 
         //$view = 'star';
         return $this->render($this->view, [
-            'ajaxUrl'   => Url::to(['/ajax/star', 'type' => $modelType, 'id' => $modelId]),
+            'ajaxUrl' => Url::to(['/ajax/star', 'type' => $modelType, 'id' => $modelId]),
             'starValue' => $starValue,
             'starCount' => $starCount,
         ]);

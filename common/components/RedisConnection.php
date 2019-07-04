@@ -61,8 +61,8 @@ class RedisConnection extends Component
      */
     public $readServers = [
         [
-            'ip'       => '127.0.0.1',
-            'port'     => 6379,
+            'ip' => '127.0.0.1',
+            'port' => 6379,
             'password' => ''
         ],
     ];
@@ -71,8 +71,8 @@ class RedisConnection extends Component
      * @var array IP:Port  server ghi
      */
     public $writeServer = [
-        'ip'       => '127.0.0.1',
-        'port'     => 6379,
+        'ip' => '127.0.0.1',
+        'port' => 6379,
         'password' => ''
     ];
 
@@ -80,7 +80,7 @@ class RedisConnection extends Component
      * @var array IP:Port  server backup
      */
     public $backupServer = [
-        'ip'   => '127.0.0.1',
+        'ip' => '127.0.0.1',
         'port' => 6379
     ];
 
@@ -96,15 +96,15 @@ class RedisConnection extends Component
         //Set Data
         $this->readServers = [
             [
-                'ip'       => $this->hostname,
-                'port'     => $this->port,
+                'ip' => $this->hostname,
+                'port' => $this->port,
                 'password' => $this->password
             ],
         ];
         $this->writeServer =
             [
-                'ip'       => $this->hostname,
-                'port'     => $this->port,
+                'ip' => $this->hostname,
+                'port' => $this->port,
                 'password' => $this->password
             ];
 

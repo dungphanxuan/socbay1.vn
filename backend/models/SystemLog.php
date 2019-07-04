@@ -9,9 +9,9 @@ use Yii;
  *
  * @property integer $id
  * @property integer $level
- * @property string  $category
+ * @property string $category
  * @property integer $log_time
- * @property string  $prefix
+ * @property string $prefix
  * @property integer $message
  */
 class SystemLog extends \yii\db\ActiveRecord
@@ -45,12 +45,12 @@ class SystemLog extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'       => Yii::t('backend', 'ID'),
-            'level'    => Yii::t('backend', 'Level'),
+            'id' => Yii::t('backend', 'ID'),
+            'level' => Yii::t('backend', 'Level'),
             'category' => Yii::t('backend', 'Category'),
             'log_time' => Yii::t('backend', 'Log Time'),
-            'prefix'   => Yii::t('backend', 'Prefix'),
-            'message'  => Yii::t('backend', 'Message'),
+            'prefix' => Yii::t('backend', 'Prefix'),
+            'message' => Yii::t('backend', 'Message'),
         ];
     }
 

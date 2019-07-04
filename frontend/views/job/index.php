@@ -83,12 +83,12 @@ $bundle = AdsAsset::register($this);
 
                     <?php echo ListView::widget([
                         'dataProvider' => $dataCompanyProvider,
-                        'layout'       => '{items}',
-                        'itemView'     => '_item_company',
-                        'options'      => [
+                        'layout' => '{items}',
+                        'itemView' => '_item_company',
+                        'options' => [
                             'tag' => false,
                         ],
-                        'itemOptions'  => [
+                        'itemOptions' => [
                             'tag' => false,
                         ]
                     ]) ?>
@@ -116,14 +116,14 @@ $bundle = AdsAsset::register($this);
                             <div class="adds-wrapper jobs-list">
                                 <?php echo ListView::widget([
                                     'dataProvider' => $dataJobProvider,
-                                    'options'      => [
+                                    'options' => [
                                         'tag' => false,
                                     ],
-                                    'itemView'     => '_item',
-                                    'itemOptions'  => [
+                                    'itemView' => '_item',
+                                    'itemOptions' => [
                                         'tag' => false,
                                     ],
-                                    'layout'       => "{items}",
+                                    'layout' => "{items}",
                                 ]);
                                 ?>
                             </div>
@@ -155,12 +155,12 @@ $bundle = AdsAsset::register($this);
                                 <ul class="cat-list arrow">
                                     <?php echo ListView::widget([
                                         'dataProvider' => $providerJobCat,
-                                        'layout'       => '{items}',
-                                        'itemView'     => 'item/_item_job_cat_sidebar',
-                                        'options'      => [
+                                        'layout' => '{items}',
+                                        'itemView' => 'item/_item_job_cat_sidebar',
+                                        'options' => [
                                             'tag' => false,
                                         ],
-                                        'itemOptions'  => [
+                                        'itemOptions' => [
                                             'tag' => false,
                                         ]
                                     ]) ?>

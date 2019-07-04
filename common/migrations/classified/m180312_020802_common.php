@@ -10,12 +10,12 @@ class m180312_020802_common extends BaseMigration
     {
         //Price Giá
         $this->createTable('ads_price_range', [
-            'id'          => $this->primaryKey(),
-            'title'       => $this->string(64)->notNull(),
-            'title_en'    => $this->string(64),
-            'slug'        => $this->string(128),
-            'type'        => $this->smallInteger(1)->defaultValue(AdsType::PROPERTY), //Price About Project, Property
-            'sub_cat'     => $this->smallInteger(1)->defaultValue(0), //Price About Sub category of category
+            'id' => $this->primaryKey(),
+            'title' => $this->string(64)->notNull(),
+            'title_en' => $this->string(64),
+            'slug' => $this->string(128),
+            'type' => $this->smallInteger(1)->defaultValue(AdsType::PROPERTY), //Price About Project, Property
+            'sub_cat' => $this->smallInteger(1)->defaultValue(0), //Price About Sub category of category
             'sort_number' => $this->smallInteger(1)->defaultValue(0),
         ]);
 
@@ -39,9 +39,9 @@ class m180312_020802_common extends BaseMigration
         foreach ($dataProperty as $key => $item) {
             $this->insert('ads_price_range', [
                 //'id'          => $key + 1,
-                'title'       => $item,
-                'slug'        => Inflector::slug($item),
-                'type'        => AdsType::PROPERTY,
+                'title' => $item,
+                'slug' => Inflector::slug($item),
+                'type' => AdsType::PROPERTY,
                 'sort_number' => 0,
             ]);
         }
@@ -67,10 +67,10 @@ class m180312_020802_common extends BaseMigration
         foreach ($dataAuto as $key => $item) {
             $this->insert('ads_price_range', [
                 //'id'          => $key + 1,
-                'title'       => $item,
-                'slug'        => Inflector::slug($item),
-                'type'        => AdsType::AUTO,
-                'sub_cat'     => 2,
+                'title' => $item,
+                'slug' => Inflector::slug($item),
+                'type' => AdsType::AUTO,
+                'sub_cat' => 2,
                 'sort_number' => 0,
             ]);
         }
@@ -88,10 +88,10 @@ class m180312_020802_common extends BaseMigration
         foreach ($dataCar as $key => $item) {
             $this->insert('ads_price_range', [
                 //'id'          => $key + 1,
-                'title'       => $item,
-                'slug'        => Inflector::slug($item),
-                'type'        => AdsType::AUTO,
-                'sub_cat'     => 1,
+                'title' => $item,
+                'slug' => Inflector::slug($item),
+                'type' => AdsType::AUTO,
+                'sub_cat' => 1,
                 'sort_number' => 0,
             ]);
         }
@@ -108,9 +108,9 @@ class m180312_020802_common extends BaseMigration
         foreach ($dataMobile as $key => $item) {
             $this->insert('ads_price_range', [
                 //'id'          => $key + 1,
-                'title'       => $item,
-                'slug'        => Inflector::slug($item),
-                'type'        => AdsType::MOBILE,
+                'title' => $item,
+                'slug' => Inflector::slug($item),
+                'type' => AdsType::MOBILE,
                 'sort_number' => 0,
             ]);
         }

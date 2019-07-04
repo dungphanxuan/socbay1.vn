@@ -32,19 +32,19 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     <?php echo GridView::widget([
                         'dataProvider' => $dataProvider,
-                        'filterModel'  => $searchModel,
-                        'columns'      => [
+                        'filterModel' => $searchModel,
+                        'columns' => [
                             [
-                                'attribute'      => 'id',
-                                'format'         => 'raw',
-                                'headerOptions'  => ['style' => 'text-align:center'],
+                                'attribute' => 'id',
+                                'format' => 'raw',
+                                'headerOptions' => ['style' => 'text-align:center'],
                                 'contentOptions' => ['style' => 'width:10%;text-align:center'],
                             ],
                             'title',
                             'slug',
                             'sort_number',
                             [
-                                'class'    => 'backend\grid\ActionColumn',
+                                'class' => 'backend\grid\ActionColumn',
                                 'template' => '{update} {delete}',
                             ],
                         ],

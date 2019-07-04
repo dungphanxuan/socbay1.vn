@@ -52,21 +52,21 @@ class ArticlePackageSearch extends ArticlePackage
         }
 
         $query->andFilterWhere([
-            'id'               => $this->id,
-            'price'            => $this->price,
-            'day'              => $this->day,
-            'promo_day'        => $this->promo_day,
-            'auto_renewal'     => $this->auto_renewal,
-            'start_date'       => $this->start_date,
-            'end_date'         => $this->end_date,
-            'sort_number'      => $this->sort_number,
-            'show_feature'     => $this->show_feature,
-            'show_top'         => $this->show_top,
-            'promo_sign'       => $this->promo_sign,
+            'id' => $this->id,
+            'price' => $this->price,
+            'day' => $this->day,
+            'promo_day' => $this->promo_day,
+            'auto_renewal' => $this->auto_renewal,
+            'start_date' => $this->start_date,
+            'end_date' => $this->end_date,
+            'sort_number' => $this->sort_number,
+            'show_feature' => $this->show_feature,
+            'show_top' => $this->show_top,
+            'promo_sign' => $this->promo_sign,
             'recommended_sign' => $this->recommended_sign,
-            'status'           => $this->status,
-            'created_at'       => $this->created_at,
-            'updated_at'       => $this->updated_at,
+            'status' => $this->status,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
         ]);
 
         $query->andFilterWhere(['like', 'slug', $this->slug])

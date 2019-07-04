@@ -21,7 +21,7 @@ class AdsReportController extends Controller
     {
         return [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['post'],
                 ],
@@ -39,7 +39,7 @@ class AdsReportController extends Controller
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -69,7 +69,7 @@ class AdsReportController extends Controller
             return $this->redirect(['index']);
         } else {
             return $this->render('create', [
-                'model'   => $model,
+                'model' => $model,
                 'reasons' => ReportReason::find()->all(),
             ]);
         }
@@ -89,7 +89,7 @@ class AdsReportController extends Controller
             return $this->redirect(['index']);
         } else {
             return $this->render('update', [
-                'model'   => $model,
+                'model' => $model,
                 'reasons' => ReportReason::find()->all(),
             ]);
         }
@@ -129,14 +129,14 @@ class AdsReportController extends Controller
                 }
             }
             $res = [
-                'body'    => 'Success',
+                'body' => 'Success',
                 'success' => true,
             ];
 
             return $res;
         }
         $res = [
-            'body'    => 'Not allow',
+            'body' => 'Not allow',
             'success' => false,
         ];
 
@@ -237,14 +237,14 @@ class AdsReportController extends Controller
 
                 return [
                     'success' => true,
-                    'id'      => $getID,
-                    'status'  => $model->status,
+                    'id' => $getID,
+                    'status' => $model->status,
                 ];
             }
 
             return [
                 'success' => false,
-                'status'  => 100,
+                'status' => 100,
             ];
         }
     }
@@ -277,19 +277,19 @@ class AdsReportController extends Controller
             $fromDate = strtotime("+1 day", $fromDate);
         }
         $arrDataset[] = [
-            'label'                => 'Thống kê Report',
-            'backgroundColor'      => "rgba(255,99,132,0.2)",
-            'borderColor'          => "rgba(255,99,132,1)",
+            'label' => 'Thống kê Report',
+            'backgroundColor' => "rgba(255,99,132,0.2)",
+            'borderColor' => "rgba(255,99,132,1)",
             'pointBackgroundColor' => "rgba(255,99,132,1)",
-            'fill'                 => false,
-            'data'                 => $dataDate,
+            'fill' => false,
+            'data' => $dataDate,
         ];
 
         return $this->render('chart', [
-            'dateRange'  => $dateRange,
-            'arrLabel'   => $arrLabel,
+            'dateRange' => $dateRange,
+            'arrLabel' => $arrLabel,
             'arrDataset' => $arrDataset,
-            'total'      => $total
+            'total' => $total
         ]);
     }
 

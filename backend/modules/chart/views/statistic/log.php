@@ -15,9 +15,9 @@ use yii\helpers\Html;
 $this->title = 'Thống kê lượt truy cập';
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['menu'] = [
-    ['label'       => 'Home',
-     'url'         => ['/'],
-     'linkOptions' => ['class' => 'btn btn-flat', 'style' => 'border: 1px solid #ccc!important;']
+    ['label' => 'Home',
+        'url' => ['/'],
+        'linkOptions' => ['class' => 'btn btn-flat', 'style' => 'border: 1px solid #ccc!important;']
     ],
 ];
 
@@ -31,7 +31,7 @@ $this->registerCssFile('@web/web/assets_log' . '/css/daterangepicker.css', [
     <div class="row">
         <?php
         $form = ActiveForm::begin([
-            'id'      => 'stats_form1',
+            'id' => 'stats_form1',
             'options' => ['class' => 'form-horizontal'],
         ]) ?>
 
@@ -59,26 +59,26 @@ $this->registerCssFile('@web/web/assets_log' . '/css/daterangepicker.css', [
             <?php echo Highcharts::widget([
                 'setupOptions' => [
                     'lang' => [
-                        'printChart'   => 'Tải xuống',
-                        'downloadPNG'  => 'Tải xuống PNG',
+                        'printChart' => 'Tải xuống',
+                        'downloadPNG' => 'Tải xuống PNG',
                         'downloadJPEG' => 'Tải xuống JPG',
-                        'downloadPDF'  => 'Tải xuống PDF',
-                        'downloadSVG'  => 'Tải xuống SVG'
+                        'downloadPDF' => 'Tải xuống PDF',
+                        'downloadSVG' => 'Tải xuống SVG'
                     ]
                 ],
-                'scripts'      => [
+                'scripts' => [
                     'modules/exporting', // adds Exporting button/menu to chart
                 ],
-                'options'      => [
-                    'chart'    => ['type' => 'line'],
-                    'title'    => ['text' => 'Thống kê lượt truy cập'],
+                'options' => [
+                    'chart' => ['type' => 'line'],
+                    'title' => ['text' => 'Thống kê lượt truy cập'],
                     'subtitle' => ['text' => 'Số lượng truy cập vào hệ thống'],
 
-                    'xAxis'  => [
+                    'xAxis' => [
                         'categories' => $arrDay,
                     ],
-                    'yAxis'  => [
-                        'title'     => [
+                    'yAxis' => [
+                        'title' => [
                             'text' => 'Số lượng',
                         ],
                         'plotLines' => [

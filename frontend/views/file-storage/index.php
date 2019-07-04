@@ -45,17 +45,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php echo GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel'  => $searchModel,
-        'options'      => [
+        'filterModel' => $searchModel,
+        'options' => [
             'class' => 'grid-view table-responsive'
         ],
-        'layout'       => "{summary}\n{items}\n<div align='center'>{pager}</div>",
-        'columns'      => [
+        'layout' => "{summary}\n{items}\n<div align='center'>{pager}</div>",
+        'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
             [
                 'attribute' => 'component',
-                'filter'    => $components
+                'filter' => $components
             ],
             'path',
             'type',
@@ -65,7 +65,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'created_at:datetime',
 
             [
-                'class'    => 'backend\grid\ActionColumn',
+                'class' => 'backend\grid\ActionColumn',
                 'template' => '{view} {delete}'
             ]
         ]

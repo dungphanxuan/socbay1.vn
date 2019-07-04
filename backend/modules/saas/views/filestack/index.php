@@ -14,7 +14,7 @@ $this->title = 'Filestack';
 
 <?php echo GridView::widget([
     'dataProvider' => $dataProvider,
-    'columns'      => [
+    'columns' => [
         'id',
         'name',
         'created_at:datetime',

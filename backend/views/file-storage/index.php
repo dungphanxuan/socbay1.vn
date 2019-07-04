@@ -53,22 +53,22 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?php echo GridView::widget([
             'dataProvider' => $dataProvider,
-            'filterModel'  => $searchModel,
-            'options'      => [
-                'id'    => 'list-file',
+            'filterModel' => $searchModel,
+            'options' => [
+                'id' => 'list-file',
                 'class' => 'grid-view table-responsive'
             ],
-            'layout'       => "{summary}\n{items}\n<div align='center'>{pager}</div>",
-            'columns'      => [
+            'layout' => "{summary}\n{items}\n<div align='center'>{pager}</div>",
+            'columns' => [
                 ['class' => 'yii\grid\SerialColumn'],
 
                 [
-                    'attribute'      => 'image',
-                    'format'         => 'raw',
-                    'header'         => 'Ảnh',
-                    'headerOptions'  => ['style' => 'text-align:center'],
+                    'attribute' => 'image',
+                    'format' => 'raw',
+                    'header' => 'Ảnh',
+                    'headerOptions' => ['style' => 'text-align:center'],
                     'contentOptions' => ['style' => 'width:10%;text-align:center'],
-                    'value'          => function ($model) {
+                    'value' => function ($model) {
                         return Html::a(Html::img(null, ['class' => 'imageList lazy', 'data-src' => $model->getImage()]), [
                             'view',
                             'id' => $model->id
@@ -77,12 +77,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 [
                     'attribute' => 'component',
-                    'filter'    => $components
+                    'filter' => $components
                 ],
                 [
                     'attribute' => 'path',
-                    'format'    => 'raw',
-                    'value'     => function ($model) {
+                    'format' => 'raw',
+                    'value' => function ($model) {
                         return \yii\helpers\StringHelper::truncate($model->path, 22);
                     },
                 ],
@@ -90,31 +90,31 @@ $this->params['breadcrumbs'][] = $this->title;
                 'size:size',
                 //'name',
                 [
-                    'attribute'      => 'created_by',
-                    'label'          => 'User',
+                    'attribute' => 'created_by',
+                    'label' => 'User',
                     'contentOptions' => ['style' => 'width:10%'],
-                    'value'          => function ($model) {
+                    'value' => function ($model) {
                         return $model->user ? $model->user->username : null;
                     },
-                    'filter'         => \yii\helpers\ArrayHelper::map(\common\models\User::find()->all(), 'id', 'username')
+                    'filter' => \yii\helpers\ArrayHelper::map(\common\models\User::find()->all(), 'id', 'username')
                 ],
                 'upload_ip',
                 [
                     'attribute' => 'created_at',
-                    'format'    => 'datetime',
-                    'filter'    => DateTimeWidget::widget([
-                        'model'                => $searchModel,
-                        'attribute'            => 'created_at',
-                        'phpDatetimeFormat'    => 'dd.MM.yyyy',
+                    'format' => 'datetime',
+                    'filter' => DateTimeWidget::widget([
+                        'model' => $searchModel,
+                        'attribute' => 'created_at',
+                        'phpDatetimeFormat' => 'dd.MM.yyyy',
                         'momentDatetimeFormat' => 'DD.MM.YYYY',
-                        'clientEvents'         => [
+                        'clientEvents' => [
                             'dp.change' => new JsExpression('(e) => $(e.target).find("input").trigger("change.yiiGridView")')
                         ],
                     ])
                 ],
 
                 [
-                    'class'    => 'backend\grid\ActionColumn',
+                    'class' => 'backend\grid\ActionColumn',
                     'template' => '{view} {delete}'
                 ]
             ]

@@ -12,8 +12,8 @@ use yii\helpers\Url;
 
 <a href="javascript: void(0)">
     <?= Html::tag('i', '', [
-        'class'         => 'fa ' . ($starValue ? 'fa fa-star' : 'fa fa-star-o'),
+        'class' => 'fa ' . ($starValue ? 'fa fa-star' : 'fa fa-star-o'),
         'data-star-url' => $ajaxUrl,
-        'data-pjax'     => 0
+        'data-pjax' => 0
     ]) ?>Lưu việc
 </a>

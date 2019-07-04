@@ -13,16 +13,16 @@ $this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'File Storage Ite
         <h3>File Upload</h3>
         <?php
         echo \trntv\filekit\widget\Upload::widget([
-            'name'                => 'filename',
-            'hiddenInputId'       => 'filename', // must for not use model
-            'url'                 => ['/file-storage/upload-filestack-action'],
-            'sortable'            => true,
-            'maxFileSize'         => 10 * 1024 * 1024, // 10Mb
+            'name' => 'filename',
+            'hiddenInputId' => 'filename', // must for not use model
+            'url' => ['/file-storage/upload-filestack-action'],
+            'sortable' => true,
+            'maxFileSize' => 10 * 1024 * 1024, // 10Mb
             //'minFileSize'         => 1 * 1024 * 1024, // 1Mb
-            'maxNumberOfFiles'    => 7, // default 1,
-            'acceptFileTypes'     => new \yii\web\JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
+            'maxNumberOfFiles' => 7, // default 1,
+            'acceptFileTypes' => new \yii\web\JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
             'showPreviewFilename' => false,
-            'clientOptions'       => []
+            'clientOptions' => []
         ]);
         ?>
         <button type="button" class="btn btn-info">Upload Done</button>

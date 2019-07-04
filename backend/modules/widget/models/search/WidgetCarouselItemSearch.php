@@ -51,10 +51,10 @@ class WidgetCarouselItemSearch extends WidgetCarouselItem
         }
 
         $query->andFilterWhere([
-            'id'          => $this->id,
+            'id' => $this->id,
             'carousel_id' => $this->carousel_id,
-            'status'      => $this->status,
-            'order'       => $this->order,
+            'status' => $this->status,
+            'order' => $this->order,
         ]);
 
         $query->andFilterWhere(['like', 'path', $this->path])

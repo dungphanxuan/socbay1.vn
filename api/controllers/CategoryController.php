@@ -20,7 +20,7 @@ class CategoryController extends ApiController
             ->all();
         $this->data = [
             'total' => count($allModel),
-            'body'  => $allModel
+            'body' => $allModel
         ];
     }
 

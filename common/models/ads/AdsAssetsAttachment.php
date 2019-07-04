@@ -7,14 +7,14 @@ use Yii;
 /**
  * This is the model class for table "ads_assets_attachment".
  *
- * @property int       $id
- * @property int       $assets_id
- * @property string    $path
- * @property string    $base_url
- * @property string    $type
- * @property int       $size
- * @property string    $name
- * @property int       $created_at
+ * @property int $id
+ * @property int $assets_id
+ * @property string $path
+ * @property string $base_url
+ * @property string $type
+ * @property int $size
+ * @property string $name
+ * @property int $created_at
  *
  * @property AdsAssets $assets
  */
@@ -47,13 +47,13 @@ class AdsAssetsAttachment extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'         => 'ID',
-            'assets_id'  => 'Assets ID',
-            'path'       => 'Path',
-            'base_url'   => 'Base Url',
-            'type'       => 'Type',
-            'size'       => 'Size',
-            'name'       => 'Name',
+            'id' => 'ID',
+            'assets_id' => 'Assets ID',
+            'path' => 'Path',
+            'base_url' => 'Base Url',
+            'type' => 'Type',
+            'size' => 'Size',
+            'name' => 'Name',
             'created_at' => 'Created At',
         ];
     }

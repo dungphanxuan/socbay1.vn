@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="media-create">
 
     <?php echo $this->render('_form', [
-        'model'      => $model,
+        'model' => $model,
         'categories' => $categories,
     ]) ?>
 

@@ -42,8 +42,8 @@ class RbacAuthAssignment extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'item_name'  => Yii::t('backend', 'Item Name'),
-            'user_id'    => Yii::t('backend', 'User ID'),
+            'item_name' => Yii::t('backend', 'Item Name'),
+            'user_id' => Yii::t('backend', 'User ID'),
             'created_at' => Yii::t('backend', 'Created At'),
         ];
     }

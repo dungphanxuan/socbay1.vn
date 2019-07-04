@@ -19,7 +19,7 @@ class DeviceType
     {
         return [
             self::ANDROID => Yii::t('common', 'Android'),
-            self::IOS     => Yii::t('common', 'Ios'),
+            self::IOS => Yii::t('common', 'Ios'),
         ];
     }
 

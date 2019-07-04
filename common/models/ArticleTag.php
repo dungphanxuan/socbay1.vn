@@ -9,10 +9,10 @@ use yii\db\ActiveRecord;
 /**
  * This is the model class for table "wiki_tags".
  *
- * @property integer   $id
- * @property integer   $frequency
- * @property string    $name
- * @property string    $slug
+ * @property integer $id
+ * @property integer $frequency
+ * @property string $name
+ * @property string $slug
  *
  * @property Article[] $wikis
  */
@@ -22,10 +22,10 @@ class ArticleTag extends ActiveRecord
     {
         return [
             [
-                'class'        => SluggableBehavior::class,
-                'attribute'    => 'name',
-                'attributes'   => [static::EVENT_BEFORE_INSERT => 'slug'],
-                'immutable'    => true,
+                'class' => SluggableBehavior::class,
+                'attribute' => 'name',
+                'attributes' => [static::EVENT_BEFORE_INSERT => 'slug'],
+                'immutable' => true,
                 'ensureUnique' => true,
             ],
         ];
@@ -56,9 +56,9 @@ class ArticleTag extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'        => 'ID',
+            'id' => 'ID',
             'frequency' => 'Frequency',
-            'name'      => 'Name',
+            'name' => 'Name',
         ];
     }
 

@@ -25,15 +25,15 @@ class AccountController extends FrontendController
     public function behaviors()
     {
         return \yii\helpers\ArrayHelper::merge(parent::behaviors(), [
-            'verbs'  => [
-                'class'   => VerbFilter::class,
+            'verbs' => [
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['post'],
                 ],
             ],
             'access' => [
                 'class' => \yii\filters\AccessControl::class,
-                'only'  => ['ads', 'favourite', 'archived', 'saved', 'pedding'],
+                'only' => ['ads', 'favourite', 'archived', 'saved', 'pedding'],
                 'rules' => [
                     // allow authenticated users
                     [
@@ -82,7 +82,7 @@ class AccountController extends FrontendController
         $pageSize = 15;
 
         $dataProvider = new ActiveDataProvider([
-            'query'      => $query,
+            'query' => $query,
             'pagination' => [
                 'pageSize' => $pageSize,
             ],
@@ -92,8 +92,8 @@ class AccountController extends FrontendController
 
         return $this->render('ads', [
             'dataProvider' => $dataProvider,
-            'type'         => 1,
-            'is_show'      => $getShow
+            'type' => 1,
+            'is_show' => $getShow
         ]);
     }
 
@@ -119,7 +119,7 @@ class AccountController extends FrontendController
         $pageSize = Yii::$app->keyStorage->get('list.adssize');
 
         $dataProvider = new ActiveDataProvider([
-            'query'      => $query,
+            'query' => $query,
             'pagination' => [
                 'pageSize' => $pageSize,
             ],
@@ -129,8 +129,8 @@ class AccountController extends FrontendController
 
         return $this->render('ads', [
             'dataProvider' => $dataProvider,
-            'type'         => 2,
-            'is_show'      => 0
+            'type' => 2,
+            'is_show' => 0
         ]);
     }
 
@@ -172,7 +172,7 @@ class AccountController extends FrontendController
             ->orderBy('id desc');
 
         $dataProvider = new ActiveDataProvider([
-            'query'      => $query,
+            'query' => $query,
             'pagination' => [
                 'pageSize' => 10,
             ],
@@ -182,7 +182,7 @@ class AccountController extends FrontendController
         $view = 'seller-profile';
         return $this->render('seller-profile', [
             'dataProvider' => $dataProvider,
-            'modelUser'    => $modelUser,
+            'modelUser' => $modelUser,
         ]);
     }
 
@@ -220,10 +220,10 @@ class AccountController extends FrontendController
         $dataProvider->pagination->pageSize = 10;
 
         return $this->render('file-storage', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'components'   => $components,
-            'totalSize'    => $totalSize
+            'components' => $components,
+            'totalSize' => $totalSize
         ]);
     }
 
@@ -263,7 +263,7 @@ class AccountController extends FrontendController
         $pageSize = Yii::$app->keyStorage->get('list.adssize');
 
         $dataProvider = new ActiveDataProvider([
-            'query'      => $query,
+            'query' => $query,
             'pagination' => [
                 'pageSize' => $pageSize,
             ],
@@ -273,8 +273,8 @@ class AccountController extends FrontendController
 
         return $this->render('ads', [
             'dataProvider' => $dataProvider,
-            'type'         => 3,
-            'is_show'      => 0
+            'type' => 3,
+            'is_show' => 0
         ]);
     }
 
@@ -299,7 +299,7 @@ class AccountController extends FrontendController
         $pageSize = Yii::$app->keyStorage->get('list.adssize');
 
         $dataProvider = new ActiveDataProvider([
-            'query'      => $query,
+            'query' => $query,
             'pagination' => [
                 'pageSize' => $pageSize,
             ],
@@ -309,8 +309,8 @@ class AccountController extends FrontendController
 
         return $this->render('ads', [
             'dataProvider' => $dataProvider,
-            'type'         => 4,
-            'is_show'      => 0
+            'type' => 4,
+            'is_show' => 0
         ]);
     }
 
@@ -337,6 +337,7 @@ class AccountController extends FrontendController
     {
         return $this->render('message');
     }
+
     /**
      * @return string
      */

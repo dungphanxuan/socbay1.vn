@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = 'User Chart';
             <div class="col-md-4">
                 <?php
                 $form = ActiveForm::begin([
-                    'id'     => 'stats_form',
+                    'id' => 'stats_form',
                     'action' => Url::to(['']),
                     'method' => 'get',
                 ])
@@ -37,20 +37,20 @@ HTML;
                 echo '<label class="control-label">Date Range</label>';
                 echo '<div class="input-group drp-container">';
                 echo DateRangePicker::widget([
-                        'name'           => 'date_range',
-                        'value'          => $dateRange,
-                        'useWithAddon'   => true,
+                        'name' => 'date_range',
+                        'value' => $dateRange,
+                        'useWithAddon' => true,
                         'presetDropdown' => true,
-                        'options'        => [
-                            'id'    => 'date-range',
+                        'options' => [
+                            'id' => 'date-range',
                             'class' => 'form-control'
                         ],
-                        'pluginOptions'  => [
+                        'pluginOptions' => [
                             'locale' => [
-                                'format'    => 'YYYY-MM-DD',
+                                'format' => 'YYYY-MM-DD',
                                 'separator' => '-',
                             ],
-                            'opens'  => 'left'
+                            'opens' => 'left'
                         ]
                     ]) . $addon;
                 echo '</div>';
@@ -60,10 +60,10 @@ HTML;
             </div>
         </div>
         <?php echo ChartJs::widget([
-            'type'          => 'line',
-            'options'       => [
+            'type' => 'line',
+            'options' => [
                 'height' => 150,
-                'width'  => 400,
+                'width' => 400,
 
             ],
             'clientOptions' => [
@@ -71,8 +71,8 @@ HTML;
                     'duration' => 0
                 ]
             ],
-            'data'          => [
-                'labels'   => $arrLabel,
+            'data' => [
+                'labels' => $arrLabel,
                 'datasets' => $arrDataset
             ]
         ]);

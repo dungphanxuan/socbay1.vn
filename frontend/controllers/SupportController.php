@@ -20,7 +20,7 @@ class SupportController extends FrontendController
             ->orderBy('id desc');
 
         $dataProvider = new ActiveDataProvider([
-            'query'      => $queryTopic,
+            'query' => $queryTopic,
             'pagination' => false,
         ]);
         return $this->render('index', [
@@ -55,12 +55,12 @@ class SupportController extends FrontendController
             ->limit(7);
 
         $dataRelatedProvider = new ActiveDataProvider([
-            'query'      => $queryRelated,
+            'query' => $queryRelated,
             'pagination' => false,
         ]);
         $viewFile = $model->view ?: 'topic';
         return $this->render($viewFile, [
-            'model'               => $model,
+            'model' => $model,
             'dataRelatedProvider' => $dataRelatedProvider
         ]);
     }

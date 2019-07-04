@@ -24,8 +24,8 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-sm-12 col-md-offset-7 col-md-5">
                 <?php echo $this->render('partials/_versions', [
                     'searchQuery' => $queryString,
-                    'language'    => $language,
-                    'version'     => $version,
+                    'language' => $language,
+                    'version' => $version,
                 ]) ?>
             </div>
         </div>
@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?php echo \yii\widgets\ListView::widget([
             'dataProvider' => $results,
-            'itemView'     => 'partials/_result',
+            'itemView' => 'partials/_result',
         ]) ?>
 
     </div>

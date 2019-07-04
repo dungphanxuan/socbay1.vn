@@ -1,51 +1,51 @@
 <?php
 $config = [
-    'homeUrl'             => Yii::getAlias('@frontendUrl'),
+    'homeUrl' => Yii::getAlias('@frontendUrl'),
     'controllerNamespace' => 'frontend\controllers',
     //'defaultRoute' => 'site/index',
-    'defaultRoute'        => 'ads/index',
-    'bootstrap'           => [
+    'defaultRoute' => 'ads/index',
+    'bootstrap' => [
         'maintenance',
         'frontend\components\DynaRoute'
     ],
-    'modules'             => [
-        'user'    => [
-            'class'             => frontend\modules\user\Module::class,
+    'modules' => [
+        'user' => [
+            'class' => frontend\modules\user\Module::class,
             'shouldBeActivated' => false,
             'enableLoginByPass' => true,
         ],
-        'go'      => [
-            'class'       => dungphanxuan\vnlocation\Module::class,
+        'go' => [
+            'class' => dungphanxuan\vnlocation\Module::class,
             'as frontend' => frontend\filters\LocationFilter::class,
         ],
         'catalog' => [
             'class' => 'frontend\modules\catalog\Module',
         ],
-        'demo'    => [
+        'demo' => [
             'class' => 'frontend\modules\demo\Module',
         ],
-        'media'   => [
+        'media' => [
             'class' => 'frontend\modules\media\Module',
         ],
-        'jobc'    => [
+        'jobc' => [
             'class' => 'frontend\modules\job\Module',
         ],
-        'sale'    => [
+        'sale' => [
             'class' => 'frontend\modules\sale\Module',
         ],
         'testing' => [
             'class' => 'frontend\modules\testing\Module',
         ],
     ],
-    'components'          => [
+    'components' => [
         'authClientCollection' => [
-            'class'   => 'yii\authclient\Collection',
+            'class' => 'yii\authclient\Collection',
             'clients' => [
                 'facebook' => [
-                    'class'          => yii\authclient\clients\Facebook::class,
-                    'clientId'       => env('FACEBOOK_CLIENT_ID'),
-                    'clientSecret'   => env('FACEBOOK_CLIENT_SECRET'),
-                    'scope'          => 'email,public_profile',
+                    'class' => yii\authclient\clients\Facebook::class,
+                    'clientId' => env('FACEBOOK_CLIENT_ID'),
+                    'clientSecret' => env('FACEBOOK_CLIENT_SECRET'),
+                    'scope' => 'email,public_profile',
                     'attributeNames' => [
                         'name',
                         'email',
@@ -56,11 +56,11 @@ $config = [
                 ]
             ]
         ],
-        'errorHandler'         => [
+        'errorHandler' => [
             'errorAction' => 'site/error'
         ],
-        'maintenance'          => [
-            'class'   => common\components\maintenance\Maintenance::class,
+        'maintenance' => [
+            'class' => common\components\maintenance\Maintenance::class,
             'enabled' => function ($app) {
                 if (env('APP_MAINTENANCE') === '1') {
                     return true;
@@ -69,83 +69,83 @@ $config = [
                 return $app->keyStorage->get('frontend.maintenance') === 'enabled';
             }
         ],
-        'request'              => [
+        'request' => [
             //'baseUrl' => 'https://socbay1.vn',
             //'hostInfo' => 'https://socbay1.vn',
             'cookieValidationKey' => env('FRONTEND_COOKIE_VALIDATION_KEY')
         ],
-        'user'                 => [
-            'class'           => yii\web\User::class,
-            'identityClass'   => common\models\User::class,
-            'loginUrl'        => ['/user/sign-in/login'],
+        'user' => [
+            'class' => yii\web\User::class,
+            'identityClass' => common\models\User::class,
+            'loginUrl' => ['/user/sign-in/login'],
             'enableAutoLogin' => true,
-            'as afterLogin'   => common\behaviors\LoginTimestampBehavior::class
+            'as afterLogin' => common\behaviors\LoginTimestampBehavior::class
         ],
-        'session'              => [
-            'name'     => 'PHPFRONTSESSID',
+        'session' => [
+            'name' => 'PHPFRONTSESSID',
             'savePath' => sys_get_temp_dir(),
         ],
-        'assetManager'         => [
+        'assetManager' => [
             'appendTimestamp' => true,
-            'bundles'         => [
-                'yii\bootstrap\BootstrapPluginAsset'          => false,
-                'yii\bootstrap\BootstrapAsset'                => false,
-                'common\assets\Html5shiv'                     => [
+            'bundles' => [
+                'yii\bootstrap\BootstrapPluginAsset' => false,
+                'yii\bootstrap\BootstrapAsset' => false,
+                'common\assets\Html5shiv' => [
                     'sourcePath' => null,
-                    'js'         => ['https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js'],
+                    'js' => ['https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js'],
                 ],
-                'common\assets\LightGallery'                  => [
+                'common\assets\LightGallery' => [
                     'sourcePath' => null,
-                    'baseUrl'    => 'https://cdn.jsdelivr.net/npm/lightgallery.js@1.0.1/dist/'
+                    'baseUrl' => 'https://cdn.jsdelivr.net/npm/lightgallery.js@1.0.1/dist/'
                 ],
-                'common\assets\Clipboard'                     => [
+                'common\assets\Clipboard' => [
                     'sourcePath' => null,
-                    'js'         => ['https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js'],
+                    'js' => ['https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js'],
                 ],
-                'common\assets\Ladda'                         => [
+                'common\assets\Ladda' => [
                     'sourcePath' => null,
-                    'baseUrl'    => 'https://cdnjs.cloudflare.com/ajax/libs/Ladda/1.0.5/'
+                    'baseUrl' => 'https://cdnjs.cloudflare.com/ajax/libs/Ladda/1.0.5/'
                 ],
-                'common\assets\Videojs'                       => [
+                'common\assets\Videojs' => [
                     'sourcePath' => null,
-                    'css'        => ['http://vjs.zencdn.net/5.19.2/video-js.css'],
-                    'js'         => ['http://vjs.zencdn.net/5.19.2/video.js'],
+                    'css' => ['http://vjs.zencdn.net/5.19.2/video-js.css'],
+                    'js' => ['http://vjs.zencdn.net/5.19.2/video.js'],
                 ],
-                'common\assets\MagnificPopup'                 => [
+                'common\assets\MagnificPopup' => [
                     'sourcePath' => null,
-                    'css'        => ['https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css'],
-                    'js'         => ['https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js'],
+                    'css' => ['https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css'],
+                    'js' => ['https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js'],
                 ],
-                'common\assets\JquerySlimScroll'              => [
+                'common\assets\JquerySlimScroll' => [
                     'sourcePath' => null,
-                    'js'         => [
+                    'js' => [
                         'https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js',
                     ]
                 ],
-                'common\assets\FontAwesome'                   => [
+                'common\assets\FontAwesome' => [
                     'sourcePath' => null,
-                    'css'        => ['https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',]
+                    'css' => ['https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',]
                 ],
-                'common\assets\MithrilJs'                     => [
+                'common\assets\MithrilJs' => [
                     'sourcePath' => null,
-                    'js'         => ['https://unpkg.com/mithril/mithril.js',]
+                    'js' => ['https://unpkg.com/mithril/mithril.js',]
                 ],
                 'trntv\filekit\widget\BlueimpFileuploadAsset' => [
                     'sourcePath' => null,
-                    'baseUrl'    => 'https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.19.3/'
+                    'baseUrl' => 'https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.19.3/'
                 ],
-                 'yii\web\JqueryAsset'                => [
-                     'js' => [
-                         'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'
-                     ]
-                 ],
-                'common\assets\Tether'                        => [
-                    'sourcePath' => null,
-                    'js'         => ['https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js']
+                'yii\web\JqueryAsset' => [
+                    'js' => [
+                        'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'
+                    ]
                 ],
-                'common\assets\BxSlider'                      => [
+                'common\assets\Tether' => [
                     'sourcePath' => null,
-                    'baseUrl'    => 'https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/'
+                    'js' => ['https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js']
+                ],
+                'common\assets\BxSlider' => [
+                    'sourcePath' => null,
+                    'baseUrl' => 'https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/'
                 ],
 
                 /*       'yii\validators\ValidationAsset'              => false,
@@ -177,7 +177,7 @@ $config = [
                        'yii\authclient\widgets\AuthChoiceStyleAsset' => false, //authchoice.css
               */],
         ],
-        'view'                 => [
+        'view' => [
             'class' => 'frontend\components\AppView',
         ],
     ]
@@ -185,10 +185,10 @@ $config = [
 
 if (YII_ENV_DEV) {
     $config['modules']['gii'] = [
-        'class'      => 'yii\gii\Module',
+        'class' => 'yii\gii\Module',
         'generators' => [
             'crud' => [
-                'class'           => 'yii\gii\generators\crud\Generator',
+                'class' => 'yii\gii\generators\crud\Generator',
                 'messageCategory' => 'frontend'
             ]
         ]

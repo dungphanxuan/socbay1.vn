@@ -4,7 +4,7 @@
 
 /* @var $searchModel frontend\models\search\ArticleSearch */
 
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 use yii\helpers\Html;
 
 $this->title = Yii::t('frontend', 'Articles')
@@ -16,7 +16,7 @@ $this->title = Yii::t('frontend', 'Articles')
     <span class="glyphicon glyphicon-search" data-toggle="collapse" data-target="#search-form"></span>
     <div class="collapse" id="search-form">
         <?php $form = ActiveForm::begin([
-            'method'  => 'GET',
+            'method' => 'GET',
             'options' => ['class' => 'form-inline']
         ]) ?>
         <div>
@@ -27,9 +27,9 @@ $this->title = Yii::t('frontend', 'Articles')
     </div>
     <?php echo \yii\widgets\ListView::widget([
         'dataProvider' => $dataProvider,
-        'pager'        => [
+        'pager' => [
             'hideOnSinglePage' => true,
         ],
-        'itemView'     => '_item'
+        'itemView' => '_item'
     ]) ?>
 </div>

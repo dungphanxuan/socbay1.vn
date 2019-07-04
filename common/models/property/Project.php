@@ -18,37 +18,37 @@ use yii\helpers\ArrayHelper;
 /**
  * This is the model class for table "m_project".
  *
- * @property integer             $id
- * @property integer             $category_id
- * @property integer             $type
- * @property string              $slug
- * @property string              $title
- * @property string              $body
- * @property string              $short_des
- * @property integer             $city_id
- * @property integer             $district_id
- * @property integer             $ward_id
- * @property integer             $level
- * @property integer             $price_id
- * @property string              $price
- * @property string              $price_to
- * @property integer             $num_of_rooms
- * @property integer             $area_id
- * @property string              $thumbnail_base_url
- * @property string              $thumbnail_path
- * @property double              $lat
- * @property double              $lng
- * @property integer             $sort_number
- * @property integer             $status
- * @property integer             $created_at
- * @property integer             $updated_at
+ * @property integer $id
+ * @property integer $category_id
+ * @property integer $type
+ * @property string $slug
+ * @property string $title
+ * @property string $body
+ * @property string $short_des
+ * @property integer $city_id
+ * @property integer $district_id
+ * @property integer $ward_id
+ * @property integer $level
+ * @property integer $price_id
+ * @property string $price
+ * @property string $price_to
+ * @property integer $num_of_rooms
+ * @property integer $area_id
+ * @property string $thumbnail_base_url
+ * @property string $thumbnail_path
+ * @property double $lat
+ * @property double $lng
+ * @property integer $sort_number
+ * @property integer $status
+ * @property integer $created_at
+ * @property integer $updated_at
  *
- * @property string              getImgThumbnail
- * @property District            $district
- * @property Ward                $ward
- * @property ProjectArea         $projectArea
- * @property ProjectPrice        $projectPrice
- * @property ProjectRank         $projectRank
+ * @property string getImgThumbnail
+ * @property District $district
+ * @property Ward $ward
+ * @property ProjectArea $projectArea
+ * @property ProjectPrice $projectPrice
+ * @property ProjectRank $projectRank
  * @property ProjectAttachment[] $mProjectAttachments
  */
 class Project extends \yii\db\ActiveRecord
@@ -81,26 +81,26 @@ class Project extends \yii\db\ActiveRecord
             TimestampBehavior::class,
             BlameableBehavior::class,
             [
-                'class'     => SluggableBehavior::class,
+                'class' => SluggableBehavior::class,
                 'attribute' => 'title',
                 'immutable' => true
             ],
             [
-                'class'            => UploadBehavior::class,
-                'attribute'        => 'attachments',
-                'multiple'         => true,
-                'uploadRelation'   => 'projectAttachments',
-                'pathAttribute'    => 'path',
+                'class' => UploadBehavior::class,
+                'attribute' => 'attachments',
+                'multiple' => true,
+                'uploadRelation' => 'projectAttachments',
+                'pathAttribute' => 'path',
                 'baseUrlAttribute' => 'base_url',
-                'orderAttribute'   => 'order',
-                'typeAttribute'    => 'type',
-                'sizeAttribute'    => 'size',
-                'nameAttribute'    => 'name',
+                'orderAttribute' => 'order',
+                'typeAttribute' => 'type',
+                'sizeAttribute' => 'size',
+                'nameAttribute' => 'name',
             ],
             [
-                'class'            => UploadBehavior::class,
-                'attribute'        => 'thumbnail',
-                'pathAttribute'    => 'thumbnail_path',
+                'class' => UploadBehavior::class,
+                'attribute' => 'thumbnail',
+                'pathAttribute' => 'thumbnail_path',
                 'baseUrlAttribute' => 'thumbnail_base_url'
             ]
         ];
@@ -146,15 +146,15 @@ class Project extends \yii\db\ActiveRecord
             [
                 ['area_id'],
                 'exist',
-                'skipOnError'     => true,
-                'targetClass'     => ProjectArea::class,
+                'skipOnError' => true,
+                'targetClass' => ProjectArea::class,
                 'targetAttribute' => ['area_id' => 'id']
             ],
             [
                 ['price_id'],
                 'exist',
-                'skipOnError'     => true,
-                'targetClass'     => ProjectPrice::class,
+                'skipOnError' => true,
+                'targetClass' => ProjectPrice::class,
                 'targetAttribute' => ['price_id' => 'id']
             ],
             [['attachments', 'thumbnail'], 'safe']
@@ -167,34 +167,34 @@ class Project extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'                 => 'ID',
-            'category_id'        => 'Danh mục',
-            'type'               => 'Loại dự án',
-            'slug'               => 'Slug',
-            'title'              => 'Tiêu đề',
-            'body'               => 'Nội dung',
-            'short_des'          => 'Mô tả',
-            'city_id'            => 'Tỉnh/Thành Phố',
-            'district_id'        => 'Quận/Huyện',
-            'ward_id'            => 'Phường/Xã',
-            'level'              => 'Hạng',
-            'price_id'           => 'Giá',
-            'price'              => 'Price',
-            'price_to'           => 'Price To',
-            'num_of_rooms'       => 'Num Of Rooms',
-            'area_id'            => 'Diện tích',
+            'id' => 'ID',
+            'category_id' => 'Danh mục',
+            'type' => 'Loại dự án',
+            'slug' => 'Slug',
+            'title' => 'Tiêu đề',
+            'body' => 'Nội dung',
+            'short_des' => 'Mô tả',
+            'city_id' => 'Tỉnh/Thành Phố',
+            'district_id' => 'Quận/Huyện',
+            'ward_id' => 'Phường/Xã',
+            'level' => 'Hạng',
+            'price_id' => 'Giá',
+            'price' => 'Price',
+            'price_to' => 'Price To',
+            'num_of_rooms' => 'Num Of Rooms',
+            'area_id' => 'Diện tích',
             'thumbnail_base_url' => 'Thumbnail Base Url',
-            'thumbnail_path'     => 'Thumbnail Path',
+            'thumbnail_path' => 'Thumbnail Path',
 
-            'thumbnail'   => 'Ảnh Thumbnail',
-            'lat'         => 'Lat',
-            'lng'         => 'Lng',
+            'thumbnail' => 'Ảnh Thumbnail',
+            'lat' => 'Lat',
+            'lng' => 'Lng',
             'sort_number' => 'Sort Number',
-            'status'      => 'Trạng thái',
-            'created_by'  => 'Created By',
-            'created_at'  => 'Ngày tạo',
-            'updated_at'  => 'Updated At',
-            'updated_by'  => 'Updated By',
+            'status' => 'Trạng thái',
+            'created_by' => 'Created By',
+            'created_at' => 'Ngày tạo',
+            'updated_at' => 'Updated At',
+            'updated_by' => 'Updated By',
         ];
     }
 
@@ -364,55 +364,55 @@ class Project extends \yii\db\ActiveRecord
                 $url = Yii::$app->glide->createSignedUrl([
                     'glide/index',
                     'path' => $path,
-                    'w'    => 480,
-                    'q'    => 75,
-                    'fit'  => 'crop'
+                    'w' => 480,
+                    'q' => 75,
+                    'fit' => 'crop'
                 ]);
                 break;
             case 3:
                 $url = Yii::$app->glide->createSignedUrl([
                     'glide/index',
                     'path' => $path,
-                    'w'    => 767,
-                    'q'    => 75,
-                    'fit'  => 'crop'
+                    'w' => 767,
+                    'q' => 75,
+                    'fit' => 'crop'
                 ]);
                 break;
             case 4:
                 $url = Yii::$app->glide->createSignedUrl([
                     'glide/index',
                     'path' => $path,
-                    'q'    => 75
+                    'q' => 75
                 ]);
                 break;
             case 5:
                 $url = Yii::$app->glide->createSignedUrl([
                     'glide/index',
                     'path' => $path,
-                    'w'    => 230,
-                    'h'    => 283,
-                    'q'    => 75,
-                    'fit'  => 'crop'
+                    'w' => 230,
+                    'h' => 283,
+                    'q' => 75,
+                    'fit' => 'crop'
                 ]);
                 break;
             case 6:
                 $url = Yii::$app->glide->createSignedUrl([
                     'glide/index',
                     'path' => $path,
-                    'w'    => 360,
-                    'h'    => 243,
-                    'q'    => 75,
-                    'fit'  => 'crop'
+                    'w' => 360,
+                    'h' => 243,
+                    'q' => 75,
+                    'fit' => 'crop'
                 ]);
                 break;
             case 7:
                 $url = Yii::$app->glide->createSignedUrl([
                     'glide/index',
                     'path' => $path,
-                    'w'    => 350,
-                    'h'    => 236,
-                    'q'    => 75,
-                    'fit'  => 'crop'
+                    'w' => 350,
+                    'h' => 236,
+                    'q' => 75,
+                    'fit' => 'crop'
                 ]);
                 break;
         }
@@ -452,23 +452,23 @@ class Project extends \yii\db\ActiveRecord
                 $data['poster_image'] = Yii::$app->glide->createSignedUrl([
                     'glide/index',
                     'path' => $imgPath,
-                    'q'    => 75
+                    'q' => 75
                 ]);
 
                 $data['poster_image_mobile'] = Yii::$app->glide->createSignedUrl([
                     'glide/index',
                     'path' => $imgPath,
-                    'w'    => 480,
-                    'q'    => 75,
-                    'fit'  => 'crop'
+                    'w' => 480,
+                    'q' => 75,
+                    'fit' => 'crop'
                 ]);
 
                 $data['poster_image_tablet'] = Yii::$app->glide->createSignedUrl([
                     'glide/index',
                     'path' => $imgPath,
-                    'w'    => 767,
-                    'q'    => 75,
-                    'fit'  => 'crop'
+                    'w' => 767,
+                    'q' => 75,
+                    'fit' => 'crop'
                 ]);
 
                 if (env('IS_HTTPS')) {

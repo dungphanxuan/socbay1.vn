@@ -100,6 +100,7 @@ class UploadCloudinary extends InputWidget
         //Get upload url
         if (!$this->url) {
             $this->url = 'http://dropcloudinary.herokuapp.com/upload-cloud';
+            //$this->url = 'http://localhost:7000/upload-cloud';
         }
         if (!$this->files && $this->value) {
             $this->files = $this->multiple ? $this->value : [$this->value];

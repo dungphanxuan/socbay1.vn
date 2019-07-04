@@ -19,7 +19,7 @@ class VisionJob
     {
         return [
             self::ARTICLE => Yii::t('common', 'Article'),
-            self::FILE    => Yii::t('common', 'File'),
+            self::FILE => Yii::t('common', 'File'),
         ];
     }
 

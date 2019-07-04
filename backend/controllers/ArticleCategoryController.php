@@ -24,7 +24,7 @@ class ArticleCategoryController extends BackendController
     {
         return \yii\helpers\ArrayHelper::merge(parent::behaviors(), [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['post'],
                 ],
@@ -53,9 +53,9 @@ class ArticleCategoryController extends BackendController
         $view = 'index-listview';
 
         return $this->render($view, [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'getParent'    => $getParent
+            'getParent' => $getParent
         ]);
     }
 
@@ -83,8 +83,8 @@ class ArticleCategoryController extends BackendController
         $dataProvider = $searchModel->search($params);
 
         return $this->render('view', [
-            'model'        => $model,
-            'searchModel'  => $searchModel,
+            'model' => $model,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -109,7 +109,7 @@ class ArticleCategoryController extends BackendController
         }
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->getSession()->setFlash('alert', [
-                'body'    => 'Thêm mới danh mục thành công',
+                'body' => 'Thêm mới danh mục thành công',
                 'options' => ['class' => 'alert-success']
             ]);
 
@@ -120,8 +120,8 @@ class ArticleCategoryController extends BackendController
             }
 
             return $this->render('create', [
-                'model'        => $model,
-                'categories'   => $categories,
+                'model' => $model,
+                'categories' => $categories,
                 'categoryType' => $categoryType,
             ]);
         }
@@ -143,15 +143,15 @@ class ArticleCategoryController extends BackendController
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->getSession()->setFlash('alert', [
-                'body'    => 'Cập nhật danh mục thành công',
+                'body' => 'Cập nhật danh mục thành công',
                 'options' => ['class' => 'alert-success']
             ]);
 
             return $this->redirect(['index']);
         } else {
             return $this->render('update', [
-                'model'        => $model,
-                'categories'   => $categories,
+                'model' => $model,
+                'categories' => $categories,
                 'categoryType' => $categoryType,
             ]);
         }
@@ -172,7 +172,7 @@ class ArticleCategoryController extends BackendController
         ArticleCategory::getList(null, true);
         //$this->findModel($id)->delete();
         Yii::$app->getSession()->setFlash('alert', [
-            'body'    => 'Xóa danh mục thành công',
+            'body' => 'Xóa danh mục thành công',
             'options' => ['class' => 'alert-warning']
         ]);
 
@@ -189,7 +189,7 @@ class ArticleCategoryController extends BackendController
             ->where(['status' => 1]);
 
         $dataProvider = new ActiveDataProvider([
-            'query'      => $queryAll,
+            'query' => $queryAll,
             'pagination' => false
         ]);
 
@@ -247,7 +247,7 @@ class ArticleCategoryController extends BackendController
 
         //Update data
         $res = array(
-            'msg'     => 'Success',
+            'msg' => 'Success',
             'success' => true,
         );
 

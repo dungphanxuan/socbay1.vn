@@ -9,7 +9,7 @@ use yii\widgets\ListView;
 
 $this->title = 'Trợ giúp ' . $model->title;
 
-$this->registerCssFile("@web/frontend/web/theme/assets/css/page/style-page.css", [
+$this->registerCssFile("@web/frontend/web/classified/assets/css/page/style-page.css", [
     'depends' => [\yii\bootstrap\BootstrapAsset::class],
 ]);
 ?>
@@ -34,16 +34,16 @@ $this->registerCssFile("@web/frontend/web/theme/assets/css/page/style-page.css",
                     <h3><?php echo Yii::t('ads', 'Related articles') ?></h3>
                     <?php echo ListView::widget([
                         'dataProvider' => $dataRelatedProvider,
-                        'options'      => [
-                            'tag'   => 'ul',
+                        'options' => [
+                            'tag' => 'ul',
                             'class' => 'list-related',
-                            'id'    => 'list-related',
+                            'id' => 'list-related',
                         ],
-                        'itemOptions'  => [
+                        'itemOptions' => [
                             'tag' => false,
                         ],
-                        'layout'       => "{items}",
-                        'itemView'     => '_item_related',
+                        'layout' => "{items}",
+                        'itemView' => '_item_related',
                     ]);
                     ?>
                 </div>

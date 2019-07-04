@@ -16,7 +16,7 @@ use trntv\filekit\widget\Upload;
     <?php $form = ActiveForm::begin(); ?>
 
     <?php echo $form->errorSummary($model, [
-        'class'  => 'alert alert-warning alert-dismissible',
+        'class' => 'alert alert-warning alert-dismissible',
         'header' => ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4><i class="icon fa fa-warning"></i> Vui lòng sửa các lỗi sau!</h4>'
     ]); ?>
 
@@ -35,12 +35,12 @@ use trntv\filekit\widget\Upload;
                 [
                     'plugins' => ['fullscreen', 'fontcolor', 'video'],
                     'options' => [
-                        'minHeight'       => 200,
-                        'maxHeight'       => 200,
-                        'buttonSource'    => true,
-                        'convertDivs'     => false,
+                        'minHeight' => 200,
+                        'maxHeight' => 200,
+                        'buttonSource' => true,
+                        'convertDivs' => false,
                         'removeEmptyTags' => true,
-                        'imageUpload'     => Yii::$app->urlManager->createUrl(['/file-storage/upload-imperavi']),
+                        'imageUpload' => Yii::$app->urlManager->createUrl(['/file-storage/upload-imperavi']),
                     ],
                 ]
             ) ?>
@@ -50,9 +50,9 @@ use trntv\filekit\widget\Upload;
             <?php echo $form->field($model, 'thumbnail')->widget(
                 Upload::class,
                 [
-                    'url'             => ['/file-storage/upload'],
+                    'url' => ['/file-storage/upload'],
                     //'url'             => ['/file-storage/thumb-upload'],
-                    'maxFileSize'     => 5000000, // 5 MiB
+                    'maxFileSize' => 5000000, // 5 MiB
                     'acceptFileTypes' => new \yii\web\JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
                 ])->hint('Ảnh thumbnail');
             ?>
@@ -60,9 +60,9 @@ use trntv\filekit\widget\Upload;
             <?php echo $form->field($model, 'banner')->widget(
                 Upload::class,
                 [
-                    'url'             => ['/file-storage/upload'],
+                    'url' => ['/file-storage/upload'],
                     //'url'             => ['/file-storage/thumb-upload'],
-                    'maxFileSize'     => 5000000, // 5 MiB
+                    'maxFileSize' => 5000000, // 5 MiB
                     'acceptFileTypes' => new \yii\web\JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
                 ])->hint('Ảnh banner');
             ?>

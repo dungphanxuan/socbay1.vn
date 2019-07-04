@@ -61,11 +61,11 @@ class MediaHelper
 
                 //Chart Info
                 $dataStatistics = [
-                    'viewCount'     => getShowFormat('.')->asInteger($model->view_count),
-                    'likeCount'     => 1000,
-                    'dislikeCount'  => 10,
+                    'viewCount' => getShowFormat('.')->asInteger($model->view_count),
+                    'likeCount' => 1000,
+                    'dislikeCount' => 10,
                     'favoriteCount' => 100,
-                    'commentCount'  => 52
+                    'commentCount' => 52
                 ];
 
                 $data['statistics'] = $dataStatistics;
@@ -140,23 +140,23 @@ class MediaHelper
                 $data['poster_image'] = Yii::$app->glide->createSignedUrl([
                     'glide/index',
                     'path' => $model->poster_path,
-                    'q'    => 75
+                    'q' => 75
                 ]);
 
                 $data['poster_image_mobile'] = Yii::$app->glide->createSignedUrl([
                     'glide/index',
                     'path' => $model->poster_path,
-                    'w'    => 480,
-                    'q'    => 75,
-                    'fit'  => 'crop'
+                    'w' => 480,
+                    'q' => 75,
+                    'fit' => 'crop'
                 ]);
 
                 $data['poster_image_tablet'] = Yii::$app->glide->createSignedUrl([
                     'glide/index',
                     'path' => $model->poster_path,
-                    'w'    => 767,
-                    'q'    => 75,
-                    'fit'  => 'crop'
+                    'w' => 767,
+                    'q' => 75,
+                    'fit' => 'crop'
                 ]);
 
                 //Set youtube thumbnail as poster
@@ -175,7 +175,7 @@ class MediaHelper
 
                             $arrContextOptions = array(
                                 "ssl" => array(
-                                    "verify_peer"      => false,
+                                    "verify_peer" => false,
                                     "verify_peer_name" => false,
                                 ),
                             );

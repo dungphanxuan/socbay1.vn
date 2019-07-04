@@ -22,18 +22,18 @@ class DynaRoute implements BootstrapInterface
         if (Yii::$app->user->isGuest) {
             Yii::$app->getUrlManager()->addRules([
                 [
-                    'pattern'    => '/',
-                    'route'      => 'site/index',
-                    'suffix'     => '/',
+                    'pattern' => '/',
+                    'route' => 'site/index',
+                    'suffix' => '/',
                     'normalizer' => false,
                 ],
             ], false);
         } else {
             Yii::$app->getUrlManager()->addRules([
                 [
-                    'pattern'    => '/',
-                    'route'      => 'ads/index',
-                    'suffix'     => '/',
+                    'pattern' => '/',
+                    'route' => 'ads/index',
+                    'suffix' => '/',
                     'normalizer' => false,
                 ],
             ], true);

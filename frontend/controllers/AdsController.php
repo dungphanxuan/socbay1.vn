@@ -189,9 +189,6 @@ class AdsController extends FrontendController
      * */
     public function actionCreate($type = 1)
     {
-        //Set Bootstrap 3 layout
-        $this->layout = 'main3';
-
         $model = new Article();
         $modelDetail = new ArticleDetail();
 
@@ -310,10 +307,6 @@ class AdsController extends FrontendController
      */
     public function actionUpdate($id)
     {
-        //dd(Yii::$app->formatter->asDate(1541264400, 'dd/MM/yyyy'));
-        //Set Bootstrap 3 layout
-        $this->layout = 'main3';
-
         $model = $this->findModel($id);
         //$model->scenario = 'update';
         $modelDetail = $model->detail;
@@ -599,6 +592,8 @@ class AdsController extends FrontendController
         }
         $modelDetail = $model->detail;
         //$viewFile = $model->view ?: 'view';
+
+        //dd($model->attributes);
 
         //dd($model->getFullAddress());
         //dd($modelCompany);

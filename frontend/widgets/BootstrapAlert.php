@@ -11,7 +11,7 @@ namespace frontend\widgets;
 
 use yii\helpers\Html;
 
-class BootstrapAlert extends \yii\bootstrap\Alert
+class BootstrapAlert extends \yii\bootstrap4\Alert
 {
     /**
      * Initializes the widget options.
@@ -24,8 +24,8 @@ class BootstrapAlert extends \yii\bootstrap\Alert
         if ($this->closeButton !== false) {
             $this->closeButton = array_merge([
                 'data-dismiss' => 'alert',
-                'aria-hidden'  => 'true',
-                'class'        => 'close',
+                'aria-hidden' => 'true',
+                'class' => 'close',
             ], $this->closeButton);
         }
     }

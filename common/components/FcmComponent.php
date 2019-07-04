@@ -79,7 +79,7 @@ class FcmComponent extends Component
     /**
      * Creates Notification object
      * @param string $title Notification title
-     * @param string $body  Notification body text
+     * @param string $body Notification body text
      * @return Notification
      */
     public function createNotification($title, $body)

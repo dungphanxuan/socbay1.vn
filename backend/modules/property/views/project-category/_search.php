@@ -43,7 +43,7 @@ use yii\helpers\Html;
 
     <div class="form-group">
         <?php echo Html::submitButton('Search', ['class' =>
-                                                     'btn btn-primary']) ?>
+            'btn btn-primary']) ?>
         <?php echo Html::resetButton('Reset', ['class' => 'btn
         btn-default']) ?>
     </div>

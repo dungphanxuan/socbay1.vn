@@ -123,11 +123,11 @@ class StorageUploadAction extends UploadAction
         foreach ($uploadedFiles as $uploadedFile) {
             /* @var \yii\web\UploadedFile $uploadedFile */
             $output = [
-                $this->responseNameParam     => Html::encode($uploadedFile->name),
+                $this->responseNameParam => Html::encode($uploadedFile->name),
                 $this->responseMimeTypeParam => $uploadedFile->type,
-                $this->responseSizeParam     => $uploadedFile->size,
+                $this->responseSizeParam => $uploadedFile->size,
                 //$this->responseBaseUrlParam  => $this->getFileStorage()->baseUrl
-                $this->responseBaseUrlParam  => $this->base_url
+                $this->responseBaseUrlParam => $this->base_url
             ];
             if ($uploadedFile->error === UPLOAD_ERR_OK) {
                 $validationModel = DynamicModel::validateData(['file' => $uploadedFile], $this->validationRules);

@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="project-pickup-create">
 
     <?php echo $this->render('_form', [
-        'model'    => $model,
+        'model' => $model,
         'projects' => $projects,
     ]) ?>
 

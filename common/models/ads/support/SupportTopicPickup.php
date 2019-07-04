@@ -39,10 +39,10 @@ class SupportTopicPickup extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'          => 'ID',
-            'topic_id'    => 'Topic ID',
+            'id' => 'ID',
+            'topic_id' => 'Topic ID',
             'sort_number' => 'Sort Number',
-            'created_at'  => 'Created At',
+            'created_at' => 'Created At',
         ];
     }
 }

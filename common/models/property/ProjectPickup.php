@@ -44,9 +44,9 @@ class ProjectPickup extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'          => 'ID',
-            'type'        => 'Loại dự án',
-            'project_id'  => 'Dự án',
+            'id' => 'ID',
+            'type' => 'Loại dự án',
+            'project_id' => 'Dự án',
             'sort_number' => 'Sort Number',
         ];
     }

@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="ads-report-create">
 
     <?php echo $this->render('_form', [
-        'model'   => $model,
+        'model' => $model,
         'reasons' => $reasons,
 
     ]) ?>

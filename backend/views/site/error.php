@@ -31,7 +31,7 @@ $this->title = $name;
 
                 <?php
                 $form = ActiveForm::begin([
-                    'id'      => 'login-form',
+                    'id' => 'login-form',
                     'options' => ['class' => 'search-form'],
                 ]) ?>
                 <div class="input-group">

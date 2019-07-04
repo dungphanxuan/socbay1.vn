@@ -26,12 +26,12 @@ use yii\helpers\Html;
         <div class="col-sm-6">
             <?php
             echo $form->field($model, 'category_id')->widget(Select2::class, [
-                'data'          => ArrayHelper::map(
+                'data' => ArrayHelper::map(
                     $categories,
                     'id',
                     'title'
                 ),
-                'options'       => ['placeholder' => 'Chọn danh mục ...'],
+                'options' => ['placeholder' => 'Chọn danh mục ...'],
                 'pluginOptions' => [
                     'allowClear' => true
                 ],
@@ -50,12 +50,12 @@ use yii\helpers\Html;
         <div class="col-sm-6">
             <?php
             echo $form->field($model, 'price_id')->widget(Select2::class, [
-                'data'          => ArrayHelper::map(
+                'data' => ArrayHelper::map(
                     $prices,
                     'id',
                     'title'
                 ),
-                'options'       => ['placeholder' => 'Chọn mức giá ...'],
+                'options' => ['placeholder' => 'Chọn mức giá ...'],
                 'pluginOptions' => [
                     'allowClear' => true
                 ],
@@ -66,12 +66,12 @@ use yii\helpers\Html;
         <div class="col-sm-6">
             <?php
             echo $form->field($model, 'area_id')->widget(Select2::class, [
-                'data'          => ArrayHelper::map(
+                'data' => ArrayHelper::map(
                     $areas,
                     'id',
                     'title'
                 ),
-                'options'       => ['placeholder' => 'Chọn diện tích ...'],
+                'options' => ['placeholder' => 'Chọn diện tích ...'],
                 'pluginOptions' => [
                     'allowClear' => true
                 ],
@@ -85,12 +85,12 @@ use yii\helpers\Html;
         <div class="col-sm-6">
             <?php
             echo $form->field($model, 'level')->widget(Select2::class, [
-                'data'          => ArrayHelper::map(
+                'data' => ArrayHelper::map(
                     $ranks,
                     'id',
                     'title'
                 ),
-                'options'       => ['placeholder' => 'Chọn hạng ...'],
+                'options' => ['placeholder' => 'Chọn hạng ...'],
                 'pluginOptions' => [
                     'allowClear' => true
                 ],

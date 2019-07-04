@@ -29,18 +29,18 @@ class AdsType
     public static function all()
     {
         return [
-            self::ADS        => Yii::t('common', 'Ads'),
-            self::MOBILE     => Yii::t('common', 'Mobile'),
-            self::PROPERTY   => Yii::t('common', 'Property'),
-            self::JOB        => Yii::t('common', 'Job'),
-            self::AUTO       => Yii::t('common', 'Auto'),
-            self::FASHION    => Yii::t('common', 'Fashion'),
-            self::KID        => Yii::t('common', 'Kid'),
+            self::ADS => Yii::t('common', 'Ads'),
+            self::MOBILE => Yii::t('common', 'Mobile'),
+            self::PROPERTY => Yii::t('common', 'Property'),
+            self::JOB => Yii::t('common', 'Job'),
+            self::AUTO => Yii::t('common', 'Auto'),
+            self::FASHION => Yii::t('common', 'Fashion'),
+            self::KID => Yii::t('common', 'Kid'),
             self::ELECTRONIC => Yii::t('common', 'Electronic'),
-            self::FOOD       => Yii::t('common', 'Food'),
-            self::BOOK       => Yii::t('common', 'Book'),
-            self::ONLINE     => Yii::t('common', 'Online'),
-            self::EVENT     => Yii::t('common', 'Event'),
+            self::FOOD => Yii::t('common', 'Food'),
+            self::BOOK => Yii::t('common', 'Book'),
+            self::ONLINE => Yii::t('common', 'Online'),
+            self::EVENT => Yii::t('common', 'Event'),
         ];
     }
 

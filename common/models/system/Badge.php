@@ -7,10 +7,10 @@ use Yii;
 /**
  * This is the model class for table "badges".
  *
- * @property integer     $id
- * @property string      $urlname
- * @property string      $class
- * @property integer     $achieved
+ * @property integer $id
+ * @property string $urlname
+ * @property string $class
+ * @property integer $achieved
  *
  * @property UserBadge[] $userBadges
  */
@@ -47,9 +47,9 @@ abstract class Badge extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'       => 'ID',
-            'urlname'  => 'Urlname',
-            'class'    => 'Class',
+            'id' => 'ID',
+            'urlname' => 'Urlname',
+            'class' => 'Class',
             'achieved' => 'Achieved',
         ];
     }

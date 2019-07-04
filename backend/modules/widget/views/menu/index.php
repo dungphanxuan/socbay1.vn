@@ -23,24 +23,24 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?php echo GridView::widget([
             'dataProvider' => $dataProvider,
-            'filterModel'  => $searchModel,
-            'options'      => [
+            'filterModel' => $searchModel,
+            'options' => [
                 'class' => 'grid-view table-responsive'
             ],
-            'columns'      => [
+            'columns' => [
                 ['class' => 'yii\grid\SerialColumn'],
                 [
-                    'class'          => 'yii\grid\CheckboxColumn',
-                    'headerOptions'  => ['style' => 'width:3%;text-align:center'],
+                    'class' => 'yii\grid\CheckboxColumn',
+                    'headerOptions' => ['style' => 'width:3%;text-align:center'],
                     'contentOptions' => ['style' => 'width:3%;text-align:center'],
                 ],
                 'title',
                 'key',
                 [
-                    'class'     => \common\grid\EnumColumn::class,
+                    'class' => \common\grid\EnumColumn::class,
                     'attribute' => 'status',
-                    'format'    => 'raw',
-                    'enum'      => [
+                    'format' => 'raw',
+                    'enum' => [
                         Yii::t('backend', 'Disabled'),
                         Yii::t('backend', 'Enabled')
                     ],

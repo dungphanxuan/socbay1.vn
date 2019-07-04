@@ -27,30 +27,30 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php echo GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel'  => $searchModel,
-        'columns'      => [
+        'filterModel' => $searchModel,
+        'columns' => [
             [
-                'class'           => 'yii\grid\CheckboxColumn',
-                'headerOptions'   => ['style' => 'width:3%;text-align:center'],
-                'contentOptions'  => ['style' => 'width:3%;text-align:center'],
+                'class' => 'yii\grid\CheckboxColumn',
+                'headerOptions' => ['style' => 'width:3%;text-align:center'],
+                'contentOptions' => ['style' => 'width:3%;text-align:center'],
                 'checkboxOptions' => [
                     'class' => 'select-item'
                 ]
             ],
             [
-                'attribute'      => 'id',
-                'format'         => 'raw',
-                'headerOptions'  => ['style' => 'text-align:center'],
+                'attribute' => 'id',
+                'format' => 'raw',
+                'headerOptions' => ['style' => 'text-align:center'],
                 'contentOptions' => ['style' => 'width:10%;text-align:center'],
             ],
             'title',
             //'view',
             [
                 'attribute' => 'category_id',
-                'value'     => function ($model) {
+                'value' => function ($model) {
                     return $model->category ? $model->category->title : null;
                 },
-                'filter'    => ArrayHelper::map(SupportTopicCategory::find()->all(), 'id', 'title')
+                'filter' => ArrayHelper::map(SupportTopicCategory::find()->all(), 'id', 'title')
             ],
             // 'category_id',
             // 'thumbnail_base_url:url',
@@ -63,15 +63,15 @@ $this->params['breadcrumbs'][] = $this->title;
             'view_count',
             // 'sort_number',
             [
-                'class'          => \common\grid\EnumColumn::class,
-                'attribute'      => 'status',
-                'format'         => 'raw',
-                'enum'           => [
+                'class' => \common\grid\EnumColumn::class,
+                'attribute' => 'status',
+                'format' => 'raw',
+                'enum' => [
                     Yii::t('backend', 'Not Published'),
                     Yii::t('backend', 'Published'),
                     Yii::t('backend', 'Deleted')
                 ],
-                'headerOptions'  => ['style' => 'text-align:center'],
+                'headerOptions' => ['style' => 'text-align:center'],
                 'contentOptions' => ['style' => 'text-align:center'],
             ],
             // 'created_by',

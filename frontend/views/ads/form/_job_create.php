@@ -10,7 +10,7 @@ use kartik\depdrop\DepDrop;
 use kartik\select2\Select2;
 use kartik\money\MaskMoney;
 use trntv\filekit\widget\Upload;
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -23,7 +23,7 @@ use yii\web\JsExpression;
 /* @var $model common\models\Article */
 /* @var $modelDetail common\models\ArticleDetail */
 /* @var $categories common\models\ArticleCategory[] */
-/* @var $form yii\bootstrap\ActiveForm */
+/* @var $form yii\bootstrap4\ActiveForm */
 /* @var $prices */
 /* @var $areas */
 /* @var $cities */
@@ -45,16 +45,16 @@ $this->title = 'Việc làm mới';
                     <div class="row">
                         <div class="col-sm-12">
                             <?php echo $this->render('_job_form', [
-                                'model'         => $model,
-                                'modelDetail'   => $modelDetail,
+                                'model' => $model,
+                                'modelDetail' => $modelDetail,
                                 'modelCategory' => $modelCategory,
-                                'categories'    => $categories,
-                                'dataSubCat'    => $dataSubCat,
-                                'article_type'  => $article_type,
-                                'cities'        => $cities,
-                                'dataDistrict'  => $dataDistrict,
-                                'dataWard'      => $dataWard,
-                                'jobTypes'      => $jobTypes,
+                                'categories' => $categories,
+                                'dataSubCat' => $dataSubCat,
+                                'article_type' => $article_type,
+                                'cities' => $cities,
+                                'dataDistrict' => $dataDistrict,
+                                'dataWard' => $dataWard,
+                                'jobTypes' => $jobTypes,
                                 'jobCategories' => $jobCategories
                             ]) ?>
                         </div>

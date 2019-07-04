@@ -7,10 +7,10 @@ use yii\helpers\ArrayHelper;
 /**
  * This is the model class for table "m_project_area".
  *
- * @property integer   $id
- * @property string    $title
- * @property string    $slug
- * @property integer   $sort_number
+ * @property integer $id
+ * @property string $title
+ * @property string $slug
+ * @property integer $sort_number
  *
  * @property Project[] $projects
  */
@@ -43,9 +43,9 @@ class ProjectArea extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'          => 'ID',
-            'title'       => 'Tiêu đề',
-            'slug'        => 'Slug',
+            'id' => 'ID',
+            'title' => 'Tiêu đề',
+            'slug' => 'Slug',
             'sort_number' => 'Sort Number',
         ];
     }

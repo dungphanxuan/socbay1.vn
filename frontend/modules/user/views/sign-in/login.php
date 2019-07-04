@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 use yii\authclient\widgets\AuthChoice;
 
 /* @var $this yii\web\View */
@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="card-body">
                             <?php $authAuthChoice = AuthChoice::begin([
                                 'baseAuthUrl' => ['user/sign-in/oauth'],
-                                'autoRender'  => false
+                                'autoRender' => false
                             ]); ?>
                             <?php foreach ($authAuthChoice->getClients() as $client): ?>
                                 <a class="btn btn-success btn-block btn-social btn-facebook facebook auth-link"
@@ -75,20 +75,20 @@ HTML;
                             <?php echo $form->field($model, 'identity', [
                                 'template' => $temp_input_html
                             ])->textInput([
-                                'maxlength'    => true,
-                                'placeholder'  => 'your username',
+                                'maxlength' => true,
+                                'placeholder' => 'your username',
                                 'autocomplete' => 'off',
-                                'readonly'     => true,
-                                'onfocus'      => "this.removeAttribute('readonly');",
+                                'readonly' => true,
+                                'onfocus' => "this.removeAttribute('readonly');",
                             ]) ?>
 
                             <?php echo $form->field($model, 'password', [
                                 'template' => $tem_input_password
                             ])->passwordInput([
                                 'autocomplete' => 'off',
-                                'placeholder'  => 'your password',
-                                'readonly'     => true,
-                                'onfocus'      => "this.removeAttribute('readonly');",
+                                'placeholder' => 'your password',
+                                'readonly' => true,
+                                'onfocus' => "this.removeAttribute('readonly');",
                             ]) ?>
 
                             <div class="form-group">

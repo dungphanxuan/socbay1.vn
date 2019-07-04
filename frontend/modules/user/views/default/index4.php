@@ -1,7 +1,7 @@
 <?php
 
 use trntv\filekit\widget\Upload;
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
@@ -113,20 +113,20 @@ $loginTime = Yii::$app->user->identity->logged_at;
                                 <div class="panel-collapse collapse show" id="collapseB1">
                                     <div class="card-body">
                                         <?php $form = ActiveForm::begin([
-                                            'layout'      => 'horizontal',
+                                            'layout' => 'horizontal',
                                             'fieldConfig' => [
-                                                'template'             => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
+                                                'template' => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
                                                 'horizontalCssClasses' => [
-                                                    'label'   => 'col-sm-3 col-xs-3',
+                                                    'label' => 'col-sm-3 col-xs-3',
                                                     'wrapper' => 'col-sm-8 col-xs-8',
-                                                    'error'   => '',
-                                                    'hint'    => '',
+                                                    'error' => '',
+                                                    'hint' => '',
                                                 ],
                                             ],
                                         ]); ?>
 
                                         <?php echo $form->errorSummary($model->getModel('profile'), [
-                                            'class'  => 'alert alert-warning alert-dismissible',
+                                            'class' => 'alert alert-warning alert-dismissible',
                                             'header' => ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4><i class="icon fa fa-warning"></i> Vui lòng sửa các lỗi sau!</h4>'
                                         ]); ?>
 
@@ -154,7 +154,7 @@ $loginTime = Yii::$app->user->identity->logged_at;
                                             <div class="col-md-4">
                                                 <?php echo $form->field($model->getModel('profile'), 'picture', [
                                                     'horizontalCssClasses' => [
-                                                        'label'   => '',
+                                                        'label' => '',
                                                         'wrapper' => '',
                                                     ]
                                                 ])->widget(
@@ -182,7 +182,7 @@ $loginTime = Yii::$app->user->identity->logged_at;
 
                                         <?php echo $form->field($model->getModel('profile'), 'gender')->dropDownlist([
                                             \common\models\UserProfile::GENDER_FEMALE => Yii::t('frontend', 'Female'),
-                                            \common\models\UserProfile::GENDER_MALE   => Yii::t('frontend', 'Male')
+                                            \common\models\UserProfile::GENDER_MALE => Yii::t('frontend', 'Male')
                                         ], ['prompt' => ''])->label('Giới tính') ?>
 
 
@@ -193,7 +193,7 @@ $loginTime = Yii::$app->user->identity->logged_at;
                                             <div class="col-md-6">
                                                 <?php echo $form->field($model->getModel('account'), 'username', [
                                                     'horizontalCssClasses' => [
-                                                        'label'   => 'col-md-12',
+                                                        'label' => 'col-md-12',
                                                         'wrapper' => 'col-md-12',
                                                     ]
                                                 ]) ?>
@@ -202,7 +202,7 @@ $loginTime = Yii::$app->user->identity->logged_at;
                                             <div class="col-md-6">
                                                 <?php echo $form->field($model->getModel('account'), 'email', [
                                                     'horizontalCssClasses' => [
-                                                        'label'   => '',
+                                                        'label' => '',
                                                         'wrapper' => '',
                                                     ]
                                                 ]) ?>
@@ -214,11 +214,11 @@ $loginTime = Yii::$app->user->identity->logged_at;
                                         <?php echo $form->field($model->getModel('account'), 'password', [
 
                                         ])->passwordInput([
-                                            'maxlength'    => true,
-                                            'placeholder'  => 'new password',
+                                            'maxlength' => true,
+                                            'placeholder' => 'new password',
                                             'autocomplete' => 'off',
-                                            'readonly'     => true,
-                                            'onfocus'      => "this.removeAttribute('readonly');",
+                                            'readonly' => true,
+                                            'onfocus' => "this.removeAttribute('readonly');",
                                         ]) ?>
 
                                         <?php echo $form->field($model->getModel('account'), 'password_confirm')->passwordInput() ?>

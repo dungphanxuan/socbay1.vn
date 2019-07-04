@@ -30,7 +30,7 @@ HTML;
     <?php $form = ActiveForm::begin(); ?>
 
     <?php echo $form->errorSummary($model, [
-        'class'  => 'alert alert-warning alert-dismissible',
+        'class' => 'alert alert-warning alert-dismissible',
         'header' => ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4><i class="icon fa fa-warning"></i> Vui lòng sửa các lỗi sau!</h4>'
     ]); ?>
 
@@ -55,7 +55,7 @@ HTML;
                 Upload::class,
                 [
                     //'url'         => ['/file/storage/upload'],
-                    'url'         => ['/file-storage/upload-storage'],
+                    'url' => ['/file-storage/upload-storage'],
                     'maxFileSize' => 500 * 1024 * 1024, // 500 MiB
                 ])->hint('Upload video');
             ?>
@@ -70,12 +70,12 @@ HTML;
         [
             'plugins' => ['fullscreen', 'fontcolor', 'video'],
             'options' => [
-                'minHeight'       => 250,
-                'maxHeight'       => 250,
-                'buttonSource'    => true,
-                'convertDivs'     => false,
+                'minHeight' => 250,
+                'maxHeight' => 250,
+                'buttonSource' => true,
+                'convertDivs' => false,
                 'removeEmptyTags' => true,
-                'imageUpload'     => Yii::$app->urlManager->createUrl(['/file/storage/upload-imperavi']),
+                'imageUpload' => Yii::$app->urlManager->createUrl(['/file/storage/upload-imperavi']),
             ],
         ]
     ) ?>
@@ -87,7 +87,7 @@ HTML;
             <?php echo $form->field($model, 'thumbnail')->widget(
                 Upload::class,
                 [
-                    'url'         => ['/file-storage/upload'],
+                    'url' => ['/file-storage/upload'],
                     //'url'             => ['/file-storage/upload-storage'],
                     'maxFileSize' => 5000000, // 5 MiB
                 ]);
@@ -104,8 +104,8 @@ HTML;
                     //'url'             => ['/file-storage/upload-filestack-action'],
                     //'url'             => ['/file-storage/upload-cloudinary'],
 
-                    'sortable'         => true,
-                    'maxFileSize'      => 10000000, // 10 MiB
+                    'sortable' => true,
+                    'maxFileSize' => 10000000, // 10 MiB
                     'maxNumberOfFiles' => 10,
                 ]);
             ?>
@@ -139,13 +139,13 @@ HTML;
                 DateTimeWidget::class,
                 [
                     'phpDatetimeFormat' => 'yyyy-MM-dd\'T\'HH:mm:ssZZZZZ',
-                    'clientOptions'     => [
-                        'minDate'           => new \yii\web\JsExpression('new Date("2018-04-01")'),
-                        'allowInputToggle'  => true,
-                        'locale'            => 'vi',
+                    'clientOptions' => [
+                        'minDate' => new \yii\web\JsExpression('new Date("2018-04-01")'),
+                        'allowInputToggle' => true,
+                        'locale' => 'vi',
                         'widgetPositioning' => [
                             'horizontal' => 'auto',
-                            'vertical'   => 'auto'
+                            'vertical' => 'auto'
                         ]
                     ]
                 ]

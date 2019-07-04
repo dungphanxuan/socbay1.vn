@@ -59,14 +59,14 @@ class ArticleCategory extends ActiveRecord
         return [
             TimestampBehavior::class,
             [
-                'class'     => SluggableBehavior::class,
+                'class' => SluggableBehavior::class,
                 'attribute' => 'title',
                 'immutable' => true
             ],
             [
-                'class'            => UploadBehavior::class,
-                'attribute'        => 'thumbnail',
-                'pathAttribute'    => 'thumbnail_path',
+                'class' => UploadBehavior::class,
+                'attribute' => 'thumbnail',
+                'pathAttribute' => 'thumbnail_path',
                 'baseUrlAttribute' => 'thumbnail_base_url'
             ],
         ];
@@ -96,14 +96,14 @@ class ArticleCategory extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'            => Yii::t('common', 'ID'),
-            'slug'          => Yii::t('common', 'Slug'),
-            'title'         => Yii::t('common', 'Title'),
-            'parent_id'     => Yii::t('common', 'Parent Category'),
-            'thumbnail'     => Yii::t('common', 'Thumbnail'),
+            'id' => Yii::t('common', 'ID'),
+            'slug' => Yii::t('common', 'Slug'),
+            'title' => Yii::t('common', 'Title'),
+            'parent_id' => Yii::t('common', 'Parent Category'),
+            'thumbnail' => Yii::t('common', 'Thumbnail'),
             'total_article' => Yii::t('common', 'Total Article'),
-            'type'          => Yii::t('common', 'Ads Type'),
-            'status'        => Yii::t('common', 'Active')
+            'type' => Yii::t('common', 'Ads Type'),
+            'status' => Yii::t('common', 'Active')
         ];
     }
 
@@ -183,7 +183,7 @@ class ArticleCategory extends ActiveRecord
                 $signConfig = [
                     'glide/index',
                     'path' => $path,
-                    'fit'  => 'crop'
+                    'fit' => 'crop'
                 ];
                 if ($w) {
                     $signConfig['w'] = $w;
@@ -197,9 +197,9 @@ class ArticleCategory extends ActiveRecord
                 $signConfig = [
                     'glide/index',
                     'path' => $path,
-                    'w'    => '480',
-                    'h'    => '240',
-                    'fit'  => 'crop'
+                    'w' => '480',
+                    'h' => '240',
+                    'fit' => 'crop'
                 ];
 
                 $url = Yii::$app->glide->createSignedUrl($signConfig);

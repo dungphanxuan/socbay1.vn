@@ -30,8 +30,8 @@ class ExtensionNewFileNotification extends BaseNotification
         foreach ($this->getFollowers($this->extension, $this->updater) as $user) {
             yield $this->buildEmail($user, [
                 'extension' => $this->extension,
-                'updater'   => $this->updater,
-                'file'      => $this->file,
+                'updater' => $this->updater,
+                'file' => $this->file,
             ]);
         }
     }

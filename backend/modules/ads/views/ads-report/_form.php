@@ -23,17 +23,17 @@ use trntv\filekit\widget\Upload;
             echo $form->field($model, 'reason_id', [
                 'addon' => ['prepend' => ['content' => '<i class="fa fa-folder-open-o"></i>']]
             ])->widget(\kartik\widgets\Select2::class, [
-                'data'          => ArrayHelper::map($reasons, 'id', 'title'),
-                'options'       => [
+                'data' => ArrayHelper::map($reasons, 'id', 'title'),
+                'options' => [
                     'placeholder' => 'Select ...',
-                    'id'          => 'ccatid'
+                    'id' => 'ccatid'
                 ],
                 'pluginOptions' => [
                     'allowClear' => true
                 ],
-                'addon'         => [
+                'addon' => [
                     'append' => [
-                        'content'  => '<a href="' . Url::to(['/ads/report-reason/index']) . '" target="_blank" class="fa fa-plus blue imouse"></a>',
+                        'content' => '<a href="' . Url::to(['/ads/report-reason/index']) . '" target="_blank" class="fa fa-plus blue imouse"></a>',
                         'asButton' => false
                     ]
                 ],

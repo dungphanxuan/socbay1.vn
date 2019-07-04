@@ -12,7 +12,7 @@ use yii\helpers\Url;
 ?>
 <?php $this->beginContent('@app/notifications/views/_layout.text.php', [
     'model' => $extension,
-    'user'  => $user,
+    'user' => $user,
 ]); ?>
 The following extension that you are following was recently updated.
 

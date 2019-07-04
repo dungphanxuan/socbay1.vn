@@ -15,12 +15,12 @@ use yii\helpers\Url;
         <h3><strong><?php echo Yii::t('ads', 'Post a Free Classified') ?></strong></h3>
         <p> <?php echo Yii::t('ads', 'Sell your products online FOR FREE. It\'s easier than you think !') ?> </p>
     </div>
-    <div class="panel sidebar-panel">
-        <div class="panel-heading uppercase">
+    <div class="card sidebar-card">
+        <div class="card-header uppercase">
             <small><strong><?php echo Yii::t('ads', 'How to sell quickly?') ?></strong></small>
         </div>
-        <div class="panel-content">
-            <div class="panel-body text-left">
+        <div class="card-content">
+            <div class="card-body text-left">
                 <ul class="list-check">
                     <li> Sử dụng tiêu đề và mô tả ngắn gọn của mặt hàng</li>
                     <li> Chọn đúng danh mục của mặt hàng</li>
@@ -28,11 +28,6 @@ use yii\helpers\Url;
                     <li> Đặt một mức giá hợp lý</li>
                     <li> Kiểm tra mặt hàng trước khi xuất bản</li>
                 </ul>
-                <p style="text-align: center">
-                    <a class="float-right"
-                       href="<?php echo Url::to(['/page/faq']) ?>"> <?php echo Yii::t('common', 'View more') ?> <i
-                                class="fa fa-angle-double-right"></i> </a>
-                </p>
             </div>
         </div>
     </div>

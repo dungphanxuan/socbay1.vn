@@ -22,8 +22,8 @@ class LocationController extends ApiController
 
         $query = GoRegion::find()->asArray();
         $provider = new ActiveDataProvider([
-            'query'      => $query,
-            'sort'       => [
+            'query' => $query,
+            'sort' => [
                 'attributes' => ['id'],
             ],
             'pagination' => [
@@ -48,8 +48,8 @@ class LocationController extends ApiController
             $query->select(['id', 'name']);
         }
         $provider = new ActiveDataProvider([
-            'query'      => $query,
-            'sort'       => [
+            'query' => $query,
+            'sort' => [
                 'attributes' => ['id'],
             ],
             'pagination' => [
@@ -60,8 +60,8 @@ class LocationController extends ApiController
         $this->data = [
             'total' => $provider->getTotalCount(),
             'count' => $provider->getCount(),
-            'page'  => $provider->getPagination()->page,
-            'city'  => $posts
+            'page' => $provider->getPagination()->page,
+            'city' => $posts
         ];
     }
 
@@ -114,8 +114,8 @@ class LocationController extends ApiController
                 $query->select(['id', 'name', 'full_name']);
             }
             $provider = new ActiveDataProvider([
-                'query'      => $query,
-                'sort'       => [
+                'query' => $query,
+                'sort' => [
                     'attributes' => ['id'],
                 ],
                 'pagination' => [
@@ -124,10 +124,10 @@ class LocationController extends ApiController
             ]);
             $posts = $provider->getModels();
             $this->data = [
-                'total'    => $provider->getTotalCount(),
-                'count'    => $provider->getCount(),
-                'page'     => $provider->getPagination()->page,
-                'city'     => $cityModel,
+                'total' => $provider->getTotalCount(),
+                'count' => $provider->getCount(),
+                'page' => $provider->getPagination()->page,
+                'city' => $cityModel,
                 'district' => $posts
             ];
         } else {
@@ -157,8 +157,8 @@ class LocationController extends ApiController
                 $query->select(['id', 'name', 'fullname']);
             }
             $provider = new ActiveDataProvider([
-                'query'      => $query,
-                'sort'       => [
+                'query' => $query,
+                'sort' => [
                     'attributes' => ['id'],
                 ],
                 'pagination' => [
@@ -167,11 +167,11 @@ class LocationController extends ApiController
             ]);
             $posts = $provider->getModels();
             $this->data = [
-                'total'    => $provider->getTotalCount(),
-                'count'    => $provider->getCount(),
-                'page'     => $provider->getPagination()->page,
+                'total' => $provider->getTotalCount(),
+                'count' => $provider->getCount(),
+                'page' => $provider->getPagination()->page,
                 'district' => $districtModel,
-                'ward'     => $posts
+                'ward' => $posts
             ];
         } else {
             $this->code = 422;
