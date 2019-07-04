@@ -23,6 +23,8 @@ switch ($site_id) {
         break;
     case AdsType::ONLINE:
         $header_view = 'media_header';
+        break;case AdsType::EVENT:
+        $header_view = 'event_header';
         break;
     default:
         $header_view = 'header_common';

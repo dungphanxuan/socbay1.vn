@@ -36,15 +36,15 @@ class AdsController extends FrontendController
     public function behaviors()
     {
         return \yii\helpers\ArrayHelper::merge(parent::behaviors(), [
-            'verbs'  => [
-                'class'   => VerbFilter::class,
+            'verbs' => [
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['post'],
                 ],
             ],
             'access' => [
                 'class' => \yii\filters\AccessControl::class,
-                'only'  => ['create', 'update', 'delete'],
+                'only' => ['create', 'update', 'delete'],
                 'rules' => [
                     // allow authenticated users
                     [
@@ -113,10 +113,15 @@ class AdsController extends FrontendController
             }
         }
 
-        $dataProvider = $searchModel->search($params);
+        $dataProvider = $searchModel->search(null);
         $dataProvider->sort = [
             'defaultOrder' => ['created_at' => SORT_DESC]
         ];
+
+        $dataProvider->pagination = [
+            'pageSize' => 3
+        ];
+
 
         $view = 'index';
         $providerJobCat = null;
@@ -138,16 +143,20 @@ class AdsController extends FrontendController
             case AdsType::FASHION:
                 //$view = '@frontend/views/fashion/index';
                 break;
+            case AdsType::EVENT:
+                $this->site_id = AdsType::EVENT;
+                $view = '@frontend/views/event/category';
+                break;
             case AdsType::JOB:
                 $this->site_id = AdsType::JOB;
                 $view = '@frontend/views/job/list';
                 $dataJobCat = JobCategory::getListCat();
                 $providerJobCat = new ArrayDataProvider([
-                    'allModels'  => $dataJobCat,
+                    'allModels' => $dataJobCat,
                     'pagination' => [
                         'pageSize' => 15,
                     ],
-                    'sort'       => [
+                    'sort' => [
                         'attributes' => ['id', 'title'],
                     ],
                 ]);
@@ -164,14 +173,14 @@ class AdsController extends FrontendController
         //TODO: Set site_id
 
         return $this->render($view, [
-            'dataProvider'    => $dataProvider,
-            'searchModel'     => $searchModel,
-            'cid'             => $cid,
-            'category_id'     => $category_id,
-            'catModel'        => $catModel,
+            'dataProvider' => $dataProvider,
+            'searchModel' => $searchModel,
+            'cid' => $cid,
+            'category_id' => $category_id,
+            'catModel' => $catModel,
             'category_svalue' => $getCategorySearch,
-            'sub_cid'         => $sub_cid,
-            'providerJobCat'  => $providerJobCat,
+            'sub_cid' => $sub_cid,
+            'providerJobCat' => $providerJobCat,
         ]);
     }
 
@@ -217,9 +226,9 @@ class AdsController extends FrontendController
                 $modelDetail->save(false);
                 Yii::$app->commandBus->handle(new AddToTimelineCommand([
                     'category' => 'article',
-                    'event'    => 'item',
-                    'data'     => [
-                        'title'      => $model->title,
+                    'event' => 'item',
+                    'data' => [
+                        'title' => $model->title,
                         'article_id' => $model->id,
                         'created_at' => $model->created_at
                     ]
@@ -229,7 +238,7 @@ class AdsController extends FrontendController
             /* else {
                  dd($model->getErrors());
              }*/
-        }else{
+        } else {
             Yii::warning('Ads Create Access', 'ads');
         }
         //Proccess Input
@@ -277,17 +286,17 @@ class AdsController extends FrontendController
         }
 
         return $this->render($viewForm, [
-            'model'         => $model,
-            'modelDetail'   => $modelDetail,
+            'model' => $model,
+            'modelDetail' => $modelDetail,
             'modelCategory' => $modelCategory,
-            'type'          => $type,
-            'categories'    => $categories,
-            'article_type'  => $article_type,
-            'cities'        => City::find()->orderBy('priority desc')->all(),
-            'dataDistrict'  => $dataDistrict,
-            'dataWard'      => $dataWard,
-            'dataSubCat'    => $dataSubCategory,
-            'jobTypes'      => $jobTypes,
+            'type' => $type,
+            'categories' => $categories,
+            'article_type' => $article_type,
+            'cities' => City::find()->orderBy('priority desc')->all(),
+            'dataDistrict' => $dataDistrict,
+            'dataWard' => $dataWard,
+            'dataSubCat' => $dataSubCategory,
+            'jobTypes' => $jobTypes,
             'jobCategories' => $jobCategories
         ]);
 
@@ -348,7 +357,7 @@ class AdsController extends FrontendController
             if ($model->save()) {
                 //dd($model->public_from);
                 Yii::$app->getSession()->setFlash('alert', [
-                    'body'    => 'Cập nhật thành công',
+                    'body' => 'Cập nhật thành công',
                     'options' => ['class' => 'alert-success']
                 ]);
 
@@ -392,16 +401,16 @@ class AdsController extends FrontendController
         //dd($model->lat);
 
         return $this->render($viewForm, [
-            'model'         => $model,
-            'modelDetail'   => $modelDetail,
+            'model' => $model,
+            'modelDetail' => $modelDetail,
             'modelCategory' => $modelCategory,
-            'article_type'  => $article_type,
-            'categories'    => ArticleCategory::find()->rootCategory()->all(),
-            'cities'        => City::find()->orderBy('priority desc')->all(),
-            'dataDistrict'  => $dataDistrict,
-            'dataWard'      => $dataWard,
-            'dataSubCat'    => $dataSubCategory,
-            'jobTypes'      => $jobTypes,
+            'article_type' => $article_type,
+            'categories' => ArticleCategory::find()->rootCategory()->all(),
+            'cities' => City::find()->orderBy('priority desc')->all(),
+            'dataDistrict' => $dataDistrict,
+            'dataWard' => $dataWard,
+            'dataSubCat' => $dataSubCategory,
+            'jobTypes' => $jobTypes,
             'jobCategories' => $jobCategories
         ]);
     }
@@ -576,6 +585,10 @@ class AdsController extends FrontendController
             case AdsType::AUTO:
                 //$viewFile = '@frontend/views/auto/view';
                 break;
+            case AdsType::EVENT:
+                $this->site_id = AdsType::EVENT;
+                $viewFile = '@frontend/views/event/view';
+                break;
             case AdsType::JOB:
                 $viewFile = '@frontend/views/job/view';
                 $this->site_id = AdsType::JOB;
@@ -590,11 +603,10 @@ class AdsController extends FrontendController
         //dd($model->getFullAddress());
         //dd($modelCompany);
         return $this->render($viewFile, [
-            'model'        => $model,
-            'modelDetail'  => $modelDetail,
-            'catModel'     => $catModel,
-            'modelCompany' => $modelCompany,
-
+            'model' => $model,
+            'modelDetail' => $modelDetail,
+            'catModel' => $catModel,
+            'modelCompany' => $modelCompany
         ]);
     }
 
@@ -622,7 +634,7 @@ class AdsController extends FrontendController
         $model->status = Article::STATUS_DELETED;
         $model->save();
         Yii::$app->getSession()->setFlash('alert', [
-            'body'    => 'Xóa Bài viết thành công',
+            'body' => 'Xóa Bài viết thành công',
             'options' => ['class' => 'alert-warning']
         ]);
 

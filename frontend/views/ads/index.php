@@ -25,7 +25,7 @@ $bannerUrl = baseUrl() . '/frontend/web/images/banner/banner-ads.jpg';
 $bundle = AdsAsset::register($this);
 $totalAds = ArticleData::getTotal(1, $category_id);
 ?>
-    <div class="search-row-wrapper">
+    <div class="search-row-wrapper" style="background-image: url(<?php echo $this->assetManager->getAssetUrl($bundle, 'images/bg.jpg') ?>)">
         <div class="container">
             <?php echo $this->render('_search', []); ?>
         </div>

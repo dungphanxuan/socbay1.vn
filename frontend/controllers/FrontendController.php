@@ -49,7 +49,7 @@ abstract class FrontendController extends Controller
 
     public function init()
     {
-        Yii::$app->language = 'vi';
+        //Yii::$app->language = 'vi';
         header('Access-Control-Allow-Origin: *');
         //todo log request
 

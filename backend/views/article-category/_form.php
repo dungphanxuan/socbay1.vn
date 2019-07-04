@@ -45,34 +45,6 @@ use yii\web\JsExpression;
     </div>
 
     <?php
-    $url = 'http://localhost:7000/count';
-    $jsUploadDone = <<<JS
-$.get("$url", function(data, status){
-        alert("Done: ");
-    });
-JS;
-
-    echo \backend\widgets\UploadCloud::widget([
-        'name' => 'file1',
-        'hiddenInputId' => 'file1', // must for not use model
-        'url' => ['http://localhost:7000/upload'],
-        'sortable' => true,
-        'options' => [
-            'name' => 'file'
-        ],
-        'clientOptions' => [
-            'start' => new JsExpression('function(e, data) {  }'),
-            'done' => new JsExpression('function(e, data) {
-               $.get("http://localhost:7000/count", function(data, status){
-                //alert("Done: ");
-    });
-    }'),
-            'fail' => new JsExpression('function(e, data) { }'),
-            'always' => new JsExpression('function(e, data) {  }'),
-        ]
-    ]);
-    ?>
-    <?php
     echo $form->field($model, 'thumbnail')->widget(
         \trntv\filekit\widget\Upload::class,
         //\backend\widgets\UploadCloud::class,

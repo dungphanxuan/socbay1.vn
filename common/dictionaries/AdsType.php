@@ -24,6 +24,7 @@ class AdsType
     const BOOK = 9;
     const FOOD = 10;
     const ONLINE = 11;
+    const EVENT = 12;
 
     public static function all()
     {
@@ -39,6 +40,7 @@ class AdsType
             self::FOOD       => Yii::t('common', 'Food'),
             self::BOOK       => Yii::t('common', 'Book'),
             self::ONLINE     => Yii::t('common', 'Online'),
+            self::EVENT     => Yii::t('common', 'Event'),
         ];
     }
 

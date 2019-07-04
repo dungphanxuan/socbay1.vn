@@ -65,6 +65,9 @@ return [
         ['pattern' => 'jobs/company/<id:\d+>', 'route' => 'job/company-profile'],
         'jobs/<action:[\w-]+>'      => 'job/<action>',
 
+        //Event
+        //['pattern' => 'su-kien', 'route' => 'event/index'],
+
         //Blog
         ['pattern' => 'blog/index/<page:\d+>', 'route' => 'blog/index'],
         ['pattern' => 'blog/<id:\d+>/<name>', 'route' => 'blog/view'],
