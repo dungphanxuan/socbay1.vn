@@ -4,6 +4,7 @@ use frontend\assets\AdsAsset;
 use yii\helpers\Url;
 use yii\helpers\StringHelper;
 use common\helpers\ArticleHelper;
+use common\helpers\CloudinaryHelper;
 
 /* @var $this yii\web\View */
 /* @var $model \common\models\Article */
@@ -11,9 +12,11 @@ use common\helpers\ArticleHelper;
 $bundle = AdsAsset::register($this);
 
 $detail = ArticleHelper::getDetail($model->id);
-$imgThumbnail = 'http://templatecycle.com/bootclassified-4/dist/images/item/FreeGreatPicture.com-46405-google-drops-price-of-nexus-4-smartphone.jpg';
-if ($model->thumbnail_path) {
-    $imgThumbnail = $model->getImgThumbnail(2, 75, 200, 133);
+$noImg = baseUrl() . '/frontend/web/images/img-loading-index.jpg';
+$imgThumbnail = fileStorage()->baseUrl . '/image/noimg.png';
+
+if (isset($detail['thumb_image'])) {
+    $imgThumbnail = CloudinaryHelper::resizingAndCropping($model->thumbnail_base_url, $model->thumbnail_path, 200, 133);
 }
 $urlView = Url::to(['/ads/view', 'id' => $model->id, 'name' => $model->slug]);
 ?>

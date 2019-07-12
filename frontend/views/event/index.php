@@ -23,27 +23,34 @@ $bundle = AdsAsset::register($this);
         <div class="inner">
             <div class="container text-center">
                 <p class="title-6-sub top animateme fittext3 animated fadeIn">
-                    Browse Event
+                    <?php echo Yii::t('event', 'Browse Event') ?>
 
                 </p>
-                <h1 class="title-6 animated fadeInDown"> Events Classified </h1>
+                <h1 class="title-6 animated fadeInDown"> <?php echo Yii::t('event', 'Events Classified') ?> </h1>
 
 
                 <div class="row search-row animated fadeInUp">
-                    <div class="col-xl-4 col-sm-4 search-col relative"><i class="icon-docs icon-append"></i>
-                        <input type="text" name="ads" class="form-control has-icon"
-                               placeholder="Search events nearby" value="">
+                    <div class="col-xl-4 col-sm-4 search-col relative">
+                        <div class="search-col-inner"><i class="icon-docs icon-append"></i>
+                            <div class="search-col-input">
+                                <input type="text" name="ads" class="form-control has-icon"
+                                       placeholder="<?php echo Yii::t('event', 'Search events nearby') ?>" value="">
+                            </div>
+                        </div>
                     </div>
                     <div class="col-xl-4 col-sm-4 search-col relative locationicon">
+                        <div class="search-col-inner">
                         <i class="icon-location-2 icon-append"></i>
+                            <div class="search-col-input">
                         <input type="text" name="country" id="autocomplete-ajax"
                                class="form-control locinput input-rel searchtag-input has-icon"
-                               placeholder="City or Location" value="">
+                               placeholder="<?php echo Yii::t('event', 'City or Location') ?>" value=""></div>
+                        </div>
 
                     </div>
 
                     <div class="col-xl-4 col-sm-4 search-col">
-                        <button class="btn btn-primary btn-search btn-block  btn-gradient"><strong>Search</strong>
+                        <button class="btn btn-primary btn-search btn-block  btn-gradient"><strong><?php echo Yii::t('event', 'Search') ?></strong>
                         </button>
                     </div>
                 </div>
@@ -71,7 +78,7 @@ $bundle = AdsAsset::register($this);
     <section class="event-featured section-ev">
         <div class="container">
             <div class="col-12 title-box text-center section-header">
-                <h2 class="title"> Featured Events in <a class="ev">Ha Noi</a></h2>
+                <h2 class="title"> <?php echo Yii::t('event', 'Featured Events in') ?> <a class="ev">Ha Noi</a></h2>
             </div>
 
             <div class="row">
@@ -103,7 +110,7 @@ $bundle = AdsAsset::register($this);
 
                 <div class="row for-list align-center">
                     <div class="event-title-holder  col-lg-4 col-md-3 col-sm-12 mr-auto">
-                        <h2 class="title text-left"> EXPLORE YOUR EVENTS </h2>
+                        <h2 class="title text-left"> <?php echo Yii::t('event', 'EXPLORE YOUR EVENTS') ?> </h2>
 
                     </div>
 
@@ -286,7 +293,7 @@ $bundle = AdsAsset::register($this);
     <section class="event-category section-ev">
         <div class="container">
             <div class="col-12 title-box text-center section-header">
-                <h2 class="title"> Explore by category</h2>
+                <h2 class="title"> <?php echo Yii::t('event', 'Explore by category') ?></h2>
             </div>
 
 

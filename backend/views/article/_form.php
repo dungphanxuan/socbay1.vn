@@ -39,13 +39,20 @@ use common\widgets\UploadCloudinary;
             'header' => ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4><i class="icon fa fa-warning"></i> Vui lòng sửa các lỗi sau!</h4>'
         ]); ?>
 
-        <?php echo $form->field($model, 'title', [
-            'addon' => ['prepend' => ['content' => '<i class="fa fa-id-card-o"></i>']]
-        ])->textInput(['maxlength' => true]) ?>
+        <div class="row">
+            <div class="col-md-6">
+                <?php echo $form->field($model, 'title', [
+                    'addon' => ['prepend' => ['content' => '<i class="fa fa-id-card-o"></i>']]
+                ])->textInput(['maxlength' => true]) ?>
 
-        <?php echo $form->field($model, 'slug')
-            ->hint(Yii::t('backend', 'If you\'ll leave this field empty, slug will be generated automatically'))
-            ->textInput(['maxlength' => true]) ?>
+            </div>
+            <div class="col-md-6">
+                <?php echo $form->field($model, 'slug')
+                    ->hint(Yii::t('backend', 'If you\'ll leave this field empty, slug will be generated automatically'))
+                    ->textInput(['maxlength' => true]) ?>
+            </div>
+        </div>
+
 
         <?php
         /*echo $form->field($model, 'slug', [
@@ -238,7 +245,8 @@ use common\widgets\UploadCloudinary;
 
             <div class="col-md-4">
                 <?php echo $form->field($model, 'condition_type', [
-                ])->dropDownList([1 => 'Mới', 2 => 'Cũ'], ['prompt' => Yii::t('common', 'Condition') . ' ...']) ?>
+                ])->dropDownList([1 => 'Mới', 2 => 'Cũ'], ['prompt' => Yii::t('common', 'Condition') . ' ...'])
+                    ->hint('Tình trạng mới/cũ')?>
             </div>
             <div class="col-md-4"></div>
         </div>
@@ -262,7 +270,7 @@ use common\widgets\UploadCloudinary;
                         'maxFileSize' => 10000000, // 10 MiB
                         'maxNumberOfFiles' => 10,
                         'acceptFileTypes' => new JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
-                    ]);
+                    ]) ->hint('Ảnh slide');
                 ?>
             </div>
         </div>
@@ -287,7 +295,8 @@ use common\widgets\UploadCloudinary;
                         'searchField' => ['name'],
                         'create' => true,
                     ],
-                ])->hint(Yii::t('common', 'Use commas to separate tags')) ?>
+                ])->label('Gắn thẻ')
+                    ->hint(Yii::t('common', 'Use commas to separate tags')) ?>
 
             </div>
         </div>

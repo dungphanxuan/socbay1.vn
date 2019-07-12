@@ -21,9 +21,12 @@ $bannerUrl = 'https://d1l9wudzdx0jr.cloudfront.net/wp-content/uploads/2016/09/ho
 $bundle = AdsAsset::register($this);
 ?>
     <!-- /.header -->
-    <div class="search-row-wrapper">
-        <div class="container ">
-            <?php echo $this->render('partical/_form_search_property', ['searchModel' => $searchModel]) ?>
+    <div class="search-row-wrapper"
+         style="background-image: url(<?php echo $this->assetManager->getAssetUrl($bundle, 'images/bg.jpg') ?>)">
+        <div class="inner">
+            <div class="container ">
+                <?php echo $this->render('partical/_form_search_property', ['searchModel' => $searchModel]) ?>
+            </div>
         </div>
     </div>
     <!-- /.search-row -->
@@ -46,12 +49,6 @@ $bundle = AdsAsset::register($this);
                 </div>
                 <!--/.page-side-bar-->
                 <div class="col-md-9 page-content col-thin-left">
-
-                    <?php Pjax::begin([
-                        'id' => 'all-ads',
-                        'timeout' => 2000,
-                        'scrollTo' => 0
-                    ]) ?>
 
                     <div class="category-list">
                         <div class="tab-box ">
@@ -157,7 +154,6 @@ $bundle = AdsAsset::register($this);
                         </nav>
                     </div>
                     <!--/.pagination-bar -->
-                    <?php Pjax::end(); ?>
                     <?php echo $this->render('@frontend/views/ads/partical/_post_promo', ['type', 'property']) ?>
                     <!--/.post-promo-->
 

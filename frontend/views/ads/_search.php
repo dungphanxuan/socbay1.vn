@@ -55,7 +55,8 @@ if ($getCategorySearch) {
         ?>
     </div>
     <div class="col-md-3">
-        <button class="btn btn-block btn-primary  "><i class="fa fa-search"></i></button>
+        <button class="btn btn-block btn-primary btn-gradient"> Search <i class="fa fa-search"></i>
+        </button>
     </div>
 </div>
 <?php ActiveForm::end(); ?>

@@ -39,36 +39,39 @@ if ($getCategorySearch) {
         $catJobName = $catData->title;
     }
 }
-
+$bundle = AdsAsset::register($this);
 $this->title = 'Việc làm mới nhất';
 ?>
     <!-- /.header -->
-    <div class="search-row-wrapper">
-        <div class="container ">
-            <form action="<?php echo Url::to(['/ads/index', 'cslug' => $catModel->slug]) ?>" method="GET">
-                <div class="row">
+    <div class="search-row-wrapper"
+         style="background-image: url(<?php echo $this->assetManager->getAssetUrl($bundle, 'images/bg.jpg') ?>)">
+        <div class="inner">
+            <div class="container ">
+                <form action="<?php echo Url::to(['/ads/index', 'cslug' => $catModel->slug]) ?>" method="GET">
+                    <div class="row">
 
-                    <div class="col-md-3">
-                        <?php
-                        echo Html::textInput('title', $getTitle, ['class' => 'form-control keyword', 'placeholder' => 'Tiêu đề, từ khóa ...'])
-                        ?>
+                        <div class="col-md-3">
+                            <?php
+                            echo Html::textInput('title', $getTitle, ['class' => 'form-control keyword', 'placeholder' => 'Tiêu đề, từ khóa ...'])
+                            ?>
+                        </div>
+                        <div class="col-md-3">
+                            <?php
+                            echo Html::dropDownList('jcategory', $catSearchValue, $jobCategories, ['class' => 'form-control selecter', 'id' => 'job_search-category', 'prompt' => 'Danh mục ...'])
+                            ?>
+                        </div>
+                        <div class="col-md-3">
+                            <?php
+                            echo Html::dropDownList('location', $cityId, $jobLocation, ['class' => 'form-control selecter', 'id' => 'job_search-location', 'prompt' => 'Tỉnh/Thành Phố'])
+                            ?>
+                        </div>
+                        <div class="col-md-3">
+                            <button class="btn btn-block btn-primary">
+                                <i class="fa fa-search"></i> <?php echo Yii::t('ads', 'Find Jobs') ?></button>
+                        </div>
                     </div>
-                    <div class="col-md-3">
-                        <?php
-                        echo Html::dropDownList('jcategory', $catSearchValue, $jobCategories, ['class' => 'form-control selecter', 'id' => 'job_search-category', 'prompt' => 'Danh mục ...'])
-                        ?>
-                    </div>
-                    <div class="col-md-3">
-                        <?php
-                        echo Html::dropDownList('location', $cityId, $jobLocation, ['class' => 'form-control selecter', 'id' => 'job_search-location', 'prompt' => 'Tỉnh/Thành Phố'])
-                        ?>
-                    </div>
-                    <div class="col-md-3">
-                        <button class="btn btn-block btn-primary">
-                            <i class="fa fa-search"></i> <?php echo Yii::t('ads', 'Find Jobs') ?></button>
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 

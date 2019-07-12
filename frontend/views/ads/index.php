@@ -27,8 +27,10 @@ $totalAds = ArticleData::getTotal(1, $category_id);
 ?>
     <div class="search-row-wrapper"
          style="background-image: url(<?php echo $this->assetManager->getAssetUrl($bundle, 'images/bg.jpg') ?>)">
-        <div class="container">
-            <?php echo $this->render('_search', []); ?>
+        <div class="inner">
+            <div class="container">
+                <?php echo $this->render('_search', []); ?>
+            </div>
         </div>
     </div>
     <!-- /.search-row -->
@@ -49,11 +51,6 @@ $totalAds = ArticleData::getTotal(1, $category_id);
                 </div>
                 <!--/.page-side-bar-->
                 <div class="col-md-9 page-content col-thin-left">
-
-                    <?php Pjax::begin([
-                        'id' => 'allAds',
-                        'scrollTo' => 0
-                    ]) ?>
                     <div class="category-list">
 
                         <div class="tab-box ">
@@ -119,20 +116,27 @@ $totalAds = ArticleData::getTotal(1, $category_id);
                         </div>
                         <div class="menu-overly-mask"></div>
                         <!-- Mobile Filter bar End-->
-                        <?php echo ListView::widget([
-                            'dataProvider' => $dataProvider,
-                            //'summary'      => '',
-                            'layout' => '{summary}{items}',
-                            'itemView' => '_item',
-                            'options' => [
-                                'tag' => 'div',
-                                'id' => 'w5',
-                                'class' => 'adds-wrapper',
-                            ],
-                            'itemOptions' => [
-                                'tag' => false,
-                            ]
-                        ]) ?>
+
+                        <div class="tab-content">
+                            <div class="tab-pane  active " id="alladslist">
+                                <?php echo ListView::widget([
+                                    'dataProvider' => $dataProvider,
+                                    //'summary'      => '',
+                                    //'layout' => '{summary}{items}',
+                                    'layout' => '{items}',
+                                    'itemView' => '_item',
+                                    'options' => [
+                                        'tag' => 'div',
+                                        'id' => 'w5',
+                                        'class' => 'adds-wrapper row no-margin',
+                                    ],
+                                    'itemOptions' => [
+                                        'tag' => false,
+                                    ]
+                                ]) ?>
+                            </div>
+                        </div>
+
                         <!--/.adds-wrapper-->
 
 
@@ -151,8 +155,6 @@ $totalAds = ArticleData::getTotal(1, $category_id);
                             ?>
                         </nav>
                     </div>
-                    <?php Pjax::end(); ?>
-
                     <!--/.pagination-bar -->
                     <?php echo $this->render('partical/_post_promo', []) ?>
 

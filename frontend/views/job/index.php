@@ -33,22 +33,35 @@ $bundle = AdsAsset::register($this);
                         <div class="row search-row">
 
                             <div class="col-xl-3 col-sm-3 search-col relative locationicon">
-                                <i class="icon-location-2 icon-append"></i>
-                                <input type="text" name="country" id="autocomplete-ajax"
-                                       class="form-control locinput input-rel searchtag-input has-icon"
-                                       placeholder="Tỉnh/Thành phố" value="">
+                                <div class="search-col-inner">
+                                    <i class="icon-location-2 icon-append"></i>
+                                    <div class="search-col-input">
+                                        <input type="text" name="country" id="autocomplete-ajax"
+                                               class="form-control locinput input-rel searchtag-input has-icon"
+                                               placeholder="Tỉnh/Thành phố" value="">
+                                    </div>
+                                </div>
 
                             </div>
-                            <div class="col-xl-3 col-sm-3 search-col relative"><i class="icon-docs icon-append"></i>
-                                <input type="text" name="ads" class="form-control has-icon"
-                                       placeholder="Danh mục" value="">
+                            <div class="col-xl-3 col-sm-3 search-col relative">
+                                <div class="search-col-inner">
+                                    <i class="icon-docs icon-append"></i>
+                                    <div class="search-col-input">
+                                        <input type="text" name="ads" class="form-control has-icon"
+                                               placeholder="Danh mục" value=""></div>
+                                </div>
                             </div>
-                            <div class="col-xl-3 col-sm-3 search-col relative"><i class="icon-search icon-append"></i>
-                                <input type="text" name="ads" class="form-control has-icon"
-                                       placeholder="tiêu đề, từ khóa, công ty" value="">
+                            <div class="col-xl-3 col-sm-3 search-col relative">
+                                <div class="search-col-inner">
+                                    <i class="icon-search icon-append"></i>
+                                    <div class="search-col-input">
+                                        <input type="text" name="ads" class="form-control has-icon"
+                                               placeholder="từ khóa" value=""></div>
+                                </div>
+
                             </div>
                             <div class="col-xl-3 col-sm-3 search-col">
-                                <button class="btn btn-primary btn-search btn-block"><i class="icon-search"></i><strong>
+                                <button class="btn btn-primary btn-search btn-block  btn-gradient"><i class="icon-search"></i><strong>
                                         Tìm kiếm</strong></button>
                             </div>
 

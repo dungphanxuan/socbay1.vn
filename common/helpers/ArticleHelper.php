@@ -45,22 +45,33 @@ class ArticleHelper
                 //$data['category_text'] = 'Điện thoại';
                 $data['category_text'] = $model->category ? $model->category->title : '';
                 $data['thumbnail_image'] = $model->thumbnail_base_url . '/' . $model->thumbnail_path;
-                $data['thumb_image'] = $model->getImgThumbnail(2, 75, 137, 81);
+                //1 Local
+                //2 Cloudinary
+                $imgSourceType = Yii::$app->params['image_source'];
+                //Image Thumb
+                $thumbImage = '';
+                switch ($imgSourceType) {
+                    case IMAGE_SOURCE_LOCAL:
+                        $thumbImage = $model->getImgThumbnail(2, 75, 137, 81);
 
-                $thumbPath = 'thumb/' . $model->thumbnail_path;
+                        $thumbPath = 'thumb/' . $model->thumbnail_path;
 
-                if (fileStorage()->getFilesystem()->has($thumbPath)) {
-                    $data['thumb_image'] = $model->thumbnail_base_url . '/' . $thumbPath;
+                        if (fileStorage()->getFilesystem()->has($thumbPath)) {
+                            $thumbImage = $model->thumbnail_base_url . '/' . $thumbPath;
+                        }
+                        break;
+                    case IMAGE_SOURCE_CLOUDINARY:
+                        $thumbImage = CloudinaryHelper::resizingAndCropping($model->thumbnail_base_url, $model->thumbnail_path, 100, 75);
+                        break;
                 }
+                $data['thumb_image'] = $thumbImage;
 
                 //Price
                 $data['price'] = $model->price;
                 $data['price-show'] = ($model->price ? getCurrencyFormat()->asDecimal($model->price) : '') . '₫';
                 $dataImage = [];
                 $countImage = 0;
-                //1 Local
-                //2 Cloudinary
-                $imgSourceType = 2;
+
                 if ($model->attachments) {
 
 
@@ -71,15 +82,16 @@ class ArticleHelper
 
                         $itemAttacthment = [];
                         $itemAttacthment[] = $itemAtt['base_url'] . '/' . $itemAtt['path'];
-
+                        $urlThumbnail = '';
+                        $urlStandar = '';
                         switch ($imgSourceType) {
-                            case 1:
+                            case IMAGE_SOURCE_LOCAL:
                                 if (fileStorage()->getFilesystem()->has($itemAtt['path'])) {
                                     $urlStandar = ArticleHelper::getImgThumb($itemAtt['base_url'], $itemAtt['path'], 790, 445);
                                     $urlThumbnail = ArticleHelper::getImgThumb($itemAtt['base_url'], $itemAtt['path'], 100, 75);
                                 }
                                 break;
-                            case 2:
+                            case IMAGE_SOURCE_CLOUDINARY:
                                 $urlStandar = CloudinaryHelper::resizingAndCropping($itemAtt['base_url'], $itemAtt['path'], $attImageWidth, $attImageHeigh);
                                 $urlThumbnail = CloudinaryHelper::resizingAndCropping($itemAtt['base_url'], $itemAtt['path'], 100, 75);
                                 break;
@@ -208,6 +220,19 @@ class ArticleHelper
         return $id;
     }
 
+
+    private function getImageSourceUrl($source)
+    {
+        $url = '';
+        switch ($source) {
+            case IMAGE_SOURCE_LOCAL:
+
+                break;
+            case IMAGE_SOURCE_CLOUDINARY:
+                break;
+        }
+        return $url;
+    }
 
     /*
      * Article Thumbnail Image

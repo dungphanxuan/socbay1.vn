@@ -97,7 +97,8 @@ class JobController extends FrontendController
 
     public function actionCompanyProfile($id)
     {
-        return $this->render('company');
+        $model = Company::findOne($id);
+        return $this->render('company', ['model' => $model]);
     }
 
 

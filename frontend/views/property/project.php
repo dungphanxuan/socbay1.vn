@@ -6,6 +6,7 @@
  * Time: 3:13 PM
  */
 
+use frontend\assets\AdsAsset;
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\ListView;
@@ -25,7 +26,7 @@ $imgUrl = baseUrl() . '/frontend/web/classified/images/house/1.jpg';
 
 $updateData = false;
 $cityCount = Project::getAllCityCount($updateData);
-
+$bundle = AdsAsset::register($this);
 $cityList = Project::getCityList($updateData);
 $catList = ProjectCategory::getCatSlug($updateData);
 
@@ -34,34 +35,37 @@ $this->registerCssFile("@web/frontend/web/classified/assets/css/box/style-page.c
 ]);
 ?>
 
-    <div class="search-row-wrapper">
-        <div class="container ">
-            <?php $form = ActiveForm::begin([
-                'action' => ['/property/project'],
-                'method' => 'get',
-            ]); ?>
-            <div class="row">
-                <div class="col-md-3">
-                    <?php
-                    echo Html::textInput('key', getParam('key'), ['class' => 'form-control keyword', 'placeholder' => 'Dự án ...'])
-                    ?>
+    <div class="search-row-wrapper"
+         style="background-image: url(<?php echo $this->assetManager->getAssetUrl($bundle, 'images/bg.jpg') ?>)">
+        <div class="inner">
+            <div class="container ">
+                <?php $form = ActiveForm::begin([
+                    'action' => ['/property/project'],
+                    'method' => 'get',
+                ]); ?>
+                <div class="row">
+                    <div class="col-md-3">
+                        <?php
+                        echo Html::textInput('key', getParam('key'), ['class' => 'form-control keyword', 'placeholder' => 'Dự án ...'])
+                        ?>
+                    </div>
+                    <div class="col-md-3">
+                        <?php
+                        echo Html::dropDownList('category', getParam('category'), $catList, ['class' => 'form-control selecter', 'id' => 'id-location', 'prompt' => 'Loại hình bất động sản ...']);
+                        ?>
+                    </div>
+                    <div class="col-md-3">
+                        <?php
+                        echo Html::dropDownList('location', getParam('location'), $cityList, ['class' => 'form-control selecter', 'id' => 'id-location', 'prompt' => 'Tỉnh/Thành Phố...']);
+                        ?>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-block btn-primary  "><i class="fa fa-search"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <?php
-                    echo Html::dropDownList('category', getParam('category'), $catList, ['class' => 'form-control selecter', 'id' => 'id-location', 'prompt' => 'Loại hình bất động sản ...']);
-                    ?>
-                </div>
-                <div class="col-md-3">
-                    <?php
-                    echo Html::dropDownList('location', getParam('location'), $cityList, ['class' => 'form-control selecter', 'id' => 'id-location', 'prompt' => 'Tỉnh/Thành Phố...']);
-                    ?>
-                </div>
-                <div class="col-md-3">
-                    <button class="btn btn-block btn-primary  "><i class="fa fa-search"></i>
-                    </button>
-                </div>
+                <?php ActiveForm::end(); ?>
             </div>
-            <?php ActiveForm::end(); ?>
         </div>
     </div>
     <!-- /.search-row -->
@@ -79,11 +83,6 @@ $this->registerCssFile("@web/frontend/web/classified/assets/css/box/style-page.c
                 </div>
                 <!--/.page-side-bar-->
                 <div class="col-md-9 page-content col-thin-left">
-                    <?php Pjax::begin([
-                        'id' => 'all-ads',
-                        'timeout' => 2000,
-                        'scrollTo' => 0
-                    ]) ?>
                     <div class="category-list">
                         <div class="tab-box ">
 
@@ -170,29 +169,26 @@ $this->registerCssFile("@web/frontend/web/classified/assets/css/box/style-page.c
                         <!-- Mobile Filter bar End-->
 
 
-                        <div class="attachment" style="overflow:hidden;" id="allAds">
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <?php echo \frontend\widgets\SummaryWidget::widget(['dataProvider' => $dataProvider]) ?>
+                        <div class="tab-content">
+                            <div class="tab-pane  active " id="alladslist">
+                                <div class="adds-wrapper row no-margin property-list">
+                                    <?php echo ListView::widget([
+                                        'dataProvider' => $dataProvider,
+                                        //'summary'      => '',
+                                        'layout' => '{items}',
+                                        'itemView' => '_item_project1',
+                                        'options' => [
+                                            'tag' => false
+                                        ],
+                                        'itemOptions' => [
+                                            'tag' => false,
+                                        ]
+                                    ]) ?>
                                 </div>
-                            </div>
-                            <?php echo ListView::widget([
-                                'dataProvider' => $dataProvider,
-                                //'summary'      => '',
-                                'layout' => '{items}',
-                                'itemView' => '_item_project1',
-                                'options' => [
-                                    'tag' => false
-                                ],
-                                'itemOptions' => [
-                                    'tag' => false,
-                                ]
-                            ]) ?>
 
+                            </div>
                         </div>
                         <!--/.adds-wrapper-->
-
                         <br>
 
                         <div class="tab-box  save-search-bar text-center">
@@ -211,7 +207,6 @@ $this->registerCssFile("@web/frontend/web/classified/assets/css/box/style-page.c
                         </nav>
                     </div>
                     <!--/.pagination-bar -->
-                    <?php Pjax::end(); ?>
                     <?php echo $this->render('@frontend/views/ads/partical/_post_promo', []) ?>
 
                     <!--/.post-promo-->
@@ -246,13 +241,6 @@ $this->registerCss($app_css);
 $urlBuild = Url::to(['/property/project']);
 
 $app_js = <<<JS
-$(document).on('pjax:success', function () {
-    var instance = $('.lazy').Lazy({chainable: false});
-    var pjaxElements = $('#allAds .lazy');
-
-    instance.addItems(pjaxElements);
-    instance.update();
-});
 
 $(".emp-city").change(function () {
     console.log('Check');
@@ -311,7 +299,7 @@ function buildSPUrl() {
     var arrArea = getAreaValue();
     
     urlReload = '$urlBuild' + '&city=' + arrCity.join() + '&price=' + arrPrice.join()+ '&area=' + arrArea.join() +'&stype=2';
-    $.pjax.reload({container: "#all-ads", url: urlReload, scrollTo:  $('#dataContent').offset().top - 80});
+    //$.pjax.reload({container: "#all-ads", url: urlReload, scrollTo:  $('#dataContent').offset().top - 80});
     return true;
 }
 JS;

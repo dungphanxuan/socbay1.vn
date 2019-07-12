@@ -71,6 +71,7 @@ return [
     'Size' => 'Kích cớ',
     'Slug' => 'Bí danh',
     'Status' => 'Trạng thái',
+
     'Thumbnail Image' => 'Ảnh thumbnail',
     'Title' => 'Tiêu đề',
     'Type' => 'Loại',
@@ -87,6 +88,8 @@ return [
     'Price' => 'Giá SP',
     'Condition' => 'Thỏa thuận',
     'Price Text' => 'Nhập giá',
+    'Sort Number' => 'Thứ tự sắp xếp',
+    'Sort By Asc' => 'Sắp xếp theo chữ cái',
     'Public From' => 'Từ ngày',
     'Public To' => 'Đến ngày',
     'Attachments' => 'Đính kèm',

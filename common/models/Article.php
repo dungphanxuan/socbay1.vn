@@ -300,6 +300,7 @@ class Article extends ActiveRecord implements Linkable, ObjectIdentityInterface
             'district_id' => Yii::t('common', 'District'),
             'ward_id' => Yii::t('common', 'Ward'),
 
+            'price_text' => Yii::t('common', 'Price Text'),
             'status' => Yii::t('common', 'Published'),
             'published_at' => Yii::t('common', 'Published At'),
             'public_from' => Yii::t('common', 'Public From'),
@@ -495,7 +496,7 @@ class Article extends ActiveRecord implements Linkable, ObjectIdentityInterface
 
     /*
      * Image Thumbnail
-     * Note: Source: Server, Google Cloud Storage, Filestack
+     * Note: Source: Server, Google Cloud Storage, Filestack, Cloudinary
      * */
     public function getImgThumbnail($type = 1, $q = 75, $w = null, $h = null)
     {

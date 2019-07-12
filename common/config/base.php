@@ -320,7 +320,8 @@ $config = [
             'allowNegative' => false,
         ],
         'gmapApiKey' => 'AIzaSyCNmTfwkNfWBggiPp060J19KlvDbDiJUS0',
-        'uploadUrl' => 'http://dropcloudinary.herokuapp.com/upload-cloud'
+        'uploadUrl' => 'http://dropcloudinary.herokuapp.com/upload-cloud',
+        'image_source' => IMAGE_SOURCE_CLOUDINARY
     ],
 ];
 

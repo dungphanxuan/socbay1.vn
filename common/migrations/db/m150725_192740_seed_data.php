@@ -423,6 +423,12 @@ class m150725_192740_seed_data extends Migration
             'comment' => 'The secret key requires to be saved to later check with the input key from the user to implement the two-factor authentication (2FA).'
         ]);
 
+        $this->insert('{{%key_storage_item}}', [
+            'key' => 'image_source',
+            'value' => IMAGE_SOURCE_CLOUDINARY,
+            'comment' => 'Image Source: Local, File Stack, Cloudinary'
+        ]);
+
     }
 
     public function safeDown()

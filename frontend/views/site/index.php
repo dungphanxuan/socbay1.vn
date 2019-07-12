@@ -31,21 +31,29 @@ $bundle = AdsAsset::register($this);
                     'action' => ['/ads/index']
                 ]) ?>
                 <div class="row search-row animated fadeInUp">
+                    <div class="col-xl-4 col-sm-4 search-col relative locationicon">
+                        <div class="search-col-inner">
+                            <i class="icon-location-2 icon-append"></i>
+                            <div class="search-col-input">
+                                <input type="text" name="country" id="autocomplete-ajax"
+                                       class="form-control locinput input-rel searchtag-input has-icon"
+                                       placeholder="<?php echo Yii::t('ads', 'City/Zipcode...') ?>" value="">
 
-
-                    <div class="col-lg-4 col-sm-4 search-col relative locationicon">
-                        <i class="icon-location-2 icon-append"></i>
-                        <input type="text" name="country" id="autocomplete-ajax"
-                               class="form-control locinput input-rel searchtag-input has-icon"
-                               placeholder="<?php echo Yii::t('ads', 'City/Zipcode...') ?>" value="">
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-sm-4 search-col relative"><i class="icon-docs icon-append"></i>
-                        <input type="text" name="ads-title" class="form-control has-icon"
-                               placeholder="<?php echo Yii::t('ads', 'I\'m looking for a ...') ?>"
-                               value="">
+                    <div class="col-xl-4 col-sm-4 search-col relative">
+                        <div class="search-col-inner">
+                            <i class="icon-docs icon-append"></i>
+                            <div class="search-col-input">
+                                <input type="text" name="ads"
+                                       class="form-control has-icon"
+                                       placeholder="<?php echo Yii::t('ads', 'I\'m looking for a ...') ?>" value="">
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-4 col-sm-4 search-col">
-                        <button class="btn btn-primary btn-search btn-block"><i
+                        <button class="btn btn-primary btn-search btn-block btn-gradient"><i
                                     class="icon-search"></i><strong><?php echo Yii::t('ads', 'Find') ?></strong>
                         </button>
                     </div>

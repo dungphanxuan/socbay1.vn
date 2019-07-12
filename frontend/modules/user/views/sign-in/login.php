@@ -26,18 +26,6 @@ $this->params['breadcrumbs'][] = $this->title;
                             </h2>
                         </div>
                         <div class="card-body">
-                            <?php $authAuthChoice = AuthChoice::begin([
-                                'baseAuthUrl' => ['user/sign-in/oauth'],
-                                'autoRender' => false
-                            ]); ?>
-                            <?php foreach ($authAuthChoice->getClients() as $client): ?>
-                                <a class="btn btn-success btn-block btn-social btn-facebook facebook auth-link"
-                                   href="<?= Url::to(['/user/sign-in/oauth', 'authclient' => $client->name]) ?>"
-                                   data-popup-width="860" data-popup-height="480">
-                                    <span class="fa fa-facebook"></span> Đăng nhập qua Facebook
-                                </a>
-                            <?php endforeach; ?>
-                            <br>
                             <?php
                             $temp_input_html = <<<HTML
                                     <label for="sender-email" class="control-label">{label}:</label>
@@ -94,8 +82,15 @@ HTML;
                             <div class="form-group">
                                 <?php echo Html::submitButton(Yii::t('frontend', 'Login'), ['class' => 'btn btn-primary  btn-block', 'name' => 'login-button']) ?>
                             </div>
+                            <h3 class="or-divider"><span>or</span></h3>
+                            <div class="button-wrap">
+                                <a href="#" class="btn-social btn-fbk"><i class="fab fa-facebook-f"></i>facebook<br>connect</a>
+                                <a href="#" class="btn-social btn-ggl"><i class="fab fa-google-plus-g"></i>google<br>connect</a>
+                            </div>
                             <?php ActiveForm::end(); ?>
+
                         </div>
+
                         <div class="card-footer">
 
                             <div class="checkbox pull-left">
