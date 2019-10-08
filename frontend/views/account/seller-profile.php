@@ -137,15 +137,15 @@ $totalAds = ArticleData::getTotal(4, Yii::$app->user->id);
                                 <!--/.listing-filter-->
                                 <?php echo ListView::widget([
                                     'dataProvider' => $dataProvider,
-                                    'summary'      => '',
-                                    'layout'       => '{items}',
+                                    'summary' => '',
+                                    'layout' => '{items}',
                                     //'itemView'     => '_item_seller',
-                                    'itemView'     => '@frontend/views/ads/_item',
-                                    'options'      => [
-                                        'tag'   => 'div',
+                                    'itemView' => '@frontend/views/ads/_item',
+                                    'options' => [
+                                        'tag' => 'div',
                                         'class' => 'adds-wrapper',
                                     ],
-                                    'itemOptions'  => [
+                                    'itemOptions' => [
                                         'tag' => false,
                                     ]
                                 ]) ?>

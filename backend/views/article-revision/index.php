@@ -32,15 +32,15 @@ $this->params['breadcrumbs'][] = $this->title;
         ?>
         <?php echo GridView::widget([
             'dataProvider' => $dataProvider,
-            'filterModel'  => $searchModel,
-            'options'      => [
+            'filterModel' => $searchModel,
+            'options' => [
                 'id' => 'w5'
             ],
-            'pager'        => [
+            'pager' => [
                 'maxButtonCount' => 15,
             ],
-            'layout'       => "{summary}\n{items}\n<div align='center'>{pager}</div>",
-            'columns'      => [
+            'layout' => "{summary}\n{items}\n<div align='center'>{pager}</div>",
+            'columns' => [
                 ['class' => 'yii\grid\CheckboxColumn'],
 
                 'article_id',
@@ -55,7 +55,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'memo',
                 [
                     'attribute' => 'updater_id',
-                    'value'     => function ($model) {
+                    'value' => function ($model) {
                         return $model->updater ? $model->updater->username : '';
                     }
                 ],

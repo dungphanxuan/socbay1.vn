@@ -78,8 +78,8 @@ class ApiResponse extends \yii\web\Response
                 }
 
                 $this->data = [
-                    'status'  => 0,
-                    'code'    => $this->statusResponseCode,
+                    'status' => 0,
+                    'code' => $this->statusResponseCode,
                     'message' => $errorMessage
                 ];
             } else {
@@ -91,8 +91,8 @@ class ApiResponse extends \yii\web\Response
                         $resData ['data'] = $this->data;
                     }
                     $resDataDefault = [
-                        'status'  => 1,
-                        'code'    => $this->statusResponseCode,
+                        'status' => 1,
+                        'code' => $this->statusResponseCode,
                         'message' => !empty($this->statusText) ? $this->statusText : $this->statusResponseExtra,
                     ];
 

@@ -52,13 +52,13 @@ class ReportReasonSearch extends ReportReason
         }
 
         $query->andFilterWhere([
-            'id'          => $this->id,
-            'parent_id'   => $this->parent_id,
-            'type'        => $this->type,
-            'status'      => $this->status,
+            'id' => $this->id,
+            'parent_id' => $this->parent_id,
+            'type' => $this->type,
+            'status' => $this->status,
             'sort_number' => $this->sort_number,
-            'created_at'  => $this->created_at,
-            'updated_at'  => $this->updated_at,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
         ]);
 
         $query->andFilterWhere(['like', 'slug', $this->slug])

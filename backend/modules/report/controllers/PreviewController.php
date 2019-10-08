@@ -12,7 +12,7 @@ class PreviewController extends \yii\web\Controller
     {
         return \yii\helpers\ArrayHelper::merge(parent::behaviors(), [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['post'],
                 ],
@@ -56,26 +56,26 @@ class PreviewController extends \yii\web\Controller
             // set to use core fonts only
             //'mode' => Pdf::MODE_ASIAN,
             // A4 paper format
-            'format'      => Pdf::FORMAT_A4,
+            'format' => Pdf::FORMAT_A4,
             // portrait orientation
             'orientation' => Pdf::ORIENT_PORTRAIT,
             // stream to browser inline
             // 'destination' => Pdf::DEST_BROWSER,
             // your html content input
-            'content'     => $content,
+            'content' => $content,
             // format content from your own css file if needed or use the
             // enhanced bootstrap css built by Krajee for mPDF formatting
             //'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.min.css',
             //'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/style.css',
             //'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/invoice21.css',
-            'cssFile'     => '@backend/web/@backend/views/layouts/preview/css/invoice21.css',
+            'cssFile' => '@backend/web/@backend/views/layouts/preview/css/invoice21.css',
             //'cssFile' => '@backend/web/@backend/views/layouts/preview/invoice/invoice21.css',
             // any css to be embedded if required
             // 'cssInline' => '.kv-heading-1{font-size:18px}',
             // set mPDF properties on the fly
-            'options'     => ['title' => 'Krajee Report Title'],
+            'options' => ['title' => 'Krajee Report Title'],
             // call mPDF methods on the fly
-            'methods'     => [
+            'methods' => [
                 'SetHeader' => ['Report Header'],
                 'SetFooter' => ['{PAGENO}'],
             ]
@@ -97,26 +97,26 @@ class PreviewController extends \yii\web\Controller
             // set to use core fonts only
             //'mode' => Pdf::MODE_ASIAN,
             // A4 paper format
-            'format'      => Pdf::FORMAT_A4,
+            'format' => Pdf::FORMAT_A4,
             // portrait orientation
             'orientation' => Pdf::ORIENT_PORTRAIT,
             // stream to browser inline
             // 'destination' => Pdf::DEST_BROWSER,
             // your html content input
-            'content'     => $content,
+            'content' => $content,
             // format content from your own css file if needed or use the
             // enhanced bootstrap css built by Krajee for mPDF formatting
             //'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.min.css',
             //'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/style.css',
             //'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/invoice21.css',
             //'cssFile' => '@backend/web/@backend/views/layouts/preview/css/invoice21.css',
-            'cssFile'     => '@backend/web/@backend/views/layouts/preview/invoice/invoice21.css',
+            'cssFile' => '@backend/web/@backend/views/layouts/preview/invoice/invoice21.css',
             // any css to be embedded if required
             // 'cssInline' => '.kv-heading-1{font-size:18px}',
             // set mPDF properties on the fly
-            'options'     => ['title' => 'Krajee Report Title'],
+            'options' => ['title' => 'Krajee Report Title'],
             // call mPDF methods on the fly
-            'methods'     => [
+            'methods' => [
                 'SetHeader' => ['Report Header'],
                 'SetFooter' => ['{PAGENO}'],
             ]

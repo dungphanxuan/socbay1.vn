@@ -8,23 +8,23 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 use kartik\depdrop\DepDrop;
 use yii\helpers\ArrayHelper;
 use yii\widgets\Pjax;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\job\CompanySearch */
-/* @var $form yii\bootstrap\ActiveForm */
+/* @var $form yii\bootstrap4\ActiveForm */
 ?>
 
 <div class="company-search box-search">
     <?php $form = ActiveForm::begin([
-        'id'                   => 'popup-form',
-        'action'               => ['/job/data-search'],
+        'id' => 'popup-form',
+        'action' => ['/job/data-search'],
         'enableAjaxValidation' => true,
-        'method'               => 'get',
-        'layout'               => 'horizontal'
+        'method' => 'get',
+        'layout' => 'horizontal'
     ]); ?>
     <?php echo Html::hiddenInput('layout', 1); ?>
     <div class="row">

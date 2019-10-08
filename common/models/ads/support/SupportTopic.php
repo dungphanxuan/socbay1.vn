@@ -12,31 +12,31 @@ use yii\behaviors\TimestampBehavior;
 /**
  * This is the model class for table "sup_topic".
  *
- * @property int                      $id
- * @property string                   $slug
- * @property string                   $title
- * @property string                   $body
- * @property string                   $view
- * @property int                      $category_id
- * @property string                   $thumbnail_base_url
- * @property string                   $thumbnail_path
- * @property int                      $total_votes
- * @property int                      $up_votes
- * @property double                   $rating
- * @property int                      $featured
- * @property int                      $comment_count
- * @property int                      $view_count
- * @property int                      $sort_number
- * @property int                      $status
- * @property int                      $created_by
- * @property int                      $updated_by
- * @property int                      $published_at
- * @property int                      $created_at
- * @property int                      $updated_at
+ * @property int $id
+ * @property string $slug
+ * @property string $title
+ * @property string $body
+ * @property string $view
+ * @property int $category_id
+ * @property string $thumbnail_base_url
+ * @property string $thumbnail_path
+ * @property int $total_votes
+ * @property int $up_votes
+ * @property double $rating
+ * @property int $featured
+ * @property int $comment_count
+ * @property int $view_count
+ * @property int $sort_number
+ * @property int $status
+ * @property int $created_by
+ * @property int $updated_by
+ * @property int $published_at
+ * @property int $created_at
+ * @property int $updated_at
  *
- * @property User                     $createdBy
- * @property SupportTopicCategory     $category
- * @property User                     $updatedBy
+ * @property User $createdBy
+ * @property SupportTopicCategory $category
+ * @property User $updatedBy
  * @property SupportTopicAttachment[] $supTopicAttachments
  */
 class SupportTopic extends \yii\db\ActiveRecord
@@ -69,26 +69,26 @@ class SupportTopic extends \yii\db\ActiveRecord
             TimestampBehavior::class,
             BlameableBehavior::class,
             [
-                'class'     => SluggableBehavior::class,
+                'class' => SluggableBehavior::class,
                 'attribute' => 'title',
                 'immutable' => true,
             ],
             [
-                'class'            => UploadBehavior::class,
-                'attribute'        => 'attachments',
-                'multiple'         => true,
-                'uploadRelation'   => 'topicAttachments',
-                'pathAttribute'    => 'path',
+                'class' => UploadBehavior::class,
+                'attribute' => 'attachments',
+                'multiple' => true,
+                'uploadRelation' => 'topicAttachments',
+                'pathAttribute' => 'path',
                 'baseUrlAttribute' => 'base_url',
-                'orderAttribute'   => 'order',
-                'typeAttribute'    => 'type',
-                'sizeAttribute'    => 'size',
-                'nameAttribute'    => 'name',
+                'orderAttribute' => 'order',
+                'typeAttribute' => 'type',
+                'sizeAttribute' => 'size',
+                'nameAttribute' => 'name',
             ],
             [
-                'class'            => UploadBehavior::class,
-                'attribute'        => 'thumbnail',
-                'pathAttribute'    => 'thumbnail_path',
+                'class' => UploadBehavior::class,
+                'attribute' => 'thumbnail',
+                'pathAttribute' => 'thumbnail_path',
                 'baseUrlAttribute' => 'thumbnail_base_url',
             ],
         ];
@@ -121,27 +121,27 @@ class SupportTopic extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'                 => 'ID',
-            'slug'               => 'Slug',
-            'title'              => 'Title',
-            'body'               => 'Body',
-            'view'               => 'View',
-            'category_id'        => 'Category',
+            'id' => 'ID',
+            'slug' => 'Slug',
+            'title' => 'Title',
+            'body' => 'Body',
+            'view' => 'View',
+            'category_id' => 'Category',
             'thumbnail_base_url' => 'Thumbnail Base Url',
-            'thumbnail_path'     => 'Thumbnail Path',
-            'total_votes'        => 'Total Votes',
-            'up_votes'           => 'Up Votes',
-            'rating'             => 'Rating',
-            'featured'           => 'Featured',
-            'comment_count'      => 'Comment Count',
-            'view_count'         => 'View Count',
-            'sort_number'        => 'Sort Number',
-            'status'             => 'Status',
-            'created_by'         => 'Created By',
-            'updated_by'         => 'Updated By',
-            'published_at'       => 'Published At',
-            'created_at'         => 'Created At',
-            'updated_at'         => 'Updated At',
+            'thumbnail_path' => 'Thumbnail Path',
+            'total_votes' => 'Total Votes',
+            'up_votes' => 'Up Votes',
+            'rating' => 'Rating',
+            'featured' => 'Featured',
+            'comment_count' => 'Comment Count',
+            'view_count' => 'View Count',
+            'sort_number' => 'Sort Number',
+            'status' => 'Status',
+            'created_by' => 'Created By',
+            'updated_by' => 'Updated By',
+            'published_at' => 'Published At',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
         ];
     }
 

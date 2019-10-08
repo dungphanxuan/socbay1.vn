@@ -6,6 +6,7 @@
  * Time: 3:13 PM
  */
 
+use frontend\assets\AdsAsset;
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\ListView;
@@ -13,33 +14,35 @@ use common\models\property\Project;
 use kartik\select2\Select2;
 use common\models\property\ProjectCategory;
 use yii\widgets\Pjax;
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $activeIndex */
 /* @var $modelCity \dungphanxuan\vnlocation\models\City */
 /* @var $dataProvider \yii\data\ActiveDataProvider */
 
-$this->title = 'Dự án Bất động sản';
-$imgUrl = baseUrl() . '/frontend/web/theme/images/house/1.jpg';
+$this->title = Yii::t('ads', 'Property project');
+$imgUrl = baseUrl() . '/frontend/web/classified/images/house/1.jpg';
 
 $updateData = false;
 $cityCount = Project::getAllCityCount($updateData);
-
+$bundle = AdsAsset::register($this);
 $cityList = Project::getCityList($updateData);
 $catList = ProjectCategory::getCatSlug($updateData);
 
-$this->registerCssFile("@web/frontend/web/theme/assets/css/box/style-page.css", [
+$this->registerCssFile("@web/frontend/web/classified/assets/css/box/style-page.css", [
     'depends' => [\frontend\assets\AdsAsset::class],
 ]);
 ?>
 
-    <div class="search-row-wrapper">
-        <div class="container ">
-            <?php $form = ActiveForm::begin([
-                'action' => ['/property/project'],
-                'method' => 'get',
-            ]); ?>
+    <div class="search-row-wrapper"
+         style="background-image: url(<?php echo $this->assetManager->getAssetUrl($bundle, 'images/bg.jpg') ?>)">
+        <div class="inner">
+            <div class="container ">
+                <?php $form = ActiveForm::begin([
+                    'action' => ['/property/project'],
+                    'method' => 'get',
+                ]); ?>
                 <div class="row">
                     <div class="col-md-3">
                         <?php
@@ -61,7 +64,8 @@ $this->registerCssFile("@web/frontend/web/theme/assets/css/box/style-page.css", 
                         </button>
                     </div>
                 </div>
-            <?php ActiveForm::end(); ?>
+                <?php ActiveForm::end(); ?>
+            </div>
         </div>
     </div>
     <!-- /.search-row -->
@@ -79,11 +83,6 @@ $this->registerCssFile("@web/frontend/web/theme/assets/css/box/style-page.css", 
                 </div>
                 <!--/.page-side-bar-->
                 <div class="col-md-9 page-content col-thin-left">
-                    <?php Pjax::begin([
-                        'id'       => 'all-ads',
-                        'timeout'  => 2000,
-                        'scrollTo' => 0
-                    ]) ?>
                     <div class="category-list">
                         <div class="tab-box ">
 
@@ -170,29 +169,26 @@ $this->registerCssFile("@web/frontend/web/theme/assets/css/box/style-page.css", 
                         <!-- Mobile Filter bar End-->
 
 
-                        <div class="attachment" style="overflow:hidden;" id="allAds">
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <?php echo \frontend\widgets\SummaryWidget::widget(['dataProvider' => $dataProvider]) ?>
+                        <div class="tab-content">
+                            <div class="tab-pane  active " id="alladslist">
+                                <div class="adds-wrapper row no-margin property-list">
+                                    <?php echo ListView::widget([
+                                        'dataProvider' => $dataProvider,
+                                        //'summary'      => '',
+                                        'layout' => '{items}',
+                                        'itemView' => '_item_project1',
+                                        'options' => [
+                                            'tag' => false
+                                        ],
+                                        'itemOptions' => [
+                                            'tag' => false,
+                                        ]
+                                    ]) ?>
                                 </div>
-                            </div>
-                            <?php echo ListView::widget([
-                                'dataProvider' => $dataProvider,
-                                //'summary'      => '',
-                                'layout'       => '{items}',
-                                'itemView'     => '_item_project1',
-                                'options'      => [
-                                    'tag' => false
-                                ],
-                                'itemOptions'  => [
-                                    'tag' => false,
-                                ]
-                            ]) ?>
 
+                            </div>
                         </div>
                         <!--/.adds-wrapper-->
-
                         <br>
 
                         <div class="tab-box  save-search-bar text-center">
@@ -211,7 +207,6 @@ $this->registerCssFile("@web/frontend/web/theme/assets/css/box/style-page.css", 
                         </nav>
                     </div>
                     <!--/.pagination-bar -->
-                    <?php Pjax::end(); ?>
                     <?php echo $this->render('@frontend/views/ads/partical/_post_promo', []) ?>
 
                     <!--/.post-promo-->
@@ -246,13 +241,6 @@ $this->registerCss($app_css);
 $urlBuild = Url::to(['/property/project']);
 
 $app_js = <<<JS
-$(document).on('pjax:success', function () {
-    var instance = $('.lazy').Lazy({chainable: false});
-    var pjaxElements = $('#allAds .lazy');
-
-    instance.addItems(pjaxElements);
-    instance.update();
-});
 
 $(".emp-city").change(function () {
     console.log('Check');
@@ -311,7 +299,7 @@ function buildSPUrl() {
     var arrArea = getAreaValue();
     
     urlReload = '$urlBuild' + '&city=' + arrCity.join() + '&price=' + arrPrice.join()+ '&area=' + arrArea.join() +'&stype=2';
-    $.pjax.reload({container: "#all-ads", url: urlReload, scrollTo:  $('#dataContent').offset().top - 80});
+    //$.pjax.reload({container: "#all-ads", url: urlReload, scrollTo:  $('#dataContent').offset().top - 80});
     return true;
 }
 JS;

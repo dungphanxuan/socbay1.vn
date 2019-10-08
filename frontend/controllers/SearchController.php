@@ -29,8 +29,8 @@ class SearchController extends FrontendController
         $results = new ActiveDataProvider(
             [
                 'query' => SearchActiveRecord::search($q, $version, $language),
-                'key'   => 'primaryKey',
-                'sort'  => false,
+                'key' => 'primaryKey',
+                'sort' => false,
             ]
         );
 
@@ -39,10 +39,10 @@ class SearchController extends FrontendController
         return $this->render(
             'results',
             [
-                'results'     => $results,
+                'results' => $results,
                 'queryString' => $q,
-                'version'     => $version,
-                'language'    => $language,
+                'version' => $version,
+                'language' => $language,
             ]
         );
     }
@@ -91,9 +91,9 @@ class SearchController extends FrontendController
             array_map(
                 function ($r) {
                     return [
-                        'title'    => $r->title,
-                        'url'      => Url::to($r->getUrl(), true),
-                        'version'  => $r->version,
+                        'title' => $r->title,
+                        'url' => Url::to($r->getUrl(), true),
+                        'version' => $r->version,
                         'language' => $r->language,
                     ];
                 },
@@ -129,7 +129,7 @@ class SearchController extends FrontendController
                 function (Package $package) {
                     return [
                         'title' => $package->getName(),
-                        'url'   => $package->getUrl()
+                        'url' => $package->getUrl()
                     ];
                 },
                 $packagistData['packages']

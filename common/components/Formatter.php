@@ -55,6 +55,7 @@ class Formatter extends \yii\i18n\Formatter
         }
         return $this->asDatetime($value) . ' (' . $this->asRelativeTime($value) . ')';
     }
+
     /**
      * Format as normal markdown without class link extensions.
      *
@@ -85,8 +86,8 @@ class Formatter extends \yii\i18n\Formatter
     public function asCommentMarkdown($markdown)
     {
         Markdown::$flavors['yii-gfm-comment'] = [
-            'class'          => \common\components\Markdown::class,
-            'html5'          => true,
+            'class' => \common\components\Markdown::class,
+            'html5' => true,
             'enableNewlines' => true,
         ];
         $html = Markdown::process($markdown, 'yii-gfm-comment');

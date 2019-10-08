@@ -44,8 +44,8 @@ class FacebookComponent extends Component
         parent::init();
 
         $this->fb = new Facebook([
-            'app_id'                => $this->appId,
-            'app_secret'            => $this->secret,
+            'app_id' => $this->appId,
+            'app_secret' => $this->secret,
             'default_graph_version' => 'v2.10',
         ]);
 

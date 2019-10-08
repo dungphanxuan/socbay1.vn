@@ -8,11 +8,11 @@ $this->title = Yii::t('backend', 'Update {modelClass}: ', [
     ]) . ' ' . $model->id;
 $this->params['breadcrumbs'][] = [
     'label' => Yii::t('backend', 'Widget Carousel Items'),
-    'url'   => ['/widget/widget-carousel/index']
+    'url' => ['/widget/widget-carousel/index']
 ];
 $this->params['breadcrumbs'][] = [
     'label' => $model->carousel->key,
-    'url'   => ['update', 'id' => $model->carousel->id]
+    'url' => ['update', 'id' => $model->carousel->id]
 ];
 $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 ?>

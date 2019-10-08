@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 use trntv\filekit\widget\Upload;
 use kartik\depdrop\DepDrop;
 use yii\helpers\Url;
@@ -33,7 +33,7 @@ HTML;
 ]); ?>
     <fieldset>
         <?php echo $form->errorSummary($model, [
-            'class'  => 'alert alert-warning alert-dismissible',
+            'class' => 'alert alert-warning alert-dismissible',
             'header' => '<h2 class="alert-heading">Vui lòng sửa các lỗi sau!</h2>',
             'footer' => '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -42,33 +42,33 @@ HTML;
 
 
         <?php echo $form->field($model, 'title', [
-            'template'     => $tempTextInput,
-            'hintOptions'  => [
-                'tag'   => 'span',
+            'template' => $tempTextInput,
+            'hintOptions' => [
+                'tag' => 'span',
                 'class' => 'form-text text-muted'
             ],
             'labelOptions' => [
                 'class' => 'col-sm-3 col-form-label'
             ],
         ])->textInput([
-            'maxlength'   => true,
+            'maxlength' => true,
             'placeholder' => '',
-            'class'       => 'form-control input-md',
+            'class' => 'form-control input-md',
         ])->label('Tên công ty')->hint('Tên đầy đủ công ty.') ?>
 
         <?php echo $form->field($model, 'title_short', [
-            'template'     => $tempTextInput,
-            'hintOptions'  => [
-                'tag'   => 'span',
+            'template' => $tempTextInput,
+            'hintOptions' => [
+                'tag' => 'span',
                 'class' => 'form-text text-muted'
             ],
             'labelOptions' => [
                 'class' => 'col-sm-3 col-form-label'
             ],
         ])->textInput([
-            'maxlength'   => true,
+            'maxlength' => true,
             'placeholder' => '',
-            'class'       => 'form-control input-md'
+            'class' => 'form-control input-md'
         ])->label('Tên ngắn') ?>
 
 
@@ -87,9 +87,9 @@ HTML;
 
         <!-- Textarea -->
         <?php echo $form->field($model, 'body', [
-            'template'     => $tempTextInput,
-            'hintOptions'  => [
-                'tag'   => 'span',
+            'template' => $tempTextInput,
+            'hintOptions' => [
+                'tag' => 'span',
                 'class' => 'form-text text-muted'
             ],
             'labelOptions' => [
@@ -98,12 +98,12 @@ HTML;
         ])->widget(\yii\imperavi\Widget::class, [
             'plugins' => ['fullscreen', 'fontcolor', 'video'],
             'options' => [
-                'minHeight'       => 250,
-                'maxHeight'       => 250,
-                'buttonSource'    => true,
-                'convertDivs'     => false,
+                'minHeight' => 250,
+                'maxHeight' => 250,
+                'buttonSource' => true,
+                'convertDivs' => false,
                 'removeEmptyTags' => true,
-                'imageUpload'     => Yii::$app->urlManager->createUrl(['/file-storage/upload-imperavi']),
+                'imageUpload' => Yii::$app->urlManager->createUrl(['/file-storage/upload-imperavi']),
             ],
         ])->label('Mô tả')->hint('Mô tả thông tin thêm về công ty.') ?>
 
@@ -124,18 +124,18 @@ HTML;
                     </div>
                     <div class="col">
                         <?php echo DepDrop::widget([
-                            'model'          => $model,
-                            'attribute'      => 'district_id',
-                            'options'        => ['id' => 'cdistrict-id', 'class' => 'form-control form-control-sm'],
-                            'type'           => DepDrop::TYPE_SELECT2,
-                            'data'           => $dataDistrict,
+                            'model' => $model,
+                            'attribute' => 'district_id',
+                            'options' => ['id' => 'cdistrict-id', 'class' => 'form-control form-control-sm'],
+                            'type' => DepDrop::TYPE_SELECT2,
+                            'data' => $dataDistrict,
                             'select2Options' => ['pluginOptions' => ['allowClear' => true], 'theme' => Select2::THEME_BOOTSTRAP],
-                            'pluginOptions'  => [
-                                'depends'     => ['ccity-id'],
-                                'initialize'  => true,
+                            'pluginOptions' => [
+                                'depends' => ['ccity-id'],
+                                'initialize' => true,
                                 'initDepends' => ['ccity-id'],
                                 'placeholder' => 'Chọn Quận/Huyện...',
-                                'url'         => Url::to(['/go/ajax/district-subcat'])
+                                'url' => Url::to(['/go/ajax/district-subcat'])
                             ],
                         ]); ?>
                     </div>
@@ -145,9 +145,9 @@ HTML;
 
 
         <?php echo $form->field($model, 'thumbnail', [
-            'template'     => $tempTextInput,
-            'hintOptions'  => [
-                'tag'   => 'span',
+            'template' => $tempTextInput,
+            'hintOptions' => [
+                'tag' => 'span',
                 'class' => 'form-text text-muted'
             ],
             'labelOptions' => [
@@ -156,55 +156,55 @@ HTML;
         ])->widget(
             Upload::class,
             [
-                'url'             => ['/file-storage/upload'],
+                'url' => ['/file-storage/upload'],
                 'acceptFileTypes' => new \yii\web\JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
-                'maxFileSize'     => 5000000, // 5 MiB
+                'maxFileSize' => 5000000, // 5 MiB
             ])->label('Ảnh logo');
         ?>
 
 
         <?php echo $form->field($model, 'url', [
-            'template'     => $tempTextInput,
-            'hintOptions'  => [
-                'tag'   => 'span',
+            'template' => $tempTextInput,
+            'hintOptions' => [
+                'tag' => 'span',
                 'class' => 'form-text text-muted'
             ],
             'labelOptions' => [
                 'class' => 'col-sm-3 col-form-label'
             ],
         ])->textInput([
-            'maxlength'   => true,
+            'maxlength' => true,
             'placeholder' => '',
-            'class'       => 'form-control input-md'
+            'class' => 'form-control input-md'
         ]) ?>
         <?php echo $form->field($model, 'email', [
-            'template'     => $tempTextInput,
-            'hintOptions'  => [
-                'tag'   => 'span',
+            'template' => $tempTextInput,
+            'hintOptions' => [
+                'tag' => 'span',
                 'class' => 'form-text text-muted'
             ],
             'labelOptions' => [
                 'class' => 'col-sm-3 col-form-label'
             ],
         ])->textInput([
-            'maxlength'   => true,
+            'maxlength' => true,
             'placeholder' => '',
-            'class'       => 'form-control input-md'
+            'class' => 'form-control input-md'
         ]) ?>
 
         <?php echo $form->field($model, 'phone', [
-            'template'     => $tempTextInput,
-            'hintOptions'  => [
-                'tag'   => 'span',
+            'template' => $tempTextInput,
+            'hintOptions' => [
+                'tag' => 'span',
                 'class' => 'form-text text-muted'
             ],
             'labelOptions' => [
                 'class' => 'col-sm-3 col-form-label'
             ],
         ])->textInput([
-            'maxlength'   => true,
+            'maxlength' => true,
             'placeholder' => '',
-            'class'       => 'form-control input-md'
+            'class' => 'form-control input-md'
         ]) ?>
 
         <div class="content-subheading"><i class="icon-user fa"></i> <strong>Company

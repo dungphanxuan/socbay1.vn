@@ -17,8 +17,8 @@ class ActiveRecord extends \yii\db\ActiveRecord
         }
 
         return [
-            'class'      => TimestampBehavior::class,
-            'value'      => new Expression('NOW()'),
+            'class' => TimestampBehavior::class,
+            'value' => new Expression('NOW()'),
             'attributes' => $attributes,
         ];
     }

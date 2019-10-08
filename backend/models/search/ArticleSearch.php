@@ -55,7 +55,7 @@ class ArticleSearch extends Article
         $pageArticle = \Yii::$app->keyStorage->get('admin.psize-article', 100);
 
         $dataProvider = new ActiveDataProvider([
-            'query'      => $query,
+            'query' => $query,
             'pagination' => [
                 'pageSize' => $pageArticle,
                 //'params' => ['type' => 2]
@@ -68,12 +68,12 @@ class ArticleSearch extends Article
 
 
         $query->andFilterWhere([
-            'id'          => $this->id,
-            'created_by'  => $this->created_by,
+            'id' => $this->id,
+            'created_by' => $this->created_by,
             'category_id' => $this->category_id,
-            'updated_by'  => $this->updated_by,
-            'status'      => $this->status,
-            'view_count'  => $this->view_count,
+            'updated_by' => $this->updated_by,
+            'status' => $this->status,
+            'view_count' => $this->view_count,
             //'published_at' => $this->published_at,
             //'created_at'   => $this->created_at,
             //'updated_at'   => $this->updated_at,

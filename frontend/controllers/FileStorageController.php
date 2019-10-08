@@ -26,10 +26,10 @@ class FileStorageController extends Controller
     public function behaviors()
     {
         return \yii\helpers\ArrayHelper::merge(parent::behaviors(), [
-            'verbs'  => [
-                'class'   => VerbFilter::class,
+            'verbs' => [
+                'class' => VerbFilter::class,
                 'actions' => [
-                    'delete'        => ['post'],
+                    'delete' => ['post'],
                     'upload-delete' => ['delete'],
                 ],
             ],
@@ -50,19 +50,19 @@ class FileStorageController extends Controller
     public function actions()
     {
         return [
-            'upload'          => [
-                'class'       => LocalUploadAction::class,
+            'upload' => [
+                'class' => LocalUploadAction::class,
                 'deleteRoute' => 'upload-delete'
             ],
-            'upload-delete'   => [
+            'upload-delete' => [
                 'class' => 'trntv\filekit\actions\DeleteAction'
             ],
             'upload-imperavi' => [
-                'class'            => 'trntv\filekit\actions\UploadAction',
-                'fileparam'        => 'file',
+                'class' => 'trntv\filekit\actions\UploadAction',
+                'fileparam' => 'file',
                 'responseUrlParam' => 'filelink',
-                'multiple'         => false,
-                'disableCsrf'      => true
+                'multiple' => false,
+                'disableCsrf' => true
             ]
         ];
     }
@@ -86,10 +86,10 @@ class FileStorageController extends Controller
         $totalSize = FileStorageItem::find()->sum('size') ?: 0;
 
         return $this->render('index', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'components'   => $components,
-            'totalSize'    => $totalSize
+            'components' => $components,
+            'totalSize' => $totalSize
         ]);
     }
 
@@ -209,7 +209,7 @@ class FileStorageController extends Controller
         $keyFilePath = getStoragePath() . '\key\YiiGroup-797194353469.json';
         $storage = new StorageClient([
             'projectId' => 'valued-ceiling-167301',
-            'keyFile'   => json_decode(file_get_contents($keyFilePath), true)
+            'keyFile' => json_decode(file_get_contents($keyFilePath), true)
 
         ]);
         $bucket = $storage->bucket('yiibucket');
@@ -231,7 +231,7 @@ class FileStorageController extends Controller
         $bucket->upload(
             fopen($fileInstance->tempName, 'r'),
             [
-                'name'          => $filePath,
+                'name' => $filePath,
                 'predefinedAcl' => 'publicRead'
             ]
         );
@@ -273,19 +273,19 @@ class FileStorageController extends Controller
             $fromDate = strtotime("+1 day", $fromDate);
         }
         $arrDataset[] = [
-            'label'                => 'User Stat',
-            'backgroundColor'      => "rgba(255,99,132,0.2)",
-            'borderColor'          => "rgba(255,99,132,1)",
+            'label' => 'User Stat',
+            'backgroundColor' => "rgba(255,99,132,0.2)",
+            'borderColor' => "rgba(255,99,132,1)",
             'pointBackgroundColor' => "rgba(255,99,132,1)",
-            'fill'                 => false,
-            'data'                 => $dataDate,
+            'fill' => false,
+            'data' => $dataDate,
         ];
 
         return $this->render('chart', [
-            'dateRange'  => $dateRange,
-            'arrLabel'   => $arrLabel,
+            'dateRange' => $dateRange,
+            'arrLabel' => $arrLabel,
             'arrDataset' => $arrDataset,
-            'total'      => $total
+            'total' => $total
         ]);
     }
 

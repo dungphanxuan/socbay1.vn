@@ -62,14 +62,14 @@ class JobCategory extends \yii\db\ActiveRecord
         return [
             TimestampBehavior::class,
             [
-                'class'     => SluggableBehavior::class,
+                'class' => SluggableBehavior::class,
                 'attribute' => 'title',
                 'immutable' => true,
             ],
             [
-                'class'            => UploadBehavior::class,
-                'attribute'        => 'thumbnail',
-                'pathAttribute'    => 'thumbnail_path',
+                'class' => UploadBehavior::class,
+                'attribute' => 'thumbnail',
+                'pathAttribute' => 'thumbnail_path',
                 'baseUrlAttribute' => 'thumbnail_base_url',
             ],
         ];
@@ -97,19 +97,19 @@ class JobCategory extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'                 => 'ID',
-            'title'              => 'Tiêu đề',
-            'slug'               => 'Slug',
-            'body'               => 'Mô tả',
-            'parent_id'          => 'Parent ID',
+            'id' => 'ID',
+            'title' => 'Tiêu đề',
+            'slug' => 'Slug',
+            'body' => 'Mô tả',
+            'parent_id' => 'Parent ID',
             'thumbnail_base_url' => 'Thumbnail Base Url',
-            'thumbnail_path'     => 'Thumbnail Path',
-            'total_article'      => 'Bài viết',
-            'sort_number'        => 'Sắp xếp',
-            'type'               => 'Type',
-            'status'             => 'Trạng thái',
-            'created_at'         => 'Created At',
-            'updated_at'         => 'Updated At',
+            'thumbnail_path' => 'Thumbnail Path',
+            'total_article' => 'Bài viết',
+            'sort_number' => 'Sắp xếp',
+            'type' => 'Type',
+            'status' => 'Trạng thái',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
         ];
     }
 

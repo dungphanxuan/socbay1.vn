@@ -44,7 +44,7 @@ class BlogController extends FrontendController
 
         $pageSize = 5;
         $dataProvider = new ActiveDataProvider([
-            'query'      => $queryBlog,
+            'query' => $queryBlog,
             'pagination' => [
                 'defaultPageSize' => $pageSize,
             ],
@@ -55,12 +55,12 @@ class BlogController extends FrontendController
             ->orderBy('id desc');
 
         $dataPopularProvider = new ActiveDataProvider([
-            'query'      => $queryPopular,
+            'query' => $queryPopular,
             'pagination' => false,
         ]);
 
         return $this->render('index', [
-            'dataProvider'        => $dataProvider,
+            'dataProvider' => $dataProvider,
             'dataPopularProvider' => $dataPopularProvider
         ]);
     }
@@ -106,18 +106,19 @@ class BlogController extends FrontendController
             ->limit(3);
 
         $dataPopularProvider = new ActiveDataProvider([
-            'query'      => $queryPopular,
+            'query' => $queryPopular,
             'pagination' => false,
         ]);
 
         return $this->render('view', [
-            'model'               => $model,
+            'model' => $model,
             'dataPopularProvider' => $dataPopularProvider
         ]);
 
     }
 
-    public function actionCollection(){
+    public function actionCollection()
+    {
         $model = Article::find()->limit(5)->all();
 
     }

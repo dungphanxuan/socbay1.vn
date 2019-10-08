@@ -12,13 +12,14 @@ namespace common\helpers;
 /*
  * Class PhoneNumber
  * */
+
 class PhoneNumber
 {
 
     protected static $carriers_number = [
-        '096'  => 'Viettel',
-        '097'  => 'Viettel',
-        '098'  => 'Viettel',
+        '096' => 'Viettel',
+        '097' => 'Viettel',
+        '098' => 'Viettel',
         '0162' => 'Viettel',
         '0163' => 'Viettel',
         '0164' => 'Viettel',
@@ -28,16 +29,16 @@ class PhoneNumber
         '0168' => 'Viettel',
         '0169' => 'Viettel',
 
-        '090'  => 'Mobifone',
-        '093'  => 'Mobifone',
+        '090' => 'Mobifone',
+        '093' => 'Mobifone',
         '0120' => 'Mobifone',
         '0121' => 'Mobifone',
         '0122' => 'Mobifone',
         '0126' => 'Mobifone',
         '0128' => 'Mobifone',
 
-        '091'  => 'Vinaphone',
-        '094'  => 'Vinaphone',
+        '091' => 'Vinaphone',
+        '094' => 'Vinaphone',
         '0123' => 'Vinaphone',
         '0124' => 'Vinaphone',
         '0125' => 'Vinaphone',
@@ -51,7 +52,7 @@ class PhoneNumber
         '0997' => 'Gmobile',
         '0199' => 'Gmobile',
 
-        '092'  => 'Vietnamobile',
+        '092' => 'Vietnamobile',
         '0186' => 'Vietnamobile',
         '0188' => 'Vietnamobile',
 

@@ -28,11 +28,11 @@ class EnumHelper extends Inflector
      * @var array time interval values in seconds
      */
     public static $intervals = [
-        'year'   => 31556926,
-        'month'  => 2629744,
-        'week'   => 604800,
-        'day'    => 86400,
-        'hour'   => 3600,
+        'year' => 31556926,
+        'month' => 2629744,
+        'week' => 604800,
+        'day' => 86400,
+        'hour' => 3600,
         'minute' => 60,
         'second' => 1
     ];
@@ -68,8 +68,8 @@ class EnumHelper extends Inflector
      * }
      * ~~~
      *
-     * @param string $needle   the value to search
-     * @param array  $haystack the array to scan
+     * @param string $needle the value to search
+     * @param array $haystack the array to scan
      *
      * @return boolean
      */
@@ -108,11 +108,11 @@ class EnumHelper extends Inflector
      * echo Enum::timeElapsed('21-Jan-2016');
      * ~~~
      *
-     * @param string  $fromTime start date time
-     * @param boolean $human    if true returns an approximate human friendly output. If set to `false`, will attempt an
+     * @param string $fromTime start date time
+     * @param boolean $human if true returns an approximate human friendly output. If set to `false`, will attempt an
      *                          exact conversion of time intervals.
-     * @param string  $toTime   end date time (defaults to current system time)
-     * @param string  $append   the string to append for the converted elapsed time. Defaults to ' ago'.
+     * @param string $toTime end date time (defaults to current system time)
+     * @param string $append the string to append for the converted elapsed time. Defaults to ' ago'.
      *
      * Example Output(s):
      *     10 hours ago
@@ -142,8 +142,8 @@ class EnumHelper extends Inflector
         }
         Yii::setAlias("@kvenum", __DIR__);
         Yii::$app->i18n->translations['kvenum*'] = [
-            'class'            => 'yii\i18n\PhpMessageSource',
-            'basePath'         => "@kvenum/messages",
+            'class' => 'yii\i18n\PhpMessageSource',
+            'basePath' => "@kvenum/messages",
             'forceTranslation' => true
         ];
     }
@@ -160,8 +160,8 @@ class EnumHelper extends Inflector
      * ~~~
      *
      * @param integer $interval time interval in seconds
-     * @param string  $append   the string to append for the converted elapsed time. Defaults to `' ago'`.
-     * @param boolean $human    if true returns an approximate human friendly output. If set to `false`, will attempt an
+     * @param string $append the string to append for the converted elapsed time. Defaults to `' ago'`.
+     * @param boolean $human if true returns an approximate human friendly output. If set to `false`, will attempt an
      *                          exact conversion of time intervals.
      *
      * @return string
@@ -211,8 +211,8 @@ class EnumHelper extends Inflector
      * Example Output:
      *    1 year 5 months 3 days ago
      *
-     * @param integer $time      elapsed number of seconds
-     * @param array   $intervals configuration of time intervals in seconds
+     * @param integer $time elapsed number of seconds
+     * @param array $intervals configuration of time intervals in seconds
      *
      * @return string
      */
@@ -240,7 +240,7 @@ class EnumHelper extends Inflector
      * echo Enum::formatBytes(17328347842.25, 3); // returns: 16.138 GB
      * ~~~
      *
-     * @param double  $bytes     number of bytes
+     * @param double $bytes number of bytes
      * @param integer $precision the number of decimal places to round off
      *
      * @return string
@@ -287,7 +287,7 @@ class EnumHelper extends Inflector
     /**
      * Recursive function used in number to words conversion. Converts three digits per pass.
      *
-     * @param double  $num the source number
+     * @param double $num the source number
      * @param integer $tri the three digits converted per pass.
      *
      * @return string
@@ -503,7 +503,7 @@ class EnumHelper extends Inflector
      * ~~~
      *
      * @param integer $from the start year
-     * @param integer $to   the end year
+     * @param integer $to the end year
      * @param boolean $keys whether to set the array keys same as the values (defaults to false)
      * @param boolean $desc whether to sort the years descending (defaults to true)
      *
@@ -526,10 +526,10 @@ class EnumHelper extends Inflector
     /**
      * Generate a month or day array list for Gregorian calendar
      *
-     * @param string  $unit  whether 'day' or 'month'
-     * @param boolean $abbr  whether to return abbreviated day or month
+     * @param string $unit whether 'day' or 'month'
+     * @param boolean $abbr whether to return abbreviated day or month
      * @param integer $start the first day or month to set. Defaults to `1`.
-     * @param string  $case  whether 'upper', lower', or null. If null, then the initcap case will be used.
+     * @param string $case whether 'upper', lower', or null. If null, then the initcap case will be used.
      *
      * @return array list of days or months
      * @throws InvalidConfigException
@@ -572,9 +572,9 @@ class EnumHelper extends Inflector
      * print_r(Enum::monthList(true, 4, 'upper'));
      * ~~~
      *
-     * @param boolean $abbr  whether to return abbreviated month
+     * @param boolean $abbr whether to return abbreviated month
      * @param integer $start the first month to set. Defaults to `1` for `January`.
-     * @param string  $case  whether 'upper', lower', or null. If null, then the initcap case will be used.
+     * @param string $case whether 'upper', lower', or null. If null, then the initcap case will be used.
      *
      * @return array list of months
      */
@@ -586,9 +586,9 @@ class EnumHelper extends Inflector
     /**
      * Generate a day array list for Gregorian calendar
      *
-     * @param boolean $abbr  whether to return abbreviated day
+     * @param boolean $abbr whether to return abbreviated day
      * @param integer $start the first day to set. Defaults to `1` for `Sunday`.
-     * @param string  $case  whether 'upper', lower', or null. If null, then the initcap case will be used.
+     * @param string $case whether 'upper', lower', or null. If null, then the initcap case will be used.
      *
      * @return array list of days
      */
@@ -607,11 +607,11 @@ class EnumHelper extends Inflector
      * print_r(Enum::dateList(1, 10));
      * ~~~
      *
-     * @param integer $from             the start day, defaults to 1
-     * @param integer $to               the end day, defaults to 31
-     * @param integer $interval         the date interval, defaults to 1.
+     * @param integer $from the start day, defaults to 1
+     * @param integer $to the end day, defaults to 31
+     * @param integer $interval the date interval, defaults to 1.
      * @param boolean $intervalFromZero whether to start incrementing intervals from zero if $from = 1.
-     * @param boolean $showLast         whether to show the last date (set in $to) even if it does not match interval.
+     * @param boolean $showLast whether to show the last date (set in $to) even if it does not match interval.
      *
      * @return array
      * @throws InvalidConfigException
@@ -651,11 +651,11 @@ class EnumHelper extends Inflector
      * echo implode(', ', Enum::timeList('sec', 5));
      * ~~~
      *
-     * @param string  $unit     the time unit ('hour', 'min', 'sec', 'ms')
+     * @param string $unit the time unit ('hour', 'min', 'sec', 'ms')
      * @param integer $interval the time interval.
-     * @param integer $from     the time from (defaults to 23 for hour
-     * @param integer $to       the time to (defaults to 1).
-     * @param boolean $padZero  whether to pad zeros to the left of each time unit value.
+     * @param integer $from the time from (defaults to 23 for hour
+     * @param integer $to the time to (defaults to 1).
+     * @param boolean $padZero whether to pad zeros to the left of each time unit value.
      *
      * @return array
      * @throws InvalidConfigException if $unit passed is invalid
@@ -706,7 +706,7 @@ class EnumHelper extends Inflector
      * ~~~
      *
      * @param string $false the label for the false value
-     * @param string $true  the label for the true value
+     * @param string $true the label for the true value
      *
      * @return array
      */
@@ -715,7 +715,7 @@ class EnumHelper extends Inflector
         static::initI18N();
         return [
             false => empty($false) ? Yii::t('kvenum', 'No') : $false, // == 0
-            true  => empty($true) ? Yii::t('kvenum', 'Yes') : $true,  // == 1
+            true => empty($true) ? Yii::t('kvenum', 'Yes') : $true,  // == 1
         ];
     }
 
@@ -734,16 +734,16 @@ class EnumHelper extends Inflector
      * echo Enum::array2table($data);
      * ~~~
      *
-     * @param array   $array        the associative array to be converted
-     * @param boolean $transpose    whether to show keys as rows instead of columns. This parameter should be used only
+     * @param array $array the associative array to be converted
+     * @param boolean $transpose whether to show keys as rows instead of columns. This parameter should be used only
      *                              for a single dimensional associative array. If used for a multidimensional array, the sub array will be imploded
      *                              as text.
-     * @param boolean $recursive    whether to recursively generate tables for multi-dimensional arrays
-     * @param boolean $typeHint     whether to show the data type as a hint
-     * @param string  $null         the content to display for blank cells
-     * @param array   $tableOptions the HTML attributes for the table
-     * @param array   $keyOptions   the HTML attributes for the array key
-     * @param array   $valueOptions the HTML attributes for the array value
+     * @param boolean $recursive whether to recursively generate tables for multi-dimensional arrays
+     * @param boolean $typeHint whether to show the data type as a hint
+     * @param string $null the content to display for blank cells
+     * @param array $tableOptions the HTML attributes for the table
+     * @param array $keyOptions the HTML attributes for the array key
+     * @param array $valueOptions the HTML attributes for the array value
      *
      * @return string|boolean
      */
@@ -934,9 +934,9 @@ class EnumHelper extends Inflector
      * echo Enum::array2table(Enum::getBrowser(), true);
      * ~~~
      *
-     * @param boolean $common   show common browsers only
-     * @param array   $browsers the list of browsers
-     * @param string  $agent    user agent
+     * @param boolean $common show common browsers only
+     * @param array $browsers the list of browsers
+     * @param string $agent user agent
      *
      * @return array the browser information
      */
@@ -948,65 +948,65 @@ class EnumHelper extends Inflector
         }
         if ($common) {
             $browsers = [
-                'opera'         => Yii::t('kvenum', 'Opera'),
-                'chrome'        => Yii::t('kvenum', 'Google Chrome'),
-                'safari'        => Yii::t('kvenum', 'Safari'),
-                'firefox'       => Yii::t('kvenum', 'Mozilla Firefox'),
-                'msie'          => Yii::t('kvenum', 'Microsoft Internet Explorer'),
+                'opera' => Yii::t('kvenum', 'Opera'),
+                'chrome' => Yii::t('kvenum', 'Google Chrome'),
+                'safari' => Yii::t('kvenum', 'Safari'),
+                'firefox' => Yii::t('kvenum', 'Mozilla Firefox'),
+                'msie' => Yii::t('kvenum', 'Microsoft Internet Explorer'),
                 'mobile safari' => Yii::t('kvenum', 'Mobile Safari'),
             ];
         } elseif (empty($browsers)) {
             $browsers = [
-                'opera'         => Yii::t('kvenum', 'Opera'),
-                'maxthon'       => Yii::t('kvenum', 'Maxthon'),
-                'seamonkey'     => Yii::t('kvenum', 'Mozilla Sea Monkey'),
-                'arora'         => Yii::t('kvenum', 'Arora'),
-                'avant'         => Yii::t('kvenum', 'Avant'),
-                'omniweb'       => Yii::t('kvenum', 'Omniweb'),
-                'epiphany'      => Yii::t('kvenum', 'Epiphany'),
-                'chromium'      => Yii::t('kvenum', 'Chromium'),
-                'galeon'        => Yii::t('kvenum', 'Galeon'),
-                'puffin'        => Yii::t('kvenum', 'Puffin'),
-                'fennec'        => Yii::t('kvenum', 'Mozilla Firefox Fennec'),
-                'chrome'        => Yii::t('kvenum', 'Google Chrome'),
+                'opera' => Yii::t('kvenum', 'Opera'),
+                'maxthon' => Yii::t('kvenum', 'Maxthon'),
+                'seamonkey' => Yii::t('kvenum', 'Mozilla Sea Monkey'),
+                'arora' => Yii::t('kvenum', 'Arora'),
+                'avant' => Yii::t('kvenum', 'Avant'),
+                'omniweb' => Yii::t('kvenum', 'Omniweb'),
+                'epiphany' => Yii::t('kvenum', 'Epiphany'),
+                'chromium' => Yii::t('kvenum', 'Chromium'),
+                'galeon' => Yii::t('kvenum', 'Galeon'),
+                'puffin' => Yii::t('kvenum', 'Puffin'),
+                'fennec' => Yii::t('kvenum', 'Mozilla Firefox Fennec'),
+                'chrome' => Yii::t('kvenum', 'Google Chrome'),
                 'mobile safari' => Yii::t('kvenum', 'Mobile Safari'),
-                'safari'        => Yii::t('kvenum', 'Apple Safari'),
-                'firefox'       => Yii::t('kvenum', 'Mozilla Firefox'),
-                'iemobile'      => Yii::t('kvenum', 'Microsoft Internet Explorer Mobile'),
-                'msie'          => Yii::t('kvenum', 'Microsoft Internet Explorer'),
-                'konqueror'     => Yii::t('kvenum', 'Konqueror'),
-                'amaya'         => Yii::t('kvenum', 'Amaya'),
-                'netscape'      => Yii::t('kvenum', 'Netscape'),
-                'mosaic'        => Yii::t('kvenum', 'Mosaic'),
-                'netsurf'       => Yii::t('kvenum', 'NetSurf'),
-                'netfront'      => Yii::t('kvenum', 'NetFront'),
-                'minimo'        => Yii::t('kvenum', 'Minimo'),
-                'blackberry'    => Yii::t('kvenum', 'Blackberry'),
+                'safari' => Yii::t('kvenum', 'Apple Safari'),
+                'firefox' => Yii::t('kvenum', 'Mozilla Firefox'),
+                'iemobile' => Yii::t('kvenum', 'Microsoft Internet Explorer Mobile'),
+                'msie' => Yii::t('kvenum', 'Microsoft Internet Explorer'),
+                'konqueror' => Yii::t('kvenum', 'Konqueror'),
+                'amaya' => Yii::t('kvenum', 'Amaya'),
+                'netscape' => Yii::t('kvenum', 'Netscape'),
+                'mosaic' => Yii::t('kvenum', 'Mosaic'),
+                'netsurf' => Yii::t('kvenum', 'NetSurf'),
+                'netfront' => Yii::t('kvenum', 'NetFront'),
+                'minimo' => Yii::t('kvenum', 'Minimo'),
+                'blackberry' => Yii::t('kvenum', 'Blackberry'),
             ];
         }
         $info = [
-            'agent'    => $agent,
-            'code'     => 'other',
-            'name'     => Yii::t('kvenum', 'Other'),
-            'version'  => "?",
+            'agent' => $agent,
+            'code' => 'other',
+            'name' => Yii::t('kvenum', 'Other'),
+            'version' => "?",
             'platform' => Yii::t('kvenum', 'Unknown')
         ];
         $ios = Yii::t('kvenum', 'iOS');
         $unix = Yii::t('kvenum', 'Unix');
         $platforms = [
-            'iphone'     => $ios,
-            'ipad'       => $ios,
-            'ipod'       => $ios,
-            'android'    => Yii::t('kvenum', 'Android'),
-            'symbian'    => Yii::t('kvenum', 'Symbian'),
-            'maemo'      => Yii::t('kvenum', 'Maemo'),
-            'palm'       => Yii::t('kvenum', 'Palm'),
-            'linux'      => Yii::t('kvenum', 'Linux'),
-            'mac'        => Yii::t('kvenum', 'Macintosh OSX'),
-            'win'        => Yii::t('kvenum', 'Windows'),
-            'x11'        => $unix,
-            'bsd'        => $unix,
-            'sun'        => $unix,
+            'iphone' => $ios,
+            'ipad' => $ios,
+            'ipod' => $ios,
+            'android' => Yii::t('kvenum', 'Android'),
+            'symbian' => Yii::t('kvenum', 'Symbian'),
+            'maemo' => Yii::t('kvenum', 'Maemo'),
+            'palm' => Yii::t('kvenum', 'Palm'),
+            'linux' => Yii::t('kvenum', 'Linux'),
+            'mac' => Yii::t('kvenum', 'Macintosh OSX'),
+            'win' => Yii::t('kvenum', 'Windows'),
+            'x11' => $unix,
+            'bsd' => $unix,
+            'sun' => $unix,
             'blackberry' => Yii::t('kvenum', 'Blackberry'),
         ];
         foreach ($platforms as $key => $value) {
@@ -1030,7 +1030,7 @@ class EnumHelper extends Inflector
      * Returns browser version
      *
      * @param string $agent the user agent string
-     * @param string $code  the browser string
+     * @param string $code the browser string
      *
      * @return float
      */

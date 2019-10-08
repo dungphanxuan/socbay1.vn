@@ -24,9 +24,9 @@ class CloudinaryComponent extends Component
     {
         parent::init();
         Cloudinary::config([
-            'cloud_name'    => $this->cloud_name,
-            'api_key'       => $this->api_key,
-            'api_secret'    => $this->api_secret,
+            'cloud_name' => $this->cloud_name,
+            'api_key' => $this->api_key,
+            'api_secret' => $this->api_secret,
             'cdn_subdomain' => $this->cdn_subdomain,
         ]);
     }
@@ -72,7 +72,7 @@ class CloudinaryComponent extends Component
         $options = [
             'public_id' => $pathName,
             //'folder'    => 'image/' . date('mY')
-            'folder'    => 'image/' . date('Y') . '/' . date('m'). '/'
+            'folder' => 'image/' . date('Y') . '/' . date('m') . '/'
         ];
 
         $data = Uploader::upload($file->tempName, $options);

@@ -18,7 +18,7 @@ class ProjectRankController extends BackendController
     {
         return \yii\helpers\ArrayHelper::merge(parent::behaviors(), [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['post'],
                 ],
@@ -36,7 +36,7 @@ class ProjectRankController extends BackendController
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -67,7 +67,7 @@ class ProjectRankController extends BackendController
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
             Yii::$app->getSession()->setFlash('alert', [
-                'body'    => 'Thêm mới thành công',
+                'body' => 'Thêm mới thành công',
                 'options' => ['class' => 'alert-success']
             ]);
 
@@ -94,7 +94,7 @@ class ProjectRankController extends BackendController
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
             Yii::$app->getSession()->setFlash('alert', [
-                'body'    => 'Cập nhật thành công',
+                'body' => 'Cập nhật thành công',
                 'options' => ['class' => 'alert-success']
             ]);
 
@@ -119,7 +119,7 @@ class ProjectRankController extends BackendController
         $this->findModel($id)->delete();
 
         Yii::$app->getSession()->setFlash('alert', [
-            'body'    => 'Xóa dữ liệu thành công',
+            'body' => 'Xóa dữ liệu thành công',
             'options' => ['class' => 'alert-success']
         ]);
 

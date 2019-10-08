@@ -10,7 +10,7 @@ use kartik\depdrop\DepDrop;
 use kartik\select2\Select2;
 use kartik\money\MaskMoney;
 use trntv\filekit\widget\Upload;
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -89,7 +89,7 @@ Datepicker::register($this);
 ]); ?>
     <fieldset>
         <?php echo $form->errorSummary($model, [
-            'class'  => 'alert alert-warning alert-dismissible',
+            'class' => 'alert alert-warning alert-dismissible',
             'header' => '<h2 class="alert-heading">Vui lòng sửa các lỗi sau!</h2>',
             'footer' => '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -102,19 +102,19 @@ Datepicker::register($this);
 
         <?php if (!isUserRole()): ?>
             <?php echo $form->field($model, 'company_name', [
-                'template'     => $tempInputCompany,
-                'hintOptions'  => [
-                    'tag'   => 'span',
+                'template' => $tempInputCompany,
+                'hintOptions' => [
+                    'tag' => 'span',
                     'class' => 'form-text text-muted'
                 ],
                 'labelOptions' => [
                     'class' => 'col-sm-3 col-form-label'
                 ],
             ])->textInput([
-                'maxlength'   => true,
+                'maxlength' => true,
                 'placeholder' => 'Tên công ty',
-                'class'       => 'form-control input-md',
-                'id'          => 'ads-company_name',
+                'class' => 'form-control input-md',
+                'id' => 'ads-company_name',
             ])->label('Công ty') ?>
         <?php else: ?>
             <div class="form-group row">
@@ -136,18 +136,18 @@ Datepicker::register($this);
         <?php endif; ?>
 
         <?php echo $form->field($model, 'title', [
-            'template'     => $tempTextInput,
-            'hintOptions'  => [
-                'tag'   => 'span',
+            'template' => $tempTextInput,
+            'hintOptions' => [
+                'tag' => 'span',
                 'class' => 'form-text text-muted'
             ],
             'labelOptions' => [
                 'class' => 'col-sm-3 col-form-label'
             ],
         ])->textInput([
-            'maxlength'   => true,
+            'maxlength' => true,
             'placeholder' => '',
-            'class'       => 'form-control input-md'
+            'class' => 'form-control input-md'
         ])->label('Tiêu đề')->hint('Tiêu đề nên đặt ít nhất 60 ký tự.') ?>
 
         <!-- Select Basic -->
@@ -161,9 +161,9 @@ Datepicker::register($this);
 
         <!-- Textarea -->
         <?php echo $form->field($model, 'body', [
-            'template'     => $tempTextInput,
-            'hintOptions'  => [
-                'tag'   => 'span',
+            'template' => $tempTextInput,
+            'hintOptions' => [
+                'tag' => 'span',
                 'class' => 'form-text text-muted'
             ],
             'labelOptions' => [
@@ -172,12 +172,12 @@ Datepicker::register($this);
         ])->widget(\yii\imperavi\Widget::class, [
             'plugins' => ['fullscreen', 'fontcolor', 'video'],
             'options' => [
-                'minHeight'       => 250,
-                'maxHeight'       => 250,
-                'buttonSource'    => true,
-                'convertDivs'     => false,
+                'minHeight' => 250,
+                'maxHeight' => 250,
+                'buttonSource' => true,
+                'convertDivs' => false,
                 'removeEmptyTags' => true,
-                'imageUpload'     => Yii::$app->urlManager->createUrl(['/file-storage/upload-imperavi']),
+                'imageUpload' => Yii::$app->urlManager->createUrl(['/file-storage/upload-imperavi']),
             ],
         ])->label('Mô tả')->hint('Mô tả các trách nhiệm, kinh nghiệm, kỹ năng, học vấn.') ?>
 
@@ -210,18 +210,18 @@ Datepicker::register($this);
                     </div>
                     <div class="col">
                         <?php echo DepDrop::widget([
-                            'model'          => $model,
-                            'attribute'      => 'district_id',
-                            'options'        => ['id' => 'cdistrict-id', 'class' => 'form-control form-control-sm'],
-                            'type'           => DepDrop::TYPE_SELECT2,
-                            'data'           => $dataDistrict,
+                            'model' => $model,
+                            'attribute' => 'district_id',
+                            'options' => ['id' => 'cdistrict-id', 'class' => 'form-control form-control-sm'],
+                            'type' => DepDrop::TYPE_SELECT2,
+                            'data' => $dataDistrict,
                             'select2Options' => ['pluginOptions' => ['allowClear' => true], 'theme' => Select2::THEME_BOOTSTRAP],
-                            'pluginOptions'  => [
-                                'depends'     => ['ccity-id'],
-                                'initialize'  => true,
+                            'pluginOptions' => [
+                                'depends' => ['ccity-id'],
+                                'initialize' => true,
                                 'initDepends' => ['ccity-id'],
                                 'placeholder' => 'Chọn Quận/Huyện...',
-                                'url'         => Url::to(['/go/ajax/district-subcat'])
+                                'url' => Url::to(['/go/ajax/district-subcat'])
                             ],
                         ]); ?>
                     </div>
@@ -282,12 +282,12 @@ Datepicker::register($this);
                 <div class="row">
                     <div class="col-md-5">
                         <?php echo DatePickerWidget::widget([
-                            'model'            => $model,
-                            'attribute'        => 'public_from',
-                            'startDate'        => new \yii\web\JsExpression('new Date("2018-04-01")'),
-                            'format'           => 'yyyy/mm/dd',
-                            'autoHide'         => true,
-                            'zIndex'           => 2048,
+                            'model' => $model,
+                            'attribute' => 'public_from',
+                            'startDate' => new \yii\web\JsExpression('new Date("2018-04-01")'),
+                            'format' => 'yyyy/mm/dd',
+                            'autoHide' => true,
+                            'zIndex' => 2048,
                             'containerOptions' => [
                                 'id' => 'publicFromW'
                             ]
@@ -298,11 +298,11 @@ Datepicker::register($this);
                     </div>
                     <div class="col-md-5">
                         <?php echo DatePickerWidget::widget([
-                            'model'            => $model,
-                            'attribute'        => 'public_to',
-                            'startDate'        => new \yii\web\JsExpression('new Date("2018-04-01")'),
-                            'autoHide'         => true,
-                            'zIndex'           => 2048,
+                            'model' => $model,
+                            'attribute' => 'public_to',
+                            'startDate' => new \yii\web\JsExpression('new Date("2018-04-01")'),
+                            'autoHide' => true,
+                            'zIndex' => 2048,
                             'containerOptions' => [
                                 'id' => 'publicToW'
                             ]
@@ -312,18 +312,18 @@ Datepicker::register($this);
             </div>
         </div>
         <?php echo $form->field($modelDetail, 'job_email', [
-            'template'     => $tempTextInput2,
-            'hintOptions'  => [
-                'tag'   => 'span',
+            'template' => $tempTextInput2,
+            'hintOptions' => [
+                'tag' => 'span',
                 'class' => 'form-text text-muted'
             ],
             'labelOptions' => [
                 'class' => 'col-sm-3 col-form-label'
             ],
         ])->textInput([
-            'maxlength'   => true,
+            'maxlength' => true,
             'placeholder' => '',
-            'class'       => 'form-control input-md'
+            'class' => 'form-control input-md'
         ])->label('Email')->hint('Gửi thông tin các hồ sơ việc làm vào email này') ?>
 
 

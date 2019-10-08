@@ -12,7 +12,7 @@ use yii\helpers\Url;
 
 $urlLogo = \common\models\ads\AdsAssets::getAssets('logo');
 if (empty($urlLogo)) {
-    $urlLogo = 'https://storage.googleapis.com/yiibucket/images/socbay-logo.png';
+    $urlLogo = Url::to('@web/frontend/web/images/') . 'logo1.png';
 }
 ?>
 

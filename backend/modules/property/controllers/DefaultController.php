@@ -51,12 +51,12 @@ class DefaultController extends Controller
                 }
             }
             $res = array(
-                'body'    => true,
+                'body' => true,
                 'success' => true,
             );
         } else {
             $res = array(
-                'body'    => 'Not allow',
+                'body' => 'Not allow',
                 'success' => false,
             );
         }

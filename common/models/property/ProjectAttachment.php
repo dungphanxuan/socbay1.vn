@@ -7,11 +7,11 @@ namespace common\models\property;
  *
  * @property integer $id
  * @property integer $project_id
- * @property string  $path
- * @property string  $base_url
- * @property string  $type
+ * @property string $path
+ * @property string $base_url
+ * @property string $type
  * @property integer $size
- * @property string  $name
+ * @property string $name
  * @property integer $order
  * @property integer $created_at
  *
@@ -39,8 +39,8 @@ class ProjectAttachment extends \yii\db\ActiveRecord
             [
                 ['project_id'],
                 'exist',
-                'skipOnError'     => true,
-                'targetClass'     => MProject::class,
+                'skipOnError' => true,
+                'targetClass' => MProject::class,
                 'targetAttribute' => ['project_id' => 'id']
             ],
         ];
@@ -52,14 +52,14 @@ class ProjectAttachment extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'         => 'ID',
+            'id' => 'ID',
             'project_id' => 'Project ID',
-            'path'       => 'Path',
-            'base_url'   => 'Base Url',
-            'type'       => 'Type',
-            'size'       => 'Size',
-            'name'       => 'Name',
-            'order'      => 'Order',
+            'path' => 'Path',
+            'base_url' => 'Base Url',
+            'type' => 'Type',
+            'size' => 'Size',
+            'name' => 'Name',
+            'order' => 'Order',
             'created_at' => 'Created At',
         ];
     }

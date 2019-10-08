@@ -30,10 +30,10 @@ use yii\helpers\Html;
         [
             'plugins' => ['fullscreen', 'fontcolor', 'video'],
             'options' => [
-                'minHeight'       => 400,
-                'maxHeight'       => 400,
-                'buttonSource'    => true,
-                'convertDivs'     => false,
+                'minHeight' => 400,
+                'maxHeight' => 400,
+                'buttonSource' => true,
+                'convertDivs' => false,
                 'removeEmptyTags' => false
             ]
         ]) ?>

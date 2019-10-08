@@ -51,11 +51,11 @@ class ArticleRevisionSearch extends ArticleRevision
         }
 
         $query->andFilterWhere([
-            'article_id'  => $this->article_id,
-            'revision'    => $this->revision,
+            'article_id' => $this->article_id,
+            'revision' => $this->revision,
             'category_id' => $this->category_id,
-            'updater_id'  => $this->updater_id,
-            'updated_at'  => $this->updated_at,
+            'updater_id' => $this->updater_id,
+            'updated_at' => $this->updated_at,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])

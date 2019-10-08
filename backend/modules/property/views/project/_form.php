@@ -34,7 +34,7 @@ $this->registerJsFile('https://maps.googleapis.com/maps/api/js?key=' . $gmapApiK
         <?php $form = ActiveForm::begin(); ?>
 
         <?php echo $form->errorSummary($model, [
-            'class'  => 'alert alert-warning alert-dismissible',
+            'class' => 'alert alert-warning alert-dismissible',
             'header' => ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4><i class="icon fa fa-warning"></i> Vui lòng sửa các lỗi sau!</h4>'
         ]); ?>
 
@@ -66,19 +66,19 @@ $this->registerJsFile('https://maps.googleapis.com/maps/api/js?key=' . $gmapApiK
         echo $form->field($model, 'body')->widget(
             \froala\froalaeditor\FroalaEditorWidget::class,
             [
-                'options'         => [
+                'options' => [
                 ],
                 'csrfCookieParam' => '_csrf',
-                'clientOptions'   => [
-                    'toolbarInline'       => false,
-                    'height'              => 250,
-                    'imageDefaultWidth'   => 680,
-                    'theme'               => 'royal',
+                'clientOptions' => [
+                    'toolbarInline' => false,
+                    'height' => 250,
+                    'imageDefaultWidth' => 680,
+                    'theme' => 'royal',
                     //'language'            => 'en_gb',
-                    'language'            => 'vi',
+                    'language' => 'vi',
                     //'toolbarButtons' => ['fullscreen', 'bold', 'italic', 'underline', '|', 'paragraphFormat', 'insertImage'],
-                    'imageUploadURL'      => Url::to(['/file-storage/upload-froala']),
-                    'fileUploadURL'       => Url::to(['/file-storage/upload-froala']),
+                    'imageUploadURL' => Url::to(['/file-storage/upload-froala']),
+                    'fileUploadURL' => Url::to(['/file-storage/upload-froala']),
                     'imageManagerLoadURL' => Url::to(['/file-storage/file-froala'])
                 ],
                 //'clientPlugins' => [ 'fullscreen', 'paragraph_format', 'image', 'file', 'image_manager' ]
@@ -123,9 +123,9 @@ $this->registerJsFile('https://maps.googleapis.com/maps/api/js?key=' . $gmapApiK
                 echo $form->field($model, 'thumbnail')->widget(
                     Upload::class,
                     [
-                        'url'             => ['/file-storage/upload'],
+                        'url' => ['/file-storage/upload'],
                         'acceptFileTypes' => new JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
-                        'maxFileSize'     => 10000000, // 10 MiB
+                        'maxFileSize' => 10000000, // 10 MiB
                     ]);
                 ?>
             </div>
@@ -133,10 +133,10 @@ $this->registerJsFile('https://maps.googleapis.com/maps/api/js?key=' . $gmapApiK
                 <?php echo $form->field($model, 'attachments')->widget(
                     Upload::class,
                     [
-                        'url'              => ['/file-storage/upload'],
-                        'sortable'         => true,
-                        'maxFileSize'      => 10000000, // 10 MiB
-                        'acceptFileTypes'  => new JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
+                        'url' => ['/file-storage/upload'],
+                        'sortable' => true,
+                        'maxFileSize' => 10000000, // 10 MiB
+                        'acceptFileTypes' => new JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
                         'maxNumberOfFiles' => 10
                     ]);
                 ?>
@@ -148,9 +148,9 @@ $this->registerJsFile('https://maps.googleapis.com/maps/api/js?key=' . $gmapApiK
                 <?php
                 echo $form->field($model, 'city_id', [
                 ])->widget(Select2::class, [
-                    'data'          => ArrayHelper::map($cities, 'id', 'name'),
-                    'language'      => 'vi',
-                    'options'       => ['id' => 'ccity-id', 'placeholder' => 'Chọn Tỉnh/Thành Phố ...'],
+                    'data' => ArrayHelper::map($cities, 'id', 'name'),
+                    'language' => 'vi',
+                    'options' => ['id' => 'ccity-id', 'placeholder' => 'Chọn Tỉnh/Thành Phố ...'],
                     'pluginOptions' => [
                         'allowClear' => true
                     ],
@@ -161,16 +161,16 @@ $this->registerJsFile('https://maps.googleapis.com/maps/api/js?key=' . $gmapApiK
                 <?php
                 echo $form->field($model, 'district_id', [
                 ])->widget(DepDrop::class, [
-                    'options'        => ['id' => 'cdistrict-id'],
-                    'type'           => DepDrop::TYPE_SELECT2,
-                    'data'           => $dataDistrict,
+                    'options' => ['id' => 'cdistrict-id'],
+                    'type' => DepDrop::TYPE_SELECT2,
+                    'data' => $dataDistrict,
                     'select2Options' => ['pluginOptions' => ['allowClear' => true]],
-                    'pluginOptions'  => [
-                        'depends'     => ['ccity-id'],
-                        'initialize'  => true,
+                    'pluginOptions' => [
+                        'depends' => ['ccity-id'],
+                        'initialize' => true,
                         'initDepends' => ['ccity-id'],
                         'placeholder' => 'Chọn Quận/Huyện...',
-                        'url'         => Url::to(['/go/district/subcat'])
+                        'url' => Url::to(['/go/district/subcat'])
                     ]
                 ]);
                 ?>
@@ -179,16 +179,16 @@ $this->registerJsFile('https://maps.googleapis.com/maps/api/js?key=' . $gmapApiK
                 <?php
                 echo $form->field($model, 'ward_id', [
                 ])->widget(DepDrop::class, [
-                    'options'        => ['id' => 'ward-id'],
-                    'type'           => DepDrop::TYPE_SELECT2,
-                    'data'           => $dataWard,
+                    'options' => ['id' => 'ward-id'],
+                    'type' => DepDrop::TYPE_SELECT2,
+                    'data' => $dataWard,
                     'select2Options' => ['pluginOptions' => ['allowClear' => true]],
-                    'pluginOptions'  => [
-                        'depends'     => ['cdistrict-id'],
-                        'initialize'  => true,
+                    'pluginOptions' => [
+                        'depends' => ['cdistrict-id'],
+                        'initialize' => true,
                         'initDepends' => ['cdistrict-id'],
                         'placeholder' => 'Chọn Phường/Xã...',
-                        'url'         => Url::to(['/go/ward/subcat'])
+                        'url' => Url::to(['/go/ward/subcat'])
                     ]
                 ]);
                 ?>
@@ -201,17 +201,17 @@ $this->registerJsFile('https://maps.googleapis.com/maps/api/js?key=' . $gmapApiK
                 <div class="col-sm-4" style="padding-left: 15px !important;">
 
                     <?php echo Html::activeTextInput($model, 'lat', [
-                        'class'        => 'form-control',
+                        'class' => 'form-control',
                         'autocomplete' => 'off',
-                        'id'           => 'lat-value',
-                        'placeholder'  => 'Vĩ độ'
+                        'id' => 'lat-value',
+                        'placeholder' => 'Vĩ độ'
                     ]) ?>
                     <p></p>
                     <?php echo Html::activeTextInput($model, 'lng', [
-                        'class'        => 'form-control',
+                        'class' => 'form-control',
                         'autocomplete' => 'off',
-                        'id'           => 'lng-value',
-                        'placeholder'  => 'Kinh độ'
+                        'id' => 'lng-value',
+                        'placeholder' => 'Kinh độ'
                     ]) ?>
                     <div class="row" style="margin-top: 30px">
                         <div class="col-md-12">

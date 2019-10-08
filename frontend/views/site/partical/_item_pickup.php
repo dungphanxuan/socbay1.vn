@@ -9,6 +9,7 @@
 use frontend\assets\AdsAsset;
 use yii\helpers\Url;
 use yii\helpers\Html;
+use common\helpers\CloudinaryHelper;
 
 /* @var $this yii\web\View */
 /* @var $model \common\models\Article */
@@ -17,8 +18,10 @@ $detail = \common\helpers\ArticleHelper::getDetail($model->id);
 
 $imgThumbnail = fileStorage()->baseUrl . '/image/noimage.jpeg';
 if ($model->thumbnail_path) {
-    $imgThumbnail = $model->getImgThumbnail(2, 75, 320, 240);
+    $imgThumbnail = CloudinaryHelper::resizingAndCropping($model->thumbnail_base_url, $model->thumbnail_path, 320, 240);
 }
+
+
 $priceText = $detail['price-show'];
 ?>
 <div class="item">

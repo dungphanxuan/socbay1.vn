@@ -28,7 +28,10 @@ use yii\helpers\Url;
                                             href="<?php echo Url::to(['/job/index']) ?>"><?php echo Yii::t('ads', 'Jobs') ?></a>
                     </li>
                     <li class="nav-item"><a class="nav-link"
-                                            href="<?php echo Url::to(['/property/project']) ?>"><?php echo Yii::t('ads', 'Homes') ?></a>
+                                            href="<?php echo Url::to(['/property/project']) ?>"><?php echo Yii::t('ads', 'Real Estate') ?></a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link"
+                                            href="<?php echo Url::to(['/event/index']) ?>"><?php echo Yii::t('ads', 'Events') ?></a>
                     </li>
 
                     <li class="nav-item"><a class="nav-link"

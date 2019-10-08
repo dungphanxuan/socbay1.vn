@@ -25,17 +25,17 @@ use yii\helpers\Html;
         [
             'plugins' => ['fullscreen', 'fontcolor', 'video'],
             'options' => [
-                'minHeight'    => 400,
-                'maxHeight'    => 400,
+                'minHeight' => 400,
+                'maxHeight' => 400,
                 'buttonSource' => true,
                 //'imageUpload'  => Yii::$app->urlManager->createUrl(['/file-storage/upload-imperavi'])
-                'imageUpload'  => Yii::$app->urlManager->createUrl(['/file-storage/upload-filestack'])
+                'imageUpload' => Yii::$app->urlManager->createUrl(['/file-storage/upload-filestack'])
             ]
         ]
     ) ?>
 
     <?php echo $form->field($model, 'view', [
-        'addon'    => ['prepend' => ['content' => '<i class="fa fa-eye"></i>']],
+        'addon' => ['prepend' => ['content' => '<i class="fa fa-eye"></i>']],
         'template' => '{label} <div class="row"><div class="col-xs-6 col-sm-6">{input}{error}{hint}</div></div>'
     ])->textInput(['maxlength' => true])->label('View hiển thị') ?>
 

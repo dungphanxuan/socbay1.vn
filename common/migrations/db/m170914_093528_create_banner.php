@@ -7,22 +7,22 @@ class m170914_093528_create_banner extends Migration
     public function safeUp()
     {
         $this->createTable('{{%banner}}', [
-            'id'          => $this->primaryKey(),
-            'slug'        => $this->string(255),
-            'title'       => $this->string(128)->notNull(),
-            'body'        => $this->text(),
-            'url'         => $this->string(255),
+            'id' => $this->primaryKey(),
+            'slug' => $this->string(255),
+            'title' => $this->string(128)->notNull(),
+            'body' => $this->text(),
+            'url' => $this->string(255),
             'sort_number' => $this->smallInteger(1)->defaultValue(1),
 
             'thumbnail_base_url' => $this->string(128),
-            'thumbnail_path'     => $this->string(255),
+            'thumbnail_path' => $this->string(255),
 
-            'status'       => $this->smallInteger(),
-            'created_by'   => $this->integer(),
-            'updated_by'   => $this->integer(),
+            'status' => $this->smallInteger(),
+            'created_by' => $this->integer(),
+            'updated_by' => $this->integer(),
             'published_at' => $this->integer(),
-            'created_at'   => $this->integer(),
-            'updated_at'   => $this->integer(),
+            'created_at' => $this->integer(),
+            'updated_at' => $this->integer(),
         ]);
     }
 

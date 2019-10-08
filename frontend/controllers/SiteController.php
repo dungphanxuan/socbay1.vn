@@ -30,8 +30,8 @@ class SiteController extends FrontendController
     {
         return [
             [
-                'class'    => PageCache::class,
-                'only'     => ['sitemap'],
+                'class' => PageCache::class,
+                'only' => ['sitemap'],
                 'duration' => Time::SECONDS_IN_AN_HOUR,
             ]
         ];
@@ -43,15 +43,15 @@ class SiteController extends FrontendController
     public function actions()
     {
         return [
-            'error'      => [
+            'error' => [
                 'class' => 'yii\web\ErrorAction'
             ],
-            'captcha'    => [
-                'class'           => 'yii\captcha\CaptchaAction',
+            'captcha' => [
+                'class' => 'yii\captcha\CaptchaAction',
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null
             ],
             'set-locale' => [
-                'class'   => 'common\actions\SetLocaleAction',
+                'class' => 'common\actions\SetLocaleAction',
                 'locales' => array_keys(Yii::$app->params['availableLocales'])
             ]
         ];
@@ -69,21 +69,21 @@ class SiteController extends FrontendController
             ->limit(20);
 
         $catProvider = new ArrayDataProvider([
-            'allModels'  => $dataCategory,
+            'allModels' => $dataCategory,
             'pagination' => [
                 'pageSize' => 12,
             ],
-            'sort'       => [
+            'sort' => [
                 'attributes' => ['id', 'sort_number'],
             ],
         ]);
 
         $pickupProvider = new ActiveDataProvider([
-            'query'      => $queryPickup,
+            'query' => $queryPickup,
             'pagination' => [
                 'pageSize' => 12,
             ],
-            'sort'       => [
+            'sort' => [
                 'defaultOrder' => [
                     'sort_number' => SORT_ASC,
                 ]
@@ -91,7 +91,7 @@ class SiteController extends FrontendController
         ]);
 
         return $this->render('index', [
-            'catProvider'    => $catProvider,
+            'catProvider' => $catProvider,
             'pickupProvider' => $pickupProvider
         ]);
     }
@@ -124,14 +124,14 @@ class SiteController extends FrontendController
         if ($model->load(Yii::$app->request->post())) {
             if ($model->contact(Yii::$app->params['adminEmail'])) {
                 Yii::$app->getSession()->setFlash('alert', [
-                    'body'    => Yii::t('frontend', 'Thank you for contacting us. We will respond to you as soon as possible.'),
+                    'body' => Yii::t('frontend', 'Thank you for contacting us. We will respond to you as soon as possible.'),
                     'options' => ['class' => 'alert-success']
                 ]);
 
                 return $this->refresh();
             } else {
                 Yii::$app->getSession()->setFlash('alert', [
-                    'body'    => \Yii::t('frontend', 'There was an error sending email.'),
+                    'body' => \Yii::t('frontend', 'There was an error sending email.'),
                     'options' => ['class' => 'alert-danger']
                 ]);
             }

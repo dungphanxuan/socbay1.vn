@@ -30,7 +30,7 @@ class CompanyController extends FrontendController
     {
         return [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['POST'],
                 ],
@@ -54,7 +54,7 @@ class CompanyController extends FrontendController
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -125,10 +125,10 @@ class CompanyController extends FrontendController
         }
 
         return $this->render('create', [
-            'model'        => $model,
-            'cities'       => City::find()->orderBy('priority desc')->all(),
+            'model' => $model,
+            'cities' => City::find()->orderBy('priority desc')->all(),
             'dataDistrict' => $dataDistrict,
-            'dataWard'     => $dataWard,
+            'dataWard' => $dataWard,
         ]);
     }
 
@@ -167,10 +167,10 @@ class CompanyController extends FrontendController
         $dataWard = Ward::getWards($model->district_id);
 
         return $this->render('update', [
-            'model'        => $model,
-            'cities'       => City::find()->orderBy('priority desc')->all(),
+            'model' => $model,
+            'cities' => City::find()->orderBy('priority desc')->all(),
             'dataDistrict' => $dataDistrict,
-            'dataWard'     => $dataWard,
+            'dataWard' => $dataWard,
         ]);
     }
 

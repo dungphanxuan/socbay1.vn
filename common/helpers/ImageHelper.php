@@ -21,7 +21,7 @@ class ImageHelper
         $param = [
             'glide/index',
             'path' => $path,
-            'q'    => $q
+            'q' => $q
         ];
 
         return \Yii::$app->glide->createSignedUrl($param);
@@ -35,9 +35,9 @@ class ImageHelper
         $param = [
             'glide/index',
             'path' => $path,
-            'q'    => $q,
-            'w'    => $w,
-            'h'    => $h
+            'q' => $q,
+            'w' => $w,
+            'h' => $h
         ];
 
         return \Yii::$app->glide->createSignedUrl($param);

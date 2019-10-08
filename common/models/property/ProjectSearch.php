@@ -71,7 +71,7 @@ class ProjectSearch extends Project
         }
 
         $dataProvider = new ActiveDataProvider([
-            'query'      => $query,
+            'query' => $query,
             'pagination' => [
                 'pageSize' => 50,
             ],
@@ -82,24 +82,24 @@ class ProjectSearch extends Project
         }
 
         $query->andFilterWhere([
-            'id'           => $this->id,
-            'category_id'  => $this->category_id,
-            'type'         => $this->type,
-            'city_id'      => $this->city_id,
-            'district_id'  => $this->district_id,
-            'ward_id'      => $this->ward_id,
-            'level'        => $this->level,
-            'price_id'     => $this->price_id,
-            'price'        => $this->price,
-            'price_to'     => $this->price_to,
+            'id' => $this->id,
+            'category_id' => $this->category_id,
+            'type' => $this->type,
+            'city_id' => $this->city_id,
+            'district_id' => $this->district_id,
+            'ward_id' => $this->ward_id,
+            'level' => $this->level,
+            'price_id' => $this->price_id,
+            'price' => $this->price,
+            'price_to' => $this->price_to,
             'num_of_rooms' => $this->num_of_rooms,
-            'area_id'      => $this->area_id,
-            'lat'          => $this->lat,
-            'lng'          => $this->lng,
-            'sort_number'  => $this->sort_number,
-            'status'       => $this->status,
+            'area_id' => $this->area_id,
+            'lat' => $this->lat,
+            'lng' => $this->lng,
+            'sort_number' => $this->sort_number,
+            'status' => $this->status,
             //'created_at'       => $this->created_at,
-            'updated_at'   => $this->updated_at,
+            'updated_at' => $this->updated_at,
         ]);
 
         if ($this->created_at) {

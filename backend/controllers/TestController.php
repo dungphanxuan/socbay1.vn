@@ -33,6 +33,7 @@ class TestController extends BackendController
         dd($str);
 
     }
+
     public function actionIndex()
     {
         dd(Url::to('http://cloud-upload', true));
@@ -58,10 +59,10 @@ class TestController extends BackendController
     {
         $token = 'EAAbdm4ocv1MBACgypsx28G4kYNitSymqKSwd6nw8n4jkb3TzaPTdhVjnZAfv3uFgPD0l0K8wqZCh9TnqMOLpZAnV0icZALZAgJmK1NI9HIu8zM5oBu7KzEZBSCDbZCsWliQaQKcBln96ZBOjZC1oyxJ6GkJy6rm9vG3bOx6MtToPVA9amFdA5YGYo2JV6wX6JbiCkY9WKAKy0gwZDZD';
         $fb = new \Facebook\Facebook([
-            'app_id'                => env('FACEBOOK_CLIENT_ID'),
-            'app_secret'            => env('FACEBOOK_CLIENT_SECRET'),
+            'app_id' => env('FACEBOOK_CLIENT_ID'),
+            'app_secret' => env('FACEBOOK_CLIENT_SECRET'),
             'default_graph_version' => 'v2.10',
-            'default_access_token'  => $token
+            'default_access_token' => $token
         ]);
 
         try {
@@ -93,8 +94,8 @@ class TestController extends BackendController
 
         dd($items);
         $dataProvider = new ArrayDataProvider([
-            'allModels'  => $items,
-            'sort'       => [
+            'allModels' => $items,
+            'sort' => [
                 //'attributes' => ['id', 'username', 'email'],
             ],
             'pagination' => [
@@ -122,7 +123,7 @@ class TestController extends BackendController
     {
         $arrContextOptions = array(
             "ssl" => array(
-                "verify_peer"      => false,
+                "verify_peer" => false,
                 "verify_peer_name" => false,
             ),
         );

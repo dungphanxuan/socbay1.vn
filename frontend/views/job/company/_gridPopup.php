@@ -13,9 +13,9 @@ use yii\helpers\Html;
 ?>
 <?php echo \yii\grid\GridView::widget([
     'dataProvider' => $dataProvider,
-    'summary'      => '',
-    'layout'       => "{summary}\n{items}",
-    'pager'        => [
+    'summary' => '',
+    'layout' => "{summary}\n{items}",
+    'pager' => [
         'linkOptions' => [
             'class' => 'pager-item'
         ]
@@ -23,27 +23,27 @@ use yii\helpers\Html;
     'tableOptions' => [
         'class' => 'table table-striped table-hover table-search'
     ],
-    'columns'      => [
+    'columns' => [
 
         [
-            'attribute'      => 'id',
-            'format'         => 'raw',
-            'headerOptions'  => ['style' => 'text-align:center'],
+            'attribute' => 'id',
+            'format' => 'raw',
+            'headerOptions' => ['style' => 'text-align:center'],
             'contentOptions' => ['style' => 'width:10%;text-align:center'],
         ],
         'title',
 
         [
-            'class'          => 'yii\grid\ActionColumn',
-            'template'       => '{choose}',
+            'class' => 'yii\grid\ActionColumn',
+            'template' => '{choose}',
             'contentOptions' => ['style' => 'width:10%;text-align:center'],
-            'buttons'        => [
+            'buttons' => [
                 //view button
                 'choose' => function ($url, $model) {
                     return Html::a('Chọn', $url, [
-                        'title'             => 'Chọn',
-                        'class'             => 'btn btn-primary btn-sm btn-callback w80',
-                        'data-company_id'   => $model->id,
+                        'title' => 'Chọn',
+                        'class' => 'btn btn-primary btn-sm btn-callback w80',
+                        'data-company_id' => $model->id,
                         'data-company_name' => $model->title,
                     ]);
                 },

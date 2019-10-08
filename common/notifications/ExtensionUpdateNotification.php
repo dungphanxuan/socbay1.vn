@@ -31,8 +31,8 @@ class ExtensionUpdateNotification extends BaseNotification
         foreach ($this->getFollowers($this->extension, $this->updater) as $user) {
             yield $this->buildEmail($user, [
                 'extension' => $this->extension,
-                'updater'   => $this->updater,
-                'changes'   => $this->changes,
+                'updater' => $this->updater,
+                'changes' => $this->changes,
             ]);
         }
     }

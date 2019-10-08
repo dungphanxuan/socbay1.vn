@@ -16,7 +16,7 @@ use trntv\filekit\widget\Upload;
         <?php $form = ActiveForm::begin([]); ?>
 
         <?php echo $form->errorSummary($model, [
-            'class'  => 'alert alert-warning alert-dismissible',
+            'class' => 'alert alert-warning alert-dismissible',
             'header' => ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4><i class="icon fa fa-warning"></i> Vui lòng sửa các lỗi sau!</h4>'
         ]); ?>
 
@@ -34,12 +34,12 @@ use trntv\filekit\widget\Upload;
             [
                 'plugins' => ['fullscreen', 'fontcolor', 'video'],
                 'options' => [
-                    'minHeight'       => 300,
-                    'maxHeight'       => 300,
-                    'buttonSource'    => true,
-                    'convertDivs'     => false,
+                    'minHeight' => 300,
+                    'maxHeight' => 300,
+                    'buttonSource' => true,
+                    'convertDivs' => false,
                     'removeEmptyTags' => true,
-                    'imageUpload'     => Yii::$app->urlManager->createUrl(['/file-storage/upload-imperavi']),
+                    'imageUpload' => Yii::$app->urlManager->createUrl(['/file-storage/upload-imperavi']),
                 ],
             ]
         ) ?>
@@ -50,7 +50,7 @@ use trntv\filekit\widget\Upload;
                 <?php echo $form->field($model, 'thumbnail')->widget(
                     Upload::class,
                     [
-                        'url'         => ['/file-storage/upload'],
+                        'url' => ['/file-storage/upload'],
                         'maxFileSize' => 5000000, // 5 MiB
                     ]);
                 ?>
@@ -59,9 +59,9 @@ use trntv\filekit\widget\Upload;
                 <?php echo $form->field($model, 'attachments')->widget(
                     Upload::class,
                     [
-                        'url'              => ['/file-storage/upload'],
-                        'sortable'         => true,
-                        'maxFileSize'      => 10000000, // 10 MiB
+                        'url' => ['/file-storage/upload'],
+                        'sortable' => true,
+                        'maxFileSize' => 10000000, // 10 MiB
                         'maxNumberOfFiles' => 10,
                     ]);
                 ?>

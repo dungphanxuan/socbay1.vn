@@ -24,7 +24,7 @@ abstract class BaseNotification extends BaseObject
 {
     /**
      * @param ActiveRecord $model
-     * @param User|null    $updater
+     * @param User|null $updater
      * @return \Generator
      */
     protected function getFollowers($model, $updater = null)
@@ -40,7 +40,7 @@ abstract class BaseNotification extends BaseObject
     }
 
     /**
-     * @param User  $recipient
+     * @param User $recipient
      * @param array $viewParams
      * @return \yii\mail\MessageInterface
      */

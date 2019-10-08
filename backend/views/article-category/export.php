@@ -36,8 +36,8 @@ $gridColumns = [
                 <?php
                 echo ExportMenu::widget([
                     'dataProvider' => $dataProvider,
-                    'columns'      => $gridColumns,
-                    'fontAwesome'  => true,
+                    'columns' => $gridColumns,
+                    'fontAwesome' => true,
                 ]);
                 ?>
             </div>

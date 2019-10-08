@@ -49,8 +49,8 @@ class ProjectPickupSearch extends ProjectPickup
         }
 
         $query->andFilterWhere([
-            'id'          => $this->id,
-            'project_id'  => $this->project_id,
+            'id' => $this->id,
+            'project_id' => $this->project_id,
             'sort_number' => $this->sort_number,
         ]);
 

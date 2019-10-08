@@ -18,7 +18,7 @@
 
     <div class="timeline-body">
         <?php echo Yii::t('backend', 'New article ({identity}) was created at {created_at}', [
-            'identity'   => $model->data['project_title'],
+            'identity' => $model->data['project_title'],
             'created_at' => Yii::$app->formatter->asDatetime($model->data['created_at'])
         ]) ?>
     </div>

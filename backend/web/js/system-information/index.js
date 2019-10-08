@@ -68,8 +68,7 @@ $(document).ready(function () {
             if ($(this).data("toggle") === "on") {
                 realtime = "on";
                 update();
-            }
-            else {
+            } else {
                 realtime = "off";
             }
         });
@@ -140,8 +139,7 @@ $(document).ready(function () {
             if ($(this).data("toggle") === "on") {
                 realtime = "on";
                 update();
-            }
-            else {
+            } else {
                 realtime = "off";
             }
         });

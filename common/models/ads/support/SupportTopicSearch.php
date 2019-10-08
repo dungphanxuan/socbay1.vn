@@ -53,20 +53,20 @@ class SupportTopicSearch extends SupportTopic
         }
 
         $query->andFilterWhere([
-            'id'            => $this->id,
-            'category_id'   => $this->category_id,
-            'total_votes'   => $this->total_votes,
-            'up_votes'      => $this->up_votes,
-            'rating'        => $this->rating,
+            'id' => $this->id,
+            'category_id' => $this->category_id,
+            'total_votes' => $this->total_votes,
+            'up_votes' => $this->up_votes,
+            'rating' => $this->rating,
             'comment_count' => $this->comment_count,
-            'view_count'    => $this->view_count,
-            'sort_number'   => $this->sort_number,
-            'status'        => $this->status,
-            'created_by'    => $this->created_by,
-            'updated_by'    => $this->updated_by,
-            'published_at'  => $this->published_at,
-            'created_at'    => $this->created_at,
-            'updated_at'    => $this->updated_at,
+            'view_count' => $this->view_count,
+            'sort_number' => $this->sort_number,
+            'status' => $this->status,
+            'created_by' => $this->created_by,
+            'updated_by' => $this->updated_by,
+            'published_at' => $this->published_at,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
         ]);
 
         $query->andFilterWhere(['like', 'slug', $this->slug])

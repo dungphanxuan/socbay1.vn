@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php echo GridView::widget([
         'dataProvider' => $dataProvider,
-        'columns'      => [
+        'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
             'name',
@@ -30,8 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'updated_at:datetime',
 
             [
-                'class'          => 'backend\grid\ActionColumn',
-                'headerOptions'  => ['style' => 'text-align:center'],
+                'class' => 'backend\grid\ActionColumn',
+                'headerOptions' => ['style' => 'text-align:center'],
                 'contentOptions' => ['style' => 'width:10%;text-align:center'],
             ],
         ],

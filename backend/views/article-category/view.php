@@ -21,9 +21,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?php echo Html::a(Yii::t('backend', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
                     <?php echo Html::a(Yii::t('backend', 'Delete'), ['delete', 'id' => $model->id], [
                         'class' => 'btn btn-danger',
-                        'data'  => [
+                        'data' => [
                             'confirm' => Yii::t('backend', 'Are you sure you want to delete this item?'),
-                            'method'  => 'post',
+                            'method' => 'post',
                         ],
                     ]) ?>
                 </p>
@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
         <?php echo DetailView::widget([
-            'model'      => $model,
+            'model' => $model,
             'attributes' => [
                 'id',
                 'title',
@@ -55,42 +55,42 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-md-12">
                 <?php echo GridView::widget([
                     'dataProvider' => $dataProvider,
-                    'filterModel'  => $searchModel,
-                    'options'      => [
+                    'filterModel' => $searchModel,
+                    'options' => [
                         'class' => 'grid-view table-responsive'
                     ],
-                    'pager'        => [
+                    'pager' => [
                         'maxButtonCount' => 15,
                     ],
-                    'columns'      => [
+                    'columns' => [
                         [
-                            'class'           => 'yii\grid\CheckboxColumn',
+                            'class' => 'yii\grid\CheckboxColumn',
                             'checkboxOptions' => [
                                 'class' => 'select-item'
                             ]
                         ],
 
                         [
-                            'attribute'      => 'id',
-                            'format'         => 'raw',
-                            'headerOptions'  => ['style' => 'text-align:center'],
+                            'attribute' => 'id',
+                            'format' => 'raw',
+                            'headerOptions' => ['style' => 'text-align:center'],
                             'contentOptions' => ['style' => 'width:10%;text-align:center'],
                         ],
                         'title',
                         'slug',
 
                         [
-                            'class'     => \common\grid\EnumColumn::class,
+                            'class' => \common\grid\EnumColumn::class,
                             'attribute' => 'status',
-                            'format'    => 'raw',
-                            'enum'      => [
+                            'format' => 'raw',
+                            'enum' => [
                                 Yii::t('backend', 'Not Published'),
                                 Yii::t('backend', 'Published')
                             ]
                         ],
 
                         [
-                            'class'    => 'backend\grid\ActionColumn',
+                            'class' => 'backend\grid\ActionColumn',
                             'template' => '{update} {delete}'
                         ],
                     ],

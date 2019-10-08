@@ -12,7 +12,7 @@ namespace common\helpers;
  * Class FilestackHelper
  * */
 
-class FilestackHelper
+class CloudinaryHelper
 {
     public static function transformation()
     {

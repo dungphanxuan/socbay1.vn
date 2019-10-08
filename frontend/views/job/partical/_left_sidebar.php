@@ -115,12 +115,12 @@ HTML;
     <ul class="browse-list list-unstyled long-list">
         <?php echo \yii\widgets\ListView::widget([
             'dataProvider' => $providerJobCat,
-            'layout'       => '{items}',
-            'itemView'     => '@frontend/views/job/item/_item_job_cat_sidebar_index',
-            'options'      => [
+            'layout' => '{items}',
+            'itemView' => '@frontend/views/job/item/_item_job_cat_sidebar_index',
+            'options' => [
                 'tag' => false,
             ],
-            'itemOptions'  => [
+            'itemOptions' => [
                 'tag' => false,
             ]
         ]) ?>
@@ -133,9 +133,9 @@ HTML;
     <h5 class="list-title"><strong><a href="#">Vị trí</a></strong></h5>
     <?php
     echo Menu::widget([
-        'items'          => LocationData::getCityItemMenu(),
+        'items' => LocationData::getCityItemMenu(),
         'activeCssClass' => 'activeclass',
-        'options'        => [
+        'options' => [
             'class' => 'browse-list list-unstyled long-list'
         ]
     ]);

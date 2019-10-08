@@ -45,18 +45,18 @@ class SetPasswordForm extends Model
         /* @var $user User */
         $user = User::findOne([
             'status' => User::STATUS_ACTIVE,
-            'email'  => $this->email,
+            'email' => $this->email,
         ]);
 
         if ($user) {
             $token = UserToken::create($user->id, UserToken::TYPE_PASSWORD_RESET, Time::SECONDS_IN_A_DAY);
             if ($user->save()) {
                 return Yii::$app->commandBus->handle(new SendEmailCommand([
-                    'to'      => $this->email,
+                    'to' => $this->email,
                     'subject' => Yii::t('frontend', 'Password reset for {name}', ['name' => Yii::$app->name]),
-                    'view'    => 'passwordResetToken',
-                    'params'  => [
-                        'user'  => $user,
+                    'view' => 'passwordResetToken',
+                    'params' => [
+                        'user' => $user,
                         'token' => $token->token
                     ]
                 ]));

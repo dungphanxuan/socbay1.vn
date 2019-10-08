@@ -68,13 +68,13 @@ class DomainValidator extends Validator
      */
     public $message;
 
-	/**
-	 * @var string user-defined error message used when DNS record corresponding to domain name not found;
-	 * you may use the following placeholders in the message:
-	 * - `{attribute}`: the label of the attribute being validated
-	 * - `{value}`: the value of the attribute being validated
-	 */
-	public $messageDNS;
+    /**
+     * @var string user-defined error message used when DNS record corresponding to domain name not found;
+     * you may use the following placeholders in the message:
+     * - `{attribute}`: the label of the attribute being validated
+     * - `{value}`: the value of the attribute being validated
+     */
+    public $messageDNS;
 
     /**
      * @var string user-defined error message used when domain name contains an invalid character;

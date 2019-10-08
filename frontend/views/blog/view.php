@@ -362,12 +362,12 @@ $bundle = AdsAsset::register($this);
                                     <div class="blog-popular-content">
                                         <?php echo \yii\widgets\ListView::widget([
                                             'dataProvider' => $dataPopularProvider,
-                                            'layout'       => '{items}',
-                                            'itemView'     => '_item_popular',
-                                            'options'      => [
+                                            'layout' => '{items}',
+                                            'itemView' => '_item_popular',
+                                            'options' => [
                                                 'tag' => false,
                                             ],
-                                            'itemOptions'  => [
+                                            'itemOptions' => [
                                                 'tag' => false,
                                             ]
                                         ]) ?>

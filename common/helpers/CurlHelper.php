@@ -70,11 +70,11 @@ class CurlHelper extends Inflector
      * Default curl options
      */
     private $_defaultOptions = array(
-        CURLOPT_USERAGENT      => 'Yii2-Curl-Agent',
-        CURLOPT_TIMEOUT        => 30,
+        CURLOPT_USERAGENT => 'Yii2-Curl-Agent',
+        CURLOPT_TIMEOUT => 30,
         CURLOPT_CONNECTTIMEOUT => 30,
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_HEADER         => false,
+        CURLOPT_HEADER => false,
     );
 
 
@@ -83,7 +83,7 @@ class CurlHelper extends Inflector
     /**
      * Start performing GET-HTTP-Request
      *
-     * @param string  $url
+     * @param string $url
      * @param boolean $raw if response body contains JSON and should be decoded
      *
      * @return mixed response
@@ -110,7 +110,7 @@ class CurlHelper extends Inflector
     /**
      * Start performing POST-HTTP-Request
      *
-     * @param string  $url
+     * @param string $url
      * @param boolean $raw if response body contains JSON and should be decoded
      *
      * @return mixed response
@@ -124,7 +124,7 @@ class CurlHelper extends Inflector
     /**
      * Start performing PUT-HTTP-Request
      *
-     * @param string  $url
+     * @param string $url
      * @param boolean $raw if response body contains JSON and should be decoded
      *
      * @return mixed response
@@ -138,7 +138,7 @@ class CurlHelper extends Inflector
     /**
      * Start performing DELETE-HTTP-Request
      *
-     * @param string  $url
+     * @param string $url
      * @param boolean $raw if response body contains JSON and should be decoded
      *
      * @return mixed response
@@ -153,7 +153,7 @@ class CurlHelper extends Inflector
      * Set curl option
      *
      * @param string $key
-     * @param mixed  $value
+     * @param mixed $value
      *
      * @return $this
      */
@@ -278,13 +278,13 @@ class CurlHelper extends Inflector
     /**
      * Performs HTTP request
      *
-     * @param string  $method
-     * @param string  $url
+     * @param string $method
+     * @param string $url
      * @param boolean $raw if response body contains JSON and should be decoded -> helper.
      *
+     * @return mixed
      * @throws Exception if request failed
      *
-     * @return mixed
      */
     private function _httpRequest($method, $url, $raw = false)
     {

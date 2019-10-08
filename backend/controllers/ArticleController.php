@@ -29,7 +29,7 @@ class ArticleController extends BackendController
     {
         return \yii\helpers\ArrayHelper::merge(parent::behaviors(), [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['post'],
                 ],
@@ -73,9 +73,9 @@ class ArticleController extends BackendController
 
 
         return $this->render('index', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'categories'   => ArticleCategory::find()->active()->where(['parent_id' => null])->all(),
+            'categories' => ArticleCategory::find()->active()->where(['parent_id' => null])->all(),
         ]);
     }
 
@@ -97,15 +97,15 @@ class ArticleController extends BackendController
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
             Yii::$app->getSession()->setFlash('alert', [
-                'body'    => 'Thêm mới thành công',
+                'body' => 'Thêm mới thành công',
                 'options' => ['class' => 'alert-success']
             ]);
 
             Yii::$app->commandBus->handle(new AddToTimelineCommand([
                 'category' => 'article',
-                'event'    => 'item',
-                'data'     => [
-                    'title'      => $model->title,
+                'event' => 'item',
+                'data' => [
+                    'title' => $model->title,
                     'article_id' => $model->id,
                     'created_at' => $model->created_at
                 ]
@@ -136,12 +136,12 @@ class ArticleController extends BackendController
         }
 
         return $this->render('create', [
-            'model'           => $model,
-            'categories'      => ArticleCategory::find()->rootCategory()->all(),
+            'model' => $model,
+            'categories' => ArticleCategory::find()->rootCategory()->all(),
             'dataSubCategory' => $dataSubCategory,
-            'cities'          => City::find()->orderBy('priority desc')->all(),
-            'dataDistrict'    => $dataDistrict,
-            'dataWard'        => $dataWard,
+            'cities' => City::find()->orderBy('priority desc')->all(),
+            'dataDistrict' => $dataDistrict,
+            'dataWard' => $dataWard,
         ]);
     }
 
@@ -191,7 +191,7 @@ class ArticleController extends BackendController
         $cookies1 = Yii::$app->response->cookies;
         if ($backUrl) {
             $cookies1->add(new \yii\web\Cookie([
-                'name'  => 'url3',
+                'name' => 'url3',
                 'value' => $backUrl,
             ]));
         } else {
@@ -202,7 +202,7 @@ class ArticleController extends BackendController
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
             Yii::$app->getSession()->setFlash('alert', [
-                'body'    => 'Cập nhật thành công',
+                'body' => 'Cập nhật thành công',
                 'options' => ['class' => 'alert-success']
             ]);
             //Notify update success
@@ -226,12 +226,12 @@ class ArticleController extends BackendController
         $dataSubCategory = ArticleCategory::getSubCategory($model->category_id);
 
         return $this->render('update', [
-            'model'           => $model,
-            'categories'      => ArticleCategory::find()->rootCategory()->all(),
+            'model' => $model,
+            'categories' => ArticleCategory::find()->rootCategory()->all(),
             'dataSubCategory' => $dataSubCategory,
-            'cities'          => City::find()->orderBy('priority desc')->all(),
-            'dataDistrict'    => $dataDistrict,
-            'dataWard'        => $dataWard,
+            'cities' => City::find()->orderBy('priority desc')->all(),
+            'dataDistrict' => $dataDistrict,
+            'dataWard' => $dataWard,
         ]);
     }
 
@@ -277,7 +277,7 @@ class ArticleController extends BackendController
         $model->status = 2;
         $model->save();
         Yii::$app->getSession()->setFlash('alert', [
-            'body'    => 'Xóa Bài viết thành công',
+            'body' => 'Xóa Bài viết thành công',
             'options' => ['class' => 'alert-warning']
         ]);
 
@@ -294,7 +294,7 @@ class ArticleController extends BackendController
             ->where(['status' => 1]);
 
         $dataProvider = new ActiveDataProvider([
-            'query'      => $queryAll,
+            'query' => $queryAll,
             'pagination' => false
         ]);
 
@@ -322,14 +322,14 @@ class ArticleController extends BackendController
                 }
             }
             $res = [
-                'body'    => 'Success',
+                'body' => 'Success',
                 'success' => true,
             ];
 
             return $res;
         }
         $res = [
-            'body'    => 'Not allow',
+            'body' => 'Not allow',
             'success' => false,
         ];
 
@@ -392,14 +392,14 @@ class ArticleController extends BackendController
 
                 return [
                     'success' => true,
-                    'id'      => $getID,
-                    'status'  => $model->status,
+                    'id' => $getID,
+                    'status' => $model->status,
                 ];
             }
 
             return [
                 'success' => false,
-                'status'  => 100,
+                'status' => 100,
             ];
         }
     }
@@ -438,7 +438,7 @@ class ArticleController extends BackendController
 
         //Update data
         $res = array(
-            'msg'     => 'Success',
+            'msg' => 'Success',
             'success' => true,
         );
 
@@ -472,19 +472,19 @@ class ArticleController extends BackendController
             $fromDate = strtotime("+1 day", $fromDate);
         }
         $arrDataset[] = [
-            'label'                => 'Article Stat',
-            'backgroundColor'      => "rgba(255,99,132,0.2)",
-            'borderColor'          => "rgba(255,99,132,1)",
+            'label' => 'Article Stat',
+            'backgroundColor' => "rgba(255,99,132,0.2)",
+            'borderColor' => "rgba(255,99,132,1)",
             'pointBackgroundColor' => "rgba(255,99,132,1)",
-            'fill'                 => false,
-            'data'                 => $dataDate,
+            'fill' => false,
+            'data' => $dataDate,
         ];
 
         return $this->render('chart', [
-            'dateRange'  => $dateRange,
-            'arrLabel'   => $arrLabel,
+            'dateRange' => $dateRange,
+            'arrLabel' => $arrLabel,
             'arrDataset' => $arrDataset,
-            'total'      => $total
+            'total' => $total
         ]);
     }
 

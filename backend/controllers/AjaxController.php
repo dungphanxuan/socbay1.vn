@@ -28,8 +28,8 @@ class AjaxController extends BackendController
     {
         return [
             'access' => [
-                'class'        => AccessControl::class,
-                'rules'        => [
+                'class' => AccessControl::class,
+                'rules' => [
                     [
                         'allow' => true,
                         'roles' => ['@'],
@@ -44,8 +44,8 @@ class AjaxController extends BackendController
                     }
                 }
             ],
-            'verbs'  => [
-                'class'   => VerbFilter::class,
+            'verbs' => [
+                'class' => VerbFilter::class,
                 'actions' => [
                     'vote' => ['post'],
                     'star' => ['post'],
@@ -66,8 +66,8 @@ class AjaxController extends BackendController
     /**
      * Casts a star to the specified content object.
      *
-     * @param string  $type the model type to add the star.
-     * @param integer $id   the ID of the model.
+     * @param string $type the model type to add the star.
+     * @param integer $id the ID of the model.
      *
      * @return array
      * @throws NotFoundHttpException
@@ -120,12 +120,12 @@ class AjaxController extends BackendController
                 $isSuccess = true;
             }
             $res = array(
-                'body'    => $item,
+                'body' => $item,
                 'success' => $isSuccess,
             );
         } else {
             $res = array(
-                'body'    => 'Not allow',
+                'body' => 'Not allow',
                 'success' => false,
             );
         }
@@ -183,12 +183,12 @@ class AjaxController extends BackendController
 
 
             $res = array(
-                'body'    => $dataLocation,
+                'body' => $dataLocation,
                 'success' => $isSuccess,
             );
         } else {
             $res = array(
-                'body'    => 'Not allow',
+                'body' => 'Not allow',
                 'success' => false,
             );
         }

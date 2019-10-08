@@ -20,7 +20,7 @@ class JobController extends FrontendController
         return [
             'access' => [
                 'class' => \yii\filters\AccessControl::class,
-                'only'  => ['create', 'update', 'company-search', 'data-search'],
+                'only' => ['create', 'update', 'company-search', 'data-search'],
                 'rules' => [
                     // allow authenticated users
                     [
@@ -32,6 +32,7 @@ class JobController extends FrontendController
             ],
         ];
     }
+
     public function init()
     {
         $this->site_id = AdsType::JOB;
@@ -53,7 +54,7 @@ class JobController extends FrontendController
             ->orderBy('id asc');
 
         $dataCompanyProvider = new ActiveDataProvider([
-            'query'      => $queryCompany,
+            'query' => $queryCompany,
             'pagination' => [
                 'pageSize' => 12,
             ],
@@ -65,25 +66,25 @@ class JobController extends FrontendController
             ->orderBy('id desc');
 
         $dataJobProvider = new ActiveDataProvider([
-            'query'      => $queryJob,
+            'query' => $queryJob,
             'pagination' => [
                 'pageSize' => 12,
             ],
         ]);
 
         $providerJobCat = new ArrayDataProvider([
-            'allModels'  => $dataJobCat,
+            'allModels' => $dataJobCat,
             'pagination' => [
                 'pageSize' => 15,
             ],
-            'sort'       => [
+            'sort' => [
                 'attributes' => ['id', 'title'],
             ],
         ]);
         return $this->render('index', [
-            'modelJobCat'         => $modelJobCat,
-            'providerJobCat'      => $providerJobCat,
-            'dataJobProvider'     => $dataJobProvider,
+            'modelJobCat' => $modelJobCat,
+            'providerJobCat' => $providerJobCat,
+            'dataJobProvider' => $dataJobProvider,
             'dataCompanyProvider' => $dataCompanyProvider
         ]);
     }
@@ -96,14 +97,13 @@ class JobController extends FrontendController
 
     public function actionCompanyProfile($id)
     {
-        return $this->render('company');
+        $model = Company::findOne($id);
+        return $this->render('company', ['model' => $model]);
     }
 
 
     public function actionCreate()
     {
-        $this->layout = 'main3';
-
         return $this->render('create');
     }
 
@@ -148,7 +148,7 @@ class JobController extends FrontendController
         $dataProvider = $searchModel->search($params);
 
         return $this->render('company-search', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -163,7 +163,7 @@ class JobController extends FrontendController
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('company-datasearch', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

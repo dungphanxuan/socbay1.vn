@@ -39,3 +39,10 @@ define('CACHE_ARTICLE_CATEGORY_DETAIL', 'tc');
 define('CACHE_ARTICLE_INDEX', 'mi');
 define('CACHE_ARTICLE_VIEW', 'mv');
 
+/*
+ * Image Source Constrant
+ * */
+
+define('IMAGE_SOURCE_LOCAL', 'image_local');
+define('IMAGE_SOURCE_FILESTACK', 'image_filestack');
+define('IMAGE_SOURCE_CLOUDINARY', 'image_cloudinary');

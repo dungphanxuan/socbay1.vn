@@ -45,7 +45,7 @@ class EnumColumn extends DataColumn
     /**
      * @param mixed $model
      * @param mixed $key
-     * @param int   $index
+     * @param int $index
      * @return mixed
      */
     public function getDataCellValue($model, $key, $index)

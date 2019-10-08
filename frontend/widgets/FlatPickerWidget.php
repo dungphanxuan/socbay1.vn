@@ -91,11 +91,11 @@ class FlatPickerWidget extends InputWidget
 
         // Init default clientOptions
         $this->clientOptions = ArrayHelper::merge([
-            'language'  => $this->language ?: substr(Yii::$app->language, 0, 2),
-            'format'    => $this->format,
-            'zIndex'    => $this->zIndex,
-            'autoShow'  => $this->autoShow,
-            'autoHide'  => $this->autoHide,
+            'language' => $this->language ?: substr(Yii::$app->language, 0, 2),
+            'format' => $this->format,
+            'zIndex' => $this->zIndex,
+            'autoShow' => $this->autoShow,
+            'autoHide' => $this->autoHide,
             'startDate' => $this->startDate,
         ], $this->clientOptions);
 

@@ -23,10 +23,10 @@ $projectDesc = empty($model->project_id) ? '' : Project::findOne($model->project
 
     <?php $form = ActiveForm::begin([
         'fieldConfig' => [
-            'template'             => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
+            'template' => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
             'horizontalCssClasses' => [
-                'label'   => 'col-sm-4',
-                'offset'  => 'col-sm-offset-4',
+                'label' => 'col-sm-4',
+                'offset' => 'col-sm-offset-4',
                 'wrapper' => 'col-sm-4',
             ],
         ],
@@ -35,7 +35,7 @@ $projectDesc = empty($model->project_id) ? '' : Project::findOne($model->project
     <div class="row">
         <div class="col-md-6">
             <?php echo $form->errorSummary($model, [
-                'class'  => 'alert alert-warning alert-dismissible',
+                'class' => 'alert alert-warning alert-dismissible',
                 'header' => ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4><i class="icon fa fa-warning"></i> Vui lòng sửa các lỗi sau!</h4>'
             ]); ?>
         </div>
@@ -83,8 +83,8 @@ $projectDesc = empty($model->project_id) ? '' : Project::findOne($model->project
     echo $form->field($model, 'project_id', [
         'template' => '{label} <div class="row"><div class="col-xs-6 col-sm-6">{input}{error}{hint}</div></div>'
     ])->widget(Select2::class, [
-        'data'          => \yii\helpers\ArrayHelper::map($projects, 'id', 'title'),
-        'options'       => ['placeholder' => 'Chọn dự án ...'],
+        'data' => \yii\helpers\ArrayHelper::map($projects, 'id', 'title'),
+        'options' => ['placeholder' => 'Chọn dự án ...'],
         'pluginOptions' => [
             'allowClear' => true
         ],

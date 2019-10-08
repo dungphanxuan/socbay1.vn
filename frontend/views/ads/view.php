@@ -20,6 +20,8 @@ PhotoSwipeAssets::register($this);
 $articleDetail = ArticleHelper::getDetail($model->id, true);
 $sellerInfo = $articleDetail['seller_user'];
 
+//dd($articleDetail);
+
 $imagesAttactment = $articleDetail['attachments'];
 
 $defaultAvatar = baseUrl() . '/frontend/web/images/avatar.png';

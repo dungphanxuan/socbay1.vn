@@ -25,26 +25,26 @@ $this->params['breadcrumbs'][] = ['label' => 'Company', 'url' => ['index']];
 
         <?php echo GridView::widget([
             'dataProvider' => $dataProvider,
-            'filterModel'  => $searchModel,
-            'columns'      => [
+            'filterModel' => $searchModel,
+            'columns' => [
                 [
-                    'class'          => 'yii\grid\CheckboxColumn',
-                    'headerOptions'  => ['style' => 'width:3%;text-align:center'],
+                    'class' => 'yii\grid\CheckboxColumn',
+                    'headerOptions' => ['style' => 'width:3%;text-align:center'],
                     'contentOptions' => ['style' => 'width:3%;text-align:center'],
                 ],
                 [
-                    'attribute'      => 'id',
-                    'format'         => 'raw',
-                    'headerOptions'  => ['style' => 'text-align:center'],
+                    'attribute' => 'id',
+                    'format' => 'raw',
+                    'headerOptions' => ['style' => 'text-align:center'],
                     'contentOptions' => ['style' => 'width:10%;text-align:center'],
                 ],
                 [
-                    'attribute'      => 'thumbnail',
-                    'format'         => 'raw',
-                    'header'         => 'Ảnh',
-                    'headerOptions'  => ['style' => 'text-align:center'],
+                    'attribute' => 'thumbnail',
+                    'format' => 'raw',
+                    'header' => 'Ảnh',
+                    'headerOptions' => ['style' => 'text-align:center'],
                     'contentOptions' => ['style' => 'width:10%;text-align:center'],
-                    'value'          => function ($model) {
+                    'value' => function ($model) {
                         return Html::a(Html::tag('img', null, ['class' => 'imageList lazy', 'data-src' => $model->getImgThumbnail(5)]), [
                             'update',
                             'id' => $model->id

@@ -22,18 +22,18 @@ class UserController extends ApiController
     public function behaviors()
     {
         return ArrayHelper::merge(parent::behaviors(), [
-            'verbs'         => [
-                'class'   => \yii\filters\VerbFilter::class,
+            'verbs' => [
+                'class' => \yii\filters\VerbFilter::class,
                 'actions' => [
-                    'login'           => ['post'],
-                    'sign-up'         => ['post'],
-                    'auth-facebook'   => ['post'],
+                    'login' => ['post'],
+                    'sign-up' => ['post'],
+                    'auth-facebook' => ['post'],
                     'forgot-password' => ['post'],
-                    'logout'          => ['post'],
+                    'logout' => ['post'],
                 ],
             ],
             'authenticator' => [
-                'class'  => AccessTokenAuth::class,
+                'class' => AccessTokenAuth::class,
                 'except' => ['index', 'login', 'sign-up', 'auth-facebook', 'forgot-password'],
             ]
         ]);
@@ -233,7 +233,7 @@ class UserController extends ApiController
         //dd($attributes);
 
         $user = User::find()->where([
-            'oauth_client'         => $clientName,
+            'oauth_client' => $clientName,
             'oauth_client_user_id' => ArrayHelper::getValue($attributes, 'id')
         ])->one();
 
@@ -298,10 +298,10 @@ class UserController extends ApiController
                 //Check Valid Email
                 if ($user->valid_email) {
                     $sentSuccess = Yii::$app->commandBus->handle(new SendEmailCommand([
-                        'view'    => 'oauth_welcome',
-                        'params'  => ['user' => $user, 'password' => $password],
+                        'view' => 'oauth_welcome',
+                        'params' => ['user' => $user, 'password' => $password],
                         'subject' => Yii::t('frontend', '{app-name} | Your login information', ['app-name' => Yii::$app->name]),
-                        'to'      => $user->email
+                        'to' => $user->email
                     ]));
                     if ($sentSuccess) {
                         //Wellcome
@@ -315,7 +315,7 @@ class UserController extends ApiController
                         'alert',
                         [
                             'options' => ['class' => 'alert-danger'],
-                            'body'    => Yii::t('frontend', 'We already have a user with email {email}', [
+                            'body' => Yii::t('frontend', 'We already have a user with email {email}', [
                                 'email' => $user->email
                             ])
                         ]
@@ -325,7 +325,7 @@ class UserController extends ApiController
                         'alert',
                         [
                             'options' => ['class' => 'alert-danger'],
-                            'body'    => Yii::t('frontend', 'Error while oauth process.')
+                            'body' => Yii::t('frontend', 'Error while oauth process.')
                         ]
                     );
                 }
@@ -363,8 +363,8 @@ class UserController extends ApiController
                         ->one();
 
                     $dataUser = [
-                        'user_id'      => $user->id,
-                        'username'     => $user->username,
+                        'user_id' => $user->id,
+                        'username' => $user->username,
                         'access_token' => Yii::$app->security->generateRandomString(40),
                     ];
                     $msg = Yii::t('common', 'Login success');
@@ -399,7 +399,7 @@ class UserController extends ApiController
 
         return array(
             'status' => $status,
-            'msg'    => $msg,
+            'msg' => $msg,
             'result' => $result
         );
     }

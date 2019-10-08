@@ -49,7 +49,7 @@ class PageSearch extends Page
         //dd($params);
 
         $query->andFilterWhere([
-            'id'     => $this->id,
+            'id' => $this->id,
             'status' => $this->status,
         ]);
 

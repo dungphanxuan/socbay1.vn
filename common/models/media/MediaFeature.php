@@ -38,9 +38,9 @@ class MediaFeature extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'       => 'ID',
+            'id' => 'ID',
             'media_id' => 'Media ID',
-            'order'    => 'Order',
+            'order' => 'Order',
         ];
     }
 }

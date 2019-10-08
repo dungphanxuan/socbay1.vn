@@ -5,9 +5,9 @@ namespace common\models;
 /**
  * This is the model class for table "{{%rbac_auth_assignment}}".
  *
- * @property string       $item_name
- * @property string       $user_id
- * @property integer      $created_at
+ * @property string $item_name
+ * @property string $user_id
+ * @property integer $created_at
  *
  * @property RbacAuthItem $itemName
  */
@@ -33,8 +33,8 @@ class RbacAuthAssignment extends \yii\db\ActiveRecord
             [
                 ['item_name'],
                 'exist',
-                'skipOnError'     => true,
-                'targetClass'     => RbacAuthItem::class,
+                'skipOnError' => true,
+                'targetClass' => RbacAuthItem::class,
                 'targetAttribute' => ['item_name' => 'name']
             ],
         ];
@@ -46,8 +46,8 @@ class RbacAuthAssignment extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'item_name'  => 'Item Name',
-            'user_id'    => 'User ID',
+            'item_name' => 'Item Name',
+            'user_id' => 'User ID',
             'created_at' => 'Created At',
         ];
     }

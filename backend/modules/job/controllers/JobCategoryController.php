@@ -19,7 +19,7 @@ class JobCategoryController extends Controller
     {
         return [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['post'],
                 ],
@@ -37,7 +37,7 @@ class JobCategoryController extends Controller
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -69,7 +69,7 @@ class JobCategoryController extends Controller
             $categories = JobCategory::find()->where(['parent_id' => null])->all();
             $categories = ArrayHelper::map($categories, 'id', 'title');
             return $this->render('create', [
-                'model'      => $model,
+                'model' => $model,
                 'categories' => $categories,
             ]);
         }
@@ -92,7 +92,7 @@ class JobCategoryController extends Controller
             $categories = ArrayHelper::map($categories, 'id', 'title');
 
             return $this->render('update', [
-                'model'      => $model,
+                'model' => $model,
                 'categories' => $categories,
             ]);
         }

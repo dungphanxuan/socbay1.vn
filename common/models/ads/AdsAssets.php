@@ -12,21 +12,21 @@ use yii\behaviors\TimestampBehavior;
 /**
  * This is the model class for table "ads_assets".
  *
- * @property int                   $id
- * @property string                $title
- * @property string                $slug
- * @property string                $body
- * @property int                   $parent_id
- * @property string                $key
- * @property string                $thumbnail_base_url
- * @property string                $thumbnail_path
- * @property string                $thumbnail_base_url_data
- * @property string                $thumbnail_path_data
- * @property int                   $type
- * @property int                   $status
- * @property int                   $sort_number
- * @property int                   $created_at
- * @property int                   $updated_at
+ * @property int $id
+ * @property string $title
+ * @property string $slug
+ * @property string $body
+ * @property int $parent_id
+ * @property string $key
+ * @property string $thumbnail_base_url
+ * @property string $thumbnail_path
+ * @property string $thumbnail_base_url_data
+ * @property string $thumbnail_path_data
+ * @property int $type
+ * @property int $status
+ * @property int $sort_number
+ * @property int $created_at
+ * @property int $updated_at
  *
  * @property AdsAssetsAttachment[] $adsAssetsAttachments
  */
@@ -59,26 +59,26 @@ class AdsAssets extends \yii\db\ActiveRecord
             TimestampBehavior::class,
             //BlameableBehavior::class,
             [
-                'class'     => SluggableBehavior::class,
+                'class' => SluggableBehavior::class,
                 'attribute' => 'title',
                 'immutable' => true,
             ],
             [
-                'class'            => UploadBehavior::class,
-                'attribute'        => 'attachments',
-                'multiple'         => true,
-                'uploadRelation'   => 'adsAssetsAttachments',
-                'pathAttribute'    => 'path',
+                'class' => UploadBehavior::class,
+                'attribute' => 'attachments',
+                'multiple' => true,
+                'uploadRelation' => 'adsAssetsAttachments',
+                'pathAttribute' => 'path',
                 'baseUrlAttribute' => 'base_url',
-                'orderAttribute'   => 'order',
-                'typeAttribute'    => 'type',
-                'sizeAttribute'    => 'size',
-                'nameAttribute'    => 'name',
+                'orderAttribute' => 'order',
+                'typeAttribute' => 'type',
+                'sizeAttribute' => 'size',
+                'nameAttribute' => 'name',
             ],
             [
-                'class'            => UploadBehavior::class,
-                'attribute'        => 'thumbnail',
-                'pathAttribute'    => 'thumbnail_path',
+                'class' => UploadBehavior::class,
+                'attribute' => 'thumbnail',
+                'pathAttribute' => 'thumbnail_path',
                 'baseUrlAttribute' => 'thumbnail_base_url',
             ],
         ];
@@ -106,21 +106,21 @@ class AdsAssets extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'                      => 'ID',
-            'title'                   => 'Title',
-            'slug'                    => 'Slug',
-            'body'                    => 'Body',
-            'parent_id'               => 'Parent ID',
-            'key'                     => 'Key',
-            'thumbnail_base_url'      => 'Thumbnail Base Url',
-            'thumbnail_path'          => 'Thumbnail Path',
+            'id' => 'ID',
+            'title' => 'Title',
+            'slug' => 'Slug',
+            'body' => 'Body',
+            'parent_id' => 'Parent ID',
+            'key' => 'Key',
+            'thumbnail_base_url' => 'Thumbnail Base Url',
+            'thumbnail_path' => 'Thumbnail Path',
             'thumbnail_base_url_data' => 'Thumbnail Base Url Data',
-            'thumbnail_path_data'     => 'Thumbnail Path Data',
-            'type'                    => 'Type',
-            'status'                  => 'Status',
-            'sort_number'             => 'Sort Number',
-            'created_at'              => 'Created At',
-            'updated_at'              => 'Updated At',
+            'thumbnail_path_data' => 'Thumbnail Path Data',
+            'type' => 'Type',
+            'status' => 'Status',
+            'sort_number' => 'Sort Number',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
         ];
     }
 

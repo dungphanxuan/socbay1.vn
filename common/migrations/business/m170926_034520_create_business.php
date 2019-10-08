@@ -5,40 +5,40 @@ class m170926_034520_create_business extends \common\migrations\BaseMigration
     public function safeUp()
     {
         $this->createTable('bus_business', [
-            'id'          => $this->primaryKey(),
-            'slug'        => $this->string(512),
-            'title'       => $this->string(255)->notNull(),
-            'body'        => $this->text()->notNull(),
-            'excerpt'     => $this->text(),
-            'comment'     => $this->string(255),
-            'view'        => $this->string(),
-            'url'         => $this->string(),
-            'start_date'  => $this->integer(),
-            'end_date'    => $this->integer(),
+            'id' => $this->primaryKey(),
+            'slug' => $this->string(512),
+            'title' => $this->string(255)->notNull(),
+            'body' => $this->text()->notNull(),
+            'excerpt' => $this->text(),
+            'comment' => $this->string(255),
+            'view' => $this->string(),
+            'url' => $this->string(),
+            'start_date' => $this->integer(),
+            'end_date' => $this->integer(),
             'complete_on' => $this->integer(),
 
-            'city_id'     => $this->smallInteger(),
+            'city_id' => $this->smallInteger(),
             'district_id' => $this->integer(),
-            'ward_id'     => $this->integer(),
+            'ward_id' => $this->integer(),
 
             'lat' => $this->double(),
             'lng' => $this->double(),
 
             'total_votes' => $this->integer()->defaultValue(0),
-            'up_votes'    => $this->integer()->defaultValue(0),
-            'rating'      => $this->double()->defaultValue(0),
+            'up_votes' => $this->integer()->defaultValue(0),
+            'rating' => $this->double()->defaultValue(0),
 
-            'featured'      => $this->boolean()->defaultValue(0),
+            'featured' => $this->boolean()->defaultValue(0),
             'comment_count' => $this->integer()->defaultValue(0),
-            'view_count'    => $this->integer()->defaultValue(0),
+            'view_count' => $this->integer()->defaultValue(0),
 
-            'sort_number'        => $this->smallInteger(1)->defaultValue(1),
+            'sort_number' => $this->smallInteger(1)->defaultValue(1),
             'thumbnail_base_url' => $this->string(128),
-            'thumbnail_path'     => $this->string(255),
+            'thumbnail_path' => $this->string(255),
 
-            'status'       => $this->smallInteger(1)->defaultValue(1),
-            'created_by'   => $this->integer(),
-            'updated_by'   => $this->integer(),
+            'status' => $this->smallInteger(1)->defaultValue(1),
+            'created_by' => $this->integer(),
+            'updated_by' => $this->integer(),
             'published_at' => $this->integer(),
 
             'created_at' => $this->integer(),
@@ -47,7 +47,7 @@ class m170926_034520_create_business extends \common\migrations\BaseMigration
 
         //Project Pickup
         $this->createTable('d_business_pickup', [
-            'id'          => $this->primaryKey(),
+            'id' => $this->primaryKey(),
             'business_id' => $this->integer()->notNull(),
             'sort_number' => $this->smallInteger(1)->defaultValue(0),
         ]);

@@ -19,9 +19,9 @@ class m180108_084344_seed_data extends BaseMigration
 
         foreach ($dataCompanySize as $key => $item) {
             $this->insert('job_company_size', [
-                'title'       => $item,
-                'status'      => 1,
-                'type'        => 1,
+                'title' => $item,
+                'status' => 1,
+                'type' => 1,
                 'sort_number' => $key,
             ]);
         }
@@ -48,16 +48,16 @@ class m180108_084344_seed_data extends BaseMigration
         $baseUrl = Yii::$app->fileStorage->baseUrl;
         foreach ($dataCompany as $key => $item) {
             $this->insert('job_company', [
-                'slug'               => Inflector::slug($item[0]),
-                'title'              => $item[0],
-                'title_short'        => $item[1],
-                'body'               => $item[0],
-                'view'               => 'view',
+                'slug' => Inflector::slug($item[0]),
+                'title' => $item[0],
+                'title_short' => $item[1],
+                'body' => $item[0],
+                'view' => 'view',
                 'thumbnail_base_url' => $baseUrl,
-                'thumbnail_path'     => 'company/property/' . $item[2],
+                'thumbnail_path' => 'company/property/' . $item[2],
 
-                'type'       => AdsType::PROPERTY,
-                'status'     => 1,
+                'type' => AdsType::PROPERTY,
+                'status' => 1,
                 'created_at' => time(),
                 'updated_at' => time(),
             ]);
@@ -205,29 +205,29 @@ class m180108_084344_seed_data extends BaseMigration
         $inc = 1;
         foreach ($dataJobMainCategory as $key => $item) {
             $this->insert('job_category', [
-                'id'                 => $inc,
-                'slug'               => Inflector::slug($item[0]),
-                'title'              => $item[0],
-                'body'               => $item[0],
+                'id' => $inc,
+                'slug' => Inflector::slug($item[0]),
+                'title' => $item[0],
+                'body' => $item[0],
                 'thumbnail_base_url' => '',
-                'thumbnail_path'     => '',
-                'status'             => 1,
-                'created_at'         => time(),
-                'updated_at'         => time(),
+                'thumbnail_path' => '',
+                'status' => 1,
+                'created_at' => time(),
+                'updated_at' => time(),
             ]);
             $subCat = $item[1];
             $incSub = 1;
             foreach ($subCat as $keySubCat => $itemSubCat) {
                 $this->insert('job_category', [
-                    'parent_id'          => $inc,
-                    'slug'               => Inflector::slug($itemSubCat),
-                    'title'              => $itemSubCat,
-                    'body'               => $itemSubCat,
+                    'parent_id' => $inc,
+                    'slug' => Inflector::slug($itemSubCat),
+                    'title' => $itemSubCat,
+                    'body' => $itemSubCat,
                     'thumbnail_base_url' => '',
-                    'thumbnail_path'     => '',
-                    'status'             => 1,
-                    'created_at'         => time(),
-                    'updated_at'         => time(),
+                    'thumbnail_path' => '',
+                    'status' => 1,
+                    'created_at' => time(),
+                    'updated_at' => time(),
                 ]);
                 $incSub++;
             }

@@ -43,22 +43,22 @@ class StatController extends BackendController
             $fromDate = strtotime("+1 day", $fromDate);
         }
         $arrDataset[] = [
-            'label'                => 'Vote Stat',
-            'backgroundColor'      => "rgba(255,99,132,0.2)",
-            'borderColor'          => "rgba(255,99,132,1)",
+            'label' => 'Vote Stat',
+            'backgroundColor' => "rgba(255,99,132,0.2)",
+            'borderColor' => "rgba(255,99,132,1)",
             'pointBackgroundColor' => "rgba(255,99,132,1)",
-            'fill'                 => false,
-            'data'                 => $dataDate,
+            'fill' => false,
+            'data' => $dataDate,
         ];
 
         return $this->render('index', [
-            'dateRange'  => $dateRange,
-            'arrLabel'   => $arrLabel,
+            'dateRange' => $dateRange,
+            'arrLabel' => $arrLabel,
             'arrDataset' => $arrDataset,
-            'type'       => $type,
-            'id'         => $id,
-            'field'      => $field,
-            'time_type'  => $time_type,
+            'type' => $type,
+            'id' => $id,
+            'field' => $field,
+            'time_type' => $time_type,
         ]);
     }
 

@@ -6,7 +6,7 @@ interface Linkable
 {
     /**
      * @param string $action
-     * @param array  $params
+     * @param array $params
      * @return array url to this object. Should be something to be passed to [[\yii\helpers\Url::to()]].
      */
     public function getUrl($action = 'view', $params = []);

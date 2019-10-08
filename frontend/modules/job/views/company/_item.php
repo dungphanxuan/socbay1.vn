@@ -12,6 +12,8 @@ use yii\helpers\Url;
 /* @var $model \common\models\job\Company */
 $urlView = Url::to(['/job/company-profile', 'id' => $model->id]);
 $imgBgBox = baseUrl() . '/frontend/web/images/bg/viewBox1.jpg';
+$is_show_action = false;
+
 ?>
 <tr>
     <td></td>
@@ -45,16 +47,19 @@ $imgBgBox = baseUrl() . '/frontend/web/images/bg/viewBox1.jpg';
     </td>
     <td style="width:10%" class="action-td">
         <div>
+            <?php if ($is_show_action):?>
             <p><a class="btn btn-primary btn-sm"
                   href="<?php echo Url::to(['/jobc/company/update', 'id' => $model->id]) ?>"> <i
                             class="fa fa-edit"></i> Cập nhật </a>
             </p>
+            <?php endif;?>
 
             <p><a class="btn btn-info btn-sm"> <i class="fa fa-mail-forward"></i> Chia sẻ
                 </a></p>
-
+            <?php if ($is_show_action):?>
             <p><a class="btn btn-danger btn-sm"> <i class=" fa fa-trash"></i> Delete
                 </a></p>
+            <?php endif;?>
         </div>
     </td>
 </tr>

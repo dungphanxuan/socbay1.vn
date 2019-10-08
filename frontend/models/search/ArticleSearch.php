@@ -80,7 +80,7 @@ class ArticleSearch extends Article
         //$pageSize = 2;
 
         $dataProvider = new ActiveDataProvider([
-            'query'      => $query,
+            'query' => $query,
             'pagination' => [
                 'defaultPageSize' => $pageSize,
             ],
@@ -92,13 +92,13 @@ class ArticleSearch extends Article
 
 
         $query->andFilterWhere([
-            'tbl_article.id'          => $this->id,
+            'tbl_article.id' => $this->id,
             'tbl_article.category_id' => $this->category_id,
-            'tbl_article.city_id'     => $this->city_id,
+            'tbl_article.city_id' => $this->city_id,
             'tbl_article.district_id' => $this->district_id,
-            'tbl_article.ward_id'     => $this->ward_id,
-            'tbl_article.price'       => $this->price,
-            'tbl_article.view_count'  => $this->view_count,
+            'tbl_article.ward_id' => $this->ward_id,
+            'tbl_article.price' => $this->price,
+            'tbl_article.view_count' => $this->view_count,
         ]);
 
         $query->andFilterWhere(['like', 'tbl_article.title', $this->title]);
@@ -106,7 +106,7 @@ class ArticleSearch extends Article
         //Todo cache
         $dependency = [
             'class' => 'yii\caching\DbDependency',
-            'sql'   => 'SELECT MAX(created_at) FROM ' . Article::tableName(),
+            'sql' => 'SELECT MAX(created_at) FROM ' . Article::tableName(),
         ];
 
         /*self::getDb()->cache(function ($db) use ($dataProvider) {

@@ -15,7 +15,7 @@ use yii\helpers\Html;
         <div class="col-md-6">
             <?php $form = ActiveForm::begin(); ?>
             <?php echo $form->errorSummary($model, [
-                'class'  => 'alert alert-warning alert-dismissible',
+                'class' => 'alert alert-warning alert-dismissible',
                 'header' => ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4><i class="icon fa fa-warning"></i> Vui lòng sửa các lỗi sau!</h4>'
             ]); ?>
             <?php echo $form->field($model, 'title')->textInput(['maxlength' => true]) ?>

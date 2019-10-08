@@ -104,13 +104,13 @@ $this->title = 'Category';
                     <?php echo \yii\widgets\ListView::widget([
                         'dataProvider' => $dataProvider,
                         //'summary'      => '',
-                        'layout'       => '{items}',
-                        'itemView'     => '_item',
-                        'options'      => [
-                            'tag'   => 'div',
+                        'layout' => '{items}',
+                        'itemView' => '_item',
+                        'options' => [
+                            'tag' => 'div',
                             'class' => 'adds-wrapper',
                         ],
-                        'itemOptions'  => [
+                        'itemOptions' => [
                             'tag' => false,
                         ]
                     ]) ?>

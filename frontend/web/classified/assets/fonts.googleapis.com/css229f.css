@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cairo'), local('Cairo-Regular'), url(https://fonts.gstatic.com/s/cairo/v4/SLXGc1nY6HkvalIhTp4.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Changa';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Changa'), local('Changa-Regular'), url(https://fonts.gstatic.com/s/changa/v5/2-cm9JNi2YuVOUckZpy7.ttf) format('truetype');
+}

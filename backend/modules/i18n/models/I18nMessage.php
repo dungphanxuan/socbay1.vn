@@ -48,11 +48,11 @@ class I18nMessage extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'            => Yii::t('backend', 'ID'),
-            'language'      => Yii::t('backend', 'Language'),
-            'translation'   => Yii::t('backend', 'Translation'),
+            'id' => Yii::t('backend', 'ID'),
+            'language' => Yii::t('backend', 'Language'),
+            'translation' => Yii::t('backend', 'Translation'),
             'sourceMessage' => Yii::t('backend', 'Source Message'),
-            'category'      => Yii::t('backend', 'Category'),
+            'category' => Yii::t('backend', 'Category'),
         ];
     }
 

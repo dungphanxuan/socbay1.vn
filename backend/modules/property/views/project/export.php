@@ -17,20 +17,20 @@ $gridColumns = [
     //'body',
     [
         'attribute' => 'district_id',
-        'value'     => function ($model) {
+        'value' => function ($model) {
             return $model->district ? $model->district->name : null;
         },
     ],
     [
-        'attribute'      => 'type',
-        'format'         => 'raw',
-        'filter'         => [1 => 'Cho thuê', 2 => 'Mua bán'],
-        'value'          => function ($model) {
+        'attribute' => 'type',
+        'format' => 'raw',
+        'filter' => [1 => 'Cho thuê', 2 => 'Mua bán'],
+        'value' => function ($model) {
             $showText = $model->type != 2 ? 'Cho thuê' : 'Mua bán';
 
             return $showText;
         },
-        'headerOptions'  => ['style' => 'text-align:center'],
+        'headerOptions' => ['style' => 'text-align:center'],
         'contentOptions' => ['style' => 'width:10%;text-align:center'],
     ],
 
@@ -53,8 +53,8 @@ $gridColumns = [
                 <?php
                 echo ExportMenu::widget([
                     'dataProvider' => $dataProvider,
-                    'columns'      => $gridColumns,
-                    'fontAwesome'  => true,
+                    'columns' => $gridColumns,
+                    'fontAwesome' => true,
                 ]);
                 ?>
             </div>

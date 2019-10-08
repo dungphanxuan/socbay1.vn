@@ -13,7 +13,7 @@ use yii\helpers\Url;
 ?>
 <?php $this->beginContent('@app/notifications/views/_layout.text.php', [
     'model' => $wiki,
-    'user'  => $user,
+    'user' => $user,
 ]); ?>
 The following tutorial that you are following was recently updated.
 

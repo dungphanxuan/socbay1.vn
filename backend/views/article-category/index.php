@@ -3,6 +3,7 @@
 use yii\grid\GridView;
 use yii\helpers\Html;
 use common\grid\EnumColumn;
+
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\search\ArticleCategorySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -26,35 +27,35 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php echo GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel'  => $searchModel,
-        'options'      => [
+        'filterModel' => $searchModel,
+        'options' => [
             'class' => 'grid-view table-responsive'
         ],
-        'pager'        => [
+        'pager' => [
             'maxButtonCount' => 15,
         ],
-        'columns'      => [
+        'columns' => [
             ['class' => 'yii\grid\CheckboxColumn'],
 
             [
-                'attribute'      => 'id',
-                'format'         => 'raw',
-                'headerOptions'  => ['style' => 'text-align:center'],
+                'attribute' => 'id',
+                'format' => 'raw',
+                'headerOptions' => ['style' => 'text-align:center'],
                 'contentOptions' => ['style' => 'width:10%;text-align:center'],
             ],
             'slug',
             'title',
             [
-                'class'     => EnumColumn::class,
+                'class' => EnumColumn::class,
                 'attribute' => 'status',
-                'enum'      => [
+                'enum' => [
                     Yii::t('backend', 'Not Published'),
                     Yii::t('backend', 'Published')
                 ]
             ],
 
             [
-                'class'    => 'backend\grid\ActionColumn',
+                'class' => 'backend\grid\ActionColumn',
                 'template' => '{update} {delete}'
             ],
         ],

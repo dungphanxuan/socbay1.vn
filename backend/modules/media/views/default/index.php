@@ -25,29 +25,29 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php echo GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel'  => $searchModel,
-        'columns'      => [
+        'filterModel' => $searchModel,
+        'columns' => [
             [
-                'class'           => 'yii\grid\CheckboxColumn',
-                'headerOptions'   => ['style' => 'width:3%;text-align:center'],
-                'contentOptions'  => ['style' => 'width:3%;text-align:center'],
+                'class' => 'yii\grid\CheckboxColumn',
+                'headerOptions' => ['style' => 'width:3%;text-align:center'],
+                'contentOptions' => ['style' => 'width:3%;text-align:center'],
                 'checkboxOptions' => [
                     'class' => 'select-item'
                 ]
             ],
             [
-                'attribute'      => 'id',
-                'format'         => 'raw',
-                'headerOptions'  => ['style' => 'text-align:center'],
+                'attribute' => 'id',
+                'format' => 'raw',
+                'headerOptions' => ['style' => 'text-align:center'],
                 'contentOptions' => ['style' => 'width:10%;text-align:center'],
             ],
             'title',
             // 'type',
             // 'view',
             [
-                'attribute'      => 'episode',
-                'format'         => 'raw',
-                'headerOptions'  => ['style' => 'text-align:center'],
+                'attribute' => 'episode',
+                'format' => 'raw',
+                'headerOptions' => ['style' => 'text-align:center'],
                 'contentOptions' => ['style' => 'text-align:center'],
             ],
             // 'category_id',
@@ -76,27 +76,27 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'is_hot',
             // 'video_status',
             [
-                'class'          => \common\grid\EnumColumn::class,
-                'attribute'      => 'status',
-                'format'         => 'raw',
-                'enum'           => [
+                'class' => \common\grid\EnumColumn::class,
+                'attribute' => 'status',
+                'format' => 'raw',
+                'enum' => [
                     Yii::t('backend', 'Not Published'),
                     Yii::t('backend', 'Published'),
                     Yii::t('backend', 'Deleted')
                 ],
-                'headerOptions'  => ['style' => 'text-align:center'],
+                'headerOptions' => ['style' => 'text-align:center'],
                 'contentOptions' => ['style' => 'text-align:center'],
             ],
             [
                 'attribute' => 'created_by',
-                'value'     => function ($model) {
+                'value' => function ($model) {
                     return $model->author ? $model->author->username : '';
                 }
             ],
             [
-                'attribute'      => 'view_count',
-                'format'         => 'raw',
-                'headerOptions'  => ['style' => 'text-align:center'],
+                'attribute' => 'view_count',
+                'format' => 'raw',
+                'headerOptions' => ['style' => 'text-align:center'],
                 'contentOptions' => ['style' => 'text-align:center'],
             ],
             // 'updated_by',
@@ -105,10 +105,10 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'updated_at',
 
             [
-                'class'          => 'backend\grid\ActionColumn',
-                'template'       => '{update} {copy} {delete}{show}',
+                'class' => 'backend\grid\ActionColumn',
+                'template' => '{update} {copy} {delete}{show}',
                 'contentOptions' => ['style' => 'width:10%;text-align:center'],
-                'buttons'        => [
+                'buttons' => [
                     'copy' => function ($url, $model, $key) {
                         $url = \yii\helpers\Url::to(['/media/default/create', 'type' => 'copy', 'id' => $key]);
 
@@ -122,9 +122,9 @@ $this->params['breadcrumbs'][] = $this->title;
                             '<i class="fa fa-eye" aria-hidden="true"></i>',
                             $url,
                             [
-                                'title'     => Yii::t('backend', 'Show'),
-                                'class'     => 'btn btn-xs btn-success',
-                                'target'    => '_blank',
+                                'title' => Yii::t('backend', 'Show'),
+                                'class' => 'btn btn-xs btn-success',
+                                'target' => '_blank',
                                 'data-pjax' => 0
                             ]
                         );

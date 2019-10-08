@@ -62,18 +62,18 @@ class AdsReportSearch extends AdsReport
         }
 
         $query->andFilterWhere([
-            'id'          => $this->id,
-            'reason_id'   => $this->reason_id,
-            'report_id'   => $this->report_id,
-            'user_id'     => $this->user_id,
-            'city_id'     => $this->city_id,
+            'id' => $this->id,
+            'reason_id' => $this->reason_id,
+            'report_id' => $this->report_id,
+            'user_id' => $this->user_id,
+            'city_id' => $this->city_id,
             'district_id' => $this->district_id,
-            'ward_id'     => $this->ward_id,
-            'status'      => $this->status,
+            'ward_id' => $this->ward_id,
+            'status' => $this->status,
             'sort_number' => $this->sort_number,
-            'approve_by'  => $this->approve_by,
-            'created_by'  => $this->created_by,
-            'updated_at'  => $this->updated_at,
+            'approve_by' => $this->approve_by,
+            'created_by' => $this->created_by,
+            'updated_at' => $this->updated_at,
         ]);
         if ($this->created_at !== null) {
             $query->andFilterWhere(['between', 'created_at', $this->created_at, $this->created_at + 3600 * 24]);

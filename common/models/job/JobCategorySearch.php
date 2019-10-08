@@ -52,14 +52,14 @@ class JobCategorySearch extends JobCategory
         }
 
         $query->andFilterWhere([
-            'id'            => $this->id,
-            'parent_id'     => $this->parent_id,
+            'id' => $this->id,
+            'parent_id' => $this->parent_id,
             'total_article' => $this->total_article,
-            'sort_number'   => $this->sort_number,
-            'type'          => $this->type,
-            'status'        => $this->status,
-            'created_at'    => $this->created_at,
-            'updated_at'    => $this->updated_at,
+            'sort_number' => $this->sort_number,
+            'type' => $this->type,
+            'status' => $this->status,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])

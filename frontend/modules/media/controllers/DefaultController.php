@@ -26,12 +26,12 @@ class DefaultController extends FrontendController
         return [
             'access' => [
                 'class' => AccessControl::class,
-                'only'  => ['create', 'update', 'delete'],
+                'only' => ['create', 'update', 'delete'],
                 'rules' => [
                     [
-                        'allow'   => true,
+                        'allow' => true,
                         'actions' => ['login', 'signup'],
-                        'roles'   => ['administrator'],
+                        'roles' => ['administrator'],
                     ],
 
                 ],
@@ -50,7 +50,7 @@ class DefaultController extends FrontendController
             ->orderBy(['id' => SORT_DESC, 'episode' => SORT_DESC]);
 
         $dataProvider = new ActiveDataProvider([
-            'query'      => $queryIndex,
+            'query' => $queryIndex,
             'pagination' => false,
         ]);
 
@@ -92,7 +92,7 @@ class DefaultController extends FrontendController
             ->limit(3);
 
         $dataPopularProvider = new ActiveDataProvider([
-            'query'      => $queryPopular,
+            'query' => $queryPopular,
             'pagination' => false,
         ]);
 
@@ -102,7 +102,7 @@ class DefaultController extends FrontendController
         }
 
         return $this->render($view, [
-            'model'               => $model,
+            'model' => $model,
             'dataPopularProvider' => $dataPopularProvider
         ]);
 

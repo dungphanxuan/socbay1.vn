@@ -22,10 +22,10 @@ class WebLogController extends BackendController
     public function behaviors()
     {
         return [
-            'verbs'  => [
-                'class'   => VerbFilter::class,
+            'verbs' => [
+                'class' => VerbFilter::class,
                 'actions' => [
-                    'delete'     => ['POST'],
+                    'delete' => ['POST'],
                     'delete-all' => ['POST'],
                 ],
             ],
@@ -63,7 +63,7 @@ class WebLogController extends BackendController
         $dataProvider = $searchModel->search($param);
 
         return $this->render('index', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -186,19 +186,19 @@ class WebLogController extends BackendController
             $fromDate = strtotime("+1 day", $fromDate);
         }
         $arrDataset[] = [
-            'label'                => 'Log Request',
-            'backgroundColor'      => "rgba(255,99,132,0.2)",
-            'borderColor'          => "rgba(255,99,132,1)",
+            'label' => 'Log Request',
+            'backgroundColor' => "rgba(255,99,132,0.2)",
+            'borderColor' => "rgba(255,99,132,1)",
             'pointBackgroundColor' => "rgba(255,99,132,1)",
-            'fill'                 => false,
-            'data'                 => $dataDate,
+            'fill' => false,
+            'data' => $dataDate,
         ];
 
         return $this->render('chart', [
-            'dateRange'  => $dateRange,
-            'arrLabel'   => $arrLabel,
+            'dateRange' => $dateRange,
+            'arrLabel' => $arrLabel,
             'arrDataset' => $arrDataset,
-            "total"      => $total
+            "total" => $total
         ]);
     }
 

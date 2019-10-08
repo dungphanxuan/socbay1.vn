@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 use yii\authclient\widgets\AuthChoice;
 
 /* @var $this yii\web\View */
@@ -26,18 +26,6 @@ $this->params['breadcrumbs'][] = $this->title;
                             </h2>
                         </div>
                         <div class="card-body">
-                            <?php $authAuthChoice = AuthChoice::begin([
-                                'baseAuthUrl' => ['user/sign-in/oauth'],
-                                'autoRender'  => false
-                            ]); ?>
-                            <?php foreach ($authAuthChoice->getClients() as $client): ?>
-                                <a class="btn btn-success btn-block btn-social btn-facebook facebook auth-link"
-                                   href="<?= Url::to(['/user/sign-in/oauth', 'authclient' => $client->name]) ?>"
-                                   data-popup-width="860" data-popup-height="480">
-                                    <span class="fa fa-facebook"></span> Đăng nhập qua Facebook
-                                </a>
-                            <?php endforeach; ?>
-                            <br>
                             <?php
                             $temp_input_html = <<<HTML
                                     <label for="sender-email" class="control-label">{label}:</label>
@@ -75,27 +63,34 @@ HTML;
                             <?php echo $form->field($model, 'identity', [
                                 'template' => $temp_input_html
                             ])->textInput([
-                                'maxlength'    => true,
-                                'placeholder'  => 'your username',
+                                'maxlength' => true,
+                                'placeholder' => 'your username',
                                 'autocomplete' => 'off',
-                                'readonly'     => true,
-                                'onfocus'      => "this.removeAttribute('readonly');",
+                                'readonly' => true,
+                                'onfocus' => "this.removeAttribute('readonly');",
                             ]) ?>
 
                             <?php echo $form->field($model, 'password', [
                                 'template' => $tem_input_password
                             ])->passwordInput([
                                 'autocomplete' => 'off',
-                                'placeholder'  => 'your password',
-                                'readonly'     => true,
-                                'onfocus'      => "this.removeAttribute('readonly');",
+                                'placeholder' => 'your password',
+                                'readonly' => true,
+                                'onfocus' => "this.removeAttribute('readonly');",
                             ]) ?>
 
                             <div class="form-group">
                                 <?php echo Html::submitButton(Yii::t('frontend', 'Login'), ['class' => 'btn btn-primary  btn-block', 'name' => 'login-button']) ?>
                             </div>
+                            <h3 class="or-divider"><span>or</span></h3>
+                            <div class="button-wrap">
+                                <a href="#" class="btn-social btn-fbk"><i class="fab fa-facebook-f"></i>facebook<br>connect</a>
+                                <a href="#" class="btn-social btn-ggl"><i class="fab fa-google-plus-g"></i>google<br>connect</a>
+                            </div>
                             <?php ActiveForm::end(); ?>
+
                         </div>
+
                         <div class="card-footer">
 
                             <div class="checkbox pull-left">

@@ -22,6 +22,7 @@ class DataController extends Controller
         dd($model->toArray());
 
     }
+
     public function actionBatch()
     {
 

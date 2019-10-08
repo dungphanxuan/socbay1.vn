@@ -43,12 +43,12 @@ $bundle = \frontend\assets\AdsAsset::register($this);
         <?php echo \yii\widgets\ListView::widget([
             'dataProvider' => $pickupProvider,
             //'summary'      => '',
-            'layout'       => '{items}',
-            'itemView'     => '_item_pickup',
-            'options'      => [
+            'layout' => '{items}',
+            'itemView' => '_item_pickup',
+            'options' => [
                 'tag' => false,
             ],
-            'itemOptions'  => [
+            'itemOptions' => [
                 'tag' => false,
             ]
         ]) ?>

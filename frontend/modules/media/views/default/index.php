@@ -38,12 +38,12 @@ $bundle = AdsAsset::register($this);
                     <div class="row">
                         <?php echo \yii\widgets\ListView::widget([
                             'dataProvider' => $dataProvider,
-                            'layout'       => '{items}',
-                            'itemView'     => '_item_index',
-                            'options'      => [
+                            'layout' => '{items}',
+                            'itemView' => '_item_index',
+                            'options' => [
                                 'tag' => false,
                             ],
-                            'itemOptions'  => [
+                            'itemOptions' => [
                                 'tag' => false,
                             ]
                         ]) ?>

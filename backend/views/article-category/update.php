@@ -14,8 +14,8 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 <div class="article-category-update">
 
     <?php echo $this->render('_form', [
-        'model'        => $model,
-        'categories'   => $categories,
+        'model' => $model,
+        'categories' => $categories,
         'categoryType' => $categoryType
     ]) ?>
 

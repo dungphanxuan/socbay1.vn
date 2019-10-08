@@ -28,7 +28,7 @@ class ProjectController extends BackendController
     {
         return \yii\helpers\ArrayHelper::merge(parent::behaviors(), [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['post'],
                 ],
@@ -56,12 +56,12 @@ class ProjectController extends BackendController
         $dataProvider->pagination->pageSize = 50;
 
         return $this->render('index', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'categories'   => ProjectCategory::find()->all(),
-            'prices'       => ProjectPrice::find()->all(),
-            'areas'        => ProjectArea::find()->all(),
-            'ranks'        => ProjectRank::find()->all(),
+            'categories' => ProjectCategory::find()->all(),
+            'prices' => ProjectPrice::find()->all(),
+            'areas' => ProjectArea::find()->all(),
+            'ranks' => ProjectRank::find()->all(),
         ]);
     }
 
@@ -109,7 +109,7 @@ class ProjectController extends BackendController
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
             Yii::$app->getSession()->setFlash('alert', [
-                'body'    => 'Thêm mới thành công',
+                'body' => 'Thêm mới thành công',
                 'options' => ['class' => 'alert-success']
             ]);
 
@@ -156,14 +156,14 @@ class ProjectController extends BackendController
             }
 
             return $this->render('create', [
-                'model'        => $model,
-                'categories'   => ProjectCategory::find()->orderBy('sort_number')->all(),
-                'prices'       => ProjectPrice::find()->orderBy('sort_number')->all(),
-                'areas'        => ProjectArea::find()->orderBy('sort_number')->all(),
-                'ranks'        => ProjectRank::find()->orderBy('sort_number')->all(),
-                'cities'       => City::find()->orderBy('priority desc')->all(),
+                'model' => $model,
+                'categories' => ProjectCategory::find()->orderBy('sort_number')->all(),
+                'prices' => ProjectPrice::find()->orderBy('sort_number')->all(),
+                'areas' => ProjectArea::find()->orderBy('sort_number')->all(),
+                'ranks' => ProjectRank::find()->orderBy('sort_number')->all(),
+                'cities' => City::find()->orderBy('priority desc')->all(),
                 'dataDistrict' => $dataDistrict,
-                'dataWard'     => $dataWard,
+                'dataWard' => $dataWard,
             ]);
         }
     }
@@ -186,7 +186,7 @@ class ProjectController extends BackendController
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
             Yii::$app->getSession()->setFlash('alert', [
-                'body'    => 'Cập nhật thành công',
+                'body' => 'Cập nhật thành công',
                 'options' => ['class' => 'alert-success']
             ]);
 
@@ -197,14 +197,14 @@ class ProjectController extends BackendController
             $dataWard = Ward::getWards($model->district_id);
 
             return $this->render('update', [
-                'model'        => $model,
-                'categories'   => ProjectCategory::find()->orderBy('sort_number')->all(),
-                'prices'       => ProjectPrice::find()->orderBy('sort_number')->all(),
-                'areas'        => ProjectArea::find()->orderBy('sort_number')->all(),
-                'ranks'        => ProjectRank::find()->orderBy('sort_number')->all(),
-                'cities'       => City::find()->orderBy('priority desc')->all(),
+                'model' => $model,
+                'categories' => ProjectCategory::find()->orderBy('sort_number')->all(),
+                'prices' => ProjectPrice::find()->orderBy('sort_number')->all(),
+                'areas' => ProjectArea::find()->orderBy('sort_number')->all(),
+                'ranks' => ProjectRank::find()->orderBy('sort_number')->all(),
+                'cities' => City::find()->orderBy('priority desc')->all(),
                 'dataDistrict' => $dataDistrict,
-                'dataWard'     => $dataWard,
+                'dataWard' => $dataWard,
             ]);
         }
     }
@@ -226,7 +226,7 @@ class ProjectController extends BackendController
         $model->status = 0;
         $model->save(false);
         Yii::$app->getSession()->setFlash('alert', [
-            'body'    => 'Xóa dữ liệu thành công',
+            'body' => 'Xóa dữ liệu thành công',
             'options' => ['class' => 'alert-success']
         ]);
 
@@ -243,7 +243,7 @@ class ProjectController extends BackendController
             ->where(['m_project.status' => 1]);
 
         $dataProvider = new ActiveDataProvider ([
-            'query'      => $queryAll,
+            'query' => $queryAll,
             'pagination' => false
         ]);
 
@@ -275,19 +275,19 @@ class ProjectController extends BackendController
             $fromDate = strtotime("+1 day", $fromDate);
         }
         $arrDataset[] = [
-            'label'                => 'Media Stat',
-            'backgroundColor'      => "rgba(255,99,132,0.2)",
-            'borderColor'          => "rgba(255,99,132,1)",
+            'label' => 'Media Stat',
+            'backgroundColor' => "rgba(255,99,132,0.2)",
+            'borderColor' => "rgba(255,99,132,1)",
             'pointBackgroundColor' => "rgba(255,99,132,1)",
-            'fill'                 => false,
-            'data'                 => $dataDate,
+            'fill' => false,
+            'data' => $dataDate,
         ];
 
         return $this->render('chart', [
-            'dateRange'  => $dateRange,
-            'arrLabel'   => $arrLabel,
+            'dateRange' => $dateRange,
+            'arrLabel' => $arrLabel,
             'arrDataset' => $arrDataset,
-            'total'      => $total
+            'total' => $total
         ]);
     }
 
@@ -337,7 +337,7 @@ class ProjectController extends BackendController
 
         //Update data
         $res = array(
-            'msg'     => 'Success',
+            'msg' => 'Success',
             'success' => true,
         );
 

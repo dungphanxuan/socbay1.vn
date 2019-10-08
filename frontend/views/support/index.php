@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Url;
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider \yii\data\ActiveDataProvider */
@@ -9,7 +9,7 @@ use yii\bootstrap\ActiveForm;
 
 $this->title = 'Hỗ trợ';
 
-$this->registerCssFile("@web/frontend/web/theme/assets/css/page/style-page.css", [
+$this->registerCssFile("@web/frontend/web/classified/assets/css/page/style-page.css", [
     'depends' => [\yii\bootstrap\BootstrapAsset::class],
 ]);
 ?>
@@ -24,13 +24,13 @@ $this->registerCssFile("@web/frontend/web/theme/assets/css/page/style-page.css",
             <div class="box-search">
                 <?php
                 $form = ActiveForm::begin([
-                    'id'      => 'login-form',
-                    'method'  => 'get',
+                    'id' => 'login-form',
+                    'method' => 'get',
                     'options' => ['class' => 'search'],
                 ]) ?>
                 <input type="text" class="form-control" name="title"
-                           placeholder="<?php echo Yii::t('ads', 'Hướng dẫn đăng tin') ?>">
-                    <button type="submit" class="btn btn-info btn-search"><?php echo Yii::t('ads', 'Search') ?></button>
+                       placeholder="<?php echo Yii::t('ads', 'Hướng dẫn đăng tin') ?>">
+                <button type="submit" class="btn btn-info btn-search"><?php echo Yii::t('ads', 'Search') ?></button>
                 <?php ActiveForm::end() ?>
             </div>
             <!--End:box-search-->

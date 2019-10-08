@@ -19,14 +19,14 @@ $this->params['breadcrumbs'][] = 'Cập nhật';
 <div class="project-update">
 
     <?php echo $this->render('_form', [
-        'model'        => $model,
-        'categories'   => $categories,
-        'prices'       => $prices,
-        'areas'        => $areas,
-        'ranks'        => $ranks,
-        'cities'       => $cities,
+        'model' => $model,
+        'categories' => $categories,
+        'prices' => $prices,
+        'areas' => $areas,
+        'ranks' => $ranks,
+        'cities' => $cities,
         'dataDistrict' => $dataDistrict,
-        'dataWard'     => $dataWard,
+        'dataWard' => $dataWard,
     ]) ?>
 
 </div>

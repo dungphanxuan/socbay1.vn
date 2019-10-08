@@ -28,7 +28,7 @@ class PropertyAsset extends AssetBundle
     /**
      * @var string
      */
-    public $baseUrl = '@web/frontend/web/theme';
+    public $baseUrl = '@web/frontend/web/classified';
 
     /**
      * @var array

@@ -12,10 +12,10 @@ use common\components\object\ObjectIdentityInterface;
  * This is the model class for table "star".
  *
  * @property integer $user_id
- * @property string  $object_type
+ * @property string $object_type
  * @property integer $object_id
  * @property integer $star
- * @property string  $created_at
+ * @property string $created_at
  */
 class Star extends ActiveRecord
 {
@@ -61,11 +61,11 @@ class Star extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'user_id'     => 'User ID',
+            'user_id' => 'User ID',
             'object_type' => 'Object Type',
-            'object_id'   => 'Object ID',
-            'star'        => 'Star',
-            'created_at'  => 'Created At',
+            'object_id' => 'Object ID',
+            'star' => 'Star',
+            'created_at' => 'Created At',
         ];
     }
 
@@ -83,9 +83,9 @@ class Star extends ActiveRecord
 
     /**
      * Casts a star to the specified content object.
-     * @param ActiveRecord|ObjectIdentityInterface $model     the type of the content object
-     * @param integer                              $userID    the user ID
-     * @param integer                              $starValue the star value (1 means star, 0 means unstar, -1 means toggle)
+     * @param ActiveRecord|ObjectIdentityInterface $model the type of the content object
+     * @param integer $userID the user ID
+     * @param integer $starValue the star value (1 means star, 0 means unstar, -1 means toggle)
      * @return int the updated star information of the content object. False if the content object is invalid.
      */
     public static function castStar($model, $userID, $starValue = -1)
@@ -93,8 +93,8 @@ class Star extends ActiveRecord
         /** @var $star Star */
         $star = static::findOne([
             'object_type' => $model->getObjectType(),
-            'object_id'   => $model->getObjectId(),
-            'user_id'     => $userID,
+            'object_id' => $model->getObjectId(),
+            'user_id' => $userID,
         ]);
 
         if ($star === null) {
@@ -209,8 +209,8 @@ class Star extends ActiveRecord
             /** @var $star Star */
             $star = static::findOne([
                 'object_type' => $model->getObjectType(),
-                'object_id'   => $model->getObjectId(),
-                'user_id'     => $userID,
+                'object_id' => $model->getObjectId(),
+                'user_id' => $userID,
             ]);
 
             //Set Value Cache
@@ -238,8 +238,8 @@ class Star extends ActiveRecord
         /** @var $star Star */
         $star = static::findOne([
             'object_type' => $model->getObjectType(),
-            'object_id'   => $model->getObjectId(),
-            'user_id'     => $userID,
+            'object_id' => $model->getObjectId(),
+            'user_id' => $userID,
         ]);
         return $star === null ? 0 : $star->star;
     }

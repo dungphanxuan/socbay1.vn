@@ -52,12 +52,12 @@ class SupportTopicCategorySearch extends SupportTopicCategory
         }
 
         $query->andFilterWhere([
-            'id'          => $this->id,
-            'parent_id'   => $this->parent_id,
+            'id' => $this->id,
+            'parent_id' => $this->parent_id,
             'sort_number' => $this->sort_number,
-            'status'      => $this->status,
-            'created_at'  => $this->created_at,
-            'updated_at'  => $this->updated_at,
+            'status' => $this->status,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
         ]);
 
         $query->andFilterWhere(['like', 'slug', $this->slug])

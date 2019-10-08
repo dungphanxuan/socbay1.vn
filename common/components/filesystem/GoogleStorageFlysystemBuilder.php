@@ -44,7 +44,7 @@ class GoogleStorageFlysystemBuilder implements FilesystemBuilderInterface
 
         $storageClient = new StorageClient([
             'projectId' => $this->project_id,
-            'keyFile'   => json_decode(file_get_contents($keyFilePath), true)
+            'keyFile' => json_decode(file_get_contents($keyFilePath), true)
         ]);
         $bucket = $storageClient->bucket($this->bucket_name);
 

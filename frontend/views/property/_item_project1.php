@@ -14,7 +14,7 @@ use common\models\property\Project;
 /* @var $this yii\web\View */
 /* @var $model \common\models\property\Project */
 
-$imgThumbnail = baseUrl() . '/frontend/web/theme/images/house/2.jpg';
+$imgThumbnail = baseUrl() . '/frontend/web/classified/images/house/2.jpg';
 
 if ($model->thumbnail_path) {
     $imgThumbnail = $model->getImgThumbnail(5);

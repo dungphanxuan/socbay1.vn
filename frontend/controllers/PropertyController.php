@@ -32,7 +32,7 @@ class PropertyController extends FrontendController
         $getCity = getParam('city', null);
 
         $dataProvider = new ActiveDataProvider([
-            'query'      => $query,
+            'query' => $query,
             'pagination' => [
                 'pageSize' => 30,
             ],
@@ -80,7 +80,7 @@ class PropertyController extends FrontendController
 
         $pageSize = \Yii::$app->keyStorage->get('frontend.project-size', 9);
         $dataProvider = new ActiveDataProvider([
-            'query'      => $query,
+            'query' => $query,
             'pagination' => [
                 'defaultPageSize' => $pageSize,
             ],
@@ -92,8 +92,8 @@ class PropertyController extends FrontendController
 
         return $this->render('project', [
             'dataProvider' => $dataProvider,
-            'activeIndex'  => $activeIndex,
-            'modelCity'    => $modelCity
+            'activeIndex' => $activeIndex,
+            'modelCity' => $modelCity
         ]);
     }
 
@@ -123,19 +123,19 @@ class PropertyController extends FrontendController
             ->andWhere(['not in', 'id', [$model->id]])
             ->limit(2);
         $providerPickup = new ActiveDataProvider([
-            'query'      => $queryPickup,
+            'query' => $queryPickup,
             'pagination' => false,
-            'sort'       => [
+            'sort' => [
                 'defaultOrder' => [
                     'created_at' => SORT_DESC,
-                    'title'      => SORT_ASC,
+                    'title' => SORT_ASC,
                 ]
             ],
         ]);
 
 
         return $this->render('project-view', [
-            'model'          => $model,
+            'model' => $model,
             'providerPickup' => $providerPickup
         ]);
     }
@@ -147,7 +147,7 @@ class PropertyController extends FrontendController
 
         $pageSize = 5;
         $dataProvider = new ActiveDataProvider([
-            'query'      => $queryBlog,
+            'query' => $queryBlog,
             'pagination' => [
                 'defaultPageSize' => $pageSize,
             ],
@@ -184,12 +184,12 @@ class PropertyController extends FrontendController
             ->limit(7);
 
         $dataPopularProvider = new ActiveDataProvider([
-            'query'      => $queryPopular,
+            'query' => $queryPopular,
             'pagination' => false,
         ]);
 
         return $this->render('event-view', [
-            'model'               => $model,
+            'model' => $model,
             'dataPopularProvider' => $dataPopularProvider
         ]);
 

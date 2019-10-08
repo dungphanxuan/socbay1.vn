@@ -42,7 +42,7 @@ class SignupForm extends Model
             ['username', 'required'],
             ['username', 'unique',
                 'targetClass' => '\common\models\User',
-                'message'     => Yii::t('frontend', 'This username has already been taken.')
+                'message' => Yii::t('frontend', 'This username has already been taken.')
             ],
             ['username', 'string', 'min' => 4, 'max' => 20],
             [
@@ -50,7 +50,7 @@ class SignupForm extends Model
 
                 'match',
                 'pattern' => '/^\d+$/',
-                'not'     => true,
+                'not' => true,
                 'message' => Yii::t('frontend', 'Username cannot exclusively consist of digits')
             ],
 
@@ -66,7 +66,7 @@ class SignupForm extends Model
             ['email', 'email'],
             ['email', 'unique',
                 'targetClass' => '\common\models\User',
-                'message'     => Yii::t('frontend', 'This email address has already been taken.')
+                'message' => Yii::t('frontend', 'This email address has already been taken.')
             ],
 
             ['password', 'required'],
@@ -84,7 +84,7 @@ class SignupForm extends Model
     {
         return [
             'username' => Yii::t('frontend', 'Username'),
-            'email'    => Yii::t('frontend', 'E-mail'),
+            'email' => Yii::t('frontend', 'E-mail'),
             'password' => Yii::t('frontend', 'Password'),
         ];
     }
@@ -116,9 +116,9 @@ class SignupForm extends Model
                 );
                 Yii::$app->commandBus->handle(new SendEmailCommand([
                     'subject' => Yii::t('frontend', 'Activation email'),
-                    'view'    => 'activation',
-                    'to'      => $this->email,
-                    'params'  => [
+                    'view' => 'activation',
+                    'to' => $this->email,
+                    'params' => [
                         'url' => Url::to(['/user/sign-in/activation', 'token' => $token->token], true)
                     ]
                 ]));

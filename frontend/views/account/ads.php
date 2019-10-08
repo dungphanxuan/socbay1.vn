@@ -1,6 +1,6 @@
 <?php
 
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 use yii\helpers\Url;
 use yii\widgets\ListView;
 use yii\helpers\Html;
@@ -113,12 +113,12 @@ $this->title = $title;
 
                                     <?php echo ListView::widget([
                                         'dataProvider' => $dataProvider,
-                                        'itemView'     => '_item_myads',
-                                        'options'      => [
+                                        'itemView' => '_item_myads',
+                                        'options' => [
                                             'tag' => false
                                         ],
-                                        'layout'       => "{summary}\n{items}\n",
-                                        'viewParams'   => [
+                                        'layout' => "{summary}\n{items}\n",
+                                        'viewParams' => [
                                             'type' => $type,
                                         ],
                                     ]);

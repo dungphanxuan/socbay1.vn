@@ -13,13 +13,13 @@ use yii\db\ActiveRecord;
  *
  * @property integer $id
  * @property integer $user_id
- * @property string  $type
- * @property string  $token
+ * @property string $type
+ * @property string $token
  * @property integer $expire_at
  * @property integer $created_at
  * @property integer $updated_at
  *
- * @property User    $user
+ * @property User $user
  */
 class UserToken extends ActiveRecord
 {
@@ -48,8 +48,8 @@ class UserToken extends ActiveRecord
 
     /**
      * Phone Validate Token
-     * @param mixed    $user_id
-     * @param string   $type
+     * @param mixed $user_id
+     * @param string $type
      * @param int|null $duration
      * @return bool|UserToken
      * @throws \yii\base\Exception
@@ -64,9 +64,9 @@ class UserToken extends ActiveRecord
         }
 
         $model->setAttributes([
-            'user_id'   => $user_id,
-            'type'      => $type,
-            'token'     => $tokenGenerate,
+            'user_id' => $user_id,
+            'type' => $type,
+            'token' => $tokenGenerate,
             'expire_at' => $duration ? time() + $duration : null
         ]);
 
@@ -133,11 +133,11 @@ class UserToken extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'         => Yii::t('common', 'ID'),
-            'user_id'    => Yii::t('common', 'User ID'),
-            'type'       => Yii::t('common', 'Type'),
-            'token'      => Yii::t('common', 'Token'),
-            'expire_at'  => Yii::t('common', 'Expire At'),
+            'id' => Yii::t('common', 'ID'),
+            'user_id' => Yii::t('common', 'User ID'),
+            'type' => Yii::t('common', 'Type'),
+            'token' => Yii::t('common', 'Token'),
+            'expire_at' => Yii::t('common', 'Expire At'),
             'created_at' => Yii::t('common', 'Created At'),
             'updated_at' => Yii::t('common', 'Updated At'),
         ];

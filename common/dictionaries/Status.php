@@ -19,7 +19,7 @@ class Status
     {
         return [
             self::DELETED => Yii::t('common', 'Deleted'),
-            self::ACTIVE  => Yii::t('common', 'Active'),
+            self::ACTIVE => Yii::t('common', 'Active'),
         ];
     }
 

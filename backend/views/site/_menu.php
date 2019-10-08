@@ -21,16 +21,16 @@
             'options' => [
                 'class' => 'nav nav-pills nav-stacked',
             ],
-            'items'   => [
+            'items' => [
                 ['label' => Yii::t('backend', 'Setting'), 'url' => ['/site/settings']],
                 ['label' => Yii::t('backend', 'Content'), 'url' => ['/site/setting-content']],
                 ['label' => Yii::t('backend', 'TOTP'), 'url' => ['/site/otp-qr']],
                 ['label' => 'Catalog',
-                 'url'   => ['product/index'],
-                 'items' => [
-                     ['label' => 'New Arrivals', 'url' => ['product/new']],
-                     ['label' => 'Most Popular', 'url' => ['product/popular']],
-                 ]
+                    'url' => ['product/index'],
+                    'items' => [
+                        ['label' => 'New Arrivals', 'url' => ['product/new']],
+                        ['label' => 'Most Popular', 'url' => ['product/popular']],
+                    ]
                 ],
             ],
         ]) ?>

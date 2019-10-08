@@ -67,7 +67,7 @@ class FilestackDeleteAction extends BaseAction
     {
         FileStorageItem::deleteAll([
             'component' => 'filestack',
-            'path'      => $path
+            'path' => $path
         ]);
         return true;
     }

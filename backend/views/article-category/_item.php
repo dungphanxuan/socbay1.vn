@@ -34,22 +34,22 @@ use yii\helpers\Url;
     </td>
 
     <td style="width: 5%"><?php echo Html::a(Yii::t('backend', 'View'), ['view', 'id' => $model->id, 'parent_id' => $model->id], [
-            'class'     => 'btn btn-flat btn-primary btn-sm',
+            'class' => 'btn btn-flat btn-primary btn-sm',
             'data-pjax' => 0
         ]) ?>
     </td>
 
     <td style="width: 5%"><?php echo Html::a(Yii::t('backend', 'Update'), ['update', 'id' => $model->id], [
-            'class'     => 'btn btn-flat btn-info btn-sm',
+            'class' => 'btn btn-flat btn-info btn-sm',
             'data-pjax' => 0
         ]) ?>
     </td>
 
     <td style="width: 5%"><?php echo Html::a(Yii::t('common', 'Delete'), ['delete', 'id' => $model->id], [
-            'class'     => 'btn btn-flat btn-warning  btn-sm',
-            'data'      => [
+            'class' => 'btn btn-flat btn-warning  btn-sm',
+            'data' => [
                 'confirm' => Yii::t('common', 'Are you sure to delete?'),
-                'method'  => 'post',
+                'method' => 'post',
             ],
             'data-pjax' => 0
         ]) ?>

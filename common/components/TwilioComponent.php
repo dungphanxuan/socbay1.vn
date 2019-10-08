@@ -54,11 +54,11 @@ class TwilioComponent extends Component
      *
      * @param string $to
      * @param string $text
-     * @param array  $options
+     * @param array $options
      *
-     * @throws InvalidConfigException
-     * @throws ConfigurationException
      * @return \Twilio\Rest\Api\V2010\Account\MessageInstance
+     * @throws ConfigurationException
+     * @throws InvalidConfigException
      */
     public function sms(string $to, string $text, array $options = []): MessageInstance
     {
@@ -80,10 +80,10 @@ class TwilioComponent extends Component
     /**
      * @param             $to
      * @param string|null $from
-     * @param array       $options
+     * @param array $options
      *
-     * @throws InvalidConfigException
      * @return \Twilio\Rest\Api\V2010\Account\CallInstance
+     * @throws InvalidConfigException
      */
     public function call(string $to, string $from = null, array $options = []): CallInstance
     {
@@ -107,9 +107,9 @@ class TwilioComponent extends Component
      *
      * @param string|null $from
      *
-     * @throws InvalidConfigException
      * @return string
      *
+     * @throws InvalidConfigException
      */
     protected function parseFrom(string $from): string
     {

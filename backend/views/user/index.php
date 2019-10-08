@@ -29,34 +29,34 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?php echo GridView::widget([
             'dataProvider' => $dataProvider,
-            'filterModel'  => $searchModel,
-            'options'      => [
-                'id'    => 'wuser',
+            'filterModel' => $searchModel,
+            'options' => [
+                'id' => 'wuser',
                 'class' => 'grid-view table-responsive'
             ],
-            'pager'        => [
+            'pager' => [
                 'maxButtonCount' => 15,
             ],
-            'layout'       => "{summary}\n{items}\n<div align='center'>{pager}</div>",
-            'columns'      => [
+            'layout' => "{summary}\n{items}\n<div align='center'>{pager}</div>",
+            'columns' => [
                 [
-                    'class'          => 'yii\grid\CheckboxColumn',
-                    'headerOptions'  => ['style' => 'width:3%;text-align:center'],
+                    'class' => 'yii\grid\CheckboxColumn',
+                    'headerOptions' => ['style' => 'width:3%;text-align:center'],
                     'contentOptions' => ['style' => 'width:3%;text-align:center'],
                 ],
                 [
-                    'attribute'      => 'id',
-                    'format'         => 'raw',
-                    'headerOptions'  => ['style' => 'text-align:center'],
+                    'attribute' => 'id',
+                    'format' => 'raw',
+                    'headerOptions' => ['style' => 'text-align:center'],
                     'contentOptions' => ['style' => 'width:7%;text-align:center'],
                 ],
                 [
-                    'attribute'      => 'username',
-                    'format'         => 'raw',
-                    'header'         => 'Tên thành viên',
-                    'headerOptions'  => ['style' => 'text-align:center'],
+                    'attribute' => 'username',
+                    'format' => 'raw',
+                    'header' => 'Tên thành viên',
+                    'headerOptions' => ['style' => 'text-align:center'],
                     'contentOptions' => ['style' => 'width:10%;text-align:center'],
-                    'value'          => function ($model) {
+                    'value' => function ($model) {
                         $publicIdentity = $model->publicIdentity;
 
                         return $publicIdentity;
@@ -66,62 +66,62 @@ $this->params['breadcrumbs'][] = $this->title;
                 //'status',
                 'email:email',
                 [
-                    'class'          => EnumColumn::class,
-                    'attribute'      => 'status',
-                    'format'         => 'raw',
-                    'type'           => 2,
-                    'enum'           => User::statuses(),
-                    'filter'         => User::statuses(),
-                    'headerOptions'  => ['style' => 'text-align:center'],
+                    'class' => EnumColumn::class,
+                    'attribute' => 'status',
+                    'format' => 'raw',
+                    'type' => 2,
+                    'enum' => User::statuses(),
+                    'filter' => User::statuses(),
+                    'headerOptions' => ['style' => 'text-align:center'],
                     'contentOptions' => ['style' => 'width:10%;text-align:center'],
                 ],
                 [
                     'attribute' => 'oauth_client_user_id',
-                    'header'    => 'Oauth Clien ID',
-                    'format'    => 'raw',
-                    'value'     => function ($model) {
+                    'header' => 'Oauth Clien ID',
+                    'format' => 'raw',
+                    'value' => function ($model) {
                         return Html::a($model->oauth_client_user_id, 'http://facebook.com/' . $model->oauth_client_user_id, ['target' => '_blank']);
                     },
                 ],
                 [
-                    'attribute'      => 'role_name',
-                    'format'         => 'raw',
-                    'header'         => 'Role',
-                    'headerOptions'  => ['style' => 'text-align:center'],
+                    'attribute' => 'role_name',
+                    'format' => 'raw',
+                    'header' => 'Role',
+                    'headerOptions' => ['style' => 'text-align:center'],
                     'contentOptions' => ['style' => 'width:10%;text-align:center'],
-                    'value'          => function ($model) {
+                    'value' => function ($model) {
                         $role = \Yii::$app->authManager->getRolesByUser($model->id);
                         reset($role);
                         $first_key = key($role);
 
                         return $first_key;
                     },
-                    'filter'         => ArrayHelper::map(Yii::$app->authManager->getRoles(), 'name', 'name')
+                    'filter' => ArrayHelper::map(Yii::$app->authManager->getRoles(), 'name', 'name')
                 ],
                 [
-                    'attribute'      => 'created_at',
-                    'format'         => 'datetimerel',
-                    'filter'         => DateTimeWidget::widget([
-                        'model'                => $searchModel,
-                        'attribute'            => 'created_at',
-                        'phpDatetimeFormat'    => 'dd.MM.yyyy',
+                    'attribute' => 'created_at',
+                    'format' => 'datetimerel',
+                    'filter' => DateTimeWidget::widget([
+                        'model' => $searchModel,
+                        'attribute' => 'created_at',
+                        'phpDatetimeFormat' => 'dd.MM.yyyy',
                         'momentDatetimeFormat' => 'DD.MM.YYYY',
-                        'clientEvents'         => [
+                        'clientEvents' => [
                             'dp.change' => new JsExpression('(e) => $(e.target).find("input").trigger("change.yiiGridView")')
                         ],
                     ]),
-                    'headerOptions'  => ['style' => 'text-align:center'],
+                    'headerOptions' => ['style' => 'text-align:center'],
                     'contentOptions' => ['style' => 'width:13%;text-align:center'],
                 ],
                 [
                     'attribute' => 'logged_at',
-                    'format'    => ['datetime', 'short'],
-                    'filter'    => DateTimeWidget::widget([
-                        'model'                => $searchModel,
-                        'attribute'            => 'logged_at',
-                        'phpDatetimeFormat'    => 'dd.MM.yyyy',
+                    'format' => ['datetime', 'short'],
+                    'filter' => DateTimeWidget::widget([
+                        'model' => $searchModel,
+                        'attribute' => 'logged_at',
+                        'phpDatetimeFormat' => 'dd.MM.yyyy',
                         'momentDatetimeFormat' => 'DD.MM.YYYY',
-                        'clientEvents'         => [
+                        'clientEvents' => [
                             'dp.change' => new JsExpression('(e) => $(e.target).find("input").trigger("change.yiiGridView")')
                         ],
                     ])
@@ -129,9 +129,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 // 'updated_at',
 
                 [
-                    'class'          => 'backend\grid\ActionColumn',
-                    'template'       => '{login} {view} {update} {delete}',
-                    'buttons'        => [
+                    'class' => 'backend\grid\ActionColumn',
+                    'template' => '{login} {view} {update} {delete}',
+                    'buttons' => [
                         'login' => function ($url) {
                             return Html::a(
                                 '<i class="fa fa-sign-in" aria-hidden="true"></i>',

@@ -38,12 +38,12 @@ $bundle = AdsAsset::register($this);
 
                         <?php echo ListView::widget([
                             'dataProvider' => $dataProvider,
-                            'layout'       => '{items}',
-                            'itemView'     => '_item',
-                            'options'      => [
+                            'layout' => '{items}',
+                            'itemView' => '_item',
+                            'options' => [
                                 'tag' => false,
                             ],
-                            'itemOptions'  => [
+                            'itemOptions' => [
                                 'tag' => false,
                             ]
                         ]) ?>
@@ -85,12 +85,12 @@ $bundle = AdsAsset::register($this);
 
                                     <?php echo ListView::widget([
                                         'dataProvider' => $dataPopularProvider,
-                                        'layout'       => '{items}',
-                                        'itemView'     => '_item_index_popular',
-                                        'options'      => [
+                                        'layout' => '{items}',
+                                        'itemView' => '_item_index_popular',
+                                        'options' => [
                                             'tag' => false,
                                         ],
-                                        'itemOptions'  => [
+                                        'itemOptions' => [
                                             'tag' => false,
                                         ]
                                     ]) ?>

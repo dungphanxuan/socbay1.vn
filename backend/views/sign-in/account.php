@@ -33,7 +33,7 @@ $this->title = Yii::t('backend', 'Edit account')
                         <?php echo $form->field($model, 'password', [
                             'addon' => [
                                 'prepend' => ['content' => '<i class="fa fa-key"></i>'],
-                                'append'  => ['content' => '<button class="btn btn-default" type="button" id="btnGenerate">Generate</button>', 'asButton' => true],
+                                'append' => ['content' => '<button class="btn btn-default" type="button" id="btnGenerate">Generate</button>', 'asButton' => true],
                             ],
                         ])->passwordInput() ?>
 

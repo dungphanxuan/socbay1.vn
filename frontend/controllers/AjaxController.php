@@ -39,9 +39,9 @@ class AjaxController extends Controller
     {
         return [
             'access' => [
-                'class'        => AccessControl::class,
-                'only'         => ['vote', 'star'],
-                'rules'        => [
+                'class' => AccessControl::class,
+                'only' => ['vote', 'star'],
+                'rules' => [
                     [
                         'allow' => true,
                         'roles' => ['@'],
@@ -56,8 +56,8 @@ class AjaxController extends Controller
                     }
                 }
             ],
-            'verbs'  => [
-                'class'   => VerbFilter::class,
+            'verbs' => [
+                'class' => VerbFilter::class,
                 'actions' => [
                     'vote' => ['post'],
                     'star' => ['post']
@@ -75,8 +75,8 @@ class AjaxController extends Controller
     /**
      * Casts a user vote up/down on an item, e.g. a comment
      *
-     * @param string  $type the model type to add the vote for e.g. "Comment"
-     * @param integer $id   the ID of the model.
+     * @param string $type the model type to add the vote for e.g. "Comment"
+     * @param integer $id the ID of the model.
      * @param integer $vote 1 for upvote, 0 for downvote
      * @return array updated vote count for that model
      * @throws \yii\web\NotFoundHttpException
@@ -105,9 +105,9 @@ class AjaxController extends Controller
         }
 
         return [
-            'up'       => $up,
-            'down'     => $total - $up,
-            'total'    => $total,
+            'up' => $up,
+            'down' => $total - $up,
+            'total' => $total,
             'userVote' => $userVote,
         ];
     }
@@ -115,8 +115,8 @@ class AjaxController extends Controller
     /**
      * Casts a star to the specified content object.
      *
-     * @param string  $type the model type to add the star.
-     * @param integer $id   the ID of the model.
+     * @param string $type the model type to add the star.
+     * @param integer $id the ID of the model.
      *
      * @return array
      * @throws NotFoundHttpException
@@ -139,7 +139,7 @@ class AjaxController extends Controller
         $starCount = Star::getStarCount($model);
 
         return [
-            'star'      => $star,
+            'star' => $star,
             'starCount' => $starCount
         ];
     }
@@ -221,12 +221,12 @@ class AjaxController extends Controller
                     $dataDistrict['name'] = $item['title'];
                     $data[] = $dataDistrict;
                 }
-                echo Json::encode(['output' => $data, 'selected' => '']);
 
-                return;
+                return ['output' => $data, 'selected' => ''];
+
             }
         }
-        echo Json::encode(['output' => '', 'selected' => '']);
+        return ['output' => '', 'selected' => ''];
     }
 
     public function actionAdsReport()
@@ -241,12 +241,12 @@ class AjaxController extends Controller
                 $model->save();
 
                 $res = [
-                    'body'    => print_r($_POST, true),
+                    'body' => print_r($_POST, true),
                     'success' => true,
                 ];
             } else {
                 $res = [
-                    'msg'     => 'Error',
+                    'msg' => 'Error',
                     'success' => false,
                 ];
             }
@@ -275,13 +275,13 @@ class AjaxController extends Controller
                 $isSuccess = true;
             }
             $res = array(
-                'body'    => $item,
+                'body' => $item,
                 'success' => $isSuccess,
             );
 
         } else {
             $res = array(
-                'body'    => 'Not allow',
+                'body' => 'Not allow',
                 'success' => false,
             );
         }

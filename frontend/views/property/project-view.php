@@ -17,7 +17,7 @@ use common\helpers\PropertyHelper;
 $this->title = Yii::t('common', 'Project') . ' ' . $model->title;
 
 PropertyAsset::register($this);
-$this->registerCssFile("@web/frontend/web/theme/assets/css/page/style-page.css", [
+$this->registerCssFile("@web/frontend/web/classified/assets/css/page/style-page.css", [
     'depends' => [\yii\bootstrap\BootstrapAsset::class],
 ]);
 
@@ -171,14 +171,14 @@ $bundle = AdsAsset::register($this);
                         <!--End: sidebar panel-->
                         <?php echo ListView::widget([
                             'dataProvider' => $providerPickup,
-                            'options'      => [
+                            'options' => [
                                 'tag' => false,
                             ],
-                            'itemView'     => '_item_project_relative',
-                            'itemOptions'  => [
+                            'itemView' => '_item_project_relative',
+                            'itemOptions' => [
                                 'tag' => false,
                             ],
-                            'layout'       => "{items}",
+                            'layout' => "{items}",
                         ]);
                         ?>
                     </aside>

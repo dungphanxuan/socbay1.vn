@@ -23,14 +23,14 @@ class ArticleController extends ApiController
     public function behaviors()
     {
         return ArrayHelper::merge(parent::behaviors(), [
-            'verbs'         => [
-                'class'   => \yii\filters\VerbFilter::class,
+            'verbs' => [
+                'class' => \yii\filters\VerbFilter::class,
                 'actions' => [
                     'create' => ['post'],
                 ],
             ],
             'authenticator' => [
-                'class'  => AccessTokenAuth::class,
+                'class' => AccessTokenAuth::class,
                 'except' => ['index', 'view'],
             ]
         ]);
@@ -60,8 +60,8 @@ class ArticleController extends ApiController
         $pagerSize = 10;
 
         $provider = new ActiveDataProvider([
-            'query'      => $query,
-            'sort'       => [
+            'query' => $query,
+            'sort' => [
                 'attributes' => ['id'],
             ],
             'pagination' => [
@@ -124,8 +124,8 @@ class ArticleController extends ApiController
     {
         //Massive Assignment
         $values = [
-            'title'       => 'James',
-            'body'        => 'james@example.com',
+            'title' => 'James',
+            'body' => 'james@example.com',
             'category_id' => 1
         ];
 
@@ -152,9 +152,9 @@ class ArticleController extends ApiController
 
             Yii::$app->commandBus->handle(new AddToTimelineCommand([
                 'category' => 'article',
-                'event'    => 'item',
-                'data'     => [
-                    'title'      => $model->title,
+                'event' => 'item',
+                'data' => [
+                    'title' => $model->title,
                     'article_id' => $model->id,
                     'created_at' => $model->created_at
                 ]
@@ -204,7 +204,7 @@ class ArticleController extends ApiController
         $model->status = 2;
         $model->save();
         Yii::$app->getSession()->setFlash('alert', [
-            'body'    => 'Xóa Bài viết thành công',
+            'body' => 'Xóa Bài viết thành công',
             'options' => ['class' => 'alert-warning']
         ]);
 

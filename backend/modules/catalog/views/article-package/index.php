@@ -26,19 +26,19 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php echo GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel'  => $searchModel,
-        'columns'      => [
+        'filterModel' => $searchModel,
+        'columns' => [
             //['class' => 'yii\grid\SerialColumn'],
 
             [
-                'class'          => 'yii\grid\CheckboxColumn',
-                'headerOptions'  => ['style' => 'width:3%;text-align:center'],
+                'class' => 'yii\grid\CheckboxColumn',
+                'headerOptions' => ['style' => 'width:3%;text-align:center'],
                 'contentOptions' => ['style' => 'width:3%;text-align:center'],
             ],
             [
-                'attribute'      => 'id',
-                'format'         => 'raw',
-                'headerOptions'  => ['style' => 'text-align:center'],
+                'attribute' => 'id',
+                'format' => 'raw',
+                'headerOptions' => ['style' => 'text-align:center'],
                 'contentOptions' => ['style' => 'width:10%;text-align:center'],
             ],
             'title',
@@ -58,9 +58,9 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'promo_sign',
             // 'recommended_sign',
             [
-                'class'     => \common\grid\EnumColumn::class,
+                'class' => \common\grid\EnumColumn::class,
                 'attribute' => 'status',
-                'enum'      => [
+                'enum' => [
                     Yii::t('backend', 'Not Published'),
                     Yii::t('backend', 'Published')
                 ]

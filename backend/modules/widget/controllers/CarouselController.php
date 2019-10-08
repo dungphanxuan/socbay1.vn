@@ -19,7 +19,7 @@ class CarouselController extends BackendController
     {
         return [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['post']
                 ],
@@ -37,7 +37,7 @@ class CarouselController extends BackendController
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -81,7 +81,7 @@ class CarouselController extends BackendController
             return $this->redirect(['index']);
         } else {
             return $this->render('update', [
-                'model'                 => $model,
+                'model' => $model,
                 'carouselItemsProvider' => $carouselItemsProvider
             ]);
         }

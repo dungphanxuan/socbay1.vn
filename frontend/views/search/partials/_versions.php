@@ -19,7 +19,7 @@ use app\widgets\DropdownList;
         if ($language) {
             $languageItems[] = [
                 'label' => 'All Languages',
-                'url'   => ['/search/global', 'q' => $searchQuery, 'version' => $version],
+                'url' => ['/search/global', 'q' => $searchQuery, 'version' => $version],
             ];
         }
 
@@ -33,15 +33,15 @@ use app\widgets\DropdownList;
 
             $languageItems[] = [
                 'label' => $this->context->getLanguages()[$lang],
-                'url'   => $url,
+                'url' => $url,
             ];
         }
         ?>
         <?php echo DropdownList::widget([
-            'tag'       => 'div',
+            'tag' => 'div',
             'selection' => $language ? $this->context->getLanguages()[$language] : 'All Languages',
-            'items'     => $languageItems,
-            'options'   => [
+            'items' => $languageItems,
+            'options' => [
                 'class' => 'btn-group btn-group-sm'
             ]
         ]) ?>
@@ -51,7 +51,7 @@ use app\widgets\DropdownList;
         if ($version) {
             $versionItems[] = [
                 'label' => 'All Versions',
-                'url'   => ['/search/global', 'q' => $searchQuery, 'language' => $language],
+                'url' => ['/search/global', 'q' => $searchQuery, 'language' => $language],
             ];
         }
 
@@ -64,15 +64,15 @@ use app\widgets\DropdownList;
 
             $versionItems[] = [
                 'label' => $ver,
-                'url'   => $url,
+                'url' => $url,
             ];
         }
         ?>
         <?php echo DropdownList::widget([
-            'tag'       => 'div',
+            'tag' => 'div',
             'selection' => $version ?: 'All Versions',
-            'items'     => $versionItems,
-            'options'   => [
+            'items' => $versionItems,
+            'options' => [
                 'class' => 'btn-group btn-group-sm'
             ]
         ]) ?>

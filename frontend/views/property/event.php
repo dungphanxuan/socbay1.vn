@@ -22,15 +22,15 @@ $bundle = AdsAsset::register($this);
 
         <?php echo ListView::widget([
             'dataProvider' => $dataProvider,
-            'options'      => [
+            'options' => [
                 'tag' => false
             ],
-            'itemOptions'  => [
-                'tag'   => 'div',
+            'itemOptions' => [
+                'tag' => 'div',
                 'class' => 'row',
             ],
-            'layout'       => "{items}",
-            'itemView'     => '_item_event',
+            'layout' => "{items}",
+            'itemView' => '_item_event',
         ]);
         ?>
 

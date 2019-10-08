@@ -24,9 +24,9 @@ class DefaultController extends Controller
     {
         return [
             'avatar-upload' => [
-                'class'        => LocalUploadAction::class,
+                'class' => LocalUploadAction::class,
                 //'class'        => UploadAction::class,
-                'deleteRoute'  => 'avatar-delete',
+                'deleteRoute' => 'avatar-delete',
                 'on afterSave' => function ($event) {
                     /* @var $file \League\Flysystem\File */
                     $file = $event->file;
@@ -64,7 +64,6 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        //$this->layout = '@frontend/views/layouts/main3';
         $accountForm = new AccountForm();
         $accountForm->setUser(Yii::$app->user->identity);
 
@@ -80,7 +79,7 @@ class DefaultController extends Controller
             Yii::$app->session->setFlash('forceUpdateLocale');
             Yii::$app->session->setFlash('alert', [
                 'options' => ['class' => 'alert-success'],
-                'body'    => Yii::t('frontend', 'Your account has been successfully saved', [], $locale)
+                'body' => Yii::t('frontend', 'Your account has been successfully saved', [], $locale)
             ]);
 
             //return $this->refresh();
@@ -91,7 +90,7 @@ class DefaultController extends Controller
         $dataStat = UserData::getUserStat(false, Yii::$app->user->id);
 
         return $this->render('index4', [
-            'model'    => $model,
+            'model' => $model,
             'dataStat' => $dataStat,
         ]);
     }

@@ -19,7 +19,7 @@ $imgBg = baseUrl() . '/frontend/web/images/loading/loadingjob.jpg';
 <div class="col-xl-2 col-md-3 col-sm-3 col-xs-4 f-category">
     <a href="<?php echo $urlView ?>">
         <img alt="img" class="img-responsive lazy" src="<?php echo $imgBg ?>"
-                                          data-src="<?php echo $model->getImgThumbnail(1) ?>">
+             data-src="<?php echo $model->getImgThumbnail(1) ?>">
         <h6> Việc làm tại <span class="company-name"><?php echo $model->title_short ?></span> <span
                     class="jobs-count text-muted">(10)</span>
         </h6>

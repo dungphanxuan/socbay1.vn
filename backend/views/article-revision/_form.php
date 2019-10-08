@@ -25,18 +25,18 @@ use yii\helpers\Url;
     echo $form->field($model, 'body')->widget(
         \froala\froalaeditor\FroalaEditorWidget::class,
         [
-            'options'         => [
+            'options' => [
             ],
             'csrfCookieParam' => '_csrf',
-            'clientOptions'   => [
-                'toolbarInline'       => false,
-                'height'              => 350,
-                'imageDefaultWidth'   => 1000,
-                'theme'               => 'royal',
-                'language'            => 'en_gb',
+            'clientOptions' => [
+                'toolbarInline' => false,
+                'height' => 350,
+                'imageDefaultWidth' => 1000,
+                'theme' => 'royal',
+                'language' => 'en_gb',
                 //'toolbarButtons' => ['fullscreen', 'bold', 'italic', 'underline', '|', 'paragraphFormat', 'insertImage'],
-                'imageUploadURL'      => Url::to(['/file-storage/upload-froala']),
-                'fileUploadURL'       => Url::to(['/file-storage/upload-froala']),
+                'imageUploadURL' => Url::to(['/file-storage/upload-froala']),
+                'fileUploadURL' => Url::to(['/file-storage/upload-froala']),
                 'imageManagerLoadURL' => Url::to(['/file-storage/file-froala'])
             ],
             //'clientPlugins' => [ 'fullscreen', 'paragraph_format', 'image', 'file', 'image_manager' ]

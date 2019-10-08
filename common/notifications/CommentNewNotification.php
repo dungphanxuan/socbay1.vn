@@ -39,7 +39,7 @@ class CommentNewNotification extends BaseNotification
     {
         foreach ($this->getFollowers($this->model, $this->comment->user) as $user) {
             yield $this->buildEmail($user, [
-                'model'   => $this->model,
+                'model' => $this->model,
                 'comment' => $this->comment,
             ]);
         }

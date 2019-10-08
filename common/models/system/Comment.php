@@ -11,17 +11,17 @@ use yii\behaviors\BlameableBehavior;
  *
  * @property integer $id
  * @property integer $user_id
- * @property string  $object_type
- * @property string  $object_id
- * @property string  $text
+ * @property string $object_type
+ * @property string $object_id
+ * @property string $text
  * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
- * @property int     $total_votes
- * @property int     $up_votes
- * @property float   $rating
+ * @property int $total_votes
+ * @property int $up_votes
+ * @property float $rating
  *
- * @property User    $user
+ * @property User $user
  */
 class Comment extends ActiveRecord
 {
@@ -57,7 +57,7 @@ class Comment extends ActiveRecord
         return [
             'timestamp' => $this->timeStampBehavior(),
             [
-                'class'              => BlameableBehavior::class,
+                'class' => BlameableBehavior::class,
                 'createdByAttribute' => 'user_id',
                 'updatedByAttribute' => false,
             ],
@@ -81,10 +81,10 @@ class Comment extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'         => Yii::t('app', 'ID'),
-            'user_id'    => Yii::t('app', 'User ID'),
-            'text'       => Yii::t('app', 'Text'),
-            'status'     => Yii::t('app', 'Status'),
+            'id' => Yii::t('app', 'ID'),
+            'user_id' => Yii::t('app', 'User ID'),
+            'text' => Yii::t('app', 'Text'),
+            'status' => Yii::t('app', 'Status'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
         ];

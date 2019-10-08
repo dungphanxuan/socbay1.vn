@@ -54,8 +54,8 @@ class AccountForm extends Model
             ['username', 'required'],
             ['username', 'unique',
                 'targetClass' => User::class,
-                'message'     => Yii::t('frontend', 'This username has already been taken.'),
-                'filter'      => function ($query) {
+                'message' => Yii::t('frontend', 'This username has already been taken.'),
+                'filter' => function ($query) {
                     $query->andWhere(['not', ['id' => Yii::$app->user->getId()]]);
                 }
             ],
@@ -80,8 +80,8 @@ class AccountForm extends Model
             ['email', 'string', 'min' => '2', 'max' => '32'],
             ['email', 'unique',
                 'targetClass' => User::class,
-                'message'     => Yii::t('frontend', 'This email has already been taken.'),
-                'filter'      => function ($query) {
+                'message' => Yii::t('frontend', 'This email has already been taken.'),
+                'filter' => function ($query) {
                     $query->andWhere(['not', ['id' => Yii::$app->user->getId()]]);
                 }
             ],
@@ -89,7 +89,7 @@ class AccountForm extends Model
             [
                 'password_confirm',
                 'required',
-                'when'       => function ($model) {
+                'when' => function ($model) {
                     return !empty($model->password);
                 },
                 'whenClient' => new JsExpression("function (attribute, value) {
@@ -107,9 +107,9 @@ class AccountForm extends Model
     public function attributeLabels()
     {
         return [
-            'username'         => Yii::t('frontend', 'Username'),
-            'email'            => Yii::t('frontend', 'Email'),
-            'password'         => Yii::t('frontend', 'Password'),
+            'username' => Yii::t('frontend', 'Username'),
+            'email' => Yii::t('frontend', 'Email'),
+            'password' => Yii::t('frontend', 'Password'),
             'password_confirm' => Yii::t('frontend', 'Confirm Password')
         ];
     }

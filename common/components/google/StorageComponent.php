@@ -42,7 +42,7 @@ class StorageComponent extends Component
 
         $this->client = new StorageClient([
             'projectId' => $this->project_id,
-            'keyFile'   => json_decode(file_get_contents($keyFilePath), true)
+            'keyFile' => json_decode(file_get_contents($keyFilePath), true)
 
         ]);
     }
@@ -77,7 +77,7 @@ class StorageComponent extends Component
         $bucket->upload(
             fopen($file->tempName, 'r'),
             [
-                'name'          => $filePath,
+                'name' => $filePath,
                 'predefinedAcl' => 'publicRead'
             ]
         );
@@ -88,8 +88,8 @@ class StorageComponent extends Component
     /**
      * Download an object from Cloud Storage and save it as a local file.
      *
-     * @param string $bucketName  the name of your Google Cloud bucket.
-     * @param string $objectName  the name of your Google Cloud object.
+     * @param string $bucketName the name of your Google Cloud bucket.
+     * @param string $objectName the name of your Google Cloud object.
      * @param string $destination the local destination to save the encrypted object.
      *
      */
@@ -108,8 +108,8 @@ class StorageComponent extends Component
     /**
      * Move an object to a new name and/or bucket.
      *
-     * @param string $bucketName    the name of your Cloud Storage bucket.
-     * @param string $objectName    the name of your Cloud Storage object.
+     * @param string $bucketName the name of your Cloud Storage bucket.
+     * @param string $objectName the name of your Cloud Storage object.
      * @param string $newBucketName the destination bucket name.
      * @param string $newObjectName the destination object name.
      *
@@ -132,8 +132,8 @@ class StorageComponent extends Component
     /**
      * Copy an object to a new name and/or bucket.
      *
-     * @param string $bucketName    the name of your Cloud Storage bucket.
-     * @param string $objectName    the name of your Cloud Storage object.
+     * @param string $bucketName the name of your Cloud Storage bucket.
+     * @param string $objectName the name of your Cloud Storage object.
      * @param string $newBucketName the destination bucket name.
      * @param string $newObjectName the destination object name.
      * @return void
@@ -189,7 +189,7 @@ class StorageComponent extends Component
      *
      * @param string $bucketName the name of your Cloud Storage bucket.
      * @param string $objectName the name of your Cloud Storage object.
-     * @param array  $options
+     * @param array $options
      *
      */
     function delete_object($objectName, $options = [])

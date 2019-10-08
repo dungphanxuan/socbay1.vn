@@ -8,11 +8,11 @@ class m180205_101959_create_notification extends BaseMigration
     {
         //Register Device ID, Token
         $this->createTable('app_device', [
-            'id'         => $this->primaryKey(),
-            'token'      => $this->string(),
-            'type'       => $this->smallInteger(1),//Android IOS
-            'status'     => $this->smallInteger(1)->defaultValue(1),
-            'user_id'    => $this->integer(),
+            'id' => $this->primaryKey(),
+            'token' => $this->string(),
+            'type' => $this->smallInteger(1),//Android IOS
+            'status' => $this->smallInteger(1)->defaultValue(1),
+            'user_id' => $this->integer(),
             'created_at' => $this->integer(),
         ]);
 
@@ -26,19 +26,19 @@ class m180205_101959_create_notification extends BaseMigration
 
         //FCM Topic
         $this->createTable('app_topic', [
-            'id'         => $this->primaryKey(),
-            'title'      => $this->string(32),
-            'type'       => $this->smallInteger(1),
-            'status'     => $this->smallInteger(1)->defaultValue(1),
+            'id' => $this->primaryKey(),
+            'title' => $this->string(32),
+            'type' => $this->smallInteger(1),
+            'status' => $this->smallInteger(1)->defaultValue(1),
             'created_by' => $this->integer(),
             'created_at' => $this->integer(),
         ]);
 
         //Member in topic
         $this->createTable('app_user_topic', [
-            'id'         => $this->primaryKey(),
-            'user_id'    => $this->string(),
-            'topic_id'   => $this->string(),
+            'id' => $this->primaryKey(),
+            'user_id' => $this->string(),
+            'topic_id' => $this->string(),
             'created_at' => $this->integer(),
         ]);
 

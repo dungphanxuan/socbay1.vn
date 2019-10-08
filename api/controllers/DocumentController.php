@@ -31,11 +31,11 @@ class DocumentController extends ApiController
         ];
 
         $dataProvider = new ArrayDataProvider([
-            'allModels'  => $arrData,
+            'allModels' => $arrData,
             'pagination' => [
                 'pageSize' => 10,
             ],
-            'sort'       => [
+            'sort' => [
                 'attributes' => ['id', 'name'],
             ],
         ]);

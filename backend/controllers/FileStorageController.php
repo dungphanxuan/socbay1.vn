@@ -34,9 +34,9 @@ class FileStorageController extends BackendController
     {
         return \yii\helpers\ArrayHelper::merge(parent::behaviors(), [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
-                    'delete'        => ['post'],
+                    'delete' => ['post'],
                     'upload-delete' => ['delete'],
                 ],
             ],
@@ -47,56 +47,56 @@ class FileStorageController extends BackendController
     public function actions()
     {
         return [
-            'upload'                  => [
-                'class'       => LocalUploadAction::class,
+            'upload' => [
+                'class' => LocalUploadAction::class,
                 'deleteRoute' => 'upload-delete'
             ],
-            'upload-gcloud'           => [
-                'class'       => \trntv\filekit\actions\UploadAction::class,
+            'upload-gcloud' => [
+                'class' => \trntv\filekit\actions\UploadAction::class,
                 'deleteRoute' => 'upload-delete-gcloud',
                 'fileStorage' => 'fileStorageGCloud'
             ],
-            'upload-filestack-action'  => [
-                'class'       => FilestackUploadAction::class,
+            'upload-filestack-action' => [
+                'class' => FilestackUploadAction::class,
                 'deleteRoute' => 'upload-delete-filestack',
-                'base_url'    => 'https://cdn.filestackcontent.com',
+                'base_url' => 'https://cdn.filestackcontent.com',
             ],
-            'upload-storage'           => [
-                'class'       => StorageUploadAction::class,
+            'upload-storage' => [
+                'class' => StorageUploadAction::class,
                 'deleteRoute' => 'upload-delete-storage',
-                'base_url'    => 'https://storage.googleapis.com/century-estate.appspot.com',
+                'base_url' => 'https://storage.googleapis.com/century-estate.appspot.com',
             ],
-            'upload-cloudinary'        => [
-                'class'       => CloudinaryUploadAction::class,
+            'upload-cloudinary' => [
+                'class' => CloudinaryUploadAction::class,
                 'deleteRoute' => 'upload-delete-cloudinary',
-                'base_url'    => 'https://res.cloudinary.com/dfeqcehdw/image/upload',
+                'base_url' => 'https://res.cloudinary.com/dfeqcehdw/image/upload',
             ],
-            'upload-delete'            => [
+            'upload-delete' => [
                 'class' => \trntv\filekit\actions\DeleteAction::class
             ],
-            'upload-delete-storage'    => [
+            'upload-delete-storage' => [
                 'class' => StorageDeleteAction::class
             ],
-            'upload-delete-filestack'  => [
+            'upload-delete-filestack' => [
                 'class' => FilestackDeleteAction::class
             ],
             'upload-delete-cloudinary' => [
                 'class' => CloudinaryDeleteAction::class
             ],
-            'upload-delete-gcloud'     => [
-                'class'       => 'trntv\filekit\actions\DeleteAction',
+            'upload-delete-gcloud' => [
+                'class' => 'trntv\filekit\actions\DeleteAction',
                 'fileStorage' => 'fileStorageGCloud'
             ],
-            'upload-imperavi'          => [
-                'class'            => 'trntv\filekit\actions\UploadAction',
-                'fileparam'        => 'file',
+            'upload-imperavi' => [
+                'class' => 'trntv\filekit\actions\UploadAction',
+                'fileparam' => 'file',
                 'responseUrlParam' => 'filelink',
-                'multiple'         => false,
-                'disableCsrf'      => true
+                'multiple' => false,
+                'disableCsrf' => true
             ],
-            'thumb-upload'            => [
-                'class'        => UploadAction::class,
-                'deleteRoute'  => 'upload-delete',
+            'thumb-upload' => [
+                'class' => UploadAction::class,
+                'deleteRoute' => 'upload-delete',
                 'on afterSave' => function ($event) {
                     /* @var $file \League\Flysystem\File */
                     $file = $event->file;
@@ -144,10 +144,10 @@ class FileStorageController extends BackendController
         $dataProvider->pagination->pageSize = 100;
 
         return $this->render('index', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'components'   => $components,
-            'totalSize'    => $totalSize
+            'components' => $components,
+            'totalSize' => $totalSize
         ]);
     }
 
@@ -238,9 +238,9 @@ class FileStorageController extends BackendController
 
         //Logging File
         $dataLogging = [
-            'type'     => 'filestack',
+            'type' => 'filestack',
             'base_url' => '',
-            'path'     => $filelink->handle,
+            'path' => $filelink->handle,
             'metaData' => $filelink->getMetaData(),
         ];
 
@@ -288,7 +288,7 @@ class FileStorageController extends BackendController
         $keyFilePath = getStoragePath() . '\key\YiiGroup-797194353469.json';
         $storage = new StorageClient([
             'projectId' => 'valued-ceiling-167301',
-            'keyFile'   => json_decode(file_get_contents($keyFilePath), true)
+            'keyFile' => json_decode(file_get_contents($keyFilePath), true)
 
         ]);
         $bucket = $storage->bucket('yiibucket');
@@ -310,7 +310,7 @@ class FileStorageController extends BackendController
         $bucket->upload(
             fopen($fileInstance->tempName, 'r'),
             [
-                'name'          => $filePath,
+                'name' => $filePath,
                 'predefinedAcl' => 'publicRead'
             ]
         );
@@ -337,7 +337,7 @@ class FileStorageController extends BackendController
         // Get file link
         //$res = ['url' => $imageUrl];
         $res = [
-            'url'      => 'http://dev.yiiframework.vn/classified/storage/web/source/2/012018/u4lCPhRRm08nvZDhHdOzDjD4Aww5QF29.png',
+            'url' => 'http://dev.yiiframework.vn/classified/storage/web/source/2/012018/u4lCPhRRm08nvZDhHdOzDjD4Aww5QF29.png',
             'whatever' => 'beep boop'
         ];
 
@@ -374,19 +374,19 @@ class FileStorageController extends BackendController
             $fromDate = strtotime("+1 day", $fromDate);
         }
         $arrDataset[] = [
-            'label'                => 'User Stat',
-            'backgroundColor'      => "rgba(255,99,132,0.2)",
-            'borderColor'          => "rgba(255,99,132,1)",
+            'label' => 'User Stat',
+            'backgroundColor' => "rgba(255,99,132,0.2)",
+            'borderColor' => "rgba(255,99,132,1)",
             'pointBackgroundColor' => "rgba(255,99,132,1)",
-            'fill'                 => false,
-            'data'                 => $dataDate,
+            'fill' => false,
+            'data' => $dataDate,
         ];
 
         return $this->render('chart', [
-            'dateRange'  => $dateRange,
-            'arrLabel'   => $arrLabel,
+            'dateRange' => $dateRange,
+            'arrLabel' => $arrLabel,
             'arrDataset' => $arrDataset,
-            'total'      => $total
+            'total' => $total
         ]);
     }
 

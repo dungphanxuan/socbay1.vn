@@ -36,8 +36,8 @@ class SlackController extends \yii\web\Controller
         // will be sent from 'Cyril' and to the #accounting channel
         // by default. Any names like @regan or #channel will also be linked.
         $settings = [
-            'username'   => 'Slack Boot',
-            'channel'    => '#event',
+            'username' => 'Slack Boot',
+            'channel' => '#event',
             'link_names' => true
         ];
 

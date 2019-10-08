@@ -11,6 +11,7 @@ use yii\helpers\Url;
 use kartik\money\MaskMoney;
 use yii\web\JsExpression;
 use froala\froalaeditor\FroalaEditorWidget;
+use common\widgets\UploadCloudinary;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Article */
@@ -34,17 +35,24 @@ use froala\froalaeditor\FroalaEditorWidget;
         ]); ?>
 
         <?php echo $form->errorSummary($model, [
-            'class'  => 'alert alert-warning alert-dismissible',
+            'class' => 'alert alert-warning alert-dismissible',
             'header' => ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4><i class="icon fa fa-warning"></i> Vui lòng sửa các lỗi sau!</h4>'
         ]); ?>
 
-        <?php echo $form->field($model, 'title', [
-            'addon' => ['prepend' => ['content' => '<i class="fa fa-id-card-o"></i>']]
-        ])->textInput(['maxlength' => true]) ?>
+        <div class="row">
+            <div class="col-md-6">
+                <?php echo $form->field($model, 'title', [
+                    'addon' => ['prepend' => ['content' => '<i class="fa fa-id-card-o"></i>']]
+                ])->textInput(['maxlength' => true]) ?>
 
-        <?php echo $form->field($model, 'slug')
-            ->hint(Yii::t('backend', 'If you\'ll leave this field empty, slug will be generated automatically'))
-            ->textInput(['maxlength' => true]) ?>
+            </div>
+            <div class="col-md-6">
+                <?php echo $form->field($model, 'slug')
+                    ->hint(Yii::t('backend', 'If you\'ll leave this field empty, slug will be generated automatically'))
+                    ->textInput(['maxlength' => true]) ?>
+            </div>
+        </div>
+
 
         <?php
         /*echo $form->field($model, 'slug', [
@@ -60,17 +68,17 @@ use froala\froalaeditor\FroalaEditorWidget;
                 echo $form->field($model, 'category_id', [
                     'addon' => ['prepend' => ['content' => '<i class="fa fa-folder-open-o"></i>']]
                 ])->widget(\kartik\widgets\Select2::class, [
-                    'data'          => ArrayHelper::map($categories, 'id', 'title'),
-                    'options'       => [
+                    'data' => ArrayHelper::map($categories, 'id', 'title'),
+                    'options' => [
                         'placeholder' => 'Chọn category ...',
-                        'id'          => 'ccatid'
+                        'id' => 'ccatid'
                     ],
                     'pluginOptions' => [
                         'allowClear' => true
                     ],
-                    'addon'         => [
+                    'addon' => [
                         'append' => [
-                            'content'  => '<a href="' . Url::to(['/article-category/index']) . '" target="_blank" class="fa fa-plus blue imouse"></a>',
+                            'content' => '<a href="' . Url::to(['/article-category/index']) . '" target="_blank" class="fa fa-plus blue imouse"></a>',
                             'asButton' => false
                         ]
                     ],
@@ -81,14 +89,14 @@ use froala\froalaeditor\FroalaEditorWidget;
                 <?php
                 echo $form->field($model, 'sub_category_id', [
                 ])->widget(DepDrop::class, [
-                    'options'        => ['id' => 'sub-cat-id'],
-                    'type'           => DepDrop::TYPE_SELECT2,
-                    'data'           => $dataSubCategory,
+                    'options' => ['id' => 'sub-cat-id'],
+                    'type' => DepDrop::TYPE_SELECT2,
+                    'data' => $dataSubCategory,
                     'select2Options' => ['pluginOptions' => ['allowClear' => true]],
-                    'pluginOptions'  => [
-                        'depends'     => ['ccatid'],
+                    'pluginOptions' => [
+                        'depends' => ['ccatid'],
                         'placeholder' => 'Chọn Sub Category...',
-                        'url'         => Url::to(['/article-category/subcat'])
+                        'url' => Url::to(['/article-category/subcat'])
                     ]
                 ]);
                 ?>
@@ -101,12 +109,12 @@ use froala\froalaeditor\FroalaEditorWidget;
             [
                 'plugins' => ['fullscreen', 'fontcolor', 'video'],
                 'options' => [
-                    'minHeight'       => 200,
-                    'maxHeight'       => 250,
-                    'buttonSource'    => true,
-                    'convertDivs'     => false,
+                    'minHeight' => 200,
+                    'maxHeight' => 250,
+                    'buttonSource' => true,
+                    'convertDivs' => false,
                     'removeEmptyTags' => false,
-                    'imageUpload'     => Yii::$app->urlManager->createUrl(['/file-storage/upload-imperavi'])
+                    'imageUpload' => Yii::$app->urlManager->createUrl(['/file-storage/upload-imperavi'])
                 ]
             ]
         );
@@ -157,9 +165,9 @@ use froala\froalaeditor\FroalaEditorWidget;
                 <?php
                 echo $form->field($model, 'city_id', [
                 ])->widget(Select2::class, [
-                    'data'          => ArrayHelper::map($cities, 'id', 'name'),
-                    'language'      => 'vi',
-                    'options'       => ['id' => 'ccity-id', 'placeholder' => 'Chọn Tỉnh/Thành Phố ...'],
+                    'data' => ArrayHelper::map($cities, 'id', 'name'),
+                    'language' => 'vi',
+                    'options' => ['id' => 'ccity-id', 'placeholder' => 'Chọn Tỉnh/Thành Phố ...'],
                     'pluginOptions' => [
                         'allowClear' => true
                     ],
@@ -170,16 +178,16 @@ use froala\froalaeditor\FroalaEditorWidget;
                 <?php
                 echo $form->field($model, 'district_id', [
                 ])->widget(DepDrop::class, [
-                    'options'        => ['id' => 'cdistrict-id'],
-                    'type'           => DepDrop::TYPE_SELECT2,
-                    'data'           => $dataDistrict,
+                    'options' => ['id' => 'cdistrict-id'],
+                    'type' => DepDrop::TYPE_SELECT2,
+                    'data' => $dataDistrict,
                     'select2Options' => ['pluginOptions' => ['allowClear' => true]],
-                    'pluginOptions'  => [
-                        'depends'     => ['ccity-id'],
-                        'initialize'  => true,
+                    'pluginOptions' => [
+                        'depends' => ['ccity-id'],
+                        'initialize' => true,
                         'initDepends' => ['ccity-id'],
                         'placeholder' => 'Chọn Quận/Huyện...',
-                        'url'         => Url::to(['/go/district/subcat'])
+                        'url' => Url::to(['/go/district/subcat'])
                     ]
                 ]);
                 ?>
@@ -188,16 +196,16 @@ use froala\froalaeditor\FroalaEditorWidget;
                 <?php
                 echo $form->field($model, 'ward_id', [
                 ])->widget(DepDrop::class, [
-                    'options'        => ['id' => 'ward-id'],
-                    'type'           => DepDrop::TYPE_SELECT2,
-                    'data'           => $dataWard,
+                    'options' => ['id' => 'ward-id'],
+                    'type' => DepDrop::TYPE_SELECT2,
+                    'data' => $dataWard,
                     'select2Options' => ['pluginOptions' => ['allowClear' => true]],
-                    'pluginOptions'  => [
-                        'depends'     => ['cdistrict-id'],
-                        'initialize'  => true,
+                    'pluginOptions' => [
+                        'depends' => ['cdistrict-id'],
+                        'initialize' => true,
                         'initDepends' => ['cdistrict-id'],
                         'placeholder' => 'Chọn Phường/Xã...',
-                        'url'         => Url::to(['/go/ward/subcat'])
+                        'url' => Url::to(['/go/ward/subcat'])
                     ]
                 ]);
                 ?>
@@ -215,11 +223,11 @@ use froala\froalaeditor\FroalaEditorWidget;
 
                 echo $form->field($model, 'price')->widget(MaskMoney::class, [
                     'pluginOptions' => [
-                        'prefix'    => 'đ ',
+                        'prefix' => 'đ ',
                         'thousands' => ' ',
                         'precision' => 0
                     ],
-                    'options'       => [
+                    'options' => [
                         'maxlength' => '16'
                     ]
                 ]);
@@ -237,7 +245,8 @@ use froala\froalaeditor\FroalaEditorWidget;
 
             <div class="col-md-4">
                 <?php echo $form->field($model, 'condition_type', [
-                ])->dropDownList([1 => 'Mới', 2 => 'Cũ'], ['prompt' => Yii::t('common', 'Condition') . ' ...']) ?>
+                ])->dropDownList([1 => 'Mới', 2 => 'Cũ'], ['prompt' => Yii::t('common', 'Condition') . ' ...'])
+                    ->hint('Tình trạng mới/cũ')?>
             </div>
             <div class="col-md-4"></div>
         </div>
@@ -245,28 +254,23 @@ use froala\froalaeditor\FroalaEditorWidget;
         <div class="row">
             <div class="col-md-4">
                 <?php echo $form->field($model, 'thumbnail')->widget(
-                    Upload::class,
+                    UploadCloudinary::class,
                     [
-                        'url'             => ['/file-storage/upload'],
-                        //'url'             => ['/file-storage/thumb-upload'],
-                        //'url'             => ['/file-storage/upload-gcloud'],
-                        //'url'             => ['/file-storage/upload-storage'],
-                        //'url'             => ['/file-storage/upload-filestack-action'],
-                        'maxFileSize'     => 5000000, // 5 MiB
+                        'maxFileSize' => 5000000, // 5 MiB
                         'acceptFileTypes' => new JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
                     ])->hint(Yii::t('common', 'Thumbnail Image'));
                 ?>
             </div>
             <div class="col-md-8" id="box-attachments">
                 <?php echo $form->field($model, 'attachments')->widget(
-                    Upload::class,
+                    UploadCloudinary::class,
                     [
-                        'url'              => ['/file-storage/upload'],
-                        'sortable'         => true,
-                        'maxFileSize'      => 10000000, // 10 MiB
+                        //'url' => ['/file-storage/upload'],
+                        'sortable' => true,
+                        'maxFileSize' => 10000000, // 10 MiB
                         'maxNumberOfFiles' => 10,
-                        'acceptFileTypes'  => new JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
-                    ]);
+                        'acceptFileTypes' => new JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
+                    ]) ->hint('Ảnh slide');
                 ?>
             </div>
         </div>
@@ -276,22 +280,23 @@ use froala\froalaeditor\FroalaEditorWidget;
             <div class="col-md-8">
                 <?php echo $form->field($model, 'tagNames', [
                     'feedbackIcon' => [
-                        'prefix'         => 'fa fa-',
-                        'default'        => 'tags',
+                        'prefix' => 'fa fa-',
+                        'default' => 'tags',
                         'defaultOptions' => ['class' => 'text-warning'],
                     ]])->widget(\dosamigos\selectize\SelectizeTextInput::class, [
                     // calls an action that returns a JSON object with matched
                     // tags
-                    'loadUrl'       => ['article/list-tags'],
-                    'options'       => ['class' => 'form-control'],
+                    'loadUrl' => ['article/list-tags'],
+                    'options' => ['class' => 'form-control'],
                     'clientOptions' => [
-                        'plugins'     => ['remove_button'],
-                        'valueField'  => 'name',
-                        'labelField'  => 'name',
+                        'plugins' => ['remove_button'],
+                        'valueField' => 'name',
+                        'labelField' => 'name',
                         'searchField' => ['name'],
-                        'create'      => true,
+                        'create' => true,
                     ],
-                ])->hint(Yii::t('common', 'Use commas to separate tags')) ?>
+                ])->label('Gắn thẻ')
+                    ->hint(Yii::t('common', 'Use commas to separate tags')) ?>
 
             </div>
         </div>
@@ -305,14 +310,14 @@ use froala\froalaeditor\FroalaEditorWidget;
                     DateTimeWidget::class,
                     [
                         'phpDatetimeFormat' => 'yyyy-MM-dd',
-                        'clientOptions'     => [
-                            'minDate'           => new JsExpression('new Date("2017-01-01")'),
-                            'allowInputToggle'  => true,
-                            'sideBySide'        => true,
-                            'locale'            => 'vi',
+                        'clientOptions' => [
+                            'minDate' => new JsExpression('new Date("2017-01-01")'),
+                            'allowInputToggle' => true,
+                            'sideBySide' => true,
+                            'locale' => 'vi',
                             'widgetPositioning' => [
                                 'horizontal' => 'auto',
-                                'vertical'   => 'auto'
+                                'vertical' => 'auto'
                             ]
                         ]
                     ]
@@ -324,14 +329,14 @@ use froala\froalaeditor\FroalaEditorWidget;
                     DateTimeWidget::class,
                     [
                         'phpDatetimeFormat' => 'yyyy-MM-dd',
-                        'clientOptions'     => [
-                            'minDate'           => new JsExpression('new Date("2017-01-01")'),
-                            'allowInputToggle'  => true,
-                            'sideBySide'        => true,
-                            'locale'            => 'vi',
+                        'clientOptions' => [
+                            'minDate' => new JsExpression('new Date("2017-01-01")'),
+                            'allowInputToggle' => true,
+                            'sideBySide' => true,
+                            'locale' => 'vi',
                             'widgetPositioning' => [
                                 'horizontal' => 'auto',
-                                'vertical'   => 'auto'
+                                'vertical' => 'auto'
                             ]
                         ]
                     ]
@@ -343,14 +348,14 @@ use froala\froalaeditor\FroalaEditorWidget;
                     DateTimeWidget::class,
                     [
                         'phpDatetimeFormat' => 'yyyy-MM-dd',
-                        'clientOptions'     => [
-                            'minDate'           => new JsExpression('new Date("2017-01-01")'),
-                            'allowInputToggle'  => true,
-                            'sideBySide'        => true,
-                            'locale'            => 'vi',
+                        'clientOptions' => [
+                            'minDate' => new JsExpression('new Date("2017-01-01")'),
+                            'allowInputToggle' => true,
+                            'sideBySide' => true,
+                            'locale' => 'vi',
                             'widgetPositioning' => [
                                 'horizontal' => 'auto',
-                                'vertical'   => 'auto'
+                                'vertical' => 'auto'
                             ]
                         ]
                     ]
@@ -359,7 +364,7 @@ use froala\froalaeditor\FroalaEditorWidget;
         </div>
 
         <?php echo $form->field($model, 'sort_number', [
-            'addon'    => ['prepend' => ['content' => '<i class="fa fa-sort"></i>']],
+            'addon' => ['prepend' => ['content' => '<i class="fa fa-sort"></i>']],
             'template' => '{label} <div class="row"><div class="col-xs-4 col-sm-4">{input}{error}{hint}</div></div>'
         ])->textInput()->hint(Yii::t('common', 'Sort By Asc')) ?>
 
@@ -382,9 +387,9 @@ use froala\froalaeditor\FroalaEditorWidget;
                     echo Html::a(Yii::t('common', 'Delete'), ['delete', 'id' => $model->id],
                         [
                             'class' => 'btn btn-flat btn-warning btn200 bold',
-                            'data'  => [
+                            'data' => [
                                 'confirm' => Yii::t('common', 'Are you sure to delete?'),
-                                'method'  => 'post',
+                                'method' => 'post',
                             ]
                         ]);
                 }

@@ -3,6 +3,7 @@
 use frontend\assets\AdsAsset;
 use yii\helpers\Url;
 use yii\helpers\Html;
+use common\helpers\CloudinaryHelper;
 
 /* @var $this yii\web\View */
 /* @var $model \common\models\Article */
@@ -12,8 +13,10 @@ $detail = \common\helpers\ArticleHelper::getDetail($model->id);
 
 $noImg = baseUrl() . '/frontend/web/images/img-loading-index.jpg';
 $imgThumbnail = fileStorage()->baseUrl . '/image/noimg.png';
-if ($model->thumbnail_path) {
-    $imgThumbnail = $model->getImgThumbnail(2, 75, 320, 240);
+if (isset($detail['thumb_image'])) {
+    //$imgThumbnail = $detail['thumb_image'];
+    $imgThumbnail = CloudinaryHelper::resizingAndCropping($model->thumbnail_base_url, $model->thumbnail_path, 320, 240);
+
 }
 
 $urlView = Url::to(['/ads/view', 'id' => $model->id, 'name' => $model->slug]);
@@ -31,7 +34,7 @@ $urlView = Url::to(['/ads/view', 'id' => $model->id, 'name' => $model->slug]);
                 </a></div>
         </div>
         <!--/.photobox-->
-        <div class="col-sm-7 add-desc-box">
+        <div class="add-desc-box col-md-7">
             <div class="ads-details">
                 <h5 class="add-title">
                     <a data-pjax="0" target="_blank" title="<?php echo $model->title ?>"
@@ -51,8 +54,12 @@ $urlView = Url::to(['/ads/view', 'id' => $model->id, 'name' => $model->slug]);
         <!--/.add-desc-box-->
         <div class="col-md-3 text-right  price-box">
             <h2 class="item-price"> <?php echo $detail['price-show'] ?> </h2>
-            <?php echo \frontend\widgets\Star::widget(['model' => $model, 'view' => 'star_list']) ?>
+            <a class="btn btn-danger  btn-sm make-favorite"> <i class="fa fa-certificate"></i>
 
+                <span>Top Ads</span> </a>
+            <a
+                    class="btn btn-secondary  btn-sm make-favorite"> <i class="fa fa-heart"></i>  <span>Save</span>
+            </a>
         </div>
         <!--/.add-desc-box-->
     </div>

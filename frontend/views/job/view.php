@@ -6,7 +6,7 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 use frontend\widgets\Star;
 use common\models\job\Company;
-
+use yii\helpers\HtmlPurifier;
 
 /* @var $this yii\web\View */
 /* @var $model \common\models\Article */
@@ -76,7 +76,7 @@ if ($dataCompany['thumbnail'] && !empty($dataCompany['thumbnail'])) {
                     <div class="Ads-Details ">
                         <div class="row">
                             <div class="ads-details-info jobs-details-info col-md-8">
-                                <?php echo \yii\helpers\HtmlPurifier::process($model->body) ?>
+                                <?php echo HtmlPurifier::process($model->body) ?>
                             </div>
                             <div class="col-md-4">
                                 <aside class="panel panel-body panel-details job-summery">

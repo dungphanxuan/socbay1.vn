@@ -26,7 +26,7 @@ $action = \Yii::$app->controller->id;
             'options' => [
                 'class' => 'nav nav-pills nav-stacked',
             ],
-            'items'   => [
+            'items' => [
                 ['label' => Yii::t('backend', 'Category'), 'url' => ['/property/project-category'], 'active' => $action == 'project-category' ? true : false],
                 ['label' => Yii::t('backend', 'Price'), 'url' => ['/property/project-price'], 'active' => $action == 'project-price' ? true : false],
                 ['label' => Yii::t('backend', 'Area'), 'url' => ['/property/project-area'], 'active' => $action == 'project-area' ? true : false],

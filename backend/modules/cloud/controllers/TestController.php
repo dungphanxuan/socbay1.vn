@@ -55,7 +55,7 @@ class TestController extends Controller
 
         $vision = new VisionClient([
             'projectId' => 'valued-ceiling-167301',
-            'keyFile'   => json_decode(file_get_contents($keyFilePath), true)
+            'keyFile' => json_decode(file_get_contents($keyFilePath), true)
         ]);
 
         $type = 'faces';
@@ -101,7 +101,7 @@ class TestController extends Controller
 
         $vision = new VisionClient([
             'projectId' => 'valued-ceiling-167301',
-            'keyFile'   => json_decode(file_get_contents($keyFilePath), true)
+            'keyFile' => json_decode(file_get_contents($keyFilePath), true)
         ]);
 
         $type = 'safeSearch';
@@ -137,7 +137,7 @@ class TestController extends Controller
 
         $storage = new StorageClient([
             'projectId' => 'valued-ceiling-167301',
-            'keyFile'   => json_decode(file_get_contents($keyFilePath), true)
+            'keyFile' => json_decode(file_get_contents($keyFilePath), true)
 
         ]);
 

@@ -47,11 +47,11 @@ class JobType extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'          => 'ID',
-            'title'       => 'Title',
-            'slug'        => 'Slug',
-            'status'      => 'Status',
-            'type'        => 'Type',
+            'id' => 'ID',
+            'title' => 'Title',
+            'slug' => 'Slug',
+            'status' => 'Status',
+            'type' => 'Type',
             'sort_number' => 'Sort Number',
         ];
     }

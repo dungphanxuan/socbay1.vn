@@ -54,10 +54,10 @@ class UserForm extends Model
             [['password'], StrengthValidator::class, 'preset' => 'normal', 'userAttribute' => 'username'],
             [['status', 'otp_enable'], 'integer'],
             [['roles'], 'each',
-             'rule' => ['in', 'range' => ArrayHelper::getColumn(
-                 Yii::$app->authManager->getRoles(),
-                 'name'
-             )]
+                'rule' => ['in', 'range' => ArrayHelper::getColumn(
+                    Yii::$app->authManager->getRoles(),
+                    'name'
+                )]
             ],
         ];
     }
@@ -68,12 +68,12 @@ class UserForm extends Model
     public function attributeLabels()
     {
         return [
-            'username'     => Yii::t('common', 'Username'),
-            'email'        => Yii::t('common', 'Email'),
-            'status'       => Yii::t('common', 'Status'),
-            'password'     => Yii::t('common', 'Password'),
-            'roles'        => Yii::t('common', 'Roles'),
-            'otp_enable'   => Yii::t('common', 'Otp Enable'),
+            'username' => Yii::t('common', 'Username'),
+            'email' => Yii::t('common', 'Email'),
+            'status' => Yii::t('common', 'Status'),
+            'password' => Yii::t('common', 'Password'),
+            'roles' => Yii::t('common', 'Roles'),
+            'otp_enable' => Yii::t('common', 'Otp Enable'),
             'twofa_secret' => Yii::t('common', 'Twofa Secret')
         ];
     }
@@ -148,7 +148,7 @@ class UserForm extends Model
             }
 
             return !$model->hasErrors();
-        }else{
+        } else {
             dd($this->errors);
         }
 

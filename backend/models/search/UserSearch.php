@@ -61,8 +61,8 @@ class UserSearch extends User
         }
 
         $query->andFilterWhere([
-            'id'                   => $this->id,
-            'status'               => $this->status,
+            'id' => $this->id,
+            'status' => $this->status,
             'oauth_client_user_id' => $this->oauth_client_user_id
         ]);
 

@@ -18,15 +18,15 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php echo Html::a(Yii::t('frontend', 'Update'), ['update', 'parent' => $model->parent, 'child' => $model->child], ['class' => 'btn btn-primary']) ?>
         <?php echo Html::a(Yii::t('frontend', 'Delete'), ['delete', 'parent' => $model->parent, 'child' => $model->child], [
             'class' => 'btn btn-danger',
-            'data'  => [
+            'data' => [
                 'confirm' => Yii::t('frontend', 'Are you sure you want to delete this item?'),
-                'method'  => 'post',
+                'method' => 'post',
             ],
         ]) ?>
     </p>
 
     <?php echo DetailView::widget([
-        'model'      => $model,
+        'model' => $model,
         'attributes' => [
             'parent',
             'child',

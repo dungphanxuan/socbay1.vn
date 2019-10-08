@@ -11,12 +11,12 @@ use yii\db\ActiveRecord;
  *
  * @property integer $id
  * @property integer $article_id
- * @property string  $base_url
- * @property string  $path
- * @property string  $url
- * @property string  $name
- * @property string  $type
- * @property string  $size
+ * @property string $base_url
+ * @property string $path
+ * @property string $url
+ * @property string $name
+ * @property string $type
+ * @property string $size
  * @property integer $safe_detection
  * @property integer $order
  *
@@ -39,7 +39,7 @@ class ArticleAttachment extends ActiveRecord
     {
         return [
             [
-                'class'              => TimestampBehavior::class,
+                'class' => TimestampBehavior::class,
                 'updatedAtAttribute' => false
             ]
         ];
@@ -63,12 +63,12 @@ class ArticleAttachment extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'         => Yii::t('common', 'ID'),
+            'id' => Yii::t('common', 'ID'),
             'article_id' => Yii::t('common', 'Article ID'),
-            'base_url'   => Yii::t('common', 'Base Url'),
-            'path'       => Yii::t('common', 'Path'),
-            'size'       => Yii::t('common', 'Size'),
-            'order'      => Yii::t('common', 'Order'),
+            'base_url' => Yii::t('common', 'Base Url'),
+            'path' => Yii::t('common', 'Path'),
+            'size' => Yii::t('common', 'Size'),
+            'order' => Yii::t('common', 'Order'),
 
             'safe_detection' => Yii::t('common', 'Safe Detection'),
 

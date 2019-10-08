@@ -21,7 +21,7 @@ class I18nMessageController extends Controller
     {
         return [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['post'],
                 ],
@@ -51,10 +51,10 @@ class I18nMessageController extends Controller
         );
 
         return $this->render('index', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'languages'    => $languages,
-            'categories'   => $categories
+            'languages' => $languages,
+            'categories' => $categories
         ]);
     }
 

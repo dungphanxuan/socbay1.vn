@@ -68,7 +68,7 @@ $itemSubject = [
                     <div class="contact-form">
                         <h5 class="list-title gray"><strong>Contact form</strong></h5>
                         <?php $form = ActiveForm::begin([
-                            'id'      => 'contact-form',
+                            'id' => 'contact-form',
                             'options' => ['class' => 'form-horizontal'],
                         ]); ?>
                         <fieldset>
@@ -77,44 +77,44 @@ $itemSubject = [
                                     <?php echo $form->field($model, 'name', [
                                         'template' => $temp_input_html
                                     ])->textInput([
-                                        'maxlength'    => true,
-                                        'placeholder'  => 'Tên liên hệ',
+                                        'maxlength' => true,
+                                        'placeholder' => 'Tên liên hệ',
                                         'autocomplete' => 'off',
-                                        'readonly'     => true,
-                                        'onfocus'      => "this.removeAttribute('readonly');",
+                                        'readonly' => true,
+                                        'onfocus' => "this.removeAttribute('readonly');",
                                     ]) ?>
                                 </div>
                                 <div class="col-sm-6">
                                     <?php echo $form->field($model, 'company_name', [
                                         'template' => $temp_input_html
                                     ])->textInput([
-                                        'maxlength'    => true,
-                                        'placeholder'  => 'Tên công ty',
+                                        'maxlength' => true,
+                                        'placeholder' => 'Tên công ty',
                                         'autocomplete' => 'off',
-                                        'readonly'     => true,
-                                        'onfocus'      => "this.removeAttribute('readonly');",
+                                        'readonly' => true,
+                                        'onfocus' => "this.removeAttribute('readonly');",
                                     ]) ?>
                                 </div>
                                 <div class="col-sm-6">
                                     <?php echo $form->field($model, 'email', [
                                         'template' => $temp_input_html
                                     ])->textInput([
-                                        'maxlength'    => true,
-                                        'placeholder'  => 'Địa chỉ Email',
+                                        'maxlength' => true,
+                                        'placeholder' => 'Địa chỉ Email',
                                         'autocomplete' => 'off',
-                                        'readonly'     => true,
-                                        'onfocus'      => "this.removeAttribute('readonly');",
+                                        'readonly' => true,
+                                        'onfocus' => "this.removeAttribute('readonly');",
                                     ]) ?>
                                 </div>
                                 <div class="col-sm-6">
                                     <?php echo $form->field($model, 'mobile', [
                                         'template' => $temp_input_html
                                     ])->textInput([
-                                        'maxlength'    => true,
-                                        'placeholder'  => 'Điện thoại',
+                                        'maxlength' => true,
+                                        'placeholder' => 'Điện thoại',
                                         'autocomplete' => 'off',
-                                        'readonly'     => true,
-                                        'onfocus'      => "this.removeAttribute('readonly');",
+                                        'readonly' => true,
+                                        'onfocus' => "this.removeAttribute('readonly');",
                                     ]) ?>
                                 </div>
                                 <div class="col-lg-12">
@@ -128,7 +128,7 @@ $itemSubject = [
                                         'template' => $temp_input_html
                                     ])->textarea([
                                         'placeholder' => 'Nội dung liên hệ.',
-                                        'class'       => 'form-control contact-msg'
+                                        'class' => 'form-control contact-msg'
                                     ]) ?>
                                     <div class="form-group">
                                         <div class="col-md-12 ">

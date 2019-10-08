@@ -10,19 +10,19 @@ use yii\helpers\ArrayHelper;
 /**
  * This is the model class for table "pm_project_category".
  *
- * @property int    $id
+ * @property int $id
  * @property string $slug
  * @property string $title
  * @property string $body
- * @property int    $parent_id
+ * @property int $parent_id
  * @property string $thumbnail_base_url
  * @property string $thumbnail_path
- * @property int    $total
- * @property int    $sort_number
- * @property int    $type
- * @property int    $status
- * @property int    $created_at
- * @property int    $updated_at
+ * @property int $total
+ * @property int $sort_number
+ * @property int $type
+ * @property int $status
+ * @property int $created_at
+ * @property int $updated_at
  */
 class ProjectCategory extends \yii\db\ActiveRecord
 {
@@ -48,14 +48,14 @@ class ProjectCategory extends \yii\db\ActiveRecord
         return [
             TimestampBehavior::class,
             [
-                'class'     => SluggableBehavior::class,
+                'class' => SluggableBehavior::class,
                 'attribute' => 'title',
                 'immutable' => true
             ],
             [
-                'class'            => UploadBehavior::class,
-                'attribute'        => 'thumbnail',
-                'pathAttribute'    => 'thumbnail_path',
+                'class' => UploadBehavior::class,
+                'attribute' => 'thumbnail',
+                'pathAttribute' => 'thumbnail_path',
                 'baseUrlAttribute' => 'thumbnail_base_url'
             ],
         ];
@@ -82,20 +82,20 @@ class ProjectCategory extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'                 => 'ID',
-            'slug'               => 'Slug',
-            'title'              => 'Title',
-            'body'               => 'Body',
-            'parent_id'          => 'Parent ID',
+            'id' => 'ID',
+            'slug' => 'Slug',
+            'title' => 'Title',
+            'body' => 'Body',
+            'parent_id' => 'Parent ID',
             'thumbnail_base_url' => 'Thumbnail Base Url',
-            'thumbnail_path'     => 'Thumbnail Path',
-            'thumbnail'          => 'Thumbnail Image',
-            'total'              => 'Total',
-            'sort_number'        => 'Sort Number',
-            'type'               => 'Type',
-            'status'             => 'Status',
-            'created_at'         => 'Created At',
-            'updated_at'         => 'Updated At',
+            'thumbnail_path' => 'Thumbnail Path',
+            'thumbnail' => 'Thumbnail Image',
+            'total' => 'Total',
+            'sort_number' => 'Sort Number',
+            'type' => 'Type',
+            'status' => 'Status',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
         ];
     }
 

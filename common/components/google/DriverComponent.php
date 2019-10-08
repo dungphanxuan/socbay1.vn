@@ -18,10 +18,10 @@ class DriverComponent
             'name' => 'photo.jpg'));
         $content = file_get_contents('files/photo.jpg');
         $file = $driveService->files->create($fileMetadata, array(
-            'data'       => $content,
-            'mimeType'   => 'image/jpeg',
+            'data' => $content,
+            'mimeType' => 'image/jpeg',
             'uploadType' => 'multipart',
-            'fields'     => 'id'));
+            'fields' => 'id'));
         printf("File ID: %s\n", $file->id);
     }
 }

@@ -31,10 +31,10 @@ class ArticleStatus
     {
         return [
             self::DELETED => Yii::t('common', 'Deleted'),
-            self::ACTIVE  => Yii::t('common', 'Active'),
+            self::ACTIVE => Yii::t('common', 'Active'),
             self::PENDING => Yii::t('common', 'Pending'),
-            self::DRAFT   => Yii::t('common', 'Draft'),
-            self::SOLD    => Yii::t('common', 'Sold'),
+            self::DRAFT => Yii::t('common', 'Draft'),
+            self::SOLD => Yii::t('common', 'Sold'),
         ];
     }
 

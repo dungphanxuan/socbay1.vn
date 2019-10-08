@@ -23,7 +23,7 @@ $imgBg = baseUrl() . '/frontend/web/images/loading/loadingjob.jpg';
         <a href="<?php echo Url::to(['/ads/view', 'id' => $model->id, 'name' => $model->slug]) ?>">
             <img class="thumbnail  img-responsive lazy" src="<?php echo $imgBg ?>"
                  data-src="<?php echo $model->getImgThumbnail(2, 75, 100, 75) ?>"
-                    alt="img">
+                 alt="img">
         </a>
     </td>
     <td class="ads-details-td">

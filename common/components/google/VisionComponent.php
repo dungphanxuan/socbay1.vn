@@ -35,7 +35,7 @@ class VisionComponent extends Component
 
         $this->client = new VisionClient([
             'projectId' => $this->project_id,
-            'keyFile'   => json_decode(file_get_contents($keyFilePath), true)
+            'keyFile' => json_decode(file_get_contents($keyFilePath), true)
         ]);
     }
 

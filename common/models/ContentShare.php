@@ -15,14 +15,14 @@ use yii\db\ActiveRecord;
 /**
  * This is the model class for table "{{%content_share}}".
  *
- * @property integer     $id
- * @property integer     $object_type_id
- * @property integer     $object_id
- * @property integer     $service_id
- * @property integer     $status_id
- * @property string      $message
- * @property integer     $created_at
- * @property integer     $posted_at
+ * @property integer $id
+ * @property integer $object_type_id
+ * @property integer $object_id
+ * @property integer $service_id
+ * @property integer $status_id
+ * @property string $message
+ * @property integer $created_at
+ * @property integer $posted_at
  *
  * @property BaseService $service
  */
@@ -78,7 +78,7 @@ class ContentShare extends ActiveRecord
     {
         return [
             'timestamp' => [
-                'class'              => TimestampBehavior::class,
+                'class' => TimestampBehavior::class,
                 'updatedAtAttribute' => false
             ]
         ];
@@ -87,7 +87,7 @@ class ContentShare extends ActiveRecord
     /**
      * @param EntityInterface $entity
      *
-     * @param bool            $forceReCreate
+     * @param bool $forceReCreate
      */
     public static function addJobs(EntityInterface $entity, $forceReCreate = false)
     {
@@ -95,8 +95,8 @@ class ContentShare extends ActiveRecord
         $listOfExistingContentShare = static::find()
             ->andWhere([
                 'object_type_id' => $entity->getObjectType(),
-                'object_id'      => $entity->getObjectId(),
-                'service_id'     => static::$availableServiceIds
+                'object_id' => $entity->getObjectId(),
+                'service_id' => static::$availableServiceIds
             ])
             ->indexBy('service_id')
             ->all();

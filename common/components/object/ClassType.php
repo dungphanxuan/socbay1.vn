@@ -23,12 +23,12 @@ class ClassType
     const API = 'api';
 
     public static $classes = [
-        self::ARTICLES  => Article::class,
-        self::NEWS      => News::class,
-        self::WIKI      => Wiki::class,
+        self::ARTICLES => Article::class,
+        self::NEWS => News::class,
+        self::WIKI => Wiki::class,
         self::EXTENSION => Extension::class,
-        self::COMMENT   => Comment::class,
-        self::FILE      => File::class,
+        self::COMMENT => Comment::class,
+        self::FILE => File::class,
     ];
 
     /**

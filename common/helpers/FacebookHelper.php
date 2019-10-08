@@ -8,6 +8,7 @@ namespace common\helpers;
  * Date: 4/11/2016
  * Time: 11:30 AM
  */
+
 use Facebook\Exceptions\FacebookResponseException;
 use Facebook\Facebook;
 use yii\helpers\Inflector;
@@ -22,10 +23,10 @@ class FacebookHelper extends Inflector
     {
         $dataUser = [];
         $fb = new \Facebook\Facebook([
-            'app_id'                => env('FACEBOOK_CLIENT_ID'),
-            'app_secret'            => env('FACEBOOK_CLIENT_SECRET'),
+            'app_id' => env('FACEBOOK_CLIENT_ID'),
+            'app_secret' => env('FACEBOOK_CLIENT_SECRET'),
             'default_graph_version' => 'v2.10',
-            'default_access_token'  => $token
+            'default_access_token' => $token
         ]);
 
         try {
@@ -45,11 +46,11 @@ class FacebookHelper extends Inflector
 
         $userPicture = $me->getPicture();
         $dataUser = [
-            'id'       => $me->getId(),
-            'email'    => $me->getEmail(),
+            'id' => $me->getId(),
+            'email' => $me->getEmail(),
             'fullname' => $me->getName(),
             'birthday' => $me->getBirthday(),
-            'picture'  => isset($userPicture) ? $me->getPicture()->getUrl() : '',
+            'picture' => isset($userPicture) ? $me->getPicture()->getUrl() : '',
         ];
 
         return $dataUser;
@@ -63,8 +64,8 @@ class FacebookHelper extends Inflector
     {
 
         $fb = new Facebook([
-            'app_id'                => env('FACEBOOK_CLIENT_ID'),
-            'app_secret'            => env('FACEBOOK_CLIENT_SECRET'),
+            'app_id' => env('FACEBOOK_CLIENT_ID'),
+            'app_secret' => env('FACEBOOK_CLIENT_SECRET'),
             'default_graph_version' => 'v2.10',
         ]);
 
@@ -99,8 +100,8 @@ class FacebookHelper extends Inflector
     public static function feedAlbumPhoto($id = '')
     {
         $fb = new Facebook([
-            'app_id'                => env('FACEBOOK_CLIENT_ID'),
-            'app_secret'            => env('FACEBOOK_CLIENT_SECRET'),
+            'app_id' => env('FACEBOOK_CLIENT_ID'),
+            'app_secret' => env('FACEBOOK_CLIENT_SECRET'),
             'default_graph_version' => 'v2.10',
         ]);
 

@@ -13,129 +13,129 @@ class m180413_094459_create_category extends Migration
     public function safeUp()
     {
         $this->createTable('med_media_category', [
-            'id'                      => $this->primaryKey(),
-            'title'                   => $this->string(255)->notNull(),
-            'slug'                    => $this->string(255),
-            'body'                    => $this->text(),
-            'parent_id'               => $this->integer(),
-            'key'                     => $this->string(8)->notNull(),
-            'thumbnail_base_url'      => $this->string(128),
-            'thumbnail_path'          => $this->string(255),
+            'id' => $this->primaryKey(),
+            'title' => $this->string(255)->notNull(),
+            'slug' => $this->string(255),
+            'body' => $this->text(),
+            'parent_id' => $this->integer(),
+            'key' => $this->string(8)->notNull(),
+            'thumbnail_base_url' => $this->string(128),
+            'thumbnail_path' => $this->string(255),
             'thumbnail_base_url_data' => $this->string(128),
-            'thumbnail_path_data'     => $this->string(255),
+            'thumbnail_path_data' => $this->string(255),
 
-            'type'        => $this->smallInteger()->defaultValue(1),
-            'status'      => $this->smallInteger()->defaultValue(0),
+            'type' => $this->smallInteger()->defaultValue(1),
+            'status' => $this->smallInteger()->defaultValue(0),
             'sort_number' => $this->smallInteger()->defaultValue(0),
-            'created_at'  => $this->integer(),
-            'updated_at'  => $this->integer(),
+            'created_at' => $this->integer(),
+            'updated_at' => $this->integer(),
         ]);
 
         $this->createTable('med_media', [
-            'id'                 => $this->primaryKey(),
-            'source_id'          => $this->integer(),
-            'slug'               => $this->string(255),
-            'title'              => $this->string(255)->notNull(),
-            'body'               => $this->text()->notNull(),
-            'excerpt'            => $this->text(),
-            'type'               => $this->smallInteger()->defaultValue(1), //1. Video 2. Photo 3. Book
-            'view'               => $this->string(),
-            'episode'            => $this->smallInteger()->comment('Tập film'),
-            'category_id'        => $this->integer(),
+            'id' => $this->primaryKey(),
+            'source_id' => $this->integer(),
+            'slug' => $this->string(255),
+            'title' => $this->string(255)->notNull(),
+            'body' => $this->text()->notNull(),
+            'excerpt' => $this->text(),
+            'type' => $this->smallInteger()->defaultValue(1), //1. Video 2. Photo 3. Book
+            'view' => $this->string(),
+            'episode' => $this->smallInteger()->comment('Tập film'),
+            'category_id' => $this->integer(),
             'thumbnail_base_url' => $this->string(255),
-            'thumbnail_path'     => $this->string(255),
-            'video_base_url'     => $this->string(255),
-            'video_path'         => $this->string(255),
-            'video_play_type'    => $this->smallInteger()->defaultValue(1), //1. Stream 2. Local File 3. Youtube 4. Vimeo
-            'url_local'          => $this->string(255),
-            'url_local1'         => $this->string(255),
-            'url_local2'         => $this->string(255),
-            'url_local3'         => $this->string(255),
-            'url_local4'         => $this->string(255),
-            'url_local5'         => $this->string(255),
-            'url_streaming'      => $this->string(255),
-            'youtube_id'         => $this->string(255),
-            'youtube_url'        => $this->string(255),
-            'vimeo_url'          => $this->string(255),
+            'thumbnail_path' => $this->string(255),
+            'video_base_url' => $this->string(255),
+            'video_path' => $this->string(255),
+            'video_play_type' => $this->smallInteger()->defaultValue(1), //1. Stream 2. Local File 3. Youtube 4. Vimeo
+            'url_local' => $this->string(255),
+            'url_local1' => $this->string(255),
+            'url_local2' => $this->string(255),
+            'url_local3' => $this->string(255),
+            'url_local4' => $this->string(255),
+            'url_local5' => $this->string(255),
+            'url_streaming' => $this->string(255),
+            'youtube_id' => $this->string(255),
+            'youtube_url' => $this->string(255),
+            'vimeo_url' => $this->string(255),
 
-            'review_url'  => $this->string(255),
+            'review_url' => $this->string(255),
             'review_type' => $this->smallInteger(),//Youtubee, Local, Streaming
 
-            'view_count'     => $this->integer()->defaultValue(1),
-            'like_count'     => $this->integer()->defaultValue(1),
-            'dislike_count'  => $this->integer()->defaultValue(1),
-            'share_count'    => $this->integer()->defaultValue(1),
+            'view_count' => $this->integer()->defaultValue(1),
+            'like_count' => $this->integer()->defaultValue(1),
+            'dislike_count' => $this->integer()->defaultValue(1),
+            'share_count' => $this->integer()->defaultValue(1),
             'favorite_count' => $this->integer()->defaultValue(1),
-            'comment_count'  => $this->integer()->defaultValue(1),
-            'matched'        => $this->smallInteger(1)->defaultValue(0),
-            'is_syn'         => $this->smallInteger(1)->defaultValue(0), //Trạng thái đã đồng bộ
+            'comment_count' => $this->integer()->defaultValue(1),
+            'matched' => $this->smallInteger(1)->defaultValue(0),
+            'is_syn' => $this->smallInteger(1)->defaultValue(0), //Trạng thái đã đồng bộ
 
-            'min_total'  => $this->integer(),
-            'next_id'    => $this->integer(),
+            'min_total' => $this->integer(),
+            'next_id' => $this->integer(),
             'preview_id' => $this->integer(),
-            'order'      => $this->smallInteger(),
+            'order' => $this->smallInteger(),
 
             'login_require' => $this->smallInteger()->defaultValue(0),
-            'is_hot'        => $this->smallInteger()->defaultValue(0),
-            'video_status'  => $this->smallInteger()->defaultValue(0),
-            'status'        => $this->smallInteger()->defaultValue(0),
-            'created_by'    => $this->integer(),
-            'updated_by'    => $this->integer(),
-            'published_at'  => $this->integer(),
-            'created_at'    => $this->integer(),
-            'updated_at'    => $this->integer(),
+            'is_hot' => $this->smallInteger()->defaultValue(0),
+            'video_status' => $this->smallInteger()->defaultValue(0),
+            'status' => $this->smallInteger()->defaultValue(0),
+            'created_by' => $this->integer(),
+            'updated_by' => $this->integer(),
+            'published_at' => $this->integer(),
+            'created_at' => $this->integer(),
+            'updated_at' => $this->integer(),
         ]);
 
         $this->createTable('med_media_attachment', [
-            'id'         => $this->primaryKey(),
-            'media_id'   => $this->integer()->notNull(),
-            'path'       => $this->string()->notNull(),
-            'base_url'   => $this->string(),
-            'type'       => $this->string(),
-            'size'       => $this->integer(),
-            'name'       => $this->string(),
-            'order'      => $this->integer(),
+            'id' => $this->primaryKey(),
+            'media_id' => $this->integer()->notNull(),
+            'path' => $this->string()->notNull(),
+            'base_url' => $this->string(),
+            'type' => $this->string(),
+            'size' => $this->integer(),
+            'name' => $this->string(),
+            'order' => $this->integer(),
             'created_at' => $this->integer()
         ]);
 
         $this->createTable('med_media_detail', [
-            'id'         => $this->primaryKey(),
-            'media_id'   => $this->integer()->notNull(),
-            'title'      => $this->string(),
-            'body'       => $this->text(),
-            'path'       => $this->string(),
-            'base_url'   => $this->string(),
-            'url'        => $this->string(),
+            'id' => $this->primaryKey(),
+            'media_id' => $this->integer()->notNull(),
+            'title' => $this->string(),
+            'body' => $this->text(),
+            'path' => $this->string(),
+            'base_url' => $this->string(),
+            'url' => $this->string(),
             'created_at' => $this->integer()
         ]);;
 
         //Media Feature
         $this->createTable('med_media_feature', [
-            'id'       => $this->primaryKey(),
+            'id' => $this->primaryKey(),
             'media_id' => $this->integer()->notNull(),
-            'order'    => $this->smallInteger(1)->defaultValue(0),
+            'order' => $this->smallInteger(1)->defaultValue(0),
         ]);
 
         //Tag table
         $this->createTable('med_media_tag', [
-            'id'        => $this->primaryKey(),
+            'id' => $this->primaryKey(),
             'frequency' => $this->integer(),
-            'name'      => $this->string(32),
+            'name' => $this->string(32),
         ]);
 
         //Media tag
         $this->createTable('med_media_tag_assn', [
             'media_id' => $this->integer(),
-            'tag_id'   => $this->integer(),
+            'tag_id' => $this->integer(),
         ]);
 
         //Playlist table
         $this->createTable('med_media_playlist', [
-            'id'         => $this->primaryKey(),
-            'title'      => $this->string(64)->notNull(),
-            'slug'       => $this->string(255)->notNull(),
-            'type'       => $this->smallInteger(1)->defaultValue(1), // Kiểu hiển thị
-            'status'     => $this->smallInteger()->defaultValue(1),
+            'id' => $this->primaryKey(),
+            'title' => $this->string(64)->notNull(),
+            'slug' => $this->string(255)->notNull(),
+            'type' => $this->smallInteger(1)->defaultValue(1), // Kiểu hiển thị
+            'status' => $this->smallInteger()->defaultValue(1),
             'created_at' => $this->integer(),
             'updated_at' => $this->integer(),
             'created_by' => $this->integer(),
@@ -144,10 +144,10 @@ class m180413_094459_create_category extends Migration
 
         //Playlist table
         $this->createTable('med_media_playlist_detail', [
-            'id'          => $this->primaryKey(),
+            'id' => $this->primaryKey(),
             'playlist_id' => $this->integer()->notNull(),
-            'media_id'    => $this->integer()->notNull(),
-            'order'       => $this->smallInteger(1)->defaultValue(0),
+            'media_id' => $this->integer()->notNull(),
+            'order' => $this->smallInteger(1)->defaultValue(0),
         ]);
 
         // Creates index for column `name`

@@ -17,7 +17,7 @@ use trntv\filekit\widget\Upload;
     <?php $form = ActiveForm::begin(); ?>
 
     <?php echo $form->errorSummary($model, [
-        'class'  => 'alert alert-warning alert-dismissible',
+        'class' => 'alert alert-warning alert-dismissible',
         'header' => ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4><i class="icon fa fa-warning"></i> Vui lòng sửa các lỗi sau!</h4>'
     ]); ?>
 
@@ -33,17 +33,17 @@ use trntv\filekit\widget\Upload;
             echo $form->field($model, 'category_id', [
                 'addon' => ['prepend' => ['content' => '<i class="fa fa-folder-open-o"></i>']]
             ])->widget(\kartik\widgets\Select2::class, [
-                'data'          => ArrayHelper::map($categories, 'id', 'title'),
-                'options'       => [
+                'data' => ArrayHelper::map($categories, 'id', 'title'),
+                'options' => [
                     'placeholder' => 'Chọn category ...',
-                    'id'          => 'ccatid'
+                    'id' => 'ccatid'
                 ],
                 'pluginOptions' => [
                     'allowClear' => true
                 ],
-                'addon'         => [
+                'addon' => [
                     'append' => [
-                        'content'  => '<a href="' . Url::to(['/ads/support-topic-category/index']) . '" target="_blank" class="fa fa-plus blue imouse"></a>',
+                        'content' => '<a href="' . Url::to(['/ads/support-topic-category/index']) . '" target="_blank" class="fa fa-plus blue imouse"></a>',
                         'asButton' => false
                     ]
                 ],
@@ -59,8 +59,8 @@ use trntv\filekit\widget\Upload;
             <?php echo $form->field($model, 'thumbnail')->widget(
                 Upload::class,
                 [
-                    'url'             => ['/file-storage/upload'],
-                    'maxFileSize'     => 5000000, // 5 MiB
+                    'url' => ['/file-storage/upload'],
+                    'maxFileSize' => 5000000, // 5 MiB
                     'acceptFileTypes' => new \yii\web\JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
                 ]);
             ?>
@@ -69,9 +69,9 @@ use trntv\filekit\widget\Upload;
             <?php echo $form->field($model, 'attachments')->widget(
                 Upload::class,
                 [
-                    'url'              => ['/file-storage/upload'],
-                    'sortable'         => true,
-                    'maxFileSize'      => 10000000, // 10 MiB
+                    'url' => ['/file-storage/upload'],
+                    'sortable' => true,
+                    'maxFileSize' => 10000000, // 10 MiB
                     'maxNumberOfFiles' => 10,
                 ]);
             ?></div>

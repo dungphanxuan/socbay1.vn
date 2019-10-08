@@ -43,7 +43,7 @@ class RbacAuthItemChild extends \yii\db\ActiveRecord
     {
         return [
             'parent' => Yii::t('backend', 'Parent'),
-            'child'  => Yii::t('backend', 'Child'),
+            'child' => Yii::t('backend', 'Child'),
         ];
     }
 

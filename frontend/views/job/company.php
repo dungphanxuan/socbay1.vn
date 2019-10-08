@@ -4,6 +4,7 @@ use yii\helpers\Url;
 use frontend\assets\AdsAsset;
 
 /* @var $this yii\web\View */
+/* @var $model \common\models\job\Company */
 
 $this->title = 'Job Company';
 
@@ -29,7 +30,7 @@ $bundle = AdsAsset::register($this);
 <div class="main-container inner-page">
     <div class="container">
         <div class="row clearfix">
-            <h1 class="text-center title-1"> Job Company</h1>
+            <h1 class="text-center title-1"> <?php echo $model->title?></h1>
             <hr class="mx-auto small text-hr">
 
             <div style="clear:both">

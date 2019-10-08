@@ -8,14 +8,14 @@ class m141012_101932_i18n_tables extends Migration
     {
 
         $this->createTable('{{%i18n_source_message}}', [
-            'id'       => $this->primaryKey(),
+            'id' => $this->primaryKey(),
             'category' => $this->string(32),
-            'message'  => $this->text()
+            'message' => $this->text()
         ]);
 
         $this->createTable('{{%i18n_message}}', [
-            'id'          => $this->integer(),
-            'language'    => $this->string(16),
+            'id' => $this->integer(),
+            'language' => $this->string(16),
             'translation' => $this->text()
         ]);
 

@@ -12,9 +12,9 @@ use yii\helpers\Url;
 ?>
 <?php $this->beginContent('@app/notifications/views/_layout.html.php', [
     'model' => $wiki,
-    'user'  => $user,
+    'user' => $user,
     'title' => "Yii tutorial changed: {$wiki->title}",
-    'css'   => file_get_contents(__DIR__ . '/assets/diff.css'),
+    'css' => file_get_contents(__DIR__ . '/assets/diff.css'),
 ]) ?>
 <p>
     The following tutorial that you are following was recently updated.
@@ -30,7 +30,7 @@ use yii\helpers\Url;
 
 <hr/>
 <?= $this->render('//wiki/_changes', [
-    'left'  => $changes->findPrevious(),
+    'left' => $changes->findPrevious(),
     'right' => $changes,
 ]) ?>
 <hr/>

@@ -67,7 +67,7 @@ class CloudinaryDeleteAction extends BaseAction
     {
         FileStorageItem::deleteAll([
             'component' => 'filestack',
-            'path'      => $path
+            'path' => $path
         ]);
         return true;
     }

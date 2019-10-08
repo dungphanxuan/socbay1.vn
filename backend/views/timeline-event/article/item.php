@@ -26,7 +26,7 @@ use yii\helpers\Html;
 
     <div class="timeline-body">
         <?php echo Yii::t('backend', 'New article ({title}) was published at {created_at}', [
-            'title'      => $model->data['title'],
+            'title' => $model->data['title'],
             'created_at' => Yii::$app->formatter->asDatetime($model->data['created_at'])
         ]) ?>
     </div>

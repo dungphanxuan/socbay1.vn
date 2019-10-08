@@ -34,7 +34,7 @@ class WikiUpdateNotification extends BaseNotification
     {
         foreach ($this->getFollowers($this->wiki, $this->updater) as $user) {
             yield $this->buildEmail($user, [
-                'wiki'    => $this->wiki,
+                'wiki' => $this->wiki,
                 'updater' => $this->updater,
                 'changes' => $this->changes,
             ]);

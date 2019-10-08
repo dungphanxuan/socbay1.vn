@@ -51,8 +51,8 @@ class FileStorageItemSearch extends FileStorageItem
         }
 
         $query->andFilterWhere([
-            'id'         => $this->id,
-            'size'       => $this->size,
+            'id' => $this->id,
+            'size' => $this->size,
             'created_by' => $this->created_by,
             'created_at' => $this->created_at,
         ]);

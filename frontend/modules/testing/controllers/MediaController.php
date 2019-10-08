@@ -24,7 +24,7 @@ class MediaController extends Controller
             ->orderBy('id asc');
 
         $dataProvider = new ActiveDataProvider([
-            'query'      => $queryIndex,
+            'query' => $queryIndex,
             'pagination' => false,
         ]);
 
@@ -60,12 +60,12 @@ class MediaController extends Controller
             ->limit(3);
 
         $dataPopularProvider = new ActiveDataProvider([
-            'query'      => $queryPopular,
+            'query' => $queryPopular,
             'pagination' => false,
         ]);
 
         return $this->render('view', [
-            'model'               => $model,
+            'model' => $model,
             'dataPopularProvider' => $dataPopularProvider
         ]);
 
@@ -82,7 +82,7 @@ class MediaController extends Controller
         //$shareId = '1f1GOYLZen37zI6_TX7C12ZEZfSasWtiT';
         $urlView = GoogleDriverHelper::getViewUrl($shareId);
         return $this->render('audio', [
-            'urlView'     => $urlView,
+            'urlView' => $urlView,
             'urlDownload' => $urlDownload,
         ]);
     }

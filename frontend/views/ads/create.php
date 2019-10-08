@@ -26,13 +26,13 @@ $this->title = 'Đăng tin'
                     <div class="row">
                         <div class="col-sm-12">
                             <?php echo $this->render('_form', [
-                                'model'        => $model,
-                                'categories'   => $categories,
-                                'dataSubCat'   => $dataSubCat,
+                                'model' => $model,
+                                'categories' => $categories,
+                                'dataSubCat' => $dataSubCat,
                                 'article_type' => $article_type,
-                                'cities'       => $cities,
+                                'cities' => $cities,
                                 'dataDistrict' => $dataDistrict,
-                                'dataWard'     => $dataWard,
+                                'dataWard' => $dataWard,
                             ]) ?>
                         </div>
                     </div>

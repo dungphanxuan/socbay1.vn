@@ -37,7 +37,7 @@ class CacheController extends BackendController
     {
         if ($this->getCache($id)->flush()) {
             Yii::$app->session->setFlash('alert', [
-                'body'    => \Yii::t('backend', 'Cache has been successfully flushed'),
+                'body' => \Yii::t('backend', 'Cache has been successfully flushed'),
                 'options' => ['class' => 'alert-success']
             ]);
         };
@@ -55,7 +55,7 @@ class CacheController extends BackendController
     {
         if ($this->getCache($id)->delete($key)) {
             Yii::$app->session->setFlash('alert', [
-                'body'    => \Yii::t('backend', 'Cache entry has been successfully deleted'),
+                'body' => \Yii::t('backend', 'Cache entry has been successfully deleted'),
                 'options' => ['class' => 'alert-success']
             ]);
         };
@@ -73,7 +73,7 @@ class CacheController extends BackendController
     {
         TagDependency::invalidate($this->getCache($id), $tag);
         Yii::$app->session->setFlash('alert', [
-            'body'    => \Yii::t('backend', 'TagDependency was invalidated'),
+            'body' => \Yii::t('backend', 'TagDependency was invalidated'),
             'options' => ['class' => 'alert-success']
         ]);
 

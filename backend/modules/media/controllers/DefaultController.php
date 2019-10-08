@@ -20,7 +20,7 @@ class DefaultController extends Controller
     {
         return [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['post'],
                 ],
@@ -38,7 +38,7 @@ class DefaultController extends Controller
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -81,7 +81,7 @@ class DefaultController extends Controller
             }
 
             return $this->render('create', [
-                'model'      => $model,
+                'model' => $model,
                 'categories' => MediaCategory::find()->all(),
             ]);
         }
@@ -101,7 +101,7 @@ class DefaultController extends Controller
             return $this->redirect(['index']);
         } else {
             return $this->render('update', [
-                'model'      => $model,
+                'model' => $model,
                 'categories' => MediaCategory::find()->all(),
             ]);
         }
@@ -135,7 +135,7 @@ class DefaultController extends Controller
         $queryAll = Media::find()->limit(1000);
 
         $dataProvider = new ActiveDataProvider ([
-            'query'      => $queryAll,
+            'query' => $queryAll,
             'pagination' => false
         ]);
 
@@ -144,6 +144,7 @@ class DefaultController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+
     /**
      * @param $id
      * @return \yii\web\Response

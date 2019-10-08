@@ -7,16 +7,16 @@ class m170914_100920_create_comment extends Migration
     public function safeUp()
     {
         $this->createTable('{{%comment}}', [
-            'id'          => $this->primaryKey(),
-            'user_id'     => $this->integer()->notNull(),
+            'id' => $this->primaryKey(),
+            'user_id' => $this->integer()->notNull(),
             'object_type' => $this->string(255)->notNull(),
-            'object_id'   => $this->string(255)->notNull(),
-            'text'        => $this->text()->notNull(),
+            'object_id' => $this->string(255)->notNull(),
+            'text' => $this->text()->notNull(),
             'total_votes' => $this->integer()->notNull()->defaultValue(0),
-            'up_votes'    => $this->integer()->notNull()->defaultValue(0),
-            'rating'      => $this->double()->notNull()->defaultValue(0),
+            'up_votes' => $this->integer()->notNull()->defaultValue(0),
+            'rating' => $this->double()->notNull()->defaultValue(0),
 
-            'status'     => $this->smallInteger()->notNull()->defaultValue(10),
+            'status' => $this->smallInteger()->notNull()->defaultValue(10),
             'created_at' => $this->dateTime()->notNull(),
             'updated_at' => $this->dateTime(),
         ]);

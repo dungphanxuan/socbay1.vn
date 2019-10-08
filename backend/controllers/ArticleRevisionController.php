@@ -18,7 +18,7 @@ class ArticleRevisionController extends BackendController
     {
         return [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['post'],
                 ],
@@ -36,7 +36,7 @@ class ArticleRevisionController extends BackendController
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -125,14 +125,14 @@ class ArticleRevisionController extends BackendController
                 }
             }
             $res = [
-                'body'    => 'Success',
+                'body' => 'Success',
                 'success' => true,
             ];
 
             return $res;
         }
         $res = [
-            'body'    => 'Not allow',
+            'body' => 'Not allow',
             'success' => false,
         ];
 

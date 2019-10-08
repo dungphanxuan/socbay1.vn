@@ -25,7 +25,7 @@ class CarouselItemController extends BackendController
     {
         return [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['post'],
                 ],
@@ -51,7 +51,7 @@ class CarouselItemController extends BackendController
             if ($model->save()) {
                 Yii::$app->getSession()->setFlash('alert', [
                     'options' => ['class' => 'alert-success'],
-                    'body'    => Yii::t('backend', 'Carousel slide was successfully saved')
+                    'body' => Yii::t('backend', 'Carousel slide was successfully saved')
                 ]);
 
                 return $this->redirect(['/widget/widget-carousel/update', 'id' => $model->carousel_id]);
@@ -59,7 +59,7 @@ class CarouselItemController extends BackendController
         }
 
         return $this->render('create', [
-            'model'    => $model,
+            'model' => $model,
             'carousel' => $carousel,
         ]);
     }
@@ -79,7 +79,7 @@ class CarouselItemController extends BackendController
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->getSession()->setFlash('alert', [
                 'options' => ['class' => 'alert-success'],
-                'body'    => Yii::t('backend', 'Carousel slide was successfully saved')
+                'body' => Yii::t('backend', 'Carousel slide was successfully saved')
             ]);
 
             return $this->redirect(['/widget/widget-carousel/update', 'id' => $model->carousel_id]);

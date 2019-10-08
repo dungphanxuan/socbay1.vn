@@ -180,7 +180,7 @@ class FilestackController extends \yii\web\Controller
         $hander = 'Zmi2DCXMSXmwSeWvF06Q';
         $url = "https://cdn.filestackcontent.com/" . $hander;
         $transform_tasks = [
-            'resize'    => ['w' => '300', 'h' => '200', 'fit' => 'crop'],
+            'resize' => ['w' => '300', 'h' => '200', 'fit' => 'crop'],
             'watermark' => ['file' => 'bikKdunjQ9ubyLitiW80', 'size' => '50', 'position' => '[bottom,right]']
         ];
 

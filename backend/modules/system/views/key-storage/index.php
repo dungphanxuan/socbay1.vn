@@ -26,15 +26,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?php echo GridView::widget([
             'dataProvider' => $dataProvider,
-            'filterModel'  => $searchModel,
-            'options'      => [
+            'filterModel' => $searchModel,
+            'options' => [
                 'class' => 'grid-view table-responsive'
             ],
-            'columns'      => [
+            'columns' => [
                 [
-                    'class'           => 'yii\grid\CheckboxColumn',
-                    'headerOptions'   => ['style' => 'width:3%;text-align:center'],
-                    'contentOptions'  => ['style' => 'width:3%;text-align:center'],
+                    'class' => 'yii\grid\CheckboxColumn',
+                    'headerOptions' => ['style' => 'width:3%;text-align:center'],
+                    'contentOptions' => ['style' => 'width:3%;text-align:center'],
                     'checkboxOptions' => [
                         'class' => 'select-item'
                     ]
@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value',
 
                 [
-                    'class'    => 'backend\grid\ActionColumn',
+                    'class' => 'backend\grid\ActionColumn',
                     'template' => '{update} {delete}'
                 ],
             ],

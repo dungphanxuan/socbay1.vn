@@ -17,15 +17,15 @@ class ActionColumn extends \yii\grid\ActionColumn
      * @var array
      */
     public $buttonClass = [
-        'delete'      => 'danger',
+        'delete' => 'danger',
         'delete-file' => 'danger',
-        'view'        => 'success',
-        'update'      => 'info',
-        'copy'        => 'info',
-        'item'        => 'info',
-        'task'        => 'info',
-        'search'      => 'info',
-        'login'       => 'info'
+        'view' => 'success',
+        'update' => 'info',
+        'copy' => 'info',
+        'item' => 'info',
+        'task' => 'info',
+        'search' => 'info',
+        'login' => 'info'
     ];
 
     /**
@@ -37,11 +37,11 @@ class ActionColumn extends \yii\grid\ActionColumn
         $this->initDefaultButton('update', 'pencil');
         $this->initDefaultButton('delete-file', 'trash', [
             'data-confirm' => Yii::t('yii', 'Are you sure you want to delete this item?'),
-            'data-method'  => 'post',
+            'data-method' => 'post',
         ]);
         $this->initDefaultButton('delete', 'trash', [
             'data-confirm' => Yii::t('yii', 'Are you sure you want to delete this item?'),
-            'data-method'  => 'post',
+            'data-method' => 'post',
         ]);
     }
 
@@ -54,10 +54,10 @@ class ActionColumn extends \yii\grid\ActionColumn
             $this->buttons[$name] = function ($url, $model, $key) use ($name, $iconName, $additionalOptions) {
                 $title = Yii::t('yii', ucfirst($name));
                 $options = array_merge([
-                    'title'      => $title,
-                    'class'      => 'btn btn-sm btn-' . $this->buttonClass[$name],
+                    'title' => $title,
+                    'class' => 'btn btn-sm btn-' . $this->buttonClass[$name],
                     'aria-label' => $title,
-                    'data-pjax'  => '0',
+                    'data-pjax' => '0',
                 ], $additionalOptions, $this->buttonOptions);
                 $icon = Html::tag('span', '', ['class' => "fa fa-$iconName"]);
 

@@ -14,7 +14,7 @@ $this->title = 'Api Document';
         <div class="col-md-12">
             <?php echo \yii\grid\GridView::widget([
                 'dataProvider' => $dataProvider,
-                'columns'      => [
+                'columns' => [
                     'id',
                     'title',
                     // ...

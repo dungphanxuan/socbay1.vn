@@ -4,7 +4,7 @@ use frontend\assets\AdsAsset;
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\ListView;
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $catProvider \yii\data\ActiveDataProvider */
@@ -23,29 +23,37 @@ $bundle = AdsAsset::register($this);
         <div class="dtable-cell hw100">
             <div class="container text-center">
                 <h1 class="intro-title  "> <?php echo Yii::t('ads', 'Find Classified Ads') ?> </h1>
-                <p class="sub animateme fittext3  "> Thông tin mua bán nhanh chóng và tiết kiệm thời gian </p>
+                <p class="sub animateme fittext3  "> Thông tin mua bán nhanh chóng </p>
                 <?php
                 $form = ActiveForm::begin([
-                    'id'     => 'find-form',
+                    'id' => 'find-form',
                     'method' => 'get',
                     'action' => ['/ads/index']
                 ]) ?>
                 <div class="row search-row animated fadeInUp">
+                    <div class="col-xl-4 col-sm-4 search-col relative locationicon">
+                        <div class="search-col-inner">
+                            <i class="icon-location-2 icon-append"></i>
+                            <div class="search-col-input">
+                                <input type="text" name="country" id="autocomplete-ajax"
+                                       class="form-control locinput input-rel searchtag-input has-icon"
+                                       placeholder="<?php echo Yii::t('ads', 'City/Zipcode...') ?>" value="">
 
-
-                    <div class="col-lg-4 col-sm-4 search-col relative locationicon">
-                        <i class="icon-location-2 icon-append"></i>
-                        <input type="text" name="country" id="autocomplete-ajax"
-                               class="form-control locinput input-rel searchtag-input has-icon"
-                               placeholder="<?php echo Yii::t('ads', 'City/Zipcode...') ?>" value="">
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-sm-4 search-col relative"><i class="icon-docs icon-append"></i>
-                        <input type="text" name="ads-title" class="form-control has-icon"
-                               placeholder="<?php echo Yii::t('ads', 'I\'m looking for a ...') ?>"
-                               value="">
+                    <div class="col-xl-4 col-sm-4 search-col relative">
+                        <div class="search-col-inner">
+                            <i class="icon-docs icon-append"></i>
+                            <div class="search-col-input">
+                                <input type="text" name="ads"
+                                       class="form-control has-icon"
+                                       placeholder="<?php echo Yii::t('ads', 'I\'m looking for a ...') ?>" value="">
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-4 col-sm-4 search-col">
-                        <button class="btn btn-primary btn-search btn-block"><i
+                        <button class="btn btn-primary btn-search btn-block btn-gradient"><i
                                     class="icon-search"></i><strong><?php echo Yii::t('ads', 'Find') ?></strong>
                         </button>
                     </div>
@@ -72,12 +80,12 @@ $bundle = AdsAsset::register($this);
                 <?php echo ListView::widget([
                     'dataProvider' => $catProvider,
                     //'summary'      => '',
-                    'layout'       => '{items}',
-                    'itemView'     => '_item_cat',
-                    'options'      => [
+                    'layout' => '{items}',
+                    'itemView' => '_item_cat',
+                    'options' => [
                         'tag' => false,
                     ],
-                    'itemOptions'  => [
+                    'itemOptions' => [
                         'tag' => false,
                     ]
                 ]) ?>

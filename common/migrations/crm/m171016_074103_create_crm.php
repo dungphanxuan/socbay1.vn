@@ -7,34 +7,34 @@ class m171016_074103_create_crm extends BaseMigration
     public function up()
     {
         $this->createTable('crm_crm', [
-            'id'      => $this->primaryKey(),
-            'slug'    => $this->string(512)->notNull(),
-            'title'   => $this->string(255)->notNull(),
-            'body'    => $this->text()->notNull(),
+            'id' => $this->primaryKey(),
+            'slug' => $this->string(512)->notNull(),
+            'title' => $this->string(255)->notNull(),
+            'body' => $this->text()->notNull(),
             'excerpt' => $this->text()->notNull(),
-            'view'    => $this->string(),
-            'url'     => $this->string(),
+            'view' => $this->string(),
+            'url' => $this->string(),
 
-            'featured'      => $this->boolean()->notNull()->defaultValue(0),
+            'featured' => $this->boolean()->notNull()->defaultValue(0),
             'comment_count' => $this->integer()->notNull()->defaultValue(0),
-            'view_count'    => $this->integer()->notNull()->defaultValue(0),
+            'view_count' => $this->integer()->notNull()->defaultValue(0),
 
-            'sort_number'        => $this->smallInteger(1)->defaultValue(1),
+            'sort_number' => $this->smallInteger(1)->defaultValue(1),
             'thumbnail_base_url' => $this->string(128),
-            'thumbnail_path'     => $this->string(255),
+            'thumbnail_path' => $this->string(255),
 
-            'status'       => $this->smallInteger(1)->defaultValue(1),
-            'created_by'   => $this->integer(),
-            'updated_by'   => $this->integer(),
+            'status' => $this->smallInteger(1)->defaultValue(1),
+            'created_by' => $this->integer(),
+            'updated_by' => $this->integer(),
             'published_at' => $this->integer(),
-            'created_at'   => $this->integer(),
-            'updated_at'   => $this->integer(),
+            'created_at' => $this->integer(),
+            'updated_at' => $this->integer(),
         ]);
 
         //Project Pickup
         $this->createTable('d_crm_pickup', [
-            'id'          => $this->primaryKey(),
-            'crm_id'      => $this->integer()->notNull(),
+            'id' => $this->primaryKey(),
+            'crm_id' => $this->integer()->notNull(),
             'sort_number' => $this->smallInteger(1)->defaultValue(0),
         ]);
 

@@ -282,13 +282,13 @@ $bundle = BackendAsset::register($this);
             <!-- /.search form -->
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <?php echo Menu::widget([
-                'options'         => ['class' => 'sidebar-menu', 'data-widget' => 'tree'],
-                'linkTemplate'    => '<a href="{url}">{icon}<span>{label}</span>{right-icon}{badge}</a>',
+                'options' => ['class' => 'sidebar-menu', 'data-widget' => 'tree'],
+                'linkTemplate' => '<a href="{url}">{icon}<span>{label}</span>{right-icon}{badge}</a>',
                 'submenuTemplate' => "\n<ul class=\"treeview-menu\">\n{items}\n</ul>\n",
                 'activateParents' => true,
-                'items'           => [
+                'items' => [
                     [
-                        'label'   => Yii::t('backend', 'Main'),
+                        'label' => Yii::t('backend', 'Main'),
                         'options' => ['class' => 'header']
                     ],
                     /* [
@@ -300,29 +300,29 @@ $bundle = BackendAsset::register($this);
                      ],*/
                     [
                         'label' => Yii::t('backend', 'Dashboard'),
-                        'icon'  => '<i class="fa fa-dashboard"></i>',
-                        'url'   => ['/site/dashboard'],
+                        'icon' => '<i class="fa fa-dashboard"></i>',
+                        'url' => ['/site/dashboard'],
                     ],
 
                     [
-                        'label'   => Yii::t('backend', 'Ads Management'),
-                        'url'     => '#',
-                        'icon'    => '<i class="fa fa-cubes"></i>',
+                        'label' => Yii::t('backend', 'Ads Management'),
+                        'url' => '#',
+                        'icon' => '<i class="fa fa-cubes"></i>',
                         'options' => ['class' => 'treeview'],
-                        'active'  => in_array(Yii::$app->controller->id, ['article', 'article-package']),
-                        'items'   => [
+                        'active' => in_array(Yii::$app->controller->id, ['article', 'article-package']),
+                        'items' => [
                             ['label' => Yii::t('backend', 'All Ads'), 'url' => ['/article/index'], 'icon' => '<i class="fa fa-circle-o"></i>', 'active' => (Yii::$app->controller->id == 'article')],
                             ['label' => Yii::t('backend', 'Pending Ads'), 'url' => ['/article/index', 'status' => 3], 'icon' => '<i class="fa fa-circle-o"></i>'],
                             ['label' => Yii::t('backend', 'Package'), 'url' => ['/catalog/article-package/index'], 'icon' => '<i class="fa fa-circle-o"></i>'],
                         ]
                     ],
                     [
-                        'label'   => Yii::t('backend', 'Content'),
-                        'url'     => '#',
-                        'icon'    => '<i class="fa fa-edit"></i>',
+                        'label' => Yii::t('backend', 'Content'),
+                        'url' => '#',
+                        'icon' => '<i class="fa fa-edit"></i>',
                         'options' => ['class' => 'treeview'],
-                        'active'  => in_array(Yii::$app->controller->id, ['page', 'article-category', 'widget-text', 'widget-menu', 'widget-carousel']),
-                        'items'   => [
+                        'active' => in_array(Yii::$app->controller->id, ['page', 'article-category', 'widget-text', 'widget-menu', 'widget-carousel']),
+                        'items' => [
                             ['label' => Yii::t('backend', 'Static pages'), 'url' => ['/page/index'], 'icon' => '<i class="fa fa-circle-o"></i>', 'active' => (Yii::$app->controller->id == 'page')],
                             //['label' => Yii::t('backend', 'Article'), 'url' => ['/article/index'], 'icon' => '<i class="fa fa-circle-o"></i>'],
                             //['label' => Yii::t('backend', 'Article Revision'), 'url' => ['/article-revision/index'], 'icon' => '<i class="fa fa-circle-o"></i>'],
@@ -334,63 +334,63 @@ $bundle = BackendAsset::register($this);
                         ]
                     ],
                     [
-                        'label'   => Yii::t('backend', 'Property'),
-                        'url'     => '#',
-                        'icon'    => '<i class="fa fa-list"></i>',
+                        'label' => Yii::t('backend', 'Property'),
+                        'url' => '#',
+                        'icon' => '<i class="fa fa-list"></i>',
                         'options' => ['class' => 'treeview'],
-                        'active'  => in_array(Yii::$app->controller->id, ['project', 'event', 'project-area', 'project-price', 'project-status', 'project-type', 'project-feature']),
-                        'items'   => [
+                        'active' => in_array(Yii::$app->controller->id, ['project', 'event', 'project-area', 'project-price', 'project-status', 'project-type', 'project-feature']),
+                        'items' => [
                             ['label' => Yii::t('backend', 'Project'), 'url' => ['/property/project/index'], 'icon' => '<i class="fa fa-circle-o"></i>', 'active' => (Yii::$app->controller->id == 'project')],
                             ['label' => Yii::t('backend', 'Property'), 'url' => ['/property/category/index'], 'icon' => '<i class="fa fa-circle-o"></i>'],
                             ['label' => Yii::t('backend', 'Event'), 'url' => ['/property/event/index'], 'icon' => '<i class="fa fa-circle-o"></i>'],
                             ['label' => Yii::t('backend', 'Company'), 'url' => ['/job/company/index'], 'icon' => '<i class="fa fa-circle-o"></i>'],
                             [
-                                'label'   => Yii::t('backend', 'Property Setting'),
-                                'url'     => '#',
-                                'icon'    => '<i class="fa fa-flag"></i>',
+                                'label' => Yii::t('backend', 'Property Setting'),
+                                'url' => '#',
+                                'icon' => '<i class="fa fa-flag"></i>',
                                 'options' => ['class' => 'treeview'],
-                                'active'  => in_array(Yii::$app->controller->id, ['project-area', 'project-price', 'project-type', 'project-status']),
-                                'items'   => [
+                                'active' => in_array(Yii::$app->controller->id, ['project-area', 'project-price', 'project-type', 'project-status']),
+                                'items' => [
                                     [
                                         'label' => Yii::t('backend', 'Category'),
-                                        'url'   => ['/property/project-category/index'],
-                                        'icon'  => '<i class="fa fa-circle-o"></i>',
+                                        'url' => ['/property/project-category/index'],
+                                        'icon' => '<i class="fa fa-circle-o"></i>',
                                     ],
                                     [
                                         'label' => Yii::t('backend', 'Type'),
-                                        'url'   => ['/property/project-type/index'],
-                                        'icon'  => '<i class="fa fa-circle-o"></i>',
+                                        'url' => ['/property/project-type/index'],
+                                        'icon' => '<i class="fa fa-circle-o"></i>',
                                     ],
                                     [
                                         'label' => Yii::t('backend', 'Status'),
-                                        'url'   => ['/property/project-status/index'],
-                                        'icon'  => '<i class="fa fa-circle-o"></i>',
+                                        'url' => ['/property/project-status/index'],
+                                        'icon' => '<i class="fa fa-circle-o"></i>',
                                     ],
                                     [
                                         'label' => Yii::t('backend', 'Feature'),
-                                        'url'   => ['/property/project-feature/index'],
-                                        'icon'  => '<i class="fa fa-circle-o"></i>',
+                                        'url' => ['/property/project-feature/index'],
+                                        'icon' => '<i class="fa fa-circle-o"></i>',
                                     ],
                                     [
                                         'label' => Yii::t('backend', 'Price'),
-                                        'url'   => ['/property/project-price/index'],
-                                        'icon'  => '<i class="fa fa-circle-o"></i>',
+                                        'url' => ['/property/project-price/index'],
+                                        'icon' => '<i class="fa fa-circle-o"></i>',
                                     ],
                                     [
                                         'label' => Yii::t('backend', 'Area'),
-                                        'url'   => ['/property/project-area/index'],
-                                        'icon'  => '<i class="fa fa-circle-o"></i>',
+                                        'url' => ['/property/project-area/index'],
+                                        'icon' => '<i class="fa fa-circle-o"></i>',
                                     ],
                                 ],
                             ],
                         ]
                     ],
                     [
-                        'label'   => Yii::t('backend', 'Job'),
-                        'url'     => '#',
-                        'icon'    => '<i class="fa fa-cubes"></i>',
+                        'label' => Yii::t('backend', 'Job'),
+                        'url' => '#',
+                        'icon' => '<i class="fa fa-cubes"></i>',
                         'options' => ['class' => 'treeview'],
-                        'items'   => [
+                        'items' => [
                             ['label' => Yii::t('backend', 'Job Type'), 'url' => ['/job/job-type/index'], 'icon' => '<i class="fa fa-circle-o"></i>'],
                             ['label' => Yii::t('backend', 'Job Category'), 'url' => ['/job/job-category/index'], 'icon' => '<i class="fa fa-circle-o"></i>'],
                             ['label' => Yii::t('backend', 'Company'), 'url' => ['/job/company/index'], 'icon' => '<i class="fa fa-circle-o"></i>'],
@@ -398,33 +398,33 @@ $bundle = BackendAsset::register($this);
                         ]
                     ],
                     [
-                        'label'   => Yii::t('backend', 'Catalog'),
-                        'url'     => '#',
-                        'icon'    => '<i class="fa fa-globe"></i>',
+                        'label' => Yii::t('backend', 'Catalog'),
+                        'url' => '#',
+                        'icon' => '<i class="fa fa-globe"></i>',
                         'options' => ['class' => 'treeview'],
-                        'items'   => [
+                        'items' => [
                             ['label' => Yii::t('backend', 'Support'), 'url' => ['/catalog/product/index'], 'icon' => '<i class="fa fa-circle-o"></i>'],
                             ['label' => Yii::t('backend', 'Product'), 'url' => ['/catalog/category/index'], 'icon' => '<i class="fa fa-circle-o"></i>'],
                             [
-                                'label'   => Yii::t('backend', 'CRM'),
-                                'url'     => '#',
-                                'icon'    => '<i class="fa fa-flag"></i>',
+                                'label' => Yii::t('backend', 'CRM'),
+                                'url' => '#',
+                                'icon' => '<i class="fa fa-flag"></i>',
                                 'options' => ['class' => 'treeview'],
-                                'active'  => in_array(Yii::$app->controller->id, ['rbac-auth-assignment', 'rbac-auth-item', 'rbac-auth-item-child', 'rbac-auth-rule']),
-                                'items'   => [
+                                'active' => in_array(Yii::$app->controller->id, ['rbac-auth-assignment', 'rbac-auth-item', 'rbac-auth-item-child', 'rbac-auth-rule']),
+                                'items' => [
                                     [
                                         'label' => Yii::t('backend', 'Auth Assignment'),
-                                        'url'   => ['/rbac/rbac-auth-assignment/index'],
-                                        'icon'  => '<i class="fa fa-angle-double-right"></i>',
+                                        'url' => ['/rbac/rbac-auth-assignment/index'],
+                                        'icon' => '<i class="fa fa-angle-double-right"></i>',
                                     ],
                                 ],
                             ],
                             [
-                                'label'   => Yii::t('backend', 'Finance'),
-                                'url'     => '#',
-                                'icon'    => '<i class="fa fa-cubes"></i>',
+                                'label' => Yii::t('backend', 'Finance'),
+                                'url' => '#',
+                                'icon' => '<i class="fa fa-cubes"></i>',
                                 'options' => ['class' => 'treeview'],
-                                'items'   => [
+                                'items' => [
                                     ['label' => Yii::t('backend', 'Banking'), 'url' => ['/catalog/product/index'], 'icon' => '<i class="fa fa-circle-o"></i>'],
                                     ['label' => Yii::t('backend', 'Report'), 'url' => ['/catalog/category/index'], 'icon' => '<i class="fa fa-circle-o"></i>'],
                                 ]
@@ -476,25 +476,25 @@ $bundle = BackendAsset::register($this);
                     ],
                     */
                     [
-                        'label'   => Yii::t('backend', 'Service'),
-                        'url'     => '#',
-                        'icon'    => '<i class="fa fa-cubes"></i>',
+                        'label' => Yii::t('backend', 'Service'),
+                        'url' => '#',
+                        'icon' => '<i class="fa fa-cubes"></i>',
                         'options' => ['class' => 'treeview'],
-                        'items'   => [
+                        'items' => [
                             ['label' => 'Filestack', 'url' => ['/saas/filestack/index'], 'icon' => '<i class="fa fa-circle-o"></i>'],
                             ['label' => Yii::t('backend', 'Product Create'), 'url' => ['/product/create'], 'icon' => '<i class="fa fa-circle-o"></i>'],
                         ]
                     ],
                     [
-                        'label'   => Yii::t('backend', 'System'),
+                        'label' => Yii::t('backend', 'System'),
                         'options' => ['class' => 'header']
                     ],
                     [
-                        'label'   => Yii::t('backend', 'Statistic'),
-                        'url'     => '#',
-                        'icon'    => '<i class="fa fa-bar-chart"></i>',
+                        'label' => Yii::t('backend', 'Statistic'),
+                        'url' => '#',
+                        'icon' => '<i class="fa fa-bar-chart"></i>',
                         'options' => ['class' => 'treeview'],
-                        'items'   => [
+                        'items' => [
                             ['label' => Yii::t('backend', 'Ads Chart'), 'url' => ['/report/sale/index'], 'icon' => '<i class="fa fa-circle-o"></i>'],
                             ['label' => Yii::t('backend', 'Order'), 'url' => ['/report/product/index'], 'icon' => '<i class="fa fa-circle-o"></i>'],
                             ['label' => Yii::t('backend', 'Customer'), 'url' => ['/report/customer/index'], 'icon' => '<i class="fa fa-circle-o"></i>'],
@@ -502,18 +502,18 @@ $bundle = BackendAsset::register($this);
                         ]
                     ],
                     [
-                        'label'   => Yii::t('backend', 'Users'),
-                        'icon'    => '<i class="fa fa-users"></i>',
-                        'url'     => ['/user/index'],
+                        'label' => Yii::t('backend', 'Users'),
+                        'icon' => '<i class="fa fa-users"></i>',
+                        'url' => ['/user/index'],
                         'visible' => Yii::$app->user->can('administrator')
                     ],
                     [
-                        'label'   => Yii::t('backend', 'Other'),
-                        'url'     => '#',
-                        'icon'    => '<i class="fa fa-cogs"></i>',
+                        'label' => Yii::t('backend', 'Other'),
+                        'url' => '#',
+                        'icon' => '<i class="fa fa-cogs"></i>',
                         'options' => ['class' => 'treeview'],
-                        'active'  => in_array(Yii::$app->controller->id, ['i18n-source-message', 'i18n-message', 'key-storage', 'file-storage', 'cache', 'file-manager', 'system-information', 'log', 'rbac-auth-assignment', 'rbac-auth-item', 'rbac-auth-item-child', 'rbac-auth-rules']),
-                        'items'   => [
+                        'active' => in_array(Yii::$app->controller->id, ['i18n-source-message', 'i18n-message', 'key-storage', 'file-storage', 'cache', 'file-manager', 'system-information', 'log', 'rbac-auth-assignment', 'rbac-auth-item', 'rbac-auth-item-child', 'rbac-auth-rules']),
+                        'items' => [
                             ['label' => Yii::t('backend', 'Key-Value Storage'), 'url' => ['/system/key-storage/index'], 'icon' => '<i class="fa fa-circle-o"></i>', 'active' => (Yii::$app->controller->id == 'key-storage')],
                             ['label' => Yii::t('backend', 'File Storage'), 'url' => ['/file-storage/index'], 'icon' => '<i class="fa fa-circle-o"></i>', 'active' => (Yii::$app->controller->id == 'storage')],
                             ['label' => Yii::t('backend', 'Cache'), 'url' => ['/system/cache/index'], 'icon' => '<i class="fa fa-circle-o"></i>'],
@@ -531,40 +531,40 @@ $bundle = BackendAsset::register($this);
                                 'badgeBgClass' => 'label-danger',
                             ],*/
                             [
-                                'label'   => Yii::t('backend', 'RBAC Rules'),
-                                'url'     => '#',
-                                'icon'    => '<i class="fa fa-flag"></i>',
+                                'label' => Yii::t('backend', 'RBAC Rules'),
+                                'url' => '#',
+                                'icon' => '<i class="fa fa-flag"></i>',
                                 'options' => ['class' => 'treeview'],
-                                'active'  => in_array(Yii::$app->controller->id, ['rbac-auth-assignment', 'rbac-auth-item', 'rbac-auth-item-child', 'rbac-auth-rule']),
-                                'items'   => [
+                                'active' => in_array(Yii::$app->controller->id, ['rbac-auth-assignment', 'rbac-auth-item', 'rbac-auth-item-child', 'rbac-auth-rule']),
+                                'items' => [
                                     [
                                         'label' => Yii::t('backend', 'Auth Assignment'),
-                                        'url'   => ['/rbac/rbac-auth-assignment/index'],
-                                        'icon'  => '<i class="fa fa-circle-o"></i>',
+                                        'url' => ['/rbac/rbac-auth-assignment/index'],
+                                        'icon' => '<i class="fa fa-circle-o"></i>',
                                     ],
                                     [
                                         'label' => Yii::t('backend', 'Auth Items'),
-                                        'url'   => ['/rbac/rbac-auth-item/index'],
-                                        'icon'  => '<i class="fa fa-circle-o"></i>',
+                                        'url' => ['/rbac/rbac-auth-item/index'],
+                                        'icon' => '<i class="fa fa-circle-o"></i>',
                                     ],
                                     [
                                         'label' => Yii::t('backend', 'Auth Item Child'),
-                                        'url'   => ['/rbac/rbac-auth-item-child/index'],
-                                        'icon'  => '<i class="fa fa-circle-o"></i>',
+                                        'url' => ['/rbac/rbac-auth-item-child/index'],
+                                        'icon' => '<i class="fa fa-circle-o"></i>',
                                     ],
                                     [
                                         'label' => Yii::t('backend', 'Auth Rules'),
-                                        'url'   => ['/rbac/rbac-auth-rule/index'],
-                                        'icon'  => '<i class="fa fa-circle-o"></i>',
+                                        'url' => ['/rbac/rbac-auth-rule/index'],
+                                        'icon' => '<i class="fa fa-circle-o"></i>',
                                     ],
                                 ],
                             ],
                         ]
                     ],
                     [
-                        'label'   => Yii::t('backend', 'Help Ticket'),
-                        'icon'    => '<i class="fa fa-circle-o text-aqua"></i>',
-                        'url'     => ['/ticket/index'],
+                        'label' => Yii::t('backend', 'Help Ticket'),
+                        'icon' => '<i class="fa fa-circle-o text-aqua"></i>',
+                        'url' => ['/ticket/index'],
                         'options' => [
                             'class' => 'bg-ticket'
                         ]
@@ -588,7 +588,7 @@ $bundle = BackendAsset::register($this);
             </h1>
 
             <?php echo Breadcrumbs::widget([
-                'tag'   => 'ol',
+                'tag' => 'ol',
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
         </section>
@@ -597,7 +597,7 @@ $bundle = BackendAsset::register($this);
         <section class="content">
             <?php if (Yii::$app->session->hasFlash('alert')): ?>
                 <?php echo Alert::widget([
-                    'body'    => ArrayHelper::getValue(Yii::$app->session->getFlash('alert'), 'body'),
+                    'body' => ArrayHelper::getValue(Yii::$app->session->getFlash('alert'), 'body'),
                     'options' => ArrayHelper::getValue(Yii::$app->session->getFlash('alert'), 'options'),
                 ]) ?>
             <?php endif; ?>

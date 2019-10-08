@@ -19,7 +19,7 @@ class CompanyType
     {
         return [
             self::REAL_ESTATE => Yii::t('common', 'Male'),
-            self::FASHION     => Yii::t('common', 'Female'),
+            self::FASHION => Yii::t('common', 'Female'),
         ];
     }
 
